@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { FaLinkedin, FaGithub, FaRegCommentAlt } from "react-icons/fa";
 import useWindowDimensions from "../hooks/useWindowDimensions";
@@ -13,7 +13,7 @@ const Header = (props: Props) => {
   const { scrollY } = useWindowDimensions();
   const HEADER_STAY_LIMIT = 200;
 
-  const handleScroll = () => {
+  const handleScroll = useCallback(() => {
     if (typeof window !== "undefined") {
       if (window.scrollY < HEADER_STAY_LIMIT) {
         setShow(true);
@@ -36,7 +36,7 @@ const Header = (props: Props) => {
       // remember current page location to use in the next move
       setLastScrollY(window.scrollY);
     }
-  };
+  }, []);
 
   useEffect(() => {
     if (typeof window !== "undefined") {

@@ -67,9 +67,10 @@ const Experience = (props: Props) => {
             lineColor="rgba(196, 196, 196, 0.74)"
             className="transition-all duration-500"
           >
-            {experience.map((item) => {
+            {experience.map((item, index) => {
               return (
                 <VerticalTimelineElement
+                  key={index}
                   className="vertical-timeline-element--work"
                   contentStyle={{
                     background: "rgb(38 38 38 / 0.5)",
