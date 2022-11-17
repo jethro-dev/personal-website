@@ -1,11 +1,113 @@
 import React from "react";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { motion } from "framer-motion";
 
 type Props = {};
 
+const experience = [
+  {
+    title: "Junior Software Engineer",
+    company: "The Business Plan Shop",
+    location: "London, UK",
+    desc: "Help develop a financial planning and analysis platform for small and medium size businesses, and their financial advisors.",
+    startDate: "Mar 2022",
+    endDate: "Present",
+  },
+  {
+    title: "Freelance Software Developer",
+    company: "LATAVIVOS",
+    location: "Brighton, UK",
+    desc: "Help develop shopify e-commerce web application.",
+    startDate: "Dec 2021",
+    endDate: "Mar 2022",
+  },
+  {
+    title: "Internship",
+    company: "PR Asia",
+    location: "Hong Kong",
+    desc: "Enhance company websites and provide better user experience.",
+    startDate: "Jun 2019",
+    endDate: "Aug 2019",
+  },
+  {
+    title: "Bachelor of Science",
+    company: "Univeristy of Sussex",
+    location: "East Sussex, UK",
+    desc: "Key modules included: Data Structures & Algorithms, Software Engineering, Databases, Web 3D Applications",
+    startDate: "Sept 2018",
+    endDate: "Aug 2021",
+  },
+];
+
+const timeline = {
+  hidden: { translateY: 100, opacity: 0 },
+  show: {
+    translateY: 0,
+    opacity: 1,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.5,
+    },
+  },
+};
+
 const Experience = (props: Props) => {
   return (
-    <div className="h-[800px] bg-purple-600">
-      <div className="wrapper">Experience</div>
+    <div id="experience-section" className="relative">
+      <div className="timeline-gradient"></div>
+      <div className="wrapper py-20">
+        Experience
+        <motion.div variants={timeline} initial="hidden" whileInView="show">
+          <VerticalTimeline
+            animate={true}
+            lineColor="rgba(196, 196, 196, 0.74)"
+            className="transition-all duration-500"
+          >
+            {experience.map((item) => {
+              return (
+                <VerticalTimelineElement
+                  className="vertical-timeline-element--work"
+                  contentStyle={{
+                    background: "rgb(38 38 38 / 0.5)",
+                    color: "#dfdfdf",
+                    borderRadius: "16px",
+                    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                    backdropFilter: "blur(8.1px)",
+                    border: "1px solid rgba(196, 196, 196, 0.35)",
+                  }}
+                  contentArrowStyle={{
+                    borderRight: "7px solid  rgb(139, 92, 246)",
+                  }}
+                  date={item.startDate + ` - ` + item.endDate}
+                  iconStyle={{
+                    background: "rgb(38 38 38 / 0.9)",
+                    color: "#dfdfdf",
+                    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+                    backdropFilter: "blur(8.1px)",
+                    border: "2px solid rgba(139, 92, 246,0.8)",
+                  }}
+                  // icon={<WorkIcon />}
+                >
+                  <h3 className="vertical-timeline-element-title font-semibold text-lg text-violet-500">
+                    {item.title}
+                  </h3>
+                  <h4 className="vertical-timeline-element-title font-light text-violet-200">
+                    {item.company}
+                  </h4>
+                  <h4 className="vertical-timeline-element-subtitle font-light text-violet-200">
+                    {item.location}
+                  </h4>
+                  <p className="!font-light !text-neutral-300">{item.desc}</p>
+                </VerticalTimelineElement>
+              );
+            })}
+          </VerticalTimeline>
+        </motion.div>
+      </div>
     </div>
   );
 };

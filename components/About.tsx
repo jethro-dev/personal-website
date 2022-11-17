@@ -3,6 +3,7 @@ import useConfettiGradient from "../hooks/useConfettiGradient";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import StaggeredGrid from "./StaggeredGrid";
 import { FaArrowDown } from "react-icons/fa";
+import scrollToById from "../utils/scrollToById";
 type Props = {};
 
 export const SECTION_HEIGHT = 800;
@@ -11,16 +12,9 @@ const About = (props: Props) => {
   const { ConfettiGradient } = useConfettiGradient(1.5);
   const { height, width } = useWindowDimensions();
 
-  const handleClickScroll = () => {
-    const element = document.getElementById("skill-section");
-    window.scroll({
-      top: element?.clientHeight,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <div
+      id="about-section"
       className={`relative h-[${SECTION_HEIGHT}px]`}
       style={{ height: height > SECTION_HEIGHT ? height : SECTION_HEIGHT }}
     >
@@ -38,12 +32,12 @@ const About = (props: Props) => {
               High level experience in software engineering and development,
               producing quality work.
             </p>
-            <div className="grid place-items-center">
+            <div className="grid place-items-center absolute left-[50%] translate-x-[-50%]">
               <h3 className="mb-3 text-neutral-300 opacity-90 font-medium">
                 click to see more
               </h3>
               <button
-                onClick={handleClickScroll}
+                onClick={() => scrollToById("skill-section")}
                 className="full-glassify font-semibold text-3xl p-4 rounded-full pointer-events-auto !border-2 hover:scale-105 transition-all duration-500"
               >
                 <FaArrowDown />

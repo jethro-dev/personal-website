@@ -127,3 +127,17 @@ a {
     rgba(0, 0, 0, 1) 90%
   );
 }
+
+.timeline-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgb(0, 0, 0) 0%,
+    rgb(80, 80, 80) 50%,
+    rgb(212, 212, 212) 100%
+  );
+}

@@ -14,7 +14,7 @@ const Contact = (props: Props) => {
     setIsFormOpen((cur) => !cur);
   };
   return (
-    <div>
+    <div id="contact-section">
       <div className="wrapper py-20">
         <h1 className="text-4xl lg:text-5xl font-bold mb-5 lg:mb-10">
           Contact Me!

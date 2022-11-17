@@ -32,7 +32,7 @@ const Projects = (props: Props) => {
   const [showIndex, setShowIndex] = useState(0);
 
   return (
-    <div className="bg-neutral-300">
+    <div id="project-section" className="bg-neutral-300">
       <div className="wrapper h-full pt-20 pb-40">
         <div className="text-left relative mb-10">
           <h1 className="text-6xl font-bold text-neutral-200 dark:text-neutral-700 ml-[-20px] select-none">

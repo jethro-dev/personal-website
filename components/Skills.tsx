@@ -26,7 +26,7 @@ const columns = [
       { name: "SASS/SCSS", img: "/image/sass.svg" },
       { name: "TailwindCSS", img: "/image/tailwindcss.svg" },
       { name: "jQuery", img: "/image/jquery.svg" },
-      { name: "GWT", img: "/image/html5.svg" },
+      { name: "GWT", img: "/image/gwt.svg" },
     ],
   },
   {

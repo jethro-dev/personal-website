@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { MdOpenInBrowser } from "react-icons/md";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 type Props = {
   name: string;
@@ -36,10 +37,11 @@ const ProjectItem = ({
       onClick={() => setShowIndex(index)}
       className={`project-item ${isActive ? "md:flex-[3]" : "md:flex-[2]"}`}
     >
-      <img
+      <Image
         src={thumbnail}
         alt={name}
-        className="absolute top-0 bottom-0 left-0 right-0 h-full w-full object-cover"
+        layout="fill"
+        className="object-cover object-center"
       />
       <div className="black-gradient"></div>
       <div className="w-full absolute bottom-0 left-0 p-4">

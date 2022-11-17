@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 export type Item = {
   name: string;
@@ -17,7 +18,7 @@ const container = {
     translateY: 0,
     opacity: 1,
     transition: {
-      duration: 2,
+      duration: 1,
       staggerChildren: 0.2,
     },
   },
@@ -47,8 +48,8 @@ const SkillColumn = ({ title, items }: Props) => {
               variants={inner}
               className="h-[150px] w-full flex flex-col items-center justify-center"
             >
-              <img src={item.img} alt={item.name} className="mb-2" />
-              <h4 className="font-thin text-base lg:text-sm text-neutral-300 opacity-90">
+              <Image width={60} height={60} src={item.img} alt={item.name} />
+              <h4 className="mt-2 font-thin text-base lg:text-sm text-neutral-300 opacity-90">
                 {item.name}
               </h4>
             </motion.div>

@@ -39,8 +39,6 @@ const Home: NextPage = () => {
         {/* contact*/}
         <Contact />
       </main>
-
-      <Footer />
     </div>
   );
 };

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Bars3Icon } from "@heroicons/react/24/solid";
 import { FaLinkedin, FaGithub, FaRegCommentAlt } from "react-icons/fa";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import { SECTION_HEIGHT as ABOVE_SECTION_HEIGHT } from "../components/About";
-
+import scrollToById from "../utils/scrollToById";
 type Props = {};
 
 const Header = (props: Props) => {
@@ -12,6 +12,7 @@ const Header = (props: Props) => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const { scrollY } = useWindowDimensions();
   const HEADER_STAY_LIMIT = 200;
+
   const handleScroll = () => {
     if (typeof window !== "undefined") {
       if (window.scrollY < HEADER_STAY_LIMIT) {
@@ -46,7 +47,7 @@ const Header = (props: Props) => {
         window.removeEventListener("scroll", handleScroll);
       };
     }
-  }, [lastScrollY]);
+  }, [lastScrollY, handleScroll]);
   return (
     <header
       className={`${!show ? "-translate-y-full" : ""} ${
@@ -58,29 +59,41 @@ const Header = (props: Props) => {
         <div className="flex items-end gap-6 md:gap-8 lg:gap-10">
           {/* logo */}
           <h1 className="h-full text-5xl font-semibold transition duration-300 hover:text-neutral-800/50">
-            <a href="#">Jethro</a>
+            <button onClick={() => scrollToById("about-section")}>
+              Jethro
+            </button>
           </h1>
           <nav className=" hidden md:block">
             <ul className="flex items-center gap-2 md:gap-4 lg:gap-6 h-full">
               {/* about*/}
               <li className="header-link">
-                <a href="#">About</a>
+                <button onClick={() => scrollToById("about-section")}>
+                  About
+                </button>
               </li>
               {/* skills */}
               <li className="header-link">
-                <a href="#">Skills</a>
+                <button onClick={() => scrollToById("skill-section")}>
+                  Skills
+                </button>
               </li>
               {/* experience*/}
               <li className="header-link">
-                <a href="#">Experience</a>
+                <button onClick={() => scrollToById("experience-section")}>
+                  Experience
+                </button>
               </li>
               {/* portfolio*/}
               <li className="header-link">
-                <a href="#">Portfolio</a>
+                <button onClick={() => scrollToById("project-section")}>
+                  Projects
+                </button>
               </li>
               {/* contact*/}
               <li className="header-link">
-                <a href="#">Contact</a>
+                <button onClick={() => scrollToById("contact-section")}>
+                  Contact
+                </button>
               </li>
             </ul>
           </nav>
