@@ -91,6 +91,7 @@ const Experience = (props: Props) => {
                         src={`/image/${
                           item.isWork ? "work" : "university"
                         }.svg`}
+                        alt=""
                         width={30}
                         height={30}
                       />
