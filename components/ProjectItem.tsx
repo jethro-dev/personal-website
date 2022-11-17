@@ -35,7 +35,9 @@ const ProjectItem = ({
     <div
       tabIndex={0}
       onClick={() => setShowIndex(index)}
-      className={`project-item ${isActive ? "md:flex-[3]" : "md:flex-[2]"}`}
+      className={`project-item ${
+        isActive ? "md:flex-[3]" : "md:flex-[2]"
+      } hover:ring-4 hover:scale-[102%] ring-violet-500`}
     >
       <Image
         src={thumbnail}

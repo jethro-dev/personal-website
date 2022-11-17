@@ -5,6 +5,7 @@ import {
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 type Props = {};
 
@@ -16,6 +17,7 @@ const experience = [
     desc: "Help develop a financial planning and analysis platform for small and medium size businesses, and their financial advisors.",
     startDate: "Mar 2022",
     endDate: "Present",
+    isWork: true,
   },
   {
     title: "Freelance Software Developer",
@@ -24,6 +26,7 @@ const experience = [
     desc: "Help develop shopify e-commerce web application.",
     startDate: "Dec 2021",
     endDate: "Mar 2022",
+    isWork: true,
   },
   {
     title: "Internship",
@@ -32,6 +35,7 @@ const experience = [
     desc: "Enhance company websites and provide better user experience.",
     startDate: "Jun 2019",
     endDate: "Aug 2019",
+    isWork: true,
   },
   {
     title: "Bachelor of Science",
@@ -40,6 +44,7 @@ const experience = [
     desc: "Key modules included: Data Structures & Algorithms, Software Engineering, Databases, Web 3D Applications",
     startDate: "Sept 2018",
     endDate: "Aug 2021",
+    isWork: false,
   },
 ];
 
@@ -80,6 +85,17 @@ const Experience = (props: Props) => {
                     backdropFilter: "blur(8.1px)",
                     border: "1px solid rgba(196, 196, 196, 0.35)",
                   }}
+                  icon={
+                    <div className="w-full h-full grid place-items-center">
+                      <Image
+                        src={`/image/${
+                          item.isWork ? "work" : "university"
+                        }.svg`}
+                        width={30}
+                        height={30}
+                      />
+                    </div>
+                  }
                   contentArrowStyle={{
                     borderRight: "7px solid  rgb(139, 92, 246)",
                   }}
