@@ -121,7 +121,7 @@ const Skills = (props: Props) => {
           className="text-center pt-20"
         >
           <h3 className="mb-4 text-lg font-thin">
-            Can't seem to find what you are looking for?
+            Can&apos;t seem to find what you are looking for?
           </h3>
           <form className="flex gap-4 justify-center mb-4">
             <input
