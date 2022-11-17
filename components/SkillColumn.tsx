@@ -43,6 +43,7 @@ const SkillColumn = ({ title, items }: Props) => {
         {items.map((item) => {
           return (
             <motion.div
+              key={item.name}
               variants={inner}
               className="h-[150px] w-full flex flex-col items-center justify-center"
             >

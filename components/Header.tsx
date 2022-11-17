@@ -92,7 +92,11 @@ const Header = (props: Props) => {
             <ul className="flex items-end gap-4">
               {/* linkedin */}
               <li className="header-link">
-                <a href="https://www.linkedin.com/in/galongau/" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/galongau/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaLinkedin size={28} />
                 </a>
               </li>
@@ -104,7 +108,7 @@ const Header = (props: Props) => {
               </li>
               {/* Comment*/}
               <li className="header-link">
-                <a href="/">
+                <a href="https://github.com/jethro-dev">
                   <FaRegCommentAlt size={28} />
                 </a>
               </li>

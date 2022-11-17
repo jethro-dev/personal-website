@@ -50,7 +50,13 @@ const Skills = (props: Props) => {
       <div className="wrapper py-20 pb-40">
         <div className="flex flex-col lg:flex-row gap-8">
           {columns.map((column) => {
-            return <SkillColumn title={column.title} items={column.items} />;
+            return (
+              <SkillColumn
+                key={column.title}
+                title={column.title}
+                items={column.items}
+              />
+            );
           })}
         </div>
         {/* language */}

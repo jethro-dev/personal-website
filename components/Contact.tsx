@@ -31,6 +31,7 @@ const Contact = (props: Props) => {
             className="contact-item full-glassify opacity-70"
             href="mailto:galongau@gmail.com"
             target="_blank"
+            rel="noreferrer"
           >
             <MdOutlineEmail size={width < 768 ? 20 : 80} />
           </a>
@@ -38,6 +39,7 @@ const Contact = (props: Props) => {
             className="contact-item full-glassify opacity-70"
             href="https://github.com/jethro-dev"
             target="_blank"
+            rel="noreferrer"
           >
             <FaGithub size={width < 768 ? 20 : 80} />
           </a>
@@ -45,6 +47,7 @@ const Contact = (props: Props) => {
             className="contact-item full-glassify opacity-70"
             href="https://www.linkedin.com/in/galongau/"
             target="_blank"
+            rel="noreferrer"
           >
             <FaLinkedin size={width < 768 ? 20 : 80} />
           </a>

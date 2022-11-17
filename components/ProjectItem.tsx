@@ -61,10 +61,10 @@ const ProjectItem = ({
           animate={{ translateY: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
         >
-          <a href={github_url} target="_blank">
+          <a href={github_url} target="_blank" rel="noreferrer">
             <FaGithub size={22} />
           </a>
-          <a href={live_url} target="_blank">
+          <a href={live_url} target="_blank" rel="noreferrer">
             <MdOpenInBrowser size={28} />
           </a>
         </motion.div>
