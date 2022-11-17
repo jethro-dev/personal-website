@@ -110,13 +110,13 @@ const Experience = (props: Props) => {
                   }}
                   // icon={<WorkIcon />}
                 >
-                  <h3 className="vertical-timeline-element-title font-semibold text-lg text-violet-500">
+                  <h3 className="vertical-timeline-element-title font-bold text-lg text-violet-400">
                     {item.title}
                   </h3>
-                  <h4 className="vertical-timeline-element-title font-light text-violet-200">
+                  <h4 className="vertical-timeline-element-title font-normal text-violet-300">
                     {item.company}
                   </h4>
-                  <h4 className="vertical-timeline-element-subtitle font-light text-violet-200">
+                  <h4 className="vertical-timeline-element-subtitle font-light text-violet-300">
                     {item.location}
                   </h4>
                   <p className="!font-light !text-neutral-300">{item.desc}</p>
