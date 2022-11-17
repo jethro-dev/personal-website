@@ -33,7 +33,7 @@ const Tile = ({
     anime({
       targets: ".tile",
       //   backgroundColor: colors[count % (colors.length - 1)],
-      opacity: toggled ? 0 : 1,
+      opacity: toggled ? 1 : 0,
       delay: anime.stagger(50, {
         grid: [columns, rows],
         from: index,
@@ -42,7 +42,7 @@ const Tile = ({
   };
   return (
     <div
-      className="tile pointer-events-auto bg-neutral-800"
+      className="tile pointer-events-auto bg-neutral-800 opacity-0"
       onClick={handleTileClick}
       //   style={{ backgroundColor: colors[count % (colors.length - 1)] }}
     ></div>
