@@ -49,7 +49,7 @@ const SkillColumn = ({ title, items }: Props) => {
               className="h-[150px] w-full flex flex-col items-center justify-center"
             >
               <Image width={60} height={60} src={item.img} alt={item.name} />
-              <h4 className="mt-2 font-thin text-base lg:text-sm text-neutral-300 opacity-90">
+              <h4 className="mt-2 font-thin text-base lg:text-sm text-neutral-300 opacity-90 text-center">
                 {item.name}
               </h4>
             </motion.div>
