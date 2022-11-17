@@ -11,6 +11,7 @@ const columns = [
       { name: "HTML", img: "/image/html5.svg" },
       { name: "CSS", img: "/image/css3.svg" },
       { name: "JavaScript", img: "/image/javascript.svg" },
+      { name: "TypeScript", img: "/image/typescript.svg" },
       { name: "Java", img: "/image/java.svg" },
       { name: "C#", img: "/image/csharp.svg" },
       { name: "Python", img: "/image/python.svg" },
@@ -59,10 +60,6 @@ const Skills = (props: Props) => {
             );
           })}
         </div>
-        {/* language */}
-        {/* frontend */}
-        {/* backend*/}
-        {/* database*/}
       </div>
     </div>
   );
