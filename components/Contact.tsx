@@ -1,18 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { FaLinkedin, FaGithub, FaRegCommentAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import getWindowDimensions from "../hooks/useWindowDimensions";
 import { motion, AnimatePresence } from "framer-motion";
+import ReCAPTCHA from "react-google-recaptcha";
 
 type Props = {};
 
 const Contact = (props: Props) => {
   const { width } = getWindowDimensions();
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isVerified, setIsVerified] = useState(false);
+  const [data, setData] = useState({ name: "", email: "", message: "" });
+  const nameRef = useRef<HTMLInputElement>(null);
+  const emailRef = useRef<HTMLInputElement>(null);
+  const messageRef = useRef<HTMLTextAreaElement>(null);
 
   const handleFormClick = () => {
     setIsFormOpen((cur) => !cur);
   };
+
+  const handleSubmit = (e: React.MouseEvent<HTMLElement>) => {
+    if (!nameRef.current || !emailRef.current || !messageRef.current) return;
+    const name = nameRef.current.value;
+    const email = emailRef.current.value;
+    const message = messageRef.current.value;
+
+    alert(`name: ${name}, email: ${email}, message: ${message}`);
+    console.log("submit");
+    e.preventDefault();
+  };
+
   return (
     <div id="contact-section">
       <div className="wrapper py-20">
@@ -63,41 +81,76 @@ const Contact = (props: Props) => {
         <AnimatePresence>
           {/* contact form */}
           {isFormOpen && (
-            <motion.div
+            <motion.form
               initial={{ opacity: 0, translateX: 300 }}
               animate={{ opacity: 1, translateX: 0 }}
               exit={{ opacity: 0, translateX: 300 }}
               transition={{ duration: 0.5 }}
-              className="w-full py-16 px-5 full-glassify bg-opacity-5 bg-white grid place-items-center"
+              className="py-8 px-5 full-glassify bg-opacity-5 bg-white grid place-items-center w-full"
             >
               <div className="w-full max-w-[600px]">
                 <div>
-                  <div className="flex items-center gap-4 mb-5">
-                    <div className="flex flex-col w-[40%]">
-                      <label htmlFor="" className="mb-2">
+                  <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 mb-4">
+                    <div className="w-full">
+                      <label
+                        htmlFor="name"
+                        className="mb-1 block font-thin text-sm text-neutral-300 cursor-pointer"
+                      >
                         Name:
                       </label>
-                      <input type="text" />
+                      <input
+                        ref={nameRef}
+                        id="name"
+                        type="text"
+                        className="w-full placeholder:text-neutral-500"
+                        placeholder="Peter"
+                      />
                     </div>
-                    <div className="flex flex-col flex-1">
-                      <label htmlFor="" className="mb-2">
+                    <div className="w-full">
+                      <label
+                        htmlFor="email"
+                        className="mb-1 block font-thin text-sm text-neutral-300 cursor-pointer"
+                      >
                         Email
                       </label>
-                      <input type="text" />
+                      <input
+                        ref={emailRef}
+                        id="email"
+                        type="email"
+                        className="w-full placeholder:text-neutral-500"
+                        placeholder="peter@gmail.com"
+                      />
                     </div>
                   </div>
                   <textarea
-                    name=""
-                    id=""
+                    ref={messageRef}
                     rows={10}
-                    className="w-full resize-none mb-4"
+                    className="resize-none mb-4 w-full placeholder:text-neutral-500"
+                    placeholder="This site is awesome! Here is a job opportunity..."
                   ></textarea>
-                  <button className="bg-violet-700 hover:bg-violet-800 w-full p-2 rounded-md transition-colors duration-500 font-semibold">
-                    Submit
-                  </button>
+                  <div className="flex items-start justify-between">
+                    <ReCAPTCHA
+                      sitekey="6LdZLBUjAAAAAL8lD0xwfJF_nLCcpysXoIcRF0xS"
+                      onChange={() => setIsVerified(true)}
+                      theme="dark"
+                    />
+
+                    <button
+                      type="submit"
+                      onClick={(e) => handleSubmit(e)}
+                      className={`bg-violet-700 p-2 rounded-md transition-colors duration-500 font-thin w-20 sm:w-40 h-10 sm:h-12 text-sm ${
+                        isVerified
+                          ? "cursor-pointor hover:bg-violet-800"
+                          : "cursor-not-allowed"
+                      }`}
+                      disabled={!isVerified}
+                    >
+                      Submit
+                    </button>
+                  </div>
                 </div>
               </div>
-            </motion.div>
+            </motion.form>
           )}
         </AnimatePresence>
       </div>
