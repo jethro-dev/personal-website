@@ -31,20 +31,57 @@ const data = [
 const Projects = (props: Props) => {
   const [showIndex, setShowIndex] = useState(0);
 
+  const headings = {
+    hidden: { translateY: 100, opacity: 0 },
+    show: {
+      translateY: 0,
+      opacity: 1,
+      transition: {
+        duration: 2,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const heading = {
+    hidden: { translateX: -100, opacity: 0 },
+    show: {
+      translateX: 0,
+      opacity: 1,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
+
   return (
     <div id="project-section" className="bg-neutral-300">
       <div className="wrapper h-full pt-20 pb-40">
-        <div className="text-left relative mb-10">
-          <h1 className="text-6xl font-bold text-neutral-200 dark:text-neutral-700 ml-[-20px] select-none">
+        <motion.div
+          variants={headings}
+          initial="hidden"
+          whileInView="show"
+          className="text-left relative mb-10"
+        >
+          <motion.h1
+            variants={heading}
+            className="text-6xl font-bold text-neutral-400 ml-[-20px] select-none"
+          >
             PROJECTS
-          </h1>
-          <h1 className="text-6xl font-bold z-10 relative mt-[-30px] select-none">
+          </motion.h1>
+          <motion.h1
+            variants={heading}
+            className="text-6xl font-bold z-10 relative mt-[-30px] select-none text-neutral-700 "
+          >
             PROJECTS
-          </h1>
-          <h1 className="text-6xl font-bold text-neutral-200 dark:text-neutral-700 mt-[-30px] ml-[20px] mb-5 select-none">
+          </motion.h1>
+          <motion.h1
+            variants={heading}
+            className="text-6xl font-bold text-neutral-400 mt-[-30px] ml-[20px] mb-5 select-none"
+          >
             PROJECTS
-          </h1>
-        </div>
+          </motion.h1>
+        </motion.div>
         <div className="flex flex-col md:flex-row gap-5 justify-between items-center mb-10">
           {data.map((project, i) => {
             return (
@@ -59,7 +96,7 @@ const Projects = (props: Props) => {
           })}
         </div>
         <a href=""></a>
-        <h1 className="text-neutral-800 text-base font-semibold">
+        <h1 className="text-sm text-neutral-800 sm:text-base font-semibold">
           More projects can be found on my{" "}
           <a
             className="hover:underline underline-offset-2 text-violet-600"

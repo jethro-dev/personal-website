@@ -33,11 +33,11 @@ const Contact = (props: Props) => {
 
   return (
     <div id="contact-section">
-      <div className="wrapper py-20">
-        <h1 className="text-4xl lg:text-5xl font-bold mb-5 lg:mb-10">
+      <div className="wrapper py-14 lg:py-20">
+        <h1 className="text-xl md:text-3xl lg:text-4xl font-bold mb-5 lg:mb-10">
           Contact Me!
         </h1>
-        <p className="text-lg lg:text-xl font-thin mb-5 lg:mb-10">
+        <p className="text-sm md:text-base lg:text-xl font-thin mb-5 lg:mb-10">
           Like what you are seeing, why not start a conversation by sending me a{" "}
           <b className="text-violet-500 font-bold">Email</b>, find me through{" "}
           <b className="text-violet-500 font-bold">GitHub</b> or{" "}
@@ -128,7 +128,7 @@ const Contact = (props: Props) => {
                     className="resize-none mb-4 w-full placeholder:text-neutral-500"
                     placeholder="This site is awesome! Here is a job opportunity..."
                   ></textarea>
-                  <div className="flex items-start justify-between">
+                  <div className="flex flex-col gap-5 sm:flex-row items-start justify-between">
                     <ReCAPTCHA
                       sitekey="6LdZLBUjAAAAAL8lD0xwfJF_nLCcpysXoIcRF0xS"
                       onChange={() => setIsVerified(true)}
