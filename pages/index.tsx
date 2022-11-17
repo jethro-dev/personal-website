@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { Footer, Header, Sidebar } from "../components";
+import { Header, Sidebar } from "../components";
 import About from "../components/About";
 import Contact from "../components/Contact";
 import Experience from "../components/Experience";
