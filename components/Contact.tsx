@@ -20,11 +20,11 @@ const Contact = (props: Props) => {
           Contact Me!
         </h1>
         <p className="text-lg lg:text-xl font-thin mb-5 lg:mb-10">
-          If you like what you are seeing, why not start a conversation by
-          sending <b className="text-violet-500 font-bold">email</b>, find me
-          through <b className="text-violet-500 font-bold">linkedin</b> or{" "}
-          <b className="text-violet-500 font-bold">github</b>, or fill in the{" "}
-          <b className="text-violet-500 font-bold">contact form</b> below?
+          Like what you are seeing, why not start a conversation by sending me a{" "}
+          <b className="text-violet-500 font-bold">Email</b>, find me through{" "}
+          <b className="text-violet-500 font-bold">GitHub</b> or{" "}
+          <b className="text-violet-500 font-bold">Linkedin</b>, or fill in the{" "}
+          <b className="text-violet-500 font-bold">Contact form</b> below?
         </p>
         <div className="flex gap-2 md:gap-4 mb-5 lg:mb-10">
           <a

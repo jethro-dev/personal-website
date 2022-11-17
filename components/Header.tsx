@@ -36,7 +36,7 @@ const Header = (props: Props) => {
       // remember current page location to use in the next move
       setLastScrollY(window.scrollY);
     }
-  }, []);
+  }, [lastScrollY]);
 
   useEffect(() => {
     if (typeof window !== "undefined") {
