@@ -1,8 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
-import { Header, Sidebar } from "../components";
-import About from "../components/About";
+import { About, Header, Sidebar } from "../components";
+import Banner from "../components/Banner";
 import Contact from "../components/Contact";
 import Experience from "../components/Experience";
 import Portfolio from "../components/Projects";
@@ -11,7 +11,6 @@ import useWindowDimensions from "../hooks/useWindowDimensions";
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
-  console.log(width);
   return (
     <div>
       <Head>
@@ -26,10 +25,10 @@ const Home: NextPage = () => {
       <Header />
       {width && width < 1024 && <Sidebar />}
       <main>
-        {/* about*/}
+        {/* home banner */}
+        <Banner />
+        {/* about */}
         <About />
-        {/* [FIXME] FOR TESTING PURPOSE. REMOVE LATER */}
-        {/* <GradientTest /> */}
         {/* skills */}
         <Skills />
         {/* experience*/}
