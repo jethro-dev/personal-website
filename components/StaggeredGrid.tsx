@@ -69,8 +69,6 @@ const StaggeredGrid = ({ height, width }: Props) => {
   let columns = Math.floor(width / 150);
   let rows = Math.floor(height / 150);
 
-  console.log({ height, columns, rows });
-
   return (
     <div className="absolute w-full h-full top-0 z-10">
       {createTiles(columns, rows)}
