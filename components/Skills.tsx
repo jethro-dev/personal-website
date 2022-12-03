@@ -41,6 +41,7 @@ const columns = [
       { name: "NodeJS", img: "/image/nodejs.svg" },
       { name: "ExpressJS", img: "/image/express.svg" },
       { name: "Spring Boot", img: "/image/springboot.svg" },
+      { name: "JUnit Testing", img: "/image/junit.svg" },
       { name: "JSP", img: "/image/jsp.svg" },
       { name: "MySQL", img: "/image/mysql.svg" },
       { name: "PostgreSQL", img: "/image/postgresql.svg" },
@@ -75,11 +76,8 @@ const Skills = (props: Props) => {
       }
     }
 
-    console.log({ skillList });
-
     let isFound = false;
     for (let i = 0; i < skillList.length; i++) {
-      console.log({ skill: skillList[i], targetStr });
       if (targetStr.includes(skillList[i])) {
         isFound = true;
       }
@@ -87,7 +85,6 @@ const Skills = (props: Props) => {
 
     setIsSearchFound(isFound);
     searchResultRef.current?.classList.replace("opacity-0", "opacity-100");
-    console.log({ isSearchFound });
 
     // setInterval(() => {
     //   searchResultRef.current?.classList.replace("opacity-100", "opacity-0");
@@ -142,8 +139,8 @@ const Skills = (props: Props) => {
             className="transition-all duration-500 opacity-0"
           >
             {isSearchFound
-              ? 'It is right in my "toolbox"! I might be the developer you are looking for...'
-              : "Unfontunately, I don't have the skill you are looking for, at the moment. As a professional software engineer, I love challenges and always love to learn new things!"}
+              ? "It is right in my toolbox 🧰! I might be the developer you are looking for..."
+              : "I don't have the skill you are looking for, but just at the moment. As a professional software engineer, I always love challenges and am eager to accquire new skills!"}
           </p>
         </motion.div>
       </div>
