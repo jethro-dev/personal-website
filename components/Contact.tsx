@@ -1,33 +1,63 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { FaLinkedin, FaGithub, FaRegCommentAlt } from "react-icons/fa";
 import { MdOutlineEmail } from "react-icons/md";
 import getWindowDimensions from "../hooks/useWindowDimensions";
 import { motion, AnimatePresence } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha";
+import { sendContactForm } from "../utils/sendContactForm";
+import scrollToById from "../utils/scrollToById";
 
 type Props = {};
 
+const initValues = { name: "", email: "", subject: "", message: "" };
+const initState = { values: initValues };
 const Contact = (props: Props) => {
   const { width } = getWindowDimensions();
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isVerified, setIsVerified] = useState(false);
-  const [data, setData] = useState({ name: "", email: "", message: "" });
-  const nameRef = useRef<HTMLInputElement>(null);
-  const emailRef = useRef<HTMLInputElement>(null);
-  const messageRef = useRef<HTMLTextAreaElement>(null);
+  const [isVerified, setIsVerified] = useState(true);
+  const [data, setData] = useState(initState);
+  const [isTouched, setIsTouched] = useState({
+    name: false,
+    email: false,
+    subject: false,
+    message: false,
+  });
 
   const handleFormClick = () => {
     setIsFormOpen((cur) => !cur);
+    scrollToById("contact-form");
   };
 
-  const handleSubmit = (e: React.MouseEvent<HTMLElement>) => {
-    if (!nameRef.current || !emailRef.current || !messageRef.current) return;
-    const name = nameRef.current.value;
-    const email = emailRef.current.value;
-    const message = messageRef.current.value;
+  const handleChange = (e: React.ChangeEvent<HTMLElement>) => {
+    const target = e.target as HTMLInputElement;
+    const id = target.id;
 
-    alert(`name: ${name}, email: ${email}, message: ${message}`);
-    console.log("submit");
+    setData((prev) => ({
+      ...prev,
+      values: {
+        ...prev.values,
+        [id]: target.value,
+      },
+    }));
+
+    console.log(data);
+  };
+
+  const onBlur = (e: React.FocusEvent<HTMLElement>) => {
+    setIsTouched((prev) => ({ ...prev, [e.target.id]: true }));
+    console.log(isTouched);
+  };
+
+  const handleSubmit = async (e: React.MouseEvent<HTMLElement>) => {
+    await sendContactForm(data.values);
+
+    setData(initState);
+    setIsTouched({
+      name: false,
+      email: false,
+      subject: false,
+      message: false,
+    });
     e.preventDefault();
   };
 
@@ -82,6 +112,7 @@ const Contact = (props: Props) => {
           {/* contact form */}
           {isFormOpen && (
             <motion.form
+              id="contact-form"
               initial={{ opacity: 0, translateX: 300 }}
               animate={{ opacity: 1, translateX: 0 }}
               exit={{ opacity: 0, translateX: 300 }}
@@ -96,14 +127,21 @@ const Contact = (props: Props) => {
                         htmlFor="name"
                         className="mb-1 block font-thin text-sm text-neutral-300 cursor-pointer"
                       >
-                        Name:
+                        Name <span className="text-red-600">*</span>
                       </label>
                       <input
-                        ref={nameRef}
                         id="name"
                         type="text"
-                        className="w-full placeholder:text-neutral-500"
+                        className={`w-full placeholder:text-neutral-500 ${
+                          !data.values.name &&
+                          isTouched.name &&
+                          "ring-2 ring-inset ring-red-600"
+                        }`}
                         placeholder="Peter"
+                        value={data.values.name}
+                        onChange={(e) => handleChange(e)}
+                        onBlur={(e) => onBlur(e)}
+                        required
                       />
                     </div>
                     <div className="w-full">
@@ -111,39 +149,104 @@ const Contact = (props: Props) => {
                         htmlFor="email"
                         className="mb-1 block font-thin text-sm text-neutral-300 cursor-pointer"
                       >
-                        Email
+                        Email <span className="text-red-600">*</span>
                       </label>
                       <input
-                        ref={emailRef}
                         id="email"
                         type="email"
-                        className="w-full placeholder:text-neutral-500"
+                        className={`w-full placeholder:text-neutral-500 ${
+                          !data.values.email &&
+                          isTouched.email &&
+                          "ring-2 ring-inset ring-red-600"
+                        }`}
                         placeholder="peter@gmail.com"
+                        value={data.values.email}
+                        onChange={(e) => handleChange(e)}
+                        onBlur={(e) => onBlur(e)}
+                        required
                       />
                     </div>
                   </div>
+                  <div className="w-full mb-4">
+                    <label
+                      htmlFor="subject"
+                      className="mb-1 block font-thin text-sm text-neutral-300 cursor-pointer"
+                    >
+                      Subject <span className="text-red-600">*</span>
+                    </label>
+                    <input
+                      id="subject"
+                      type="text"
+                      className={`w-full placeholder:text-neutral-500 ${
+                        !data.values.subject &&
+                        isTouched.subject &&
+                        "ring-2 ring-inset ring-red-600"
+                      }`}
+                      placeholder="Here is a new opportunity..."
+                      value={data.values.subject}
+                      onChange={(e) => handleChange(e)}
+                      onBlur={(e) => onBlur(e)}
+                      required
+                    />
+                  </div>
+                  <label
+                    htmlFor="message"
+                    className="mb-1 block font-thin text-sm text-neutral-300 cursor-pointer"
+                  >
+                    Message <span className="text-red-600">*</span>
+                  </label>
                   <textarea
-                    ref={messageRef}
+                    id="message"
                     rows={10}
-                    className="resize-none mb-4 w-full placeholder:text-neutral-500"
+                    className={`mb-4 w-full placeholder:text-neutral-500 resize-none ${
+                      !data.values.message &&
+                      isTouched.message &&
+                      "ring-2 ring-inset ring-red-600"
+                    }`}
                     placeholder="This site is awesome! Here is a job opportunity..."
+                    value={data.values.message}
+                    onChange={(e) => handleChange(e)}
+                    onBlur={(e) => onBlur(e)}
+                    required
                   ></textarea>
+                  {isTouched.name &&
+                    isTouched.email &&
+                    isTouched.subject &&
+                    isTouched.message &&
+                    (!data.values.name ||
+                      !data.values.email ||
+                      !data.values.subject ||
+                      !data.values.message) && (
+                      <p className="text-red-500 mb-4 font-thin text-sm">
+                        All fields are required!
+                      </p>
+                    )}
                   <div className="flex flex-col gap-5 sm:flex-row items-start justify-between">
-                    <ReCAPTCHA
+                    {/* <ReCAPTCHA
                       sitekey="6LdZLBUjAAAAAL8lD0xwfJF_nLCcpysXoIcRF0xS"
                       onChange={() => setIsVerified(true)}
                       theme="dark"
-                    />
+                    /> */}
 
                     <button
                       type="submit"
                       onClick={(e) => handleSubmit(e)}
                       className={`bg-violet-700 p-2 rounded-md transition-colors duration-500 font-thin w-20 sm:w-40 h-10 sm:h-12 text-sm ${
-                        isVerified
+                        isVerified &&
+                        data.values.name &&
+                        data.values.email &&
+                        data.values.subject &&
+                        data.values.message
                           ? "cursor-pointor hover:bg-violet-800"
                           : "cursor-not-allowed"
                       }`}
-                      disabled={!isVerified}
+                      disabled={
+                        !isVerified ||
+                        !data.values.name ||
+                        !data.values.email ||
+                        !data.values.subject ||
+                        !data.values.message
+                      }
                     >
                       Submit
                     </button>
