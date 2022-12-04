@@ -10,7 +10,7 @@ const About = (props: Props) => {
   };
 
   return (
-    <div id="skill-section" className="bg-black">
+    <div id="about-section" className="bg-black">
       <div className="wrapper py-20 flex flex-col md:flex-row gap-8">
         {/* left */}
         <div className="image-container min-h-[600px] md:w-[50%] relative rounded-lg overflow-hidden">
@@ -63,25 +63,25 @@ const About = (props: Props) => {
           <div className="ring-2 rounded-md flex-1 bg-neutral-800 bg-opacity-50 full-glassify p-5">
             <h1 className="text-xl font-semibold mb-2">What about me?</h1>
             <p className="font-thin mb-5">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur
-              dolore dolorum repellendus dolores dolorem molestias sit explicabo
-              placeat facilis consectetur?
+              A passionate STEM graduate following his dreams. Originated in
+              Hong Kong, currently living in the capital of UK — London. This
+              gives me the ability to read and write fluently in two of the most
+              spoken languages in the world, English and Chinese.
             </p>
             <h1 className="text-xl font-semibold mb-2">
               Why do I love software development?
             </h1>
             <p className="font-thin mb-5">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur
-              dolore dolorum repellendus dolores dolorem molestias sit explicabo
-              placeat facilis consectetur?
+              I love to create. I am curious. I love computer and technology. I
+              love to create products to help people acoss the globe.
             </p>
             <h1 className="text-xl font-semibold mb-2">
               What makes me a good software engineer?
             </h1>
             <p className="font-thin">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur
-              dolore dolorum repellendus dolores dolorem molestias sit explicabo
-              placeat facilis consectetur?
+              I love challenges. I have great attitude and never give up.
+              Ability to read docs across the world. Always curious. Always stay
+              updated. Always eager to learn new technologies.
             </p>
           </div>
         </div>
