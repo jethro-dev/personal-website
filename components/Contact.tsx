@@ -223,7 +223,7 @@ const Contact = (props: Props) => {
                     )}
                   <div className="flex flex-col gap-5 sm:flex-row items-start justify-between">
                     <ReCAPTCHA
-                      sitekey="6LdZLBUjAAAAAL8lD0xwfJF_nLCcpysXoIcRF0xS"
+                      sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
                       onChange={() => setIsVerified(true)}
                       theme="dark"
                     />
