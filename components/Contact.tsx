@@ -14,7 +14,7 @@ const initState = { values: initValues };
 const Contact = (props: Props) => {
   const { width } = getWindowDimensions();
   const [isFormOpen, setIsFormOpen] = useState(false);
-  const [isVerified, setIsVerified] = useState(true);
+  const [isVerified, setIsVerified] = useState(false);
   const [data, setData] = useState(initState);
   const [isTouched, setIsTouched] = useState({
     name: false,
@@ -222,11 +222,11 @@ const Contact = (props: Props) => {
                       </p>
                     )}
                   <div className="flex flex-col gap-5 sm:flex-row items-start justify-between">
-                    {/* <ReCAPTCHA
+                    <ReCAPTCHA
                       sitekey="6LdZLBUjAAAAAL8lD0xwfJF_nLCcpysXoIcRF0xS"
                       onChange={() => setIsVerified(true)}
                       theme="dark"
-                    /> */}
+                    />
 
                     <button
                       type="submit"
