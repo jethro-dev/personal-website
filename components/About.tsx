@@ -104,11 +104,11 @@ const About = (props: Props) => {
               Why do I love software development so much?
             </h1>
             <p className="font-thin mb-5 text-neutral-300">
-              There's nothing more satisfying than solving a problem that's been
-              around for a while and nobody else knows how to solve. As a
-              Software Developer you constantly provide solutions for users'
-              problems. You can be working on the occasional quick fix as well
-              as more complex strategic solutions.
+              There&apos;s nothing more satisfying than solving a problem
+              that&apos;s been around for a while and nobody else knows how to
+              solve. As a Software Developer you constantly provide solutions
+              for users&apos; problems. You can be working on the occasional
+              quick fix as well as more complex strategic solutions.
             </p>
             <h1 className="text-xl font-semibold mb-2">
               What makes me a good software engineer?
@@ -116,9 +116,10 @@ const About = (props: Props) => {
             <p className="font-thin text-neutral-300">
               Great fundamentals built up from university. I am always curious
               and love to stay updated to the latest technology. Also, I love
-              challenges and I don't give up. With the advantages of bilingual,
-              I am able to read documentations across the globe. Giving me the
-              opportunity to learn things from different perspective.
+              challenges and I don&apos;t give up. With the advantages of
+              bilingual, I am able to read documentations across the globe.
+              Giving me the opportunity to learn things from different
+              perspective.
             </p>
           </div>
         </div>
