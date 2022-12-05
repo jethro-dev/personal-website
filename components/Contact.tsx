@@ -99,15 +99,16 @@ const Contact = (props: Props) => {
   return (
     <div id="contact-section">
       <div className="wrapper py-14 lg:py-20">
-        <h1 className="text-xl md:text-3xl lg:text-4xl font-bold mb-5 lg:mb-10">
+        <h1 className="text-xl md:text-3xl lg:text-4xl font-medium mb-5 lg:mb-10">
           Contact Me!
         </h1>
-        <p className="text-sm md:text-base lg:text-xl font-thin mb-5 lg:mb-10">
-          Like what you are seeing, why not start a conversation by sending me a{" "}
-          <b className="text-violet-500 font-bold">Email</b>, find me through{" "}
-          <b className="text-violet-500 font-bold">GitHub</b> or{" "}
-          <b className="text-violet-500 font-bold">Linkedin</b>, or fill in the{" "}
-          <b className="text-violet-500 font-bold">Contact form</b> below?
+        <p className="text-sm md:text-base lg:text-xl font-light mb-5 lg:mb-10">
+          Interested? Why not send me an an{" "}
+          <b className="text-violet-500 font-semibold">email</b>, find me in{" "}
+          <b className="text-violet-500 font-semibold">GitHub</b> or{" "}
+          <b className="text-violet-500 font-semibold">Linkedin</b>, or fill in
+          the <b className="text-violet-500 font-semibold">Contact form</b>{" "}
+          below?
         </p>
         <div className="flex gap-2 md:gap-4 mb-5 lg:mb-10">
           <a
@@ -160,7 +161,7 @@ const Contact = (props: Props) => {
                     <div className="w-full">
                       <label
                         htmlFor="name"
-                        className="mb-1 block font-thin text-sm text-neutral-300 cursor-pointer"
+                        className="mb-1 block font-light text-sm text-neutral-300 cursor-pointer"
                       >
                         Name <span className="text-red-600">*</span>
                       </label>
@@ -182,7 +183,7 @@ const Contact = (props: Props) => {
                     <div className="w-full">
                       <label
                         htmlFor="email"
-                        className="mb-1 block font-thin text-sm text-neutral-300 cursor-pointer"
+                        className="mb-1 block font-light text-sm text-neutral-300 cursor-pointer"
                       >
                         Email <span className="text-red-600">*</span>
                       </label>
@@ -205,7 +206,7 @@ const Contact = (props: Props) => {
                   <div className="w-full mb-4">
                     <label
                       htmlFor="subject"
-                      className="mb-1 block font-thin text-sm text-neutral-300 cursor-pointer"
+                      className="mb-1 block font-light text-sm text-neutral-300 cursor-pointer"
                     >
                       Subject <span className="text-red-600">*</span>
                     </label>
@@ -226,7 +227,7 @@ const Contact = (props: Props) => {
                   </div>
                   <label
                     htmlFor="message"
-                    className="mb-1 block font-thin text-sm text-neutral-300 cursor-pointer"
+                    className="mb-1 block font-light text-sm text-neutral-300 cursor-pointer"
                   >
                     Message <span className="text-red-600">*</span>
                   </label>
@@ -252,7 +253,7 @@ const Contact = (props: Props) => {
                       !values.email ||
                       !values.subject ||
                       !values.message) && (
-                      <p className="text-red-500 mb-4 font-thin text-sm">
+                      <p className="text-red-500 mb-4 font-light text-sm">
                         All fields are required!
                       </p>
                     )}
@@ -266,7 +267,7 @@ const Contact = (props: Props) => {
                     <button
                       type="submit"
                       onClick={(e) => handleSubmit(e)}
-                      className={`bg-violet-700 p-2 rounded-md transition-colors duration-500 font-thin w-20 sm:w-40 h-10 sm:h-12 text-sm grid place-items-center ${
+                      className={`bg-violet-700 p-2 rounded-md transition-colors duration-500 font-light w-20 sm:w-40 h-10 sm:h-12 text-sm grid place-items-center ${
                         isVerified &&
                         values.name &&
                         values.email &&

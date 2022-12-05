@@ -110,6 +110,7 @@ const Skills = (props: Props) => {
         </div>
         <motion.div
           initial={{ opacity: 0, translateY: 50 }}
+          viewport={{ once: true }}
           whileInView={{
             opacity: 1,
             translateY: 0,
@@ -117,7 +118,7 @@ const Skills = (props: Props) => {
           }}
           className="text-center pt-20"
         >
-          <h3 className="mb-4 text-lg font-thin">
+          <h3 className="mb-4 text-lg font-light">
             Can&apos;t seem to find what you are looking for?
           </h3>
           <form className="flex gap-4 justify-center mb-4">

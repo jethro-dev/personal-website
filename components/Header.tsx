@@ -58,7 +58,7 @@ const Header = (props: Props) => {
         {/* left div*/}
         <div className="flex items-end gap-6 md:gap-8 lg:gap-10">
           {/* logo */}
-          <h1 className="h-full text-5xl font-semibold transition duration-300 hover:text-neutral-800/50">
+          <h1 className="h-full text-5xl font-light transition duration-300 hover:text-neutral-800/50">
             <button onClick={() => scrollToById("banner-section")}>
               Jethro
             </button>

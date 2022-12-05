@@ -66,7 +66,12 @@ const Experience = (props: Props) => {
       <div className="timeline-gradient"></div>
       <div className="wrapper py-20">
         Experience
-        <motion.div variants={timeline} initial="hidden" whileInView="show">
+        <motion.div
+          variants={timeline}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+        >
           <VerticalTimeline
             animate={true}
             lineColor="rgba(196, 196, 196, 0.74)"

@@ -37,7 +37,7 @@ const Projects = (props: Props) => {
       translateY: 0,
       opacity: 1,
       transition: {
-        duration: 2,
+        duration: 0.2,
         staggerChildren: 0.2,
       },
     },
@@ -61,6 +61,7 @@ const Projects = (props: Props) => {
           variants={headings}
           initial="hidden"
           whileInView="show"
+          viewport={{ once: true }}
           className="text-left relative mb-10"
         >
           <motion.h1

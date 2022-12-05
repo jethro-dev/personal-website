@@ -3,6 +3,7 @@ import React from "react";
 import calculateAge from "../utils/calculateAge";
 import { FiClipboard } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { motion } from "framer-motion";
 type Props = {};
 
 const About = (props: Props) => {
@@ -10,9 +11,26 @@ const About = (props: Props) => {
     navigator.clipboard.writeText("galongau@gmail.com");
   };
 
+  const container = {
+    hidden: { translateY: 200, opacity: 0 },
+    show: {
+      translateY: 0,
+      opacity: 1,
+      transition: {
+        duration: 2,
+      },
+    },
+  };
+
   return (
     <div id="about-section" className="bg-black">
-      <div className="wrapper py-20 flex flex-col md:flex-row gap-8">
+      <motion.div
+        className="wrapper py-20 flex flex-col md:flex-row gap-8"
+        variants={container}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
         {/* left */}
         <div className="image-container min-h-[600px] md:w-[50%] relative rounded-lg overflow-hidden">
           <Image
@@ -27,13 +45,13 @@ const About = (props: Props) => {
         <div className="md:w-[50%] flex flex-col gap-5">
           <div className="rounded-md bg-neutral-800 bg-opacity-50 full-glassify p-5 relative">
             <p className="mb-2">
-              <span className="font-semibold">Name: </span>
-              <span className="font-thin text-neutral-300">Jethro Au</span>
+              <span className="font-medium">Name: </span>
+              <span className="font-light text-neutral-300">Jethro Au</span>
             </p>
             <p className="mb-2">
-              <span className="font-semibold">Email: </span>
+              <span className="font-medium">Email: </span>
               <span
-                className="font-thin relative text-neutral-300"
+                className="font-light relative text-neutral-300"
                 id="myEmail"
               >
                 galongau@gmail.com
@@ -47,18 +65,18 @@ const About = (props: Props) => {
               </span>
             </p>
             <p className="mb-2">
-              <span className="font-semibold">Location: </span>
-              <span className="font-thin text-neutral-300">London</span>
+              <span className="font-medium">Location: </span>
+              <span className="font-light text-neutral-300">London</span>
             </p>
             <p className="mb-2">
-              <span className="font-semibold">Age: </span>
-              <span className="font-thin text-neutral-300">
+              <span className="font-medium">Age: </span>
+              <span className="font-light text-neutral-300">
                 {calculateAge(new Date(1999, 9, 6))}
               </span>
             </p>
             <p className="mb-4 lg:mb-0">
-              <span className="font-semibold">Occupation: </span>
-              <span className="font-thin text-neutral-300">
+              <span className="font-medium">Occupation: </span>
+              <span className="font-light text-neutral-300">
                 Software Engineer
               </span>
             </p>
@@ -96,28 +114,28 @@ const About = (props: Props) => {
               </ul>
             </div>
           </div>
-          <div className="ring-2 rounded-md flex-1 bg-neutral-800 bg-opacity-50 full-glassify p-5">
-            <h1 className="text-xl font-semibold mb-2">What about me?</h1>
-            <p className="font-thin mb-5 text-neutral-300">
+          <div className="rounded-md flex-1 bg-neutral-800 bg-opacity-50 full-glassify p-5">
+            <h1 className="text-xl font-medium mb-2">What about me?</h1>
+            <p className="font-light mb-5 text-neutral-300">
               A passionate STEM graduate following his dreams. Originated in
               Hong Kong, currently living in the capital of the UK — London.
               Giving me the ability to read and write fluently in two of the
               most spoken languages in the world, English, and Chinese.
             </p>
-            <h1 className="text-xl font-semibold mb-2">
+            <h1 className="text-xl font-medium mb-2">
               Why do I love software development so much?
             </h1>
-            <p className="font-thin mb-5 text-neutral-300">
+            <p className="font-light mb-5 text-neutral-300">
               There&apos;s nothing more satisfying than solving a problem
               that&apos;s been around for a while and nobody else knows how to
               solve. As a Software Developer you constantly provide solutions
               for users&apos; problems. You can be working on the occasional
               quick fix as well as more complex strategic solutions.
             </p>
-            <h1 className="text-xl font-semibold mb-2">
+            <h1 className="text-xl font-medium mb-2">
               What makes me a good software engineer?
             </h1>
-            <p className="font-thin text-neutral-300">
+            <p className="font-light text-neutral-300">
               Great fundamentals built up from university. I am always curious
               and love to stay updated to the latest technology. Also, I love
               challenges and I don&apos;t give up. With the advantages of
@@ -127,7 +145,7 @@ const About = (props: Props) => {
             </p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -23,7 +23,7 @@
 
 @layer components {
   .header-link {
-    @apply cursor-pointer text-lg font-semibold transition duration-300 hover:text-neutral-800/50;
+    @apply cursor-pointer text-lg font-light transition duration-300 hover:text-neutral-800/50;
   }
 
   .wrapper {
@@ -42,8 +42,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 a {

@@ -26,14 +26,16 @@ const Banner = (props: Props) => {
       <div className="px-6 lg:px-10 absolute z-10 h-full w-full pointer-events-none bg-gradient">
         <div className="wrapper h-full grid place-items-center">
           <div>
-            <h1 className="text-7xl font-semibold mb-2">Hello, I am Jethro.</h1>
-            <h2 className="text-3xl font-light mb-4">A Software Engineer</h2>
-            <p className="text-xl font-light mb-20">
+            <h1 className="text-7xl font-normal mb-2">Hello, I am Jethro.</h1>
+            <h2 className="text-3xl font-extralight mb-4">
+              A Software Engineer
+            </h2>
+            <p className="text-xl font-normal mb-20">
               High level experience in software engineering and development,
               producing quality work.
             </p>
             <div className="grid place-items-center absolute left-[50%] translate-x-[-50%]">
-              <h3 className="mb-3 text-neutral-300 opacity-90 font-medium">
+              <h3 className="mb-3 text-neutral-300 opacity-90 font-normal">
                 click to see more
               </h3>
               <button
