@@ -45,7 +45,7 @@ const Sidebar = (props: Props) => {
         className="absolute top-0 bottom-0 w-full bg-neutral-100 pointer-events-auto"
         variants={sidebar}
       />
-      <Navigation />
+      <Navigation toggleOpen={toggleOpen} />
       <MenuToggle toggle={() => toggleOpen()} />
     </motion.div>
   );

@@ -8,6 +8,8 @@ import Experience from "../components/Experience";
 import Portfolio from "../components/Projects";
 import Skills from "../components/Skills";
 import useWindowDimensions from "../hooks/useWindowDimensions";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Home: NextPage = () => {
   const { width } = useWindowDimensions();
@@ -37,6 +39,8 @@ const Home: NextPage = () => {
         <Portfolio />
         {/* contact*/}
         <Contact />
+
+        <ToastContainer />
       </main>
     </div>
   );

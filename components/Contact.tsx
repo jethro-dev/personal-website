@@ -6,22 +6,27 @@ import { motion, AnimatePresence } from "framer-motion";
 import ReCAPTCHA from "react-google-recaptcha";
 import { sendContactForm } from "../utils/sendContactForm";
 import scrollToById from "../utils/scrollToById";
+import { PuffLoader } from "react-spinners";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 type Props = {};
 
 const initValues = { name: "", email: "", subject: "", message: "" };
-const initState = { values: initValues };
+const initState = { isLoading: false, error: "", values: initValues };
 const Contact = (props: Props) => {
   const { width } = getWindowDimensions();
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
-  const [data, setData] = useState(initState);
+  const [state, setState] = useState(initState);
   const [isTouched, setIsTouched] = useState({
     name: false,
     email: false,
     subject: false,
     message: false,
   });
+
+  const { values, isLoading, error } = state;
 
   const handleFormClick = () => {
     setIsFormOpen((cur) => !cur);
@@ -32,15 +37,13 @@ const Contact = (props: Props) => {
     const target = e.target as HTMLInputElement;
     const id = target.id;
 
-    setData((prev) => ({
+    setState((prev) => ({
       ...prev,
       values: {
         ...prev.values,
         [id]: target.value,
       },
     }));
-
-    console.log(data);
   };
 
   const onBlur = (e: React.FocusEvent<HTMLElement>) => {
@@ -49,16 +52,48 @@ const Contact = (props: Props) => {
   };
 
   const handleSubmit = async (e: React.MouseEvent<HTMLElement>) => {
-    await sendContactForm(data.values);
-
-    setData(initState);
-    setIsTouched({
-      name: false,
-      email: false,
-      subject: false,
-      message: false,
-    });
     e.preventDefault();
+    setState((prev) => ({
+      ...prev,
+      isLoading: true,
+    }));
+
+    try {
+      await sendContactForm(values);
+      setState(initState);
+      setIsTouched({
+        name: false,
+        email: false,
+        subject: false,
+        message: false,
+      });
+      toast.success("Message sent. Thank you.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } catch (error: any) {
+      setState((prev) => ({
+        ...prev,
+        isLoading: false,
+        error: error,
+      }));
+      toast.error(error, {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   };
 
   return (
@@ -133,12 +168,12 @@ const Contact = (props: Props) => {
                         id="name"
                         type="text"
                         className={`w-full placeholder:text-neutral-500 ${
-                          !data.values.name &&
+                          !values.name &&
                           isTouched.name &&
                           "ring-2 ring-inset ring-red-600"
                         }`}
                         placeholder="Peter"
-                        value={data.values.name}
+                        value={values.name}
                         onChange={(e) => handleChange(e)}
                         onBlur={(e) => onBlur(e)}
                         required
@@ -155,12 +190,12 @@ const Contact = (props: Props) => {
                         id="email"
                         type="email"
                         className={`w-full placeholder:text-neutral-500 ${
-                          !data.values.email &&
+                          !values.email &&
                           isTouched.email &&
                           "ring-2 ring-inset ring-red-600"
                         }`}
                         placeholder="peter@gmail.com"
-                        value={data.values.email}
+                        value={values.email}
                         onChange={(e) => handleChange(e)}
                         onBlur={(e) => onBlur(e)}
                         required
@@ -178,12 +213,12 @@ const Contact = (props: Props) => {
                       id="subject"
                       type="text"
                       className={`w-full placeholder:text-neutral-500 ${
-                        !data.values.subject &&
+                        !values.subject &&
                         isTouched.subject &&
                         "ring-2 ring-inset ring-red-600"
                       }`}
                       placeholder="Here is a new opportunity..."
-                      value={data.values.subject}
+                      value={values.subject}
                       onChange={(e) => handleChange(e)}
                       onBlur={(e) => onBlur(e)}
                       required
@@ -199,12 +234,12 @@ const Contact = (props: Props) => {
                     id="message"
                     rows={10}
                     className={`mb-4 w-full placeholder:text-neutral-500 resize-none ${
-                      !data.values.message &&
+                      !values.message &&
                       isTouched.message &&
                       "ring-2 ring-inset ring-red-600"
                     }`}
                     placeholder="This site is awesome! Here is a job opportunity..."
-                    value={data.values.message}
+                    value={values.message}
                     onChange={(e) => handleChange(e)}
                     onBlur={(e) => onBlur(e)}
                     required
@@ -213,10 +248,10 @@ const Contact = (props: Props) => {
                     isTouched.email &&
                     isTouched.subject &&
                     isTouched.message &&
-                    (!data.values.name ||
-                      !data.values.email ||
-                      !data.values.subject ||
-                      !data.values.message) && (
+                    (!values.name ||
+                      !values.email ||
+                      !values.subject ||
+                      !values.message) && (
                       <p className="text-red-500 mb-4 font-thin text-sm">
                         All fields are required!
                       </p>
@@ -231,24 +266,32 @@ const Contact = (props: Props) => {
                     <button
                       type="submit"
                       onClick={(e) => handleSubmit(e)}
-                      className={`bg-violet-700 p-2 rounded-md transition-colors duration-500 font-thin w-20 sm:w-40 h-10 sm:h-12 text-sm ${
+                      className={`bg-violet-700 p-2 rounded-md transition-colors duration-500 font-thin w-20 sm:w-40 h-10 sm:h-12 text-sm grid place-items-center ${
                         isVerified &&
-                        data.values.name &&
-                        data.values.email &&
-                        data.values.subject &&
-                        data.values.message
+                        values.name &&
+                        values.email &&
+                        values.subject &&
+                        values.message
                           ? "cursor-pointor hover:bg-violet-800"
                           : "cursor-not-allowed"
                       }`}
                       disabled={
                         !isVerified ||
-                        !data.values.name ||
-                        !data.values.email ||
-                        !data.values.subject ||
-                        !data.values.message
+                        !values.name ||
+                        !values.email ||
+                        !values.subject ||
+                        !values.message
                       }
                     >
-                      Submit
+                      {isLoading ? (
+                        <PuffLoader
+                          color="#ffffff"
+                          size={32}
+                          className="ring-2"
+                        />
+                      ) : (
+                        "Submit"
+                      )}
                     </button>
                   </div>
                 </div>

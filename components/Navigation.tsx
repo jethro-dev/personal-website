@@ -2,7 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import { MenuItem } from "../components";
 
-type Props = {};
+type Props = {
+  toggleOpen: any;
+};
 
 const variants = {
   open: {
@@ -13,19 +15,31 @@ const variants = {
   },
 };
 
-const Navigation = (props: Props) => {
+const Navigation = ({ toggleOpen }: Props) => {
   return (
     <motion.ul
       variants={variants}
-      className="px-10 space-y-10 absolute top-[100px] w-full"
+      className="px-10 space-y-10 absolute w-full top-[100px]"
     >
-      {itemIds.map((i) => (
-        <MenuItem i={i} key={i} />
+      {items.map((item, i) => (
+        <MenuItem
+          i={i}
+          key={i}
+          title={item.title}
+          sectionId={item.sectionId}
+          toggleOpen={toggleOpen}
+        />
       ))}
     </motion.ul>
   );
 };
 
-const itemIds = [0, 1, 2, 3, 4];
+const items = [
+  { title: "About", sectionId: "about-section" },
+  { title: "Skills", sectionId: "skill-section" },
+  { title: "Experience", sectionId: "experience-section" },
+  { title: "Projects", sectionId: "project-section" },
+  { title: "Contact", sectionId: "contact-section" },
+];
 
 export default Navigation;

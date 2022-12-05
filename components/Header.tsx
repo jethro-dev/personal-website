@@ -115,13 +115,17 @@ const Header = (props: Props) => {
               </li>
               {/* github */}
               <li className="header-link">
-                <a href="https://github.com/jethro-dev">
+                <a
+                  href="https://github.com/jethro-dev"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FaGithub size={28} />
                 </a>
               </li>
               {/* Comment*/}
               <li className="header-link">
-                <a href="https://github.com/jethro-dev">
+                <a onClick={() => scrollToById("contact-section")}>
                   <FaRegCommentAlt size={28} />
                 </a>
               </li>
