@@ -284,11 +284,7 @@ const Contact = (props: Props) => {
                       }
                     >
                       {isLoading ? (
-                        <PuffLoader
-                          color="#ffffff"
-                          size={32}
-                          className="ring-2"
-                        />
+                        <PuffLoader color="#ffffff" size={32} />
                       ) : (
                         "Submit"
                       )}
