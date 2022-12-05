@@ -37,7 +37,7 @@ const Banner = (props: Props) => {
                 click to see more
               </h3>
               <button
-                onClick={() => scrollToById("skill-section")}
+                onClick={() => scrollToById("about-section")}
                 className="full-glassify font-semibold text-3xl p-4 rounded-full pointer-events-auto !border-2 hover:scale-105 transition-all duration-500"
               >
                 <FaArrowDown />
