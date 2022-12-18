@@ -16,7 +16,7 @@ const experience = [
     location: "London, UK",
     desc: "Help develop a financial planning and analysis platform for small and medium size businesses, and their financial advisors.",
     startDate: "Mar 2022",
-    endDate: "Present",
+    endDate: "Jan 2023",
     isWork: true,
   },
   {
