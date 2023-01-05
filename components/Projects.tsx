@@ -7,10 +7,10 @@ type Props = {};
 const data = [
   {
     name: "Ghost Lifestyle",
-    desc: "Ghost Lifestyle is an full-stack e-commerce web application. Great design and animation to enhance UX/UI.",
+    desc: "Ghost Lifestyle is an full-stack e-commerce application. Great design and animation to enhance UX/UI.",
     thumbnail: "/image/ghost-lifestyle.png",
-    github_url: "https://github.com/jethro-dev/ghost-ecommerce",
-    live_url: "https://ghost-lifestyle.netlify.app/",
+    github_url: "https://github.com/jethro-dev/ghost-ecommerce-client",
+    live_url: "https://ghost-lifestyle.vercel.app/",
   },
   {
     name: "Crypto Tracker",
