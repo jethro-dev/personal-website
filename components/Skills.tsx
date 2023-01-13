@@ -10,19 +10,17 @@ const columns = [
   {
     title: "Language",
     items: [
-      { name: "HTML", img: "/image/html5.svg" },
-      { name: "CSS", img: "/image/css3.svg" },
       { name: "JavaScript", img: "/image/javascript.svg" },
       { name: "TypeScript", img: "/image/typescript.svg" },
       { name: "Java", img: "/image/java.svg" },
       { name: "C#", img: "/image/csharp.svg" },
-      { name: "Python", img: "/image/python.svg" },
-      { name: "XML", img: "/image/xml.svg" },
     ],
   },
   {
     title: "Frontend",
     items: [
+      { name: "HTML", img: "/image/html5.svg" },
+      { name: "CSS", img: "/image/css3.svg" },
       { name: "React", img: "/image/react.svg" },
       { name: "Redux", img: "/image/redux.svg" },
       { name: "NextJS", img: "/image/nextjs.svg" },
@@ -31,8 +29,6 @@ const columns = [
       { name: "Styled Components", img: "/image/styled-components.svg" },
       { name: "jQuery", img: "/image/jquery.svg" },
       { name: "GWT", img: "/image/gwt.svg" },
-      { name: "Bootstrap", img: "/image/bootstrap.svg" },
-      { name: "Material UI", img: "/image/mui.svg" },
     ],
   },
   {
@@ -41,7 +37,6 @@ const columns = [
       { name: "NodeJS", img: "/image/nodejs.svg" },
       { name: "ExpressJS", img: "/image/express.svg" },
       { name: "Spring Boot", img: "/image/springboot.svg" },
-      { name: "JUnit Testing", img: "/image/junit.svg" },
       { name: "JSP", img: "/image/jsp.svg" },
       { name: "MySQL", img: "/image/mysql.svg" },
       { name: "PostgreSQL", img: "/image/postgresql.svg" },
