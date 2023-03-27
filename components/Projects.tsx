@@ -6,22 +6,29 @@ type Props = {};
 
 const data = [
   {
+    name: "Urban Home",
+    desc: "Urban Home is an full-stack e-commerce application. Built Next.j, Prisma, NextAuth, Redux, Stripe, and more. Data are stored in Supabase. Fully functional e-commerce application with great UI/UX.",
+    thumbnail: "/image/urban-home.png",
+    github_url: "https://github.com/jethro-dev/urban-home",
+    live_url: "https://urban-home.vercel.app/",
+  },
+  {
     name: "Ghost Lifestyle",
-    desc: "Ghost Lifestyle is an full-stack e-commerce application. Great design and animation to enhance UX/UI.",
+    desc: "Ghost Lifestyle is an full-stack e-commerce application. Build with React for front-end,  and Express.js for bac-end. Data are stored in MongoDB. Great design and animation to enhance UX/UI.",
     thumbnail: "/image/ghost-lifestyle.png",
     github_url: "https://github.com/jethro-dev/ghost-ecommerce-client",
     live_url: "https://ghost-lifestyle.vercel.app/",
   },
   {
     name: "Crypto Tracker",
-    desc: "Crypto Tracker is a tracking application for crypto currency.",
+    desc: "Crypto Tracker is a tracking application for crypto currency. Built with React and fetching data from CoinGecko API.",
     thumbnail: "/image/crypto-tracker.png",
     github_url: "https://github.com/jethro-dev/crypto-tracker",
     live_url: "https://cryptotrkr.netlify.app/",
   },
   {
     name: "J-Blog",
-    desc: "J-Blog is a full-stack blogging application.",
+    desc: "J-Blog is a full-stack blogging application. This is built with Next.js, TailwindCSS, GraphQL and more.",
     thumbnail: "/image/jblog.png",
     github_url: "https://github.com/jethro-dev/j-blog",
     live_url: "https://jdevblog.vercel.app/",
