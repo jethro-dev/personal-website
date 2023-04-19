@@ -30,7 +30,11 @@ const Banner = (props: Props) => {
             <h2 className="text-3xl font-extralight mb-4">
               A Software Engineer
             </h2>
-            <p className="text-xl font-normal mb-20">
+            <p className="text-base lg:text-lg font-light mb-4">
+              Computer Science graduate with great fundamentals, and a passion
+              for software development.
+            </p>
+            <p className="text-base lg:text-lg font-light mb-20">
               High level experience in software engineering and development,
               producing quality work.
             </p>
