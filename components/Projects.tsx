@@ -90,6 +90,10 @@ const Projects = (props: Props) => {
             PROJECTS
           </motion.h1>
         </motion.div>
+
+        <p className="mb-8 text-neutral-800 text-opacity-30">
+          Click to see project description and repo...
+        </p>
         <div className="flex flex-col md:flex-row gap-5 justify-between items-center mb-10">
           {data.map((project, i) => {
             return (
