@@ -21,7 +21,6 @@ const data = [
       "Social Media",
       "Forum",
     ],
-    left_sided: true,
   },
   {
     name: "Urban Home",
@@ -40,7 +39,6 @@ const data = [
       "Redux",
       "Stripe",
     ],
-    left_sided: false,
   },
   {
     name: "Ghost Lifestyle",
@@ -56,7 +54,6 @@ const data = [
       "UI/UX",
       "Fullstack",
     ],
-    left_sided: true,
   },
   {
     name: "J-Blog",
@@ -72,7 +69,6 @@ const data = [
       "GraphQL",
       "Fullstack",
     ],
-    left_sided: false,
   },
   {
     name: "Crypto Tracker",
@@ -81,11 +77,25 @@ const data = [
     github_url: "https://github.com/jethro-dev/crypto-tracker",
     live_url: "https://cryptotrkr.netlify.app/",
     topics: ["JavaScript", "React", "RESTful APIs", "Data Fetching"],
-    left_sided: true,
   },
 ];
 
 const Projects = (props: Props) => {
+  return (
+    <div id="project-section" className="bg-white">
+      <div className="max-w-8xl mx-auto h-full pt-20 px-20">
+        <Heading />
+        <div className="space-y-20">
+          {data.map((project, i) => {
+            return <ProjectItem key={i} index={i} {...project} />;
+          })}
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const Heading = () => {
   const headings = {
     hidden: { translateY: 100, opacity: 0 },
     show: {
@@ -108,43 +118,33 @@ const Projects = (props: Props) => {
       },
     },
   };
-
   return (
-    <div id="project-section" className="bg-white">
-      <div className="max-w-8xl mx-auto h-full pt-20">
-        <motion.div
-          variants={headings}
-          initial="hidden"
-          whileInView="show"
-          viewport={{ once: true }}
-          className="text-left relative mb-10"
-        >
-          <motion.h1
-            variants={heading}
-            className="text-6xl font-bold text-neutral-400 ml-[-20px] select-none"
-          >
-            PROJECTS
-          </motion.h1>
-          <motion.h1
-            variants={heading}
-            className="text-6xl font-bold z-10 relative mt-[-30px] select-none text-neutral-700 "
-          >
-            PROJECTS
-          </motion.h1>
-          <motion.h1
-            variants={heading}
-            className="text-6xl font-bold text-neutral-400 mt-[-30px] ml-[20px] mb-5 select-none"
-          >
-            PROJECTS
-          </motion.h1>
-        </motion.div>
-        <div className="">
-          {data.map((project, i) => {
-            return <ProjectItem key={i} index={i} {...project} />;
-          })}
-        </div>
-      </div>
-    </div>
+    <motion.div
+      variants={headings}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className="text-left relative mb-10"
+    >
+      <motion.h1
+        variants={heading}
+        className="text-6xl font-bold text-neutral-400 ml-[-20px] select-none"
+      >
+        PROJECTS
+      </motion.h1>
+      <motion.h1
+        variants={heading}
+        className="text-6xl font-bold z-10 relative mt-[-30px] select-none text-neutral-700 "
+      >
+        PROJECTS
+      </motion.h1>
+      <motion.h1
+        variants={heading}
+        className="text-6xl font-bold text-neutral-400 mt-[-30px] ml-[20px] mb-5 select-none"
+      >
+        PROJECTS
+      </motion.h1>
+    </motion.div>
   );
 };
 

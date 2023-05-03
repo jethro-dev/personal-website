@@ -13,7 +13,6 @@ type Props = {
   index: number;
   topics: string[];
   thumbnail: string;
-  left_sided: boolean;
 };
 
 const ProjectItem = ({
@@ -23,7 +22,7 @@ const ProjectItem = ({
   live_url,
   topics,
   thumbnail,
-  left_sided,
+  index,
 }: Props) => {
   //   const handleItemClick = (e: MouseEvent) => {
   //     const projectItemEl = document.querySelectorAll(".project-item");
@@ -50,7 +49,7 @@ const ProjectItem = ({
           desc={desc}
           topics={topics}
           thumbnail={thumbnail}
-          order={left_sided ? "1" : "2"}
+          order={index % 2 == 0 ? 1 : 0}
         />
         {/* right */}
         <ProjectItemSide
@@ -80,11 +79,11 @@ const ProjectItemMain = ({
   desc: string;
   topics: string[];
   thumbnail: string;
-  order: string;
+  order: number;
 }) => {
   return (
-    <div className={`relative col-span-8 order-${order}`}>
-      <div className="black-gradient z-20"></div>
+    <div className={`relative col-span-8`} style={{ order: order }}>
+      <div className="black-gradient z-20 rounded-md overflow-hidden"></div>
       <motion.h1 className="font-semibold text-4xl lg:text-8xl">
         {name}
       </motion.h1>
@@ -92,7 +91,7 @@ const ProjectItemMain = ({
         src={thumbnail}
         alt={name}
         layout="fill"
-        className="object-cover z-10"
+        className="object-cover z-10 rounded-md overflow-hidden"
       />
     </div>
   );
