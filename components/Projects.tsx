@@ -6,25 +6,56 @@ type Props = {};
 
 const data = [
   {
+    name: "Study Bud",
+    desc: "Study Bud is an full-stack social media application development in Django's Model-View-Template (MVT) architecture. Built with Python, Django, PostgreSQL. Secure user login and authentication. Start the chat by creating a room and choose a topic!",
+    thumbnail: "/image/studybud.png",
+    github_url: "https://github.com/jethro-dev/studybud",
+    live_url: "https://studybud-jethro.up.railway.app/",
+    topics: [
+      "Python",
+      "Django",
+      "PostgreSQL",
+      "Authentication",
+      "MVT",
+      "Fullstack",
+      "Social Media",
+      "Forum",
+    ],
+    left_sided: true,
+  },
+  {
     name: "Urban Home",
     desc: "Urban Home is an full-stack e-commerce application. Built Next.j, Prisma, NextAuth, Redux, Stripe, and more. Data are stored in Supabase. Fully functional e-commerce application with great UI/UX.",
     thumbnail: "/image/urban-home.png",
     github_url: "https://github.com/jethro-dev/urban-home",
     live_url: "https://urban-home.vercel.app/",
+    topics: [
+      "JavaScript",
+      "React",
+      "Next.js",
+      "Prisma",
+      "PostgreSQL",
+      "NextAuth",
+      "Redux",
+      "Stripe",
+    ],
+    left_sided: false,
   },
   {
     name: "Ghost Lifestyle",
-    desc: "Ghost Lifestyle is an full-stack e-commerce application. Build with React for front-end,  and Express.js for bac-end. Data are stored in MongoDB. Great design and animation to enhance UX/UI.",
+    desc: "Ghost Lifestyle is an full-stack e-commerce application. Build with React for front-end,  and Express.js for back-end. Data are stored in MongoDB. Great design and animation to enhance UX/UI.",
     thumbnail: "/image/ghost-lifestyle.png",
     github_url: "https://github.com/jethro-dev/ghost-ecommerce-client",
     live_url: "https://ghost-lifestyle.vercel.app/",
-  },
-  {
-    name: "Crypto Tracker",
-    desc: "Crypto Tracker is a tracking application for crypto currency. Built with React and fetching data from CoinGecko API.",
-    thumbnail: "/image/crypto-tracker.png",
-    github_url: "https://github.com/jethro-dev/crypto-tracker",
-    live_url: "https://cryptotrkr.netlify.app/",
+    topics: [
+      "React",
+      "Express.js",
+      "MongoDB",
+      "Animation",
+      "UI/UX",
+      "Fullstack",
+    ],
+    left_sided: true,
   },
   {
     name: "J-Blog",
@@ -32,12 +63,21 @@ const data = [
     thumbnail: "/image/jblog.png",
     github_url: "https://github.com/jethro-dev/j-blog",
     live_url: "https://jdevblog.vercel.app/",
+    topics: ["Next.js", "TailwindCSS", "GraphQL", "Fullstack"],
+    left_sided: false,
+  },
+  {
+    name: "Crypto Tracker",
+    desc: "Crypto Tracker is a tracking application for crypto currency. Built with React and fetching data from CoinGecko API.",
+    thumbnail: "/image/crypto-tracker.png",
+    github_url: "https://github.com/jethro-dev/crypto-tracker",
+    live_url: "https://cryptotrkr.netlify.app/",
+    topics: ["React", "RESTful APIs", "Data Fetching"],
+    left_sided: true,
   },
 ];
 
 const Projects = (props: Props) => {
-  const [showIndex, setShowIndex] = useState(0);
-
   const headings = {
     hidden: { translateY: 100, opacity: 0 },
     show: {
@@ -62,8 +102,8 @@ const Projects = (props: Props) => {
   };
 
   return (
-    <div id="project-section" className="bg-neutral-300">
-      <div className="wrapper h-full pt-20 pb-40">
+    <div id="project-section" className="bg-white">
+      <div className="h-full pt-20">
         <motion.div
           variants={headings}
           initial="hidden"
@@ -90,29 +130,11 @@ const Projects = (props: Props) => {
             PROJECTS
           </motion.h1>
         </motion.div>
-        <div className="flex flex-col md:flex-row gap-5 justify-between items-center mb-10">
+        <div className="">
           {data.map((project, i) => {
-            return (
-              <ProjectItem
-                key={i}
-                index={i}
-                isActive={showIndex == i ? true : false}
-                setShowIndex={setShowIndex}
-                {...project}
-              />
-            );
+            return <ProjectItem key={i} index={i} {...project} />;
           })}
         </div>
-        <a href=""></a>
-        <h1 className="text-sm text-neutral-800 sm:text-base font-semibold">
-          More projects can be found on my{" "}
-          <a
-            className="hover:underline underline-offset-2 text-violet-600"
-            href="https://github.com/jethro-dev"
-          >
-            GitHub!
-          </a>
-        </h1>
       </div>
     </div>
   );

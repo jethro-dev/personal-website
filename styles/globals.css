@@ -31,7 +31,7 @@
   }
 
   .project-item {
-    @apply bg-white text-white h-[400px] relative rounded-xl cursor-pointer overflow-hidden transition-all duration-500 w-full;
+    @apply bg-white text-white h-[600px] md:h-[700px] lg:h-[800px] relative overflow-hidden transition-all duration-500 w-full;
   }
 
   .contact-item {
@@ -136,8 +136,8 @@ a {
   background: linear-gradient(
     to bottom,
     rgb(0, 0, 0) 0%,
-    rgb(80, 80, 80) 50%,
-    rgb(212, 212, 212) 100%
+    rgb(150, 150, 150) 50%,
+    rgb(255, 255, 255) 100%
   );
 }
 
