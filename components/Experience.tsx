@@ -14,7 +14,7 @@ const experience = [
     title: "Junior Software Engineer",
     company: "The Business Plan Shop",
     location: "London, UK",
-    desc: "Help develop a financial planning and analysis platform for small and medium size businesses, and their financial advisors.",
+    desc: "Help develop a financial planning and analysis platform for small and medium-size businesses, and their financial advisors.",
     key_tech_used: "Java, JavaScript, PostgreSQL",
     startDate: "Mar 2022",
     endDate: "Jan 2023",
@@ -131,7 +131,7 @@ const Experience = (props: Props) => {
                   <p className="!font-light !text-neutral-300">{item.desc}</p>
                   {item.key_tech_used && (
                     <p className="!font-light !text-neutral-300">
-                      Key technology used:{" "}
+                      Key technology include:{" "}
                       <span className="text-violet-400 font-semibold">
                         {item.key_tech_used}
                       </span>
