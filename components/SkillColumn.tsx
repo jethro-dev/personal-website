@@ -10,6 +10,7 @@ export type Item = {
 type Props = {
   title: string;
   items: Item[];
+  span: boolean;
 };
 
 const container = {
@@ -29,19 +30,25 @@ const inner = {
   show: { opacity: 1 },
 };
 
-const SkillColumn = ({ title, items }: Props) => {
+const SkillColumn = ({ title, items, span }: Props) => {
   return (
     <motion.div
       variants={container}
       initial="hidden"
       whileInView="show"
-      className="flex-1"
+      className={`col-span-12 ${span ? "lg:col-span-7" : "lg:col-span-5"}`}
       viewport={{ once: true }}
     >
       <h3 className="text-2xl font-semibold ml-1 mb-4 text-neutral-200">
         {title}
       </h3>
-      <div className=" bg-neutral-800 bg-opacity-50 full-glassify p-5 grid grid-cols-2 md:grid-cols-3 gap-5">
+      <div
+        className={`bg-neutral-800 bg-opacity-50 full-glassify p-5 grid gap-5 ${
+          span
+            ? "grid-cols-2 sm:grid-cols-3 lg:grid-cols-4"
+            : "grid-cols-2 sm:grid-cols-3 md:grid-cols-3"
+        }`}
+      >
         {items.map((item) => {
           return (
             <motion.div

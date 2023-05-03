@@ -15,6 +15,7 @@ const experience = [
     company: "The Business Plan Shop",
     location: "London, UK",
     desc: "Help develop a financial planning and analysis platform for small and medium size businesses, and their financial advisors.",
+    key_tech_used: "Java, JavaScript, PostgreSQL",
     startDate: "Mar 2022",
     endDate: "Jan 2023",
     isWork: true,
@@ -23,7 +24,8 @@ const experience = [
     title: "Freelance Software Developer",
     company: "LATAVIVOS",
     location: "Brighton, UK",
-    desc: "Help develop shopify e-commerce web application.",
+    desc: "Help develop e-commerce web application.",
+    key_tech_used: "JavaScript, React",
     startDate: "Dec 2021",
     endDate: "Mar 2022",
     isWork: true,
@@ -33,6 +35,7 @@ const experience = [
     company: "PR Asia",
     location: "Hong Kong",
     desc: "Enhance company websites and provide better user experience.",
+    key_tech_used: "HTML, CSS, JavaScript",
     startDate: "Jun 2019",
     endDate: "Aug 2019",
     isWork: true,
@@ -41,7 +44,8 @@ const experience = [
     title: "Bachelor of Science",
     company: "Univeristy of Sussex",
     location: "East Sussex, UK",
-    desc: "Key modules included: Data Structures & Algorithms, Software Engineering, Databases, Web 3D Applications",
+    desc: "Key modules included: Programming, Data Structures & Algorithms, Software Engineering, Databases",
+    key_tech_used: "HTML, CSS, JavaScript, C#, Java",
     startDate: "Sept 2018",
     endDate: "Aug 2021",
     isWork: false,
@@ -125,6 +129,14 @@ const Experience = (props: Props) => {
                     {item.location}
                   </h4>
                   <p className="!font-light !text-neutral-300">{item.desc}</p>
+                  {item.key_tech_used && (
+                    <p className="!font-light !text-neutral-300">
+                      Key technology used:{" "}
+                      <span className="text-violet-400 font-semibold">
+                        {item.key_tech_used}
+                      </span>
+                    </p>
+                  )}
                 </VerticalTimelineElement>
               );
             })}

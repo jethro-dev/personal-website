@@ -117,10 +117,10 @@ const About = (props: Props) => {
           <div className="rounded-md flex-1 bg-neutral-800 bg-opacity-50 full-glassify p-5">
             <h1 className="text-xl font-medium mb-2">What about me?</h1>
             <p className="font-light mb-5 text-neutral-300">
-              A passionate STEM graduate following his dreams. Originated in
-              Hong Kong, currently living in the capital of the UK — London.
-              Giving me the ability to read and write fluently in two of the
-              most spoken languages in the world, English, and Chinese.
+              A passionate Computer Science graduate chasing his dreams.
+              Originated in Hong Kong, currently living in the capital of the UK
+              — London. Giving me the ability to read and write fluently in two
+              of the most spoken languages in the world, English, and Chinese.
             </p>
             <h1 className="text-xl font-medium mb-2">
               Why do I love software development so much?
@@ -128,20 +128,19 @@ const About = (props: Props) => {
             <p className="font-light mb-5 text-neutral-300">
               There&apos;s nothing more satisfying than solving a problem
               that&apos;s been around for a while and nobody else knows how to
-              solve. As a Software Developer you constantly provide solutions
-              for users&apos; problems. You can be working on the occasional
-              quick fix as well as more complex strategic solutions.
+              solve. As a software developer, I constantly provide solutions for
+              users&apos; problems. I can be working on the occasional quick fix
+              as well as more complex strategic solutions.
             </p>
             <h1 className="text-xl font-medium mb-2">
-              What makes me a good software engineer?
+              Then, what makes me a good software engineer?
             </h1>
             <p className="font-light text-neutral-300">
               Great fundamentals built up from university. I am always curious
               and love to stay updated to the latest technology. Also, I love
               challenges and I don&apos;t give up. With the advantages of
-              bilingual, I am able to read documentations across the globe.
-              Giving me the opportunity to learn things from different
-              perspective.
+              bilingual, I am able to connect and collaborate with developers
+              around the world.
             </p>
           </div>
         </div>

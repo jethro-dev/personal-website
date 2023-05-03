@@ -9,35 +9,31 @@ type Props = {};
 const columns = [
   {
     title: "Language",
+    span: false,
     items: [
+      { name: "HTML", img: "/image/html5.svg" },
+      { name: "CSS", img: "/image/css3.svg" },
       { name: "JavaScript", img: "/image/javascript.svg" },
       { name: "TypeScript", img: "/image/typescript.svg" },
+      { name: "Python", img: "/image/python.svg" },
       { name: "Java", img: "/image/java.svg" },
       { name: "C#", img: "/image/csharp.svg" },
     ],
   },
   {
-    title: "Frontend",
+    title: "Framework / Library",
+    span: true,
     items: [
-      { name: "HTML", img: "/image/html5.svg" },
-      { name: "CSS", img: "/image/css3.svg" },
       { name: "React", img: "/image/react.svg" },
       { name: "Redux", img: "/image/redux.svg" },
       { name: "NextJS", img: "/image/nextjs.svg" },
-      { name: "SASS/SCSS", img: "/image/sass.svg" },
       { name: "TailwindCSS", img: "/image/tailwindcss.svg" },
       { name: "Styled Components", img: "/image/styled-components.svg" },
-      { name: "jQuery", img: "/image/jquery.svg" },
-      { name: "GWT", img: "/image/gwt.svg" },
-    ],
-  },
-  {
-    title: "Backend",
-    items: [
       { name: "NodeJS", img: "/image/nodejs.svg" },
       { name: "ExpressJS", img: "/image/express.svg" },
-      { name: "Spring Boot", img: "/image/springboot.svg" },
-      { name: "JSP", img: "/image/jsp.svg" },
+      { name: "Django", img: "/image/django.svg" },
+      { name: "jQuery", img: "/image/jquery.svg" },
+      { name: "Spring", img: "/image/springboot.svg" },
       { name: "MySQL", img: "/image/mysql.svg" },
       { name: "PostgreSQL", img: "/image/postgresql.svg" },
       { name: "MongoDB", img: "/image/mongodb.svg" },
@@ -92,10 +88,11 @@ const Skills = (props: Props) => {
   return (
     <div id="skill-section" className="bg-black">
       <div className="wrapper py-20">
-        <div className="flex flex-col lg:flex-row gap-8 mb-10">
+        <div className="grid grid-cols-12 gap-8 mb-10">
           {columns.map((column) => {
             return (
               <SkillColumn
+                span={column.span}
                 key={column.title}
                 title={column.title}
                 items={column.items}
@@ -135,8 +132,8 @@ const Skills = (props: Props) => {
             className="transition-all duration-500 opacity-0"
           >
             {isSearchFound
-              ? "It is right in my toolbox 🧰! I might be the developer you are looking for..."
-              : "I don't have the skill you are looking for, but just at the moment. As a professional software engineer, I always love challenges and am eager to accquire new skills!"}
+              ? "It is right in my toolbox 🧰! Why not contact me to dicuss further?"
+              : "I don't have the skill you are looking for, but just at the moment. As a professional software engineer, I always love challenges and am eager to learn new skills!"}
           </p>
         </motion.div>
       </div>
