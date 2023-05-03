@@ -7,7 +7,7 @@ type Props = {};
 const data = [
   {
     name: "Study Bud",
-    desc: "Study Bud is an full-stack social media application development in Django's Model-View-Template (MVT) architecture. Built with Python, Django, PostgreSQL. Secure user login and authentication. Start the chat by creating a room and choose a topic!",
+    desc: "Study Bud is a full-stack social media application development in Django's Model-View-Template (MVT) architecture. Built with Python, Django, PostgreSQL. Secure user login and authentication. Start the chat by creating a room and choose a topic!",
     thumbnail: "/image/studybud.png",
     github_url: "https://github.com/jethro-dev/studybud",
     live_url: "https://studybud-jethro.up.railway.app/",
