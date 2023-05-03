@@ -31,6 +31,7 @@ const data = [
     live_url: "https://urban-home.vercel.app/",
     topics: [
       "JavaScript",
+      "TypeScript",
       "React",
       "Next.js",
       "Prisma",
@@ -63,7 +64,14 @@ const data = [
     thumbnail: "/image/jblog.png",
     github_url: "https://github.com/jethro-dev/j-blog",
     live_url: "https://jdevblog.vercel.app/",
-    topics: ["Next.js", "TailwindCSS", "GraphQL", "Fullstack"],
+    topics: [
+      "JavaScript",
+      "React",
+      "Next.js",
+      "TailwindCSS",
+      "GraphQL",
+      "Fullstack",
+    ],
     left_sided: false,
   },
   {
@@ -72,7 +80,7 @@ const data = [
     thumbnail: "/image/crypto-tracker.png",
     github_url: "https://github.com/jethro-dev/crypto-tracker",
     live_url: "https://cryptotrkr.netlify.app/",
-    topics: ["React", "RESTful APIs", "Data Fetching"],
+    topics: ["JavaScript", "React", "RESTful APIs", "Data Fetching"],
     left_sided: true,
   },
 ];
@@ -103,7 +111,7 @@ const Projects = (props: Props) => {
 
   return (
     <div id="project-section" className="bg-white">
-      <div className="h-full pt-20">
+      <div className="max-w-8xl mx-auto h-full pt-20">
         <motion.div
           variants={headings}
           initial="hidden"

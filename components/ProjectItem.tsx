@@ -114,7 +114,7 @@ const ProjectItemSide = ({
   return (
     <div className="relative col-span-4 p-8">
       <motion.h1 className="font-semibold text-3xl lg:text-5xl mb-4">
-        {name}
+        # {name}
       </motion.h1>
       <div className="flex gap-2 mb-4">
         <a
