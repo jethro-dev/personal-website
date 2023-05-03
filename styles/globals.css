@@ -31,7 +31,7 @@
   }
 
   .project-item {
-    @apply bg-white text-white h-[400px] md:h-[500px] lg:h-[600px] relative overflow-hidden transition-all duration-500 w-full;
+    @apply bg-white text-white h-auto md:h-auto lg:h-[700px] relative overflow-hidden transition-all duration-500 w-full;
   }
 
   .contact-item {

@@ -58,6 +58,8 @@ const ProjectItem = ({
           live_url={live_url}
           desc={desc}
           topics={topics}
+          thumbnail={thumbnail}
+          left={index % 2 == 0 ? true : false}
         />
       </div>
     </div>
@@ -82,16 +84,16 @@ const ProjectItemMain = ({
   order: number;
 }) => {
   return (
-    <div className={`relative col-span-8`} style={{ order: order }}>
+    <div
+      className={`relative col-span-8 hidden md:block`}
+      style={{ order: order }}
+    >
       <div className="black-gradient z-20 rounded-md overflow-hidden"></div>
-      <motion.h1 className="font-semibold text-4xl lg:text-8xl">
-        {name}
-      </motion.h1>
       <Image
         src={thumbnail}
         alt={name}
         layout="fill"
-        className="object-cover z-10 rounded-md overflow-hidden"
+        className="object-cover z-10 rounded-md overflow-hidden shadow-md"
       />
     </div>
   );
@@ -103,25 +105,42 @@ const ProjectItemSide = ({
   live_url,
   desc,
   topics,
+  thumbnail,
+  left,
 }: {
   name: string;
   github_url: string;
   live_url: string;
   desc: string;
   topics: string[];
+  thumbnail: string;
+  left: boolean;
 }) => {
   return (
-    <div className="relative col-span-4 p-8">
-      <motion.h1 className="font-semibold text-3xl lg:text-5xl mb-4">
-        # {name}
+    <div
+      className={`relative col-span-12 md:col-span-4 px-2 md:px-3 lg:px-4 text-left ${
+        left ? "md:text-left" : "md:text-right"
+      }`}
+    >
+      <motion.h1 className="font-semibold text-4xl lg:text-5xl mb-4">
+        #{name}
       </motion.h1>
+      <div className="block md:hidden mb-4">
+        <Image
+          src={thumbnail}
+          alt={name}
+          width={1000}
+          height={600}
+          className={`object-cover object-center brightness-75 rounded-md`}
+        />
+      </div>
       <div className="flex gap-2 mb-4">
         <a
           href={github_url}
           target="_blank"
           rel="noreferrer"
           type="button"
-          className="bg-neutral-900 text-white px-2.5 py-2.5 space-x-2 rounded-md text-center flex-1"
+          className="bg-neutral-900 ring-neutral-900 text-white hover:bg-white hover:ring-1 hover:text-black px-2.5 py-2.5 space-x-2 rounded-md text-center flex-1 transition-all duration-300 shadow-md"
         >
           <span>GitHub</span>
           <FaGithub size={28} className="inline" />
@@ -131,12 +150,13 @@ const ProjectItemSide = ({
           target="_blank"
           rel="noreferrer"
           type="button"
-          className="bg-white px-2.5 py-2.5 space-x-2 rounded-md text-center ring-neutral-700 shadow-md ring-1 flex-1"
+          className="bg-white ring-neutral-900 text-black hover:bg-neutral-900 ring-1 hover:text-white px-2.5 py-2.5 space-x-2 rounded-md text-center flex-1 transition-all duration-300 shadow-md"
         >
           <span>LiveSite</span>
           <MdOpenInBrowser size={28} className="inline" />
         </a>
       </div>
+
       <motion.p
         initial={{ translateY: 50, opacity: 0 }}
         animate={{ translateY: 0, opacity: 1 }}
@@ -144,7 +164,7 @@ const ProjectItemSide = ({
       >
         {desc}
       </motion.p>
-      <div className="absolute bottom-0 left-0 mb-4 ml-4">
+      <div className="lg:absolute lg:bottom-0 lg:left-0 lg:mb-4 lg:ml-4">
         {topics.map((topic) => (
           <Bullet text={topic} />
         ))}

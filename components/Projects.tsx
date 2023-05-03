@@ -83,9 +83,9 @@ const data = [
 const Projects = (props: Props) => {
   return (
     <div id="project-section" className="bg-white">
-      <div className="max-w-8xl mx-auto h-full pt-20 px-20">
+      <div className="max-w-8xl mx-auto h-full pt-20 px-6 md:px-12 lg:px-20">
         <Heading />
-        <div className="space-y-20">
+        <div className="space-y-10 lg:space-y-20 pb-20">
           {data.map((project, i) => {
             return <ProjectItem key={i} index={i} {...project} />;
           })}
