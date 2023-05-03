@@ -165,8 +165,8 @@ const ProjectItemSide = ({
         {desc}
       </motion.p>
       <div className="lg:absolute lg:bottom-0 lg:left-0 lg:mb-4 lg:ml-4">
-        {topics.map((topic) => (
-          <Bullet text={topic} />
+        {topics.map((topic, i) => (
+          <Bullet key={i} text={topic} />
         ))}
       </div>
     </div>
