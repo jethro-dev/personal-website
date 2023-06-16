@@ -4,6 +4,7 @@ import calculateAge from "../utils/calculateAge";
 import { FiClipboard } from "react-icons/fi";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
+import Link from "next/link";
 type Props = {};
 
 const About = (props: Props) => {
@@ -80,13 +81,11 @@ const About = (props: Props) => {
                 Software Engineer
               </span>
             </p>
-            <a
-              className="px-4 py-2 ring-2 ring-inset ring-violet-500 text-violet-500 rounded-md lg:absolute top-5 right-5 font-semibold hover:bg-violet-500 hover:text-black transition-all duration-500 "
-              href="jethro_cv.pdf"
-              download
-            >
-              Download CV
-            </a>
+            <Link href="/cv">
+              <button className="px-4 py-2 ring-2 ring-inset ring-violet-500 text-violet-500 rounded-md lg:absolute top-5 right-5 font-semibold hover:bg-violet-500 hover:text-black transition-all duration-500">
+                Preview CV
+              </button>
+            </Link>
             <div className="absolute bottom-5 right-5">
               <ul className="flex items-center gap-4 text-violet-500 ">
                 {/* linkedin */}
