@@ -12,8 +12,8 @@ export const Hero = (props: Props) => {
         <TypographyP className="mt-2 w-4/5">
           Explore the intersection of technology and imagination as we embark on
           a journey to transform concepts into powerful, user-centric
-          experiences. Let's build the future together – one line of code at a
-          time.
+          experiences. Let&apos;s build the future together – one line of code
+          at a time.
         </TypographyP>
 
         <div className="flex items-center gap-2 mt-12">

@@ -46,8 +46,8 @@ export const LatestBlogPosts = (props: Props) => {
           </div>
 
           <div className="max-w-7xl mx-auto mt-10 flex justify-between gap-4">
-            {posts.map((post) => (
-              <PostCard {...post} />
+            {posts.map((post, i) => (
+              <PostCard key={i} {...post} />
             ))}
           </div>
         </div>

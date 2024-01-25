@@ -65,11 +65,11 @@ export const About = (props: Props) => {
               Why do I love software development so much?
             </h3>
             <TypographyP>
-              There's nothing more satisfying than solving a problem that's been
-              around for a while and nobody else knows how to solve. As a
-              software developer, I constantly provide solutions for users'
-              problems. I can be working on the occasional quick fix as well as
-              more complex strategic solutions.
+              There&apos;s nothing more satisfying than solving a problem
+              that&apos;s been around for a while and nobody else knows how to
+              solve. As a software developer, I constantly provide solutions for
+              users&apos; problems. I can be working on the occasional quick fix
+              as well as more complex strategic solutions.
             </TypographyP>
           </div>
           <div>
@@ -79,9 +79,9 @@ export const About = (props: Props) => {
             <TypographyP>
               Great fundamentals built up from university. I am always curious
               and love to stay updated to the latest technology. Also, I love
-              challenges and I don't give up. With the advantages of bilingual,
-              I am able to connect and collaborate with developers around the
-              world.
+              challenges and I don&apos;t give up. With the advantages of
+              bilingual, I am able to connect and collaborate with developers
+              around the world.
             </TypographyP>
           </div>
         </div>

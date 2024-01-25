@@ -21,7 +21,7 @@ export const ConnectBanner = (props: Props) => {
       <div className="max-w-5xl mx-auto px-6 z-10">
         <TypographyH1>Connect With Me</TypographyH1>
         <TypographyH3 className="mt-4">
-          Let's Transform Ideas into Code!
+          Let&apos;s Transform Ideas into Code!
         </TypographyH3>
         <TypographyP className="mt-6 w-4/5 text-white">
           Reach out for collaborations, inquiries, or just a tech chat –
