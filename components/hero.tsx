@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Button } from "./ui/button";
 import { TypographyH1 } from "./ui/typography-h1";
 import { TypographyP } from "./ui/typography-p";
@@ -6,7 +7,7 @@ type Props = {};
 
 export const Hero = (props: Props) => {
   return (
-    <header className="h-screen min-h-[600px] p-6 flex items-center justify-between">
+    <header className="relative h-screen min-h-[600px] p-6 flex items-center justify-between border-b-[3px] border-black">
       <div className="max-w-4xl mx-auto">
         <TypographyH1>Welcome to jethroau.com!</TypographyH1>
         <TypographyP className="mt-2 w-4/5">
@@ -21,6 +22,21 @@ export const Hero = (props: Props) => {
           <Button>Schedule a meeting</Button>
         </div>
       </div>
+
+      <Image
+        src="./undraw_cat.svg"
+        alt="Undraw Cat"
+        width="400"
+        height="400"
+        className="absolute  -bottom-1 right-0 lg:right-40 z-20"
+      />
+      <Image
+        src="./undraw_dog.svg"
+        alt="Undraw Dog"
+        width="450"
+        height="450"
+        className="absolute  -bottom-[33px] -right-20 lg:right-40 z-10"
+      />
     </header>
   );
 };
