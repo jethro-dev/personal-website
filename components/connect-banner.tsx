@@ -13,7 +13,7 @@ export const ConnectBanner = (props: Props) => {
   return (
     <div
       id="connect-banner"
-      className="relative h-[400px] !bg-neutral-900 text-white flex items-center"
+      className="relative py-20 !bg-neutral-900 text-white flex items-center"
     >
       <div className="w-full h-full brightness-75 absolute inset-0 z-0">
         <ConfettiGradient />
@@ -31,7 +31,7 @@ export const ConnectBanner = (props: Props) => {
         <TypographyP className="mt-2 w-4/5 text-white">
           Contact me by completing the contact form or scheduling a meeting.
         </TypographyP>
-        <div className="mt-12 flex items-center gap-4">
+        <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <Button className="bg-white text-black">Fill in contact form</Button>
           <Button className="bg-white text-black">Schedule a meeting</Button>
         </div>

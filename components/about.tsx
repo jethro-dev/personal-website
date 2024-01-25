@@ -8,7 +8,10 @@ type Props = {};
 
 export const About = (props: Props) => {
   return (
-    <div id="about" className="py-20 px-6 flex items-center justify-between">
+    <div
+      id="about"
+      className="py-20 px-6 flex items-center justify-between transition duration-300"
+    >
       <div className="max-w-4xl mx-auto">
         <TypographyH1>About me</TypographyH1>
         <TypographyP className="mt-2">

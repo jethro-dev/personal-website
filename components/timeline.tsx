@@ -124,7 +124,7 @@ const TimelineItem = ({
     <p className="mb-4 text-sm font-normal text-muted-foreground">
       {description}
     </p>
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 flex-wrap">
       {badges.map((badge, i) => (
         <Badge key={i} text={badge} />
       ))}

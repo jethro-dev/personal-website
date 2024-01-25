@@ -66,7 +66,7 @@ export const Portfolio = (props: Props) => {
   return (
     <div
       id="portfolio"
-      className="px-10 py-40 flex items-center justify-center"
+      className="px-10 py-40 flex items-center justify-center transition duration-300"
     >
       <div className="w-full">
         <div className="flex-1">

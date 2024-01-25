@@ -7,7 +7,10 @@ type Props = {};
 
 export const Experience = (props: Props) => {
   return (
-    <div id="experience" className="py-20 px-6">
+    <div
+      id="experience"
+      className="bg-background py-20 px-6 transition duration-300"
+    >
       <div className="text-center max-w-4xl mx-auto">
         <TypographyH1>My Experience</TypographyH1>
         <TypographyP className="!mt-10">
@@ -18,8 +21,8 @@ export const Experience = (props: Props) => {
           digital success.
         </TypographyP>
 
-        <span className="inline-block mt-6 text-xs font-semibold border border-primary text-primary px-2.5 py-1 rounded-full shadow-md">
-          5+ Years of experience
+        <span className="inline-block mt-6 text-xs font-light border border-primary text-primary px-2.5 py-1 rounded-full shadow-md">
+          🏅 5+ Years of experience
         </span>
       </div>
       <Timeline className="mt-20" />
