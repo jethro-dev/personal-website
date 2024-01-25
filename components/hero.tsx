@@ -6,7 +6,7 @@ type Props = {};
 
 export const Hero = (props: Props) => {
   return (
-    <header className="bg-background relative h-screen min-h-[600px] p-6 flex items-center justify-between border-b-[3px] border-black transition duration-300">
+    <header className="bg-background relative h-screen min-h-[600px] p-6 flex items-center justify-between  transition duration-300">
       <div className="max-w-4xl mx-auto">
         <TypographyH1>Welcome to jethroau.com!</TypographyH1>
         <TypographyP className="mt-2 w-4/5">
