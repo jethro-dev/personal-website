@@ -1,4 +1,5 @@
 import { DrawerDemo } from "./drawer";
+import { LearnMoreButton } from "./learn-more-btn";
 import { Button } from "./ui/button";
 import { TypographyH1 } from "./ui/typography-h1";
 import { TypographyP } from "./ui/typography-p";
@@ -19,7 +20,7 @@ export const Hero = (props: Props) => {
           at a time.
         </TypographyP>
         <div className="flex flex-col sm:flex-row items-start md:items-center gap-4 mt-12">
-          <Button>Learn more about me</Button>
+          <LearnMoreButton />
           <span>or</span>
           <DrawerDemo />
           {/* <Button>Schedule a meeting</Button> */}

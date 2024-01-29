@@ -4,6 +4,7 @@ import { Button } from "./ui/button";
 import { TypographyH1 } from "./ui/typography-h1";
 import { TypographyP } from "./ui/typography-p";
 import { TypographyH3 } from "./ui/typography-h3";
+import Link from "next/link";
 
 type Props = {};
 
@@ -44,13 +45,21 @@ export const About = (props: Props) => {
 
         <div className="mt-10">
           <div className="mt-2 flex items-center gap-2">
-            <Button>
-              <Github className="h-4 w-4 mr-2" />
-              GitHub
+            <Button asChild>
+              <Link href={"https://github.com/jethro-dev"} target="_blank">
+                <Github className="h-4 w-4 mr-2" />
+                GitHub
+              </Link>
             </Button>
-            <Button>
-              <Linkedin className="h-4 w-4 mr-2" />
-              LinkedIn
+
+            <Button asChild>
+              <Link
+                href={"https://www.linkedin.com/in/galongau/"}
+                target="_blank"
+              >
+                <Linkedin className="h-4 w-4 mr-2" />
+                LinkedIn
+              </Link>
             </Button>
           </div>
         </div>
