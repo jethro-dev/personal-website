@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { Badge } from "./badge";
 import { KEYWORDS, Project } from "@/typings";
-import { projects } from "@/data";
+import { projects } from "@/lib/data";
 import Link from "next/link";
 import { ArrowUpRightFromSquare } from "lucide-react";
 
