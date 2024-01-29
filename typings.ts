@@ -30,3 +30,10 @@ export type Project = {
   slug: string;
   is_private: boolean;
 };
+
+export type SimpleBlog = {
+  title: string;
+  smallDescription: string;
+  slug: string;
+  image: string;
+};
