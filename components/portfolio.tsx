@@ -4,69 +4,18 @@ import { TypographyP } from "./ui/typography-p";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import { Badge } from "./badge";
-import { KEYWORDS } from "@/typings";
+import { KEYWORDS, Project } from "@/typings";
+import { projects } from "@/data";
 import Link from "next/link";
+import { ArrowUpRightFromSquare } from "lucide-react";
 
 type Props = {};
-
-type Project = {
-  title: string;
-  link: string;
-  src: string;
-  description: string;
-  keywords: string[];
-};
-
-const projects: Project[] = [
-  {
-    title: "Premium Design Landing Page",
-    link: "https://jnft.vercel.app/",
-    src: "/jnft-cover.webp",
-    description:
-      "Discover my NFT Landing Page: a captivating fusion of design and animations, offering a visual journey into the world of digital art. Explore the unique essence of each NFT collection through an engaging and seamless platform.",
-    keywords: [
-      KEYWORDS.JavaScript,
-      KEYWORDS.React,
-      KEYWORDS.Next,
-      KEYWORDS.Animations,
-    ],
-  },
-  {
-    title: "AI Environmment Generator",
-    link: "/",
-    src: "/ai-environment-generator-cover.webp",
-    description:
-      "Discover my NFT Landing Page: a captivating fusion of design and animations, offering a visual journey into the world of digital art. Explore the unique essence of each NFT collection through an engaging and seamless platform.",
-    keywords: [
-      KEYWORDS.React,
-      KEYWORDS.Next,
-      KEYWORDS.Fullstack,
-      KEYWORDS.APIs,
-      KEYWORDS.StableDiffusion,
-      KEYWORDS.AI,
-    ],
-  },
-  {
-    title: "Blogging Web App",
-    link: "https://jdevblog.vercel.app/",
-    src: "/jblog-cover.webp",
-    description:
-      "J-Blog is a full-stack blogging web application. It is built with React, Next.js, GraphQL, TailwindCSS, and more.",
-    keywords: [
-      KEYWORDS.TypeScript,
-      KEYWORDS.React,
-      KEYWORDS.Next,
-      KEYWORDS.Fullstack,
-      KEYWORDS.APIs,
-    ],
-  },
-];
 
 export const Portfolio = (props: Props) => {
   return (
     <div
       id="portfolio"
-      className="px-10 py-40 flex items-center justify-center transition duration-300"
+      className="bg-background px-10 py-40 flex items-center justify-center transition duration-300"
     >
       <div className="w-full">
         <div className="flex-1">
@@ -90,28 +39,81 @@ export const Portfolio = (props: Props) => {
   );
 };
 
-const Project = ({ title, link, src, description, keywords }: Project) => (
+const Project = ({
+  title,
+  link,
+  src,
+  description,
+  keywords,
+  slug,
+  is_private,
+}: Project) => (
   <div className="w-full lg:w-1/3">
     <div className="aspect-video rounded-md relative overflow-hidden">
-      <Image
-        src={src}
-        alt={title}
-        fill={true}
-        className="object-center object-cover"
-      />
+      <Link
+        target="_blank"
+        href={is_private ? "/" : link}
+        className={`${
+          is_private ? "pointer-events-none" : "pointer-events-auto"
+        }`}
+      >
+        <Image
+          src={src}
+          alt={title}
+          fill={true}
+          className="object-center object-cover"
+        />
+      </Link>
+      {is_private && (
+        <Badge
+          text={"Private"}
+          className="absolute top-2 right-2 bg-background"
+        />
+      )}
     </div>
 
-    <h3 className="mt-4 font-semibold">{title}</h3>
+    <Link
+      target="_blank"
+      href={is_private ? "/" : link}
+      className={`${
+        is_private ? "pointer-events-none" : "pointer-events-auto"
+      }`}
+    >
+      <h3 className="mt-4 font-semibold hover:underline inline-block">
+        {title}
+      </h3>
+    </Link>
     <p className="mt-2 text-sm text-muted-foreground">{description}</p>
     <div className="mt-4 w-full flex items-center flex-wrap gap-2">
       {keywords?.map((keyword, i) => (
         <Badge key={1} text={keyword} />
       ))}
     </div>
-    <Button className="mt-4" asChild>
-      <Link href={link} target="_blank">
-        Live Site
-      </Link>
+
+    <Button
+      className={`mt-4 ${is_private ? "cursor-not-allowed" : ""}`}
+      asChild
+    >
+      {is_private ? (
+        <Button>
+          <span className="mr-2">🔒</span>Locked
+        </Button>
+      ) : (
+        <Link href={link} target="_blank">
+          <ArrowUpRightFromSquare className="w-4 h-4 mr-2" /> Live Site
+        </Link>
+      )}
     </Button>
+
+    {is_private && (
+      <>
+        <TypographyP className="text-xs mt-4">
+          This project is not public.
+        </TypographyP>
+        <TypographyP className="text-xs mt-2">
+          Send me a message if you are interested.
+        </TypographyP>
+      </>
+    )}
   </div>
 );

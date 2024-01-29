@@ -1,12 +1,11 @@
 "use client";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/providers/theme-provider";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Toaster } from "@/components/ui/sonner";
+import { poppins } from "./fonts";
 
 const metadata: Metadata = {
   title: "jethroau.com",
@@ -44,11 +43,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body className={`${poppins.className} !bg-background`}>
         <ThemeProvider>
           <Navbar />
-          {children}
+          <div vaul-drawer-wrapper="">{children}</div>
           <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

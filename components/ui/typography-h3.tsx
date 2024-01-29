@@ -8,7 +8,7 @@ export function TypographyH3({ className, children }: Props) {
   return (
     <h2
       className={cn(
-        "scroll-m-20 text-2xl font-semibold tracking-tight lg:text-2xl",
+        "scroll-m-20 text-lg font-semibold tracking-tight lg:text-xl",
         className
       )}
     >

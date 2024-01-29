@@ -5,6 +5,7 @@ import { TypographyH1 } from "./ui/typography-h1";
 import { TypographyH3 } from "./ui/typography-h3";
 import { Button } from "./ui/button";
 import useConfettiGradient from "@/hooks/useConfettiGradient";
+import { DrawerDemo } from "./drawer";
 
 type Props = {};
 
@@ -32,7 +33,7 @@ export const ConnectBanner = (props: Props) => {
           Contact me by completing the contact form or scheduling a meeting.
         </TypographyP>
         <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-          <Button className="bg-white text-black">Fill in contact form</Button>
+          <DrawerDemo />
           <Button className="bg-white text-black">Schedule a meeting</Button>
         </div>
       </div>

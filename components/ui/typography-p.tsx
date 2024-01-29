@@ -6,7 +6,12 @@ type Props = {
 };
 export function TypographyP({ className, children }: Props) {
   return (
-    <p className={cn("text-sm text-muted-foreground leading-6", className)}>
+    <p
+      className={cn(
+        "text-sm font-light text-muted-foreground leading-6",
+        className
+      )}
+    >
       {children}
     </p>
   );

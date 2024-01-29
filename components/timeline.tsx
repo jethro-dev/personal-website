@@ -118,9 +118,7 @@ const TimelineItem = ({
     <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
       {from} - {to}
     </time>
-    <h3 className="text-lg font-semibold text-primary dark:text-white">
-      {title}
-    </h3>
+    <h3 className="text-lg font-semibold text-foreground">{title}</h3>
     <p className="mb-4 text-sm font-normal text-muted-foreground">
       {description}
     </p>

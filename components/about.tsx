@@ -3,6 +3,7 @@ import { Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 import { TypographyH1 } from "./ui/typography-h1";
 import { TypographyP } from "./ui/typography-p";
+import { TypographyH3 } from "./ui/typography-h3";
 
 type Props = {};
 
@@ -10,7 +11,7 @@ export const About = (props: Props) => {
   return (
     <div
       id="about"
-      className="py-20 px-6 flex items-center justify-between transition duration-300"
+      className="bg-background py-20 px-6 flex items-center justify-between transition duration-300"
     >
       <div className="max-w-4xl mx-auto">
         <TypographyH1>About me</TypographyH1>
@@ -20,21 +21,23 @@ export const About = (props: Props) => {
           and development, producing quality work.
         </TypographyP>
 
-        <div className="mt-10 border border-primary/90 bg-primary rounded-md p-4 text-primary-foreground">
+        <div className="mt-10 border border-border rounded-md p-4 shadow-sm bg-primary/10">
           <h3 className="text-lg font-semibold">TLDR</h3>
           <ol className="mt-2 list-disc space-y-1 pl-6">
             <li>
-              <TypographyP>
+              <TypographyP className="text-foreground">
                 Born in Hong Kong, fluent in both English and Chinese
               </TypographyP>
             </li>
             <li>
-              <TypographyP>
+              <TypographyP className="text-foreground">
                 Passionate developer and life-time learner
               </TypographyP>
             </li>
             <li>
-              <TypographyP>Smart and hardworking</TypographyP>
+              <TypographyP className="text-foreground">
+                Smart and hardworking
+              </TypographyP>
             </li>
           </ol>
         </div>
@@ -54,8 +57,8 @@ export const About = (props: Props) => {
 
         <div className="mt-10 space-y-6">
           <div>
-            <h3 className="text-lg font-semibold">What about me?</h3>
-            <TypographyP>
+            <TypographyH3 className="mt-4">What about me?</TypographyH3>
+            <TypographyP className="mt-2">
               A passionate Computer Science graduate chasing his dreams.
               Originated in Hong Kong, currently living in the capital of the UK
               — London. Giving me the ability to read and write fluently in two
@@ -64,10 +67,10 @@ export const About = (props: Props) => {
           </div>
 
           <div>
-            <h3 className="text-lg font-semibold">
+            <TypographyH3>
               Why do I love software development so much?
-            </h3>
-            <TypographyP>
+            </TypographyH3>
+            <TypographyP className="mt-2">
               There&apos;s nothing more satisfying than solving a problem
               that&apos;s been around for a while and nobody else knows how to
               solve. As a software developer, I constantly provide solutions for
@@ -76,10 +79,10 @@ export const About = (props: Props) => {
             </TypographyP>
           </div>
           <div>
-            <h3 className="text-lg font-semibold">
+            <TypographyH3>
               Then, what makes me a good software engineer?
-            </h3>
-            <TypographyP>
+            </TypographyH3>
+            <TypographyP className="mt-2">
               Great fundamentals built up from university. I am always curious
               and love to stay updated to the latest technology. Also, I love
               challenges and I don&apos;t give up. With the advantages of

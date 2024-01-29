@@ -8,7 +8,7 @@ import { Portfolio } from "@/components/portfolio";
 
 export default function Home() {
   return (
-    <main className="[&>*:nth-child(even)]:bg-neutral-100 dark:[&>*:nth-child(even)]:bg-neutral-900">
+    <main className="">
       <Hero />
       <About />
       <Experience />

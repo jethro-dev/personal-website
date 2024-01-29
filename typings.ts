@@ -20,3 +20,13 @@ export enum KEYWORDS {
   AI = "AI",
   Animations = "Animations",
 }
+
+export type Project = {
+  title: string;
+  link: string;
+  src: string;
+  description: string;
+  keywords: string[];
+  slug: string;
+  is_private: boolean;
+};
