@@ -33,7 +33,7 @@ export type Project = {
 
 export type SimpleBlog = {
   title: string;
-  smallDescription: string;
+  description: string;
   slug: string;
   image: string;
 };

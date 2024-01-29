@@ -15,33 +15,10 @@ type Post = {
   description: string;
 };
 
-// const posts: Post[] = [
-//   {
-//     title: "NFT Landing Page",
-//     link: "/",
-//     src: "",
-//     description:
-//       "Discover my NFT Landing Page: a captivating fusion of design and animations, offering a visual journey into the world of digital art. Explore the unique essence of each NFT collection through an engaging and seamless platform.",
-//   },
-//   {
-//     title: "AI Environmment Generator",
-//     link: "/",
-//     src: "",
-//     description: "Lorem ipsum dolor sit amet.",
-//   },
-//   {
-//     title: "StudyBud",
-//     link: "/",
-//     src: "",
-//     description:
-//       "Study Bud is a full-stack social media application development in Django's Model-View-Template (MVT) architecture. Built with Python, Django, PostgreSQL. Secure user login and authentication. Start the chat by creating a room and choose a topic!",
-//   },
-// ];
-
 async function getBlogs() {
   const query = `*[_type=='blog'] | order(_createdAt desc) {
     title,
-    smallDescription,
+    "description":smallDescription,
     "slug":slug.current,
     "image":coverImage
   }`;
@@ -52,9 +29,9 @@ async function getBlogs() {
 }
 
 export const LatestBlogPosts = async ({}: Props) => {
-  const posts: SimpleBlog[] = await getBlogs();
-  console.log({ posts });
-  if (!posts) {
+  const blogs: SimpleBlog[] = await getBlogs();
+  console.log({ blogs });
+  if (!blogs) {
     return null;
   }
   return (
@@ -62,15 +39,15 @@ export const LatestBlogPosts = async ({}: Props) => {
       <div>
         <div className="flex-1">
           <div className="text-center">
-            <TypographyH1>Featured Blog Posts</TypographyH1>
+            <TypographyH1>Featured Blogs</TypographyH1>
             <TypographyP className="mt-2">
-              Here are some featured blog posts
+              Here are some featured blogs
             </TypographyP>
           </div>
 
           <div className="max-w-7xl mx-auto mt-10 flex justify-between gap-4">
-            {posts.map((post, i) => (
-              <PostCard key={i} {...post} />
+            {blogs.map((post, i) => (
+              <Blog key={i} {...post} />
             ))}
           </div>
         </div>
@@ -79,7 +56,7 @@ export const LatestBlogPosts = async ({}: Props) => {
   );
 };
 
-const PostCard = ({ title, smallDescription, slug, image }: SimpleBlog) => (
+const Blog = ({ title, description, slug, image }: SimpleBlog) => (
   <div className="flex-1">
     <Link href={`/blogs/${slug}`}>
       <div className="relative w-full aspect-video rounded-md bg-neutral-200 overflow-hidden">
@@ -98,7 +75,7 @@ const PostCard = ({ title, smallDescription, slug, image }: SimpleBlog) => (
       </h3>
     </Link>
     <p className="mt-2 text-sm text-muted-foreground line-clamp-3">
-      {smallDescription}
+      {description}
     </p>
   </div>
 );
