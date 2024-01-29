@@ -65,7 +65,7 @@ export function DrawerDemo() {
           <DrawerHeader className="px-0">
             <DrawerTitle>Send me a message</DrawerTitle>
             <DrawerDescription>
-              Just fill in your name, and your email, that's it!
+              Just fill in your name, and your email, that&apos;s it!
             </DrawerDescription>
           </DrawerHeader>
           <div className="p-0 pb-0">
