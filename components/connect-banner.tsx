@@ -34,7 +34,7 @@ export const ConnectBanner = (props: Props) => {
         </TypographyP>
         <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <DrawerDemo />
-          <Button className="bg-white text-black">Schedule a meeting</Button>
+          {/* <Button className="bg-white text-black">Schedule a meeting</Button> */}
         </div>
       </div>
     </div>
