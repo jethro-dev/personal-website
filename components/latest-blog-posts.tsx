@@ -51,12 +51,13 @@ export const LatestBlogPosts = async ({}: Props) => {
 const Blog = ({ title, description, slug, image }: SimpleBlog) => (
   <div className="flex-1">
     <Link href={`/blogs/${slug}`}>
-      <div className="relative w-full aspect-video rounded-md bg-neutral-200 overflow-hidden">
+      <div className="relative w-full aspect-video rounded-md overflow-hidden">
         <Image
           src={urlFor(image).url()}
           alt="title"
           fill
           className="object-cover object-center hover:brightness-50 transition"
+          priority
         />
       </div>
     </Link>
