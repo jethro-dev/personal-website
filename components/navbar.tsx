@@ -25,10 +25,10 @@ const list_item: NavItem[] = [
     title: "projects",
     href: "#portfolio",
   },
-  // {
-  //   title: "blog",
-  //   href: "#blog",
-  // },
+  {
+    title: "blogs",
+    href: "#blogs",
+  },
 ];
 
 export const Navbar = (props: Props) => {

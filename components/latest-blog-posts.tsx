@@ -27,7 +27,7 @@ export const LatestBlogPosts = async ({}: Props) => {
     return null;
   }
   return (
-    <div id="blog" className="px-10 py-40 flex items-center justify-center">
+    <div id="blogs" className="px-10 py-40 flex items-center justify-center">
       <div>
         <div className="flex-1">
           <div className="text-center">
