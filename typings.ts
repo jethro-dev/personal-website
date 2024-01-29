@@ -35,5 +35,13 @@ export type SimpleBlog = {
   title: string;
   description: string;
   slug: string;
-  image: string;
+  image: any;
+};
+
+export type FullBlog = {
+  title: string;
+  content: any;
+  image: any;
+  slug: string;
+  description: string;
 };

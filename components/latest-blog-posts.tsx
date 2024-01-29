@@ -8,13 +8,6 @@ import Link from "next/link";
 
 type Props = {};
 
-type Post = {
-  title: string;
-  link: string;
-  src: string;
-  description: string;
-};
-
 async function getBlogs() {
   const query = `*[_type=='blog'] | order(_createdAt desc) {
     title,
@@ -30,7 +23,6 @@ async function getBlogs() {
 
 export const LatestBlogPosts = async ({}: Props) => {
   const blogs: SimpleBlog[] = await getBlogs();
-  console.log({ blogs });
   if (!blogs) {
     return null;
   }
