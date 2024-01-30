@@ -1,11 +1,12 @@
 import { TypographyH1 } from "@/components/ui/typography-h1";
 import { TypographyP } from "@/components/ui/typography-p";
 import { client, urlFor } from "@/lib/sanity";
-import { FullBlog } from "@/typings";
+import { FullBlog, SimpleBlog } from "@/typings";
 import Image from "next/image";
 import React from "react";
 import { PortableText } from "@portabletext/react";
 import { ConnectBanner } from "@/components/connect-banner";
+import { getBlogs } from "@/components/latest-blog-posts";
 
 type Props = {
   params: { slug: string };
@@ -66,5 +67,12 @@ const BlogPage = async ({ params }: Props) => {
     </main>
   );
 };
+
+export async function generateStaticParams() {
+  const blogs: SimpleBlog[] = await getBlogs();
+  return blogs.map((blogs) => ({
+    slug: blogs.slug,
+  }));
+}
 
 export default BlogPage;

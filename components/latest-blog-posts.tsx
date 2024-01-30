@@ -8,7 +8,7 @@ import Link from "next/link";
 
 type Props = {};
 
-async function getBlogs() {
+export async function getBlogs() {
   const query = `*[_type=='blog'] | order(_createdAt desc) {
     title,
     "description":smallDescription,
