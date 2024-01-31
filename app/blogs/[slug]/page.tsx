@@ -13,7 +13,7 @@ type Props = {
   params: { slug: string };
 };
 
-export const revalidate = 60; // revalidate at most every hour
+export const revalidate = 60; // revalidate at most every minutes
 
 async function getBlog(slug: string) {
   const query = `*[_type=='blog' &&  slug.current == "${slug}"] {
