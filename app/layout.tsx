@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
   },
   openGraph: {},
-  metadataBase: new URL("https://acme.com"),
+  metadataBase: new URL("https://jethroau.com"),
 };
 
 export default function RootLayout({
