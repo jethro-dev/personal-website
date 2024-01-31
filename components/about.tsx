@@ -1,4 +1,3 @@
-"use client";
 import { Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 import { TypographyH1 } from "./ui/typography-h1";

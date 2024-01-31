@@ -7,10 +7,16 @@ import { Toaster } from "@/components/ui/sonner";
 import { poppins } from "./fonts";
 
 export const metadata: Metadata = {
-  title: "Jethro Au",
+  title: { default: "JethroAu.com", template: `%s - JethroAu.com` },
+
   description:
     "Explore the intersection of technology and imagination as we embark on a journey to transform concepts into powerful, user-centric experiences. Let's build the future together – one line of code at a time.",
   keywords: ["jethro", "au", "jethroau", "jethroau.com", "personal", "website"],
+  twitter: {
+    card: "summary_large_image",
+  },
+  openGraph: {},
+  metadataBase: new URL("https://acme.com"),
 };
 
 export default function RootLayout({

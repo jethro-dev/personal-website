@@ -7,10 +7,13 @@ import React from "react";
 import { PortableText } from "@portabletext/react";
 import { ConnectBanner } from "@/components/connect-banner";
 import { getBlogs } from "@/components/latest-blog-posts";
+import { unstable_noStore as noStore, unstable_cache } from "next/cache";
 
 type Props = {
   params: { slug: string };
 };
+
+export const revalidate = 60; // revalidate at most every hour
 
 async function getBlog(slug: string) {
   const query = `*[_type=='blog' &&  slug.current == "${slug}"] {
@@ -19,16 +22,23 @@ async function getBlog(slug: string) {
     content,
     "image":coverImage,
     "description":smallDescription
-      
+
   }[0]`;
-
   const data = await client.fetch(query);
-
   return data;
 }
 
-const BlogPage = async ({ params }: Props) => {
+export async function generateMetadata({ params }: Props) {
   const blog: FullBlog = await getBlog(params.slug);
+  return {
+    title: blog.title,
+  };
+}
+
+const BlogPage = async ({ params }: Props) => {
+  let { slug } = params;
+
+  let blog = await getBlog(slug);
 
   return (
     <main>
@@ -56,10 +66,7 @@ const BlogPage = async ({ params }: Props) => {
           </div>
 
           <div className="my-20 prose dark:prose-invert prose-sm lg:prose-lg prose-li:marker:text-primary">
-            <PortableText
-              value={blog.content}
-              // components={/* optional object of custom components to use */}
-            />
+            <PortableText value={blog.content} />
           </div>
         </div>
       </div>
