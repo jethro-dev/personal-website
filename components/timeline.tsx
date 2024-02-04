@@ -22,8 +22,8 @@ const items: TimelineItem[] = [
     description: "Enhance company websites and provide better user experience.",
     company: "Univeristy of Sussex",
     location: "East Sussex, UK",
-    from: "September 2018",
-    to: "June 2021",
+    from: "Sept 2018",
+    to: "Jun 2021",
     badges: [KEYWORDS.HTML, KEYWORDS.CSS, KEYWORDS.Java, KEYWORDS.JavaScript],
   },
   {
@@ -31,8 +31,8 @@ const items: TimelineItem[] = [
     description: "Enhance company websites and provide better user experience.",
     company: "PR Asia",
     location: "Hong Kong",
-    from: "June 2019",
-    to: "August 2019",
+    from: "Jun 2019",
+    to: "Aug 2019",
     badges: [KEYWORDS.HTML, KEYWORDS.CSS, KEYWORDS.JavaScript],
   },
   {
@@ -41,8 +41,8 @@ const items: TimelineItem[] = [
       "Engineer innovative e-commerce solutions, leveraging advanced web technologies to create seamless and user-centric web applications that optimize online shopping experiences and drive business growth.",
     company: "LATAVIVOS",
     location: "Brighton, UK",
-    from: "December 2021",
-    to: "March 2022",
+    from: "Jun 2021",
+    to: "Mar 2022",
     badges: [
       KEYWORDS.HTML,
       KEYWORDS.CSS,
@@ -56,8 +56,8 @@ const items: TimelineItem[] = [
       "Develop a financial planning and analysis platform for small and medium-size businesses, and their financial advisors.",
     company: "The Business Plan Shop",
     location: "London, UK",
-    from: "March 2022",
-    to: "January 2023",
+    from: "Mar 2022",
+    to: "Jun 2023",
     badges: [
       KEYWORDS.HTML,
       KEYWORDS.CSS,
@@ -68,13 +68,13 @@ const items: TimelineItem[] = [
     ],
   },
   {
-    title: "Fullstack Software Engineer",
+    title: "Software Engineer",
     description:
       "Crafting robust full-stack web applications for startups, driving digital initiatives through innovative solutions that seamlessly blend front-end sophistication with powerful back-end functionalities.",
     company: "LIVR",
     location: "London, UK",
-    from: "July 2023",
-    to: "now",
+    from: "Jun 2023",
+    to: "Present",
     badges: [
       KEYWORDS.HTML,
       KEYWORDS.CSS,

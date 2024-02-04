@@ -2,6 +2,7 @@ import React from "react";
 import { TypographyH1 } from "./ui/typography-h1";
 import { TypographyP } from "./ui/typography-p";
 import { Timeline } from "./timeline";
+import { Button } from "./ui/button";
 
 type Props = {};
 
@@ -25,6 +26,7 @@ export const Experience = (props: Props) => {
           🏅 5+ Years of experience
         </span>
       </div>
+
       <Timeline className="mt-20" />
     </div>
   );

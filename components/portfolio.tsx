@@ -33,6 +33,17 @@ export const Portfolio = (props: Props) => {
               // <div className="bg-red-300 h-60 flex-1">s</div>
             ))}
           </div>
+          <TypographyP className="mt-10 text-center">
+            More projects can be found on my{" "}
+            <Link
+              href="https://github.com/jethro-dev"
+              className="underline"
+              target="_blank"
+            >
+              GitHub
+            </Link>
+            .
+          </TypographyP>
         </div>
       </div>
     </div>

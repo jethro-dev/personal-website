@@ -1,4 +1,4 @@
-import { Github, Linkedin } from "lucide-react";
+import { Download, Eye, Github, Linkedin } from "lucide-react";
 import { Button } from "./ui/button";
 import { TypographyH1 } from "./ui/typography-h1";
 import { TypographyP } from "./ui/typography-p";
@@ -45,19 +45,40 @@ export const About = (props: Props) => {
         <div className="mt-10">
           <div className="mt-2 flex items-center gap-2">
             <Button asChild>
-              <Link href={"https://github.com/jethro-dev"} target="_blank">
-                <Github className="h-4 w-4 mr-2" />
-                GitHub
+              <Link
+                href={"/jethro-cv-2024.pdf"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Eye className="h-4 w-4 mr-2" />
+                Preview CV
               </Link>
             </Button>
 
             <Button asChild>
               <Link
+                href={"/jethro-cv-2024.pdf"}
+                target="_blank"
+                rel="noopener noreferrer"
+                download
+              >
+                <Download className="h-4 w-4 mr-2" />
+                Download CV
+              </Link>
+            </Button>
+
+            <Button size={"icon"} asChild>
+              <Link href={"https://github.com/jethro-dev"} target="_blank">
+                <Github className="h-4 w-4" />
+              </Link>
+            </Button>
+
+            <Button size={"icon"} asChild>
+              <Link
                 href={"https://www.linkedin.com/in/galongau/"}
                 target="_blank"
               >
-                <Linkedin className="h-4 w-4 mr-2" />
-                LinkedIn
+                <Linkedin className="h-4 w-4" />
               </Link>
             </Button>
           </div>
