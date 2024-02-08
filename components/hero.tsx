@@ -11,7 +11,7 @@ export const Hero = (props: Props) => {
     <header className="bg-background relative h-screen min-h-[600px] p-6 flex items-center justify-between transition duration-300">
       <div className="max-w-4xl mx-auto">
         <TypographyH1 className={`${anton.className} tracking-wide`}>
-          Welcome to jethroau.com!
+          Welcome to jethroau.com
         </TypographyH1>
         <TypographyP className="mt-2 w-4/5">
           Explore the intersection of technology and imagination as we embark on
