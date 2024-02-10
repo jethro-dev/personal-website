@@ -49,7 +49,7 @@ export async function getBlogs(): Promise<SimpleBlog[]> {
 
 // Get blog by slug
 export async function getBlog(slug: string): Promise<DetailedBlog> {
-  const query = `*[_type=='blog' &&  slug.current == "${slug}"] {
+  const query = groq`*[_type=='blog' &&  slug.current == "${slug}"] {
     _id,_createdAt,_updatedAt,
     "slug":slug.current,
     title,
@@ -57,7 +57,7 @@ export async function getBlog(slug: string): Promise<DetailedBlog> {
     "coverImage":coverImage.asset,
     description
 
-}[0]]`;
+}[0]`;
   const data = await client.fetch<DetailedBlog>(query);
   return data;
 }

@@ -5,7 +5,7 @@ import { client, urlFor } from "@/lib/sanity";
 import { SimpleBlog } from "@/typings";
 import Image from "next/image";
 import Link from "next/link";
-import { getBlogs } from "@/lib/actions";
+import { getBlogs } from "@/lib/sanity-utils";
 
 type Props = {};
 

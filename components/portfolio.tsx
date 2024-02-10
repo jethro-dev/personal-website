@@ -10,7 +10,7 @@ import { ArrowUpRightFromSquare } from "lucide-react";
 import { client, urlFor } from "@/lib/sanity";
 import { groq } from "next-sanity";
 import { unstable_noStore as noStore } from "next/cache";
-import { getProjects } from "@/lib/actions";
+import { getProjects } from "@/lib/sanity-utils";
 
 type Props = {};
 

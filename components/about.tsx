@@ -6,7 +6,7 @@ import { TypographyH3 } from "./ui/typography-h3";
 import Link from "next/link";
 import { client } from "@/lib/sanity";
 import { groq } from "next-sanity";
-import { getAboutSectionData } from "@/lib/actions";
+import { getAboutSectionData } from "@/lib/sanity-utils";
 
 type Props = {};
 
@@ -28,8 +28,8 @@ export const About = async (props: Props) => {
         <div className="mt-10 border border-border rounded-md p-4 shadow-sm bg-primary/10">
           <h3 className="text-lg font-semibold">TLDR</h3>
           <ol className="mt-2 list-disc space-y-1 pl-6">
-            {tldr.map((ss) => (
-              <li>
+            {tldr.map((ss, i) => (
+              <li key={i}>
                 <TypographyP className="text-foreground">{ss}</TypographyP>
               </li>
             ))}
@@ -79,8 +79,8 @@ export const About = async (props: Props) => {
         </div>
 
         <div className="mt-10 space-y-6">
-          {paragraphs.map((p) => (
-            <div>
+          {paragraphs.map((p, i) => (
+            <div key={i}>
               <TypographyH3 className="mt-4">{p.title}</TypographyH3>
               <TypographyP className="mt-2">{p.text}</TypographyP>
             </div>

@@ -7,7 +7,7 @@ import React from "react";
 import { PortableText } from "@portabletext/react";
 import { ConnectBanner } from "@/components/connect-banner";
 import { unstable_noStore as noStore, unstable_cache } from "next/cache";
-import { getBlog, getBlogs } from "@/lib/actions";
+import { getBlog, getBlogs } from "@/lib/sanity-utils";
 
 type Props = {
   params: { slug: string };
@@ -15,12 +15,12 @@ type Props = {
 
 export const revalidate = 60; // revalidate at most every minutes
 
-export async function generateMetadata({ params }: Props) {
-  const blog: DetailedBlog = await getBlog(params.slug);
-  return {
-    title: blog.title,
-  };
-}
+// export async function generateMetadata({ params }: Props) {
+//   const blog: DetailedBlog = await getBlog(params.slug);
+//   return {
+//     title: blog.title,
+//   };
+// }
 
 const BlogPage = async ({ params }: Props) => {
   let { slug } = params;
@@ -63,6 +63,7 @@ const BlogPage = async ({ params }: Props) => {
 };
 
 export async function generateStaticParams() {
+  console.log("Running GenerateStaticParams");
   const blogs: SimpleBlog[] = await getBlogs();
   return blogs.map((blogs) => ({
     slug: blogs.slug,

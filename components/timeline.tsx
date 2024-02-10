@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import { Experience, KEYWORDS } from "@/typings";
 import React from "react";
 import { Badge } from "./badge";
-import { getExperienceSectionData } from "@/lib/actions";
+import { getExperienceSectionData } from "@/lib/sanity-utils";
 import { format } from "date-fns";
 
 type Props = {
