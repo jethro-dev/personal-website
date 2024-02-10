@@ -5,21 +5,9 @@ import { client, urlFor } from "@/lib/sanity";
 import { SimpleBlog } from "@/typings";
 import Image from "next/image";
 import Link from "next/link";
+import { getBlogs } from "@/lib/actions";
 
 type Props = {};
-
-export async function getBlogs() {
-  const query = `*[_type=='blog'] | order(_createdAt desc) {
-    title,
-    "description":smallDescription,
-    "slug":slug.current,
-    "image":coverImage
-  }`;
-
-  const data = await client.fetch(query);
-
-  return data;
-}
 
 export const LatestBlogPosts = async ({}: Props) => {
   const blogs: SimpleBlog[] = await getBlogs();
@@ -48,12 +36,12 @@ export const LatestBlogPosts = async ({}: Props) => {
   );
 };
 
-const Blog = ({ title, description, slug, image }: SimpleBlog) => (
+const Blog = ({ title, description, slug, coverImage }: SimpleBlog) => (
   <div className="flex-1">
     <Link href={`/blogs/${slug}`}>
       <div className="relative w-full aspect-video rounded-md overflow-hidden">
         <Image
-          src={urlFor(image).url()}
+          src={urlFor(coverImage).url()}
           alt="title"
           fill
           className="object-cover object-center hover:brightness-50 transition"

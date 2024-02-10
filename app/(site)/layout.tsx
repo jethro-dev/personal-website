@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
-import { poppins } from "./fonts";
+import { poppins } from "../fonts";
 
 export const metadata: Metadata = {
   title: { default: "JethroAu.com", template: `%s - JethroAu.com` },

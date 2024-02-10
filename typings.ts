@@ -1,3 +1,5 @@
+import { PortableTextBlock } from "sanity";
+
 export enum KEYWORDS {
   HTML = "HTML",
   CSS = "CSS",
@@ -22,26 +24,57 @@ export enum KEYWORDS {
 }
 
 export type Project = {
-  title: string;
-  link: string;
-  src: string;
-  description: string;
-  keywords: string[];
+  _id: string;
+  _createdAt: Date;
+  name: string;
   slug: string;
-  is_private: boolean;
+  image: string;
+  content: PortableTextBlock[];
+  url?: string;
+  description: string;
+  is_public: boolean;
+  keywords: string[];
 };
 
 export type SimpleBlog = {
+  _id: string;
   title: string;
   description: string;
   slug: string;
-  image: any;
+  coverImage: string;
+  _createdAt: Date;
+  _updatedAt: Date;
 };
 
-export type FullBlog = {
+export type DetailedBlog = {
+  _id: string;
   title: string;
-  content: any;
-  image: any;
+  coverImage: string;
   slug: string;
   description: string;
+  content: PortableTextBlock[];
+  _createdAt: Date;
+  _updatedAt: Date;
+};
+
+export type AboutSectionData = {
+  title: string;
+  tldr: string[];
+  paragraphs: { title: string; text: string }[];
+};
+
+export type ExperienceSectionData = {
+  title: string;
+  description: string;
+  experience: Experience[];
+};
+
+export type Experience = {
+  title: string;
+  description: string;
+  organisation: string;
+  startDate: Date;
+  endDate: Date;
+  is_present: boolean;
+  keywords: string[];
 };

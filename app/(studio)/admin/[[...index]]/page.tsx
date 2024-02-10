@@ -4,7 +4,7 @@ import type { Viewport } from "next";
 import { metadata as studioMetadata } from "next-sanity/studio/metadata";
 import { viewport as studioViewport } from "next-sanity/studio/viewport";
 
-import { Studio } from "./Studio";
+import { Studio } from "./next-studio";
 
 // Set the right `viewport`, `robots` and `referer` meta tags
 export const metadata: Metadata = {

@@ -1,13 +1,13 @@
 import { TypographyH1 } from "@/components/ui/typography-h1";
 import { TypographyP } from "@/components/ui/typography-p";
 import { client, urlFor } from "@/lib/sanity";
-import { FullBlog, SimpleBlog } from "@/typings";
+import { DetailedBlog, SimpleBlog } from "@/typings";
 import Image from "next/image";
 import React from "react";
 import { PortableText } from "@portabletext/react";
 import { ConnectBanner } from "@/components/connect-banner";
-import { getBlogs } from "@/components/latest-blog-posts";
 import { unstable_noStore as noStore, unstable_cache } from "next/cache";
+import { getBlog, getBlogs } from "@/lib/actions";
 
 type Props = {
   params: { slug: string };
@@ -15,21 +15,8 @@ type Props = {
 
 export const revalidate = 60; // revalidate at most every minutes
 
-async function getBlog(slug: string) {
-  const query = `*[_type=='blog' &&  slug.current == "${slug}"] {
-    "slug":slug.current,
-    title,
-    content,
-    "image":coverImage,
-    "description":smallDescription
-
-  }[0]`;
-  const data = await client.fetch(query);
-  return data;
-}
-
 export async function generateMetadata({ params }: Props) {
-  const blog: FullBlog = await getBlog(params.slug);
+  const blog: DetailedBlog = await getBlog(params.slug);
   return {
     title: blog.title,
   };
@@ -56,7 +43,7 @@ const BlogPage = async ({ params }: Props) => {
           <div className="border p-2 rounded-md">
             <div className="relative w-full aspect-video rounded-md overflow-hidden">
               <Image
-                src={urlFor(blog.image).url()}
+                src={urlFor(blog.coverImage).url()}
                 alt={blog.title}
                 fill
                 className="object-center object-cover"

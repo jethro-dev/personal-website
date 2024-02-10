@@ -5,13 +5,18 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import { Badge } from "./badge";
 import { KEYWORDS, Project } from "@/typings";
-import { projects } from "@/lib/data";
 import Link from "next/link";
 import { ArrowUpRightFromSquare } from "lucide-react";
+import { client, urlFor } from "@/lib/sanity";
+import { groq } from "next-sanity";
+import { unstable_noStore as noStore } from "next/cache";
+import { getProjects } from "@/lib/actions";
 
 type Props = {};
 
-export const Portfolio = (props: Props) => {
+export const Portfolio = async (props: Props) => {
+  const projects = await getProjects();
+
   return (
     <div
       id="portfolio"
@@ -28,9 +33,8 @@ export const Portfolio = (props: Props) => {
           </div>
 
           <div className="max-w-7xl mx-auto mt-10 flex flex-col lg:flex-row justify-between gap-4 flex-grow-0 flex-shrink-0">
-            {projects.map((project, i) => (
-              <Project key={i} {...project} />
-              // <div className="bg-red-300 h-60 flex-1">s</div>
+            {projects.map((project) => (
+              <Project key={project._id} {...project} />
             ))}
           </div>
           <TypographyP className="mt-10 text-center">
@@ -51,72 +55,79 @@ export const Portfolio = (props: Props) => {
 };
 
 const Project = ({
-  title,
-  link,
-  src,
-  description,
-  keywords,
+  _id,
+  _createdAt,
   slug,
-  is_private,
+  content,
+  image,
+  url,
+  name,
+  description,
+  is_public,
+  keywords,
 }: Project) => (
   <div className="w-full lg:w-1/3">
     <div className="aspect-video rounded-md relative overflow-hidden">
-      <Link
-        target="_blank"
-        href={is_private ? "/" : link}
-        className={`${
-          is_private ? "pointer-events-none" : "pointer-events-auto"
-        }`}
-      >
+      {url ? (
+        <Link target="_blank" href={`${url}`} className={``}>
+          <Image
+            src={urlFor(image).url()}
+            alt={name}
+            fill={true}
+            className="object-center object-cover"
+          />
+        </Link>
+      ) : (
         <Image
-          src={src}
-          alt={title}
+          src={urlFor(image).url()}
+          alt={name}
           fill={true}
           className="object-center object-cover"
         />
-      </Link>
-      {is_private && (
+      )}
+      {/* {is_private && (
         <Badge
           text={"Private"}
           className="absolute top-2 right-2 bg-background"
         />
-      )}
+      )} */}
     </div>
 
     <Link
       target="_blank"
-      href={is_private ? "/" : link}
+      // href={is_private ? "/" : link}
+      href={"url"}
       className={`${
-        is_private ? "pointer-events-none" : "pointer-events-auto"
+        !is_public ? "pointer-events-none" : "pointer-events-auto"
       }`}
     >
       <h3 className="mt-4 font-semibold hover:underline inline-block">
-        {title}
+        {name}
       </h3>
     </Link>
     <p className="mt-2 text-sm text-muted-foreground">{description}</p>
     <div className="mt-4 w-full flex items-center flex-wrap gap-2">
-      {keywords?.map((keyword, i) => (
-        <Badge key={1} text={keyword} />
+      {keywords?.map((keyword) => (
+        <Badge key={keyword} text={keyword} />
       ))}
     </div>
 
     <Button
-      className={`mt-4 ${is_private ? "cursor-not-allowed" : ""}`}
+      className={`mt-4 ${!is_public ? "cursor-not-allowed" : ""}`}
       asChild
     >
-      {is_private ? (
+      {!is_public ? (
         <Button>
           <span className="mr-2">🔒</span>Locked
         </Button>
       ) : (
-        <Link href={link} target="_blank">
+        <Link href={"url"} target="_blank">
           <ArrowUpRightFromSquare className="w-4 h-4 mr-2" /> Live Site
         </Link>
       )}
     </Button>
 
-    {is_private && (
+    {!is_public && (
       <>
         <TypographyP className="text-xs mt-4">
           This project is not public.

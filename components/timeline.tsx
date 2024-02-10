@@ -1,7 +1,9 @@
 import { cn } from "@/lib/utils";
-import { KEYWORDS } from "@/typings";
+import { Experience, KEYWORDS } from "@/typings";
 import React from "react";
 import { Badge } from "./badge";
+import { getExperienceSectionData } from "@/lib/actions";
+import { format } from "date-fns";
 
 type Props = {
   className?: string;
@@ -89,7 +91,9 @@ const items: TimelineItem[] = [
   },
 ];
 
-export const Timeline = ({ className }: Props) => {
+export const Timeline = async ({ className }: Props) => {
+  const { experience } = await getExperienceSectionData();
+
   return (
     <ol
       className={cn(
@@ -97,7 +101,7 @@ export const Timeline = ({ className }: Props) => {
         "max-w-3xl mx-auto relative border-s border-gray-200 dark:border-gray-700"
       )}
     >
-      {items.map((item, i) => (
+      {experience.map((item, i) => (
         <TimelineItem key={i} {...item} />
       ))}
     </ol>
@@ -106,26 +110,30 @@ export const Timeline = ({ className }: Props) => {
 
 const TimelineItem = ({
   title,
-  company,
   description,
-  location,
-  from,
-  to,
-  badges,
-}: TimelineItem) => (
-  <li className="mb-10 last:mb-0 ms-4">
-    <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
-    <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-      {from} - {to}
-    </time>
-    <h3 className="text-lg font-semibold text-foreground">{title}</h3>
-    <p className="mb-4 text-sm font-normal text-muted-foreground">
-      {description}
-    </p>
-    <div className="flex items-center gap-2 flex-wrap">
-      {badges.map((badge, i) => (
-        <Badge key={i} text={badge} />
-      ))}
-    </div>
-  </li>
-);
+  organisation,
+  startDate,
+  endDate,
+  is_present,
+  keywords,
+}: Experience) => {
+  return (
+    <li className="mb-10 last:mb-0 ms-4">
+      <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
+      <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+        {format(startDate, "MMM yyyy")} - {format(endDate, "MMM yyyy")}
+      </time>
+      <h3 className="text-lg font-semibold text-foreground">
+        {organisation} - <span className="italic font-light">{title}</span>
+      </h3>
+      <p className="mt-4 text-sm font-normal text-muted-foreground">
+        {description}
+      </p>
+      <div className="mt-4 flex items-center gap-2 flex-wrap">
+        {keywords.map((ss, i) => (
+          <Badge key={i} text={ss} />
+        ))}
+      </div>
+    </li>
+  );
+};
