@@ -29,6 +29,7 @@ import { Textarea } from "./ui/textarea";
 import { toast } from "sonner";
 import { useState } from "react";
 import { tree } from "next/dist/build/templates/app-page";
+import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 
 const formSchema = z.object({
   name: z.string().min(2).max(50),
@@ -58,7 +59,12 @@ export function DrawerDemo() {
   return (
     <Drawer shouldScaleBackground open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
-        <Button>Send me a message</Button>
+        <MovingBorderButton
+          // borderRadius="1.75rem"
+          className="bg-white bg-background px-4 py-2 text-sm font-medium h-auto"
+        >
+          Message me
+        </MovingBorderButton>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm p-8">

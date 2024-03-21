@@ -6,6 +6,7 @@ import { TypographyH1 } from "./ui/typography-h1";
 import { TypographyP } from "./ui/typography-p";
 import { anton } from "@/app/fonts";
 import { groq } from "next-sanity";
+import { MacbookScroll } from "./ui/macbook-scroll";
 type Props = {};
 
 export const Hero = async (props: Props) => {

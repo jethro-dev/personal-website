@@ -8,6 +8,18 @@ const nextConfig = {
                 port: '',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'images.unsplash.com',
+                port: '',
+                pathname: '/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'aceternity.com',
+                port: '',
+                pathname: '/images/products/thumbnails/new/**',
+            },
         ],
     },
     logging: {
