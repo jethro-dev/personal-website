@@ -51,8 +51,8 @@ export function ProjectCard({
           />
         </CardItem>
         <div className="mt-4 w-full flex items-center flex-wrap gap-2">
-          {keywords?.map((keyword) => (
-            <CardItem translateZ={40}>
+          {keywords?.map((keyword, i) => (
+            <CardItem key={i} translateZ={40}>
               <Badge key={keyword} text={keyword} />
             </CardItem>
           ))}

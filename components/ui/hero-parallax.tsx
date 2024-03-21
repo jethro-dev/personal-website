@@ -11,50 +11,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { TextGenerateEffect } from "./text-generate-effect";
 
-export const HeroParallax = ({
-  products,
-}: {
-  products: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  }[];
-}) => {
-  const firstRow = products.slice(0, 5);
-  const secondRow = products.slice(5, 10);
-  const thirdRow = products.slice(10, 15);
+export const HeroParallax = ({}: {}) => {
   const ref = React.useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
 
-  const springConfig = { stiffness: 300, damping: 30, bounce: 100 };
-
-  const translateX = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, 1000]),
-    springConfig
-  );
-  const translateXReverse = useSpring(
-    useTransform(scrollYProgress, [0, 1], [0, -1000]),
-    springConfig
-  );
-  const rotateX = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [15, 0]),
-    springConfig
-  );
-  const opacity = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [0.2, 1]),
-    springConfig
-  );
-  const rotateZ = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [20, 0]),
-    springConfig
-  );
-  const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
-    springConfig
-  );
   return (
     <div
       ref={ref}
@@ -109,11 +68,6 @@ export const Header = () => {
       <h1 className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
         Welcome to <br /> jethroau.com
       </h1>
-      {/* <p className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
-        We build beautiful products with the latest technologies and frameworks.
-        We are a team of passionate developers and designers that love to build
-        amazing products.
-      </p> */}
       <TextGenerateEffect
         className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 whitespace-pre-wrap"
         words={`Let's build the future together\n – one line of code at a time.`}
