@@ -34,8 +34,8 @@ const list_item: NavItem[] = [
 export const Navbar = (props: Props) => {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="h-20 fixed top-0 z-50 w-full p-6">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
+    <div className="h-20 fixed top-0 z-50 w-full flex items-center">
+      <div className="container max-w-7xl flex items-center justify-between">
         <div>
           <Link href="/">
             <Image src="/logo.svg" width={60} height={60} alt="Logo" />
