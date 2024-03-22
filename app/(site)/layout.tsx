@@ -5,6 +5,7 @@ import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { poppins } from "../fonts";
+import SmoothScrollingWrapper from "@/components/smooth-scrolling-wrapper";
 
 export const metadata: Metadata = {
   title: { default: "JethroAu.com", template: `%s - JethroAu.com` },
@@ -29,7 +30,9 @@ export default function RootLayout({
       <body className={`${poppins.className} !bg-background`}>
         <ThemeProvider>
           <Navbar />
-          <div vaul-drawer-wrapper="">{children}</div>
+          <SmoothScrollingWrapper>
+            <div vaul-drawer-wrapper="">{children}</div>
+          </SmoothScrollingWrapper>
           <Footer />
           <Toaster />
         </ThemeProvider>

@@ -6,6 +6,7 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Project } from "@/typings";
 import { urlFor } from "@/lib/sanity";
 import { Badge } from "./badge";
+import Link from "next/link";
 
 export function ProjectCard({
   _id,
@@ -58,14 +59,16 @@ export function ProjectCard({
           ))}
         </div>
         <div className="flex justify-between items-center mt-20">
-          <CardItem
-            translateZ={20}
-            // translateX={-40}
-            as="button"
-            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-          >
-            Live site →
-          </CardItem>
+          <Link href="/">
+            <CardItem
+              translateZ={20}
+              // translateX={-40}
+              as="button"
+              className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
+            >
+              Live site →
+            </CardItem>
+          </Link>
           <CardItem
             translateZ={20}
             // translateX={40}

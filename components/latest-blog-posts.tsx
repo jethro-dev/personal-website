@@ -32,7 +32,7 @@ export const LatestBlogPosts = async ({}: Props) => {
             </TypographyP>
           </div>
 
-          <div className="max-w-7xl mx-auto mt-10 flex flex-col lg:flex-row justify-between gap-4">
+          <div className="max-w-7xl mx-auto mt-10 flex flex-col lg:flex-row items-stretch justify-between gap-4">
             {blogs.map((post, i) => (
               // <Blog key={i} {...post} />
               <BlogCard key={i} {...post} />
@@ -43,28 +43,3 @@ export const LatestBlogPosts = async ({}: Props) => {
     </div>
   );
 };
-
-const Blog = ({ title, description, slug, coverImage }: SimpleBlog) => (
-  <div className="flex-1">
-    <Link href={`/blogs/${slug}`}>
-      <div className="relative w-full aspect-video rounded-md overflow-hidden">
-        <Image
-          src={urlFor(coverImage).url()}
-          alt="title"
-          fill
-          className="object-cover object-center hover:brightness-50 transition"
-          priority
-        />
-      </div>
-    </Link>
-
-    <Link href={`/blogs/${slug}`}>
-      <h3 className="mt-4 font-semibold line-clamp-1 hover:underline">
-        {title}
-      </h3>
-    </Link>
-    <p className="mt-2 text-sm text-muted-foreground line-clamp-3">
-      {description}
-    </p>
-  </div>
-);

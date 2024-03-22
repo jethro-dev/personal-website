@@ -14,19 +14,19 @@ type NavItem = {
 
 const list_item: NavItem[] = [
   {
-    title: "about",
+    title: "About",
     href: "#about",
   },
   {
-    title: "experience",
+    title: "Experience",
     href: "#experience",
   },
   {
-    title: "projects",
+    title: "Projects",
     href: "#portfolio",
   },
   {
-    title: "blogs",
+    title: "Blogs",
     href: "#blogs",
   },
 ];
@@ -34,18 +34,21 @@ const list_item: NavItem[] = [
 export const Navbar = (props: Props) => {
   const { theme, setTheme } = useTheme();
   return (
-    <div className="h-20 fixed top-0 z-50 w-full flex items-center">
+    <div className="h-20 fixed top-0 z-50 w-full flex items-center border-b border-neutral-700 backdrop-blur-sm rounded-md">
       <div className="container max-w-7xl flex items-center justify-between">
         <div>
           <Link href="/">
-            <Image src="/logo.svg" width={60} height={60} alt="Logo" />
+            {/* <Image src="/logo.svg" width={60} height={60} alt="Logo" /> */}
+            <span className="font-bold text-3xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+              JethroAu.com
+            </span>
           </Link>
         </div>
         <div className="flex items-center gap-6">
           {list_item.map((item, i) => (
             <NavItem key={i} {...item} />
           ))}
-          <ThemeSwitch />
+          {/* <ThemeSwitch /> */}
         </div>
       </div>
     </div>
@@ -57,7 +60,7 @@ const NavItem = ({ title, href }: NavItem) => (
     onClick={() => {
       document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     }}
-    className="hidden sm:block"
+    className="hidden sm:block font-bold text-lg bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500"
   >
     {title}
   </button>

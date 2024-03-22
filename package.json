@@ -21,6 +21,7 @@
     "@sanity/vision": "^3.28.0",
     "@splinetool/react-spline": "^2.2.6",
     "@splinetool/runtime": "^1.0.75",
+    "@studio-freight/react-lenis": "^0.0.46",
     "@tabler/icons-react": "^2.47.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
