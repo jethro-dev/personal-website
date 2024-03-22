@@ -10,6 +10,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { TextGenerateEffect } from "./text-generate-effect";
+import CubicModel from "../cubic-model";
 
 export const HeroParallax = ({}: {}) => {
   const ref = React.useRef(null);
@@ -17,103 +18,24 @@ export const HeroParallax = ({}: {}) => {
   return (
     <div
       ref={ref}
-      className="py-40 overflow-hidden  antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] dark:bg-black bg-white  dark:bg-grid-small-white/[0.2] bg-grid-small-black/[0.2]"
+      className="h-screen flex items-center dark:bg-black bg-white  overflow-hidden"
     >
-      <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-      <Header />
-      {/* <motion.div
-        style={{
-          rotateX,
-          rotateZ,
-          translateY,
-          opacity,
-        }}
-        className=""
-      >
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20 mb-20">
-          {firstRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row  mb-20 space-x-20 ">
-          {secondRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateXReverse}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-20">
-          {thirdRow.map((product) => (
-            <ProductCard
-              product={product}
-              translate={translateX}
-              key={product.title}
-            />
-          ))}
-        </motion.div>
-      </motion.div> */}
-    </div>
-  );
-};
+      <div className="absolute pointer-events-none inset-0 dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-export const Header = () => {
-  return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full  left-0 top-0">
-      <h1 className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
-        Welcome to <br /> jethroau.com
-      </h1>
-      <TextGenerateEffect
-        className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 whitespace-pre-wrap"
-        words={`Let's build the future together\n – one line of code at a time.`}
-      />
+      <div className="flex items-center container max-w-7xl h-full py-20">
+        <div className="basis-1/2">
+          <h1 className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+            Welcome to <br /> jethroau.com
+          </h1>
+          <TextGenerateEffect
+            className="max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 whitespace-pre-wrap"
+            words={`Let's build the future together\n – one line of code at a time.`}
+          />
+        </div>
+        <div className="basis-1/2 w-full h-full object-center">
+          <CubicModel />
+        </div>
+      </div>
     </div>
-  );
-};
-
-export const ProductCard = ({
-  product,
-  translate,
-}: {
-  product: {
-    title: string;
-    link: string;
-    thumbnail: string;
-  };
-  translate: MotionValue<number>;
-}) => {
-  return (
-    <motion.div
-      style={{
-        x: translate,
-      }}
-      whileHover={{
-        y: -20,
-      }}
-      key={product.title}
-      className="group/product h-96 w-[30rem] relative flex-shrink-0"
-    >
-      <Link
-        href={product.link}
-        className="block group-hover/product:shadow-2xl "
-      >
-        <Image
-          src={product.thumbnail}
-          height="600"
-          width="600"
-          className="object-cover object-left-top absolute h-full w-full inset-0"
-          alt={product.title}
-        />
-      </Link>
-      <div className="absolute inset-0 h-full w-full opacity-0 group-hover/product:opacity-80 bg-black pointer-events-none"></div>
-      <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/product:opacity-100 text-white">
-        {product.title}
-      </h2>
-    </motion.div>
   );
 };

@@ -19,6 +19,8 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.28.0",
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^1.0.75",
     "@tabler/icons-react": "^2.47.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
