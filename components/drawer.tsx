@@ -30,8 +30,9 @@ import { toast } from "sonner";
 import { useState } from "react";
 import { tree } from "next/dist/build/templates/app-page";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
+import { send } from "@/action/send-email";
 
-const formSchema = z.object({
+export const formSchema = z.object({
   name: z.string().min(2).max(50),
   email: z.string().email(),
   message: z.string().min(2).max(200).optional(),
@@ -47,12 +48,42 @@ export function DrawerDemo() {
       email: "",
     },
   });
+
+  async function sendEmail(values: z.infer<typeof formSchema>) {
+    const response = await fetch("/api/send", {
+      method: "POST", // Specify the method
+      headers: {
+        // Headers can include things like content type. Adjust as needed.
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values), // Convert the data to JSON string
+    });
+
+    if (!response.ok) {
+      // Handle response errors
+      throw new Error("Failed to send email");
+    }
+
+    return response.json(); // Parse JSON response
+  }
+
   // 2. Define a submit handler.
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
-    console.log(values);
-    toast.success("Message sent!");
+    // toast.promise(send(values), {
+    //   loading: "Loading...",
+    //   success: (data) => {
+    //     console.log(data);
+    //     return `Message sent!`;
+    //   },
+    //   error: (data) => {
+    //     return data.message;
+    //   },
+    // });
+    // await sendEmail(values);
+    alert("Hello");
+
     form.reset();
     setOpen(false);
   }
@@ -63,7 +94,7 @@ export function DrawerDemo() {
           // borderRadius="1.75rem"
           className="bg-white bg-background px-4 py-2 text-sm font-medium h-auto"
         >
-          Message me
+          Message meadasd
         </MovingBorderButton>
       </DrawerTrigger>
       <DrawerContent>
