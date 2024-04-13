@@ -22,7 +22,7 @@ export const HeroParallax = ({}: {}) => {
     >
       <div className="absolute pointer-events-none inset-0 dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
 
-      <div className="flex items-center container max-w-7xl h-full pt-20 flex-col md:flex-row gap-10">
+      <div className="flex items-center container max-w-7xl h-full flex-col md:flex-row gap-10">
         <div className="order-2 md:order-1 basis-1/2 h-1/2 md:h-full flex justify-center flex-col">
           <h1 className="text-4xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
             Welcome to <br /> jethroau.com

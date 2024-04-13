@@ -3,7 +3,6 @@
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -31,6 +30,7 @@ import { useState } from "react";
 import { tree } from "next/dist/build/templates/app-page";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 import { send } from "@/action/send-email";
+import { Loader2 } from "lucide-react";
 
 export const formSchema = z.object({
   name: z.string().min(2).max(50),
@@ -40,6 +40,7 @@ export const formSchema = z.object({
 
 export function DrawerDemo() {
   const [open, setOpen] = useState(false);
+  const [loading, setLoading] = useState(false);
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -49,44 +50,32 @@ export function DrawerDemo() {
     },
   });
 
-  async function sendEmail(values: z.infer<typeof formSchema>) {
-    const response = await fetch("/api/send", {
-      method: "POST", // Specify the method
-      headers: {
-        // Headers can include things like content type. Adjust as needed.
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(values), // Convert the data to JSON string
-    });
-
-    if (!response.ok) {
-      // Handle response errors
-      throw new Error("Failed to send email");
-    }
-
-    return response.json(); // Parse JSON response
-  }
-
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof formSchema>) {
-    // Do something with the form values.
-    // ✅ This will be type-safe and validated.
-    // toast.promise(send(values), {
-    //   loading: "Loading...",
-    //   success: (data) => {
-    //     console.log(data);
-    //     return `Message sent!`;
-    //   },
-    //   error: (data) => {
-    //     return data.message;
-    //   },
-    // });
-    // await sendEmail(values);
-    alert("Hello");
-
-    form.reset();
-    setOpen(false);
+    try {
+      setLoading(true);
+      // Try to send the form data
+      const res = await send(values);
+      // If send is successful, reset the form and provide user feedback
+      form.reset();
+      setLoading(false);
+      setOpen(false);
+      toast.success("Message received. Thank you!");
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        console.error("Failed to send message:", error);
+        toast.error(`Error: ${error.message}`);
+      } else {
+        // Handle the case where the error is not an instance of Error
+        console.error("An unexpected error occurred:", error);
+        toast.error("An unexpected error occurred. Please try again.");
+      }
+    } finally {
+      // Finally block will run regardless of try/catch outcome
+      setLoading(false); // Make sure to stop the loading indicator
+    }
   }
+
   return (
     <Drawer shouldScaleBackground open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
@@ -94,7 +83,7 @@ export function DrawerDemo() {
           // borderRadius="1.75rem"
           className="bg-white bg-background px-4 py-2 text-sm font-medium h-auto"
         >
-          Message meadasd
+          Message me
         </MovingBorderButton>
       </DrawerTrigger>
       <DrawerContent>
@@ -118,7 +107,11 @@ export function DrawerDemo() {
                     <FormItem>
                       <FormLabel className="font-light text-xs">Name</FormLabel>
                       <FormControl>
-                        <Input {...field} className="font-light text-xs" />
+                        <Input
+                          {...field}
+                          className="font-light text-xs"
+                          onPointerDown={(e) => e.stopPropagation()}
+                        />
                       </FormControl>
                       <FormMessage className="font-light text-xs" />
                     </FormItem>
@@ -133,7 +126,11 @@ export function DrawerDemo() {
                         Email
                       </FormLabel>
                       <FormControl>
-                        <Input {...field} className="font-light text-xs" />
+                        <Input
+                          {...field}
+                          className="font-light text-xs"
+                          onPointerDown={(e) => e.stopPropagation()}
+                        />
                       </FormControl>
 
                       <FormMessage className="font-light text-xs" />
@@ -153,6 +150,7 @@ export function DrawerDemo() {
                           rows={5}
                           placeholder="I really like your work. Let's connect!"
                           className="resize-none font-light text-xs"
+                          onPointerDown={(e) => e.stopPropagation()}
                           {...field}
                         />
                       </FormControl>
@@ -161,7 +159,13 @@ export function DrawerDemo() {
                   )}
                 />
                 <DrawerFooter className="px-0">
-                  <Button>Submit</Button>
+                  <Button disabled={loading}>
+                    {loading ? (
+                      <Loader2 className="h-4 w-4 animate-spin" />
+                    ) : (
+                      "Submit"
+                    )}
+                  </Button>
 
                   <DrawerClose asChild>
                     <Button variant="outline">Cancel</Button>
