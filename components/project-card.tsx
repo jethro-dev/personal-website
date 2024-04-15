@@ -59,7 +59,7 @@ export function ProjectCard({
           ))}
         </div>
         <div className="flex justify-between items-center mt-20">
-          <Link href="/">
+          <Link href={`${url}`} target="_blank">
             <CardItem
               translateZ={20}
               // translateX={-40}
