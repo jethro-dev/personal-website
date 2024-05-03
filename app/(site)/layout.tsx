@@ -36,8 +36,8 @@ export default function RootLayout({
           </SmoothScrollingWrapper>
           <Footer />
           <Toaster />
-          <Analytics />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
