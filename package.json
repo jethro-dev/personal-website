@@ -23,6 +23,7 @@
     "@splinetool/runtime": "^1.0.75",
     "@studio-freight/react-lenis": "^0.0.46",
     "@tabler/icons-react": "^2.47.0",
+    "@vercel/analytics": "^1.2.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "date-fns": "^3.3.1",

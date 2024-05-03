@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { poppins } from "../fonts";
 import SmoothScrollingWrapper from "@/components/smooth-scrolling-wrapper";
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: { default: "JethroAu.com", template: `%s - JethroAu.com` },
@@ -35,6 +36,7 @@ export default function RootLayout({
           </SmoothScrollingWrapper>
           <Footer />
           <Toaster />
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
