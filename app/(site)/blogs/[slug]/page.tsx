@@ -119,7 +119,7 @@ const BlogPage = async ({ params }: Props) => {
             Related readings
           </p>
           {relatedBlogs.map((blog) => (
-            <div className="mt-6">
+            <div className="mt-6" key={blog._id}>
               <p className="text-md font-medium">{blog.title}</p>
               <div className="mt-2 flex items-center gap-2">
                 <Image
