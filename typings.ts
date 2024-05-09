@@ -52,6 +52,8 @@ export type DetailedBlog = {
   coverImage: string;
   slug: string;
   description: string;
+  category: string;
+  tags: string[];
   content: PortableTextBlock[];
   _createdAt: Date;
   _updatedAt: Date;

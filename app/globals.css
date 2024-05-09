@@ -82,6 +82,16 @@
   }
 }
 
+@layer utilities {
+  .test {
+    background: linear-gradient(to top, #000 0, hsla(0, 0%, 100%, 0) 100%),
+      linear-gradient(
+        90deg,
+        rgb(var(--gradient-from, 85 85 85) / 0.2) 0,
+        rgb(var(--gradient-to, 85 85 85) / 0.2) 100%
+      );
+  }
+}
 /* WebKit-based browsers
 ::-webkit-scrollbar {
   width: 12px;

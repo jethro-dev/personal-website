@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getBlogs } from "@/lib/sanity-utils";
 import { BlogCard } from "./blog-card";
+import { Button } from "./ui/button";
 
 type Props = {};
 
@@ -32,8 +33,11 @@ export const LatestBlogPosts = async ({}: Props) => {
             </TypographyP>
           </div>
 
-          <div className="max-w-7xl mx-auto mt-10 flex flex-col lg:flex-row items-stretch justify-between gap-4">
-            {blogs.map((post, i) => (
+          <div className="relative max-w-7xl mx-auto mt-10 flex flex-col lg:flex-row items-stretch justify-between gap-4">
+            <Button className="absolute bottom-[100%] mb-10 right-0">
+              Read more blogs
+            </Button>
+            {blogs.slice(0, 3).map((post, i) => (
               // <Blog key={i} {...post} />
               <BlogCard key={i} {...post} />
             ))}

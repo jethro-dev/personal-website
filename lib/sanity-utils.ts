@@ -55,10 +55,29 @@ export async function getBlog(slug: string): Promise<DetailedBlog> {
     title,
     content,
     "coverImage":coverImage.asset,
-    description
+    description,
+    category,
+    tags
 
 }[0]`;
   const data = await client.fetch<DetailedBlog>(query);
+  return data;
+}
+
+// Get Related Blogs by Tags
+export async function getRelatedBlogs(tags: string[]): Promise<DetailedBlog[]> {
+  const query = groq`*[_type=='blog'] {
+    _id,_createdAt,_updatedAt,
+    "slug":slug.current,
+    title,
+    content,
+    "coverImage":coverImage.asset,
+    description,
+    category,
+    tags
+
+}`;
+  const data = await client.fetch<DetailedBlog[]>(query);
   return data;
 }
 

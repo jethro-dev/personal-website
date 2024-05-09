@@ -35,7 +35,34 @@ export default {
         {
           type: "block",
         },
+        {
+          type: "code",
+          options: {
+            languageAlternatives: [
+              { title: "JavaScript", value: "javascript" },
+              { title: "Python", value: "python" },
+              { title: "C++", value: "cpp" },
+              // add other languages here
+            ],
+          },
+        },
       ],
+    },
+    {
+      name: "category",
+      type: "string",
+      title: "Category",
+      description: "Category under which the blog post falls",
+    },
+    {
+      name: "tags",
+      type: "array",
+      title: "Tags",
+      of: [{ type: "string" }],
+      options: {
+        layout: "tags",
+      },
+      description: "Tags for internal use to calculate related readings",
     },
   ],
 };

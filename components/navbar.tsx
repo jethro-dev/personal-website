@@ -10,24 +10,29 @@ type Props = {};
 type NavItem = {
   title: string;
   href: string;
+  smooth: boolean;
 };
 
 const list_item: NavItem[] = [
   {
     title: "About",
     href: "#about",
+    smooth: true,
   },
   {
     title: "Experience",
     href: "#experience",
+    smooth: true,
   },
   {
     title: "Projects",
     href: "#portfolio",
+    smooth: true,
   },
   {
     title: "Blogs",
-    href: "#blogs",
+    href: "/blogs",
+    smooth: false,
   },
 ];
 
@@ -55,13 +60,26 @@ export const Navbar = (props: Props) => {
   );
 };
 
-const NavItem = ({ title, href }: NavItem) => (
-  <button
-    onClick={() => {
-      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-    }}
-    className="hidden sm:block font-bold text-lg bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500"
-  >
-    {title}
-  </button>
-);
+const NavItem = ({ title, href, smooth }: NavItem) => {
+  if (smooth) {
+    return (
+      <button
+        onClick={() => {
+          document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+        }}
+        className="hidden sm:block font-bold text-lg bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500"
+      >
+        {title}
+      </button>
+    );
+  } else {
+    return (
+      <Link
+        href={href}
+        className="hidden sm:block font-bold text-lg bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500"
+      >
+        {title}
+      </Link>
+    );
+  }
+};
