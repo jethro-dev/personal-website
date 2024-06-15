@@ -34,8 +34,8 @@ export const LatestBlogPosts = async ({}: Props) => {
           </div>
 
           <div className="relative max-w-7xl mx-auto mt-10 flex flex-col lg:flex-row items-stretch justify-between gap-4">
-            <Button className="absolute bottom-[100%] mb-10 right-0">
-              Read more blogs
+            <Button className="absolute bottom-[100%] mb-10 right-0" asChild>
+              <Link href={"/blogs"}>Read more blogs</Link>
             </Button>
             {blogs.slice(0, 3).map((post, i) => (
               // <Blog key={i} {...post} />
