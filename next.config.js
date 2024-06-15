@@ -20,6 +20,18 @@ const nextConfig = {
                 port: '',
                 pathname: '/images/products/thumbnails/new/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'upload.wikimedia.org',
+                port: '',
+                pathname: '/wikipedia/commons/thumb/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'dbdb.io',
+                port: '',
+                pathname: '/media/logos/**',
+            },
         ],
     },
     logging: {

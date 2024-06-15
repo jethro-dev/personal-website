@@ -20,6 +20,11 @@ const list_item: NavItem[] = [
     smooth: true,
   },
   {
+    title: "Skills",
+    href: "#skills",
+    smooth: true,
+  },
+  {
     title: "Experience",
     href: "#experience",
     smooth: true,
