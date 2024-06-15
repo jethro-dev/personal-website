@@ -32,6 +32,12 @@ const nextConfig = {
                 port: '',
                 pathname: '/media/logos/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'via.placeholder.com',
+                port: '',
+                pathname: '/**',
+            },
         ],
     },
     logging: {
