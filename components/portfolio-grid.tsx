@@ -43,8 +43,7 @@ const projects = [
     github:
       "https://github.com/jethro-dev/dvsa-driving-test-booking-automation",
     demo: "",
-    image:
-      "https://via.placeholder.com/500x300/000000/FFF?text=DVSA+Driving+Test+Booking+Automation",
+    image: "/dvsa-cover.png",
     size: "col-span-1 md:col-span-2 lg:col-span-1 row-span-1", // Standard size project
   },
   {
@@ -64,7 +63,7 @@ const projects = [
     link: "#",
     github: "https://github.com/jethro-dev/LittleLemon",
     demo: "",
-    image: "https://via.placeholder.com/500x300/000000/FFF?text=LittleLemonAPI",
+    image: "/littlelemon-cover.png",
     size: "col-span-1 md:col-span-2 row-span-1", // Horizontal project spanning two columns
   },
   {
