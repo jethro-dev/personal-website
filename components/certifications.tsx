@@ -79,8 +79,8 @@ export const Certifications = (props: Props) => {
         </p>
         <h3 className="mt-10 text-lg font-medium">Courses</h3>
         <ul className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-4">
-          {courses.map((course) => (
-            <li>
+          {courses.map((course, index) => (
+            <li key={index}>
               <h4 className="text-base font-medium">{course.title}</h4>
               <p className="mt-2 text-sm font-light text-muted-foreground">
                 {course.description}

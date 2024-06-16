@@ -231,7 +231,7 @@ const Box = ({
         </span>
       </div>
       {list.map((item) => (
-        <Item {...item} />
+        <Item key={item.name} {...item} />
       ))}
     </div>
   );
