@@ -1,8 +1,8 @@
-import React from "react";
-import { TypographyH1 } from "./ui/typography-h1";
-import { TypographyP } from "./ui/typography-p";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
+import React from 'react';
+import { TypographyH1 } from './ui/typography-h1';
+import { TypographyP } from './ui/typography-p';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 type Props = {};
 type Item = {
@@ -10,132 +10,172 @@ type Item = {
   logo: string;
 };
 
-const languages = [
-  {
-    name: "JavaScript",
-    logo: "https://www.vectorlogo.zone/logos/javascript/javascript-icon.svg",
-  },
-  {
-    name: "TypeScript",
-    logo: "https://www.vectorlogo.zone/logos/typescriptlang/typescriptlang-icon.svg",
-  },
-  {
-    name: "Python",
-    logo: "https://www.vectorlogo.zone/logos/python/python-icon.svg",
-  },
-  {
-    name: "Java",
-    logo: "https://www.vectorlogo.zone/logos/java/java-icon.svg",
-  },
-  {
-    name: "C++",
-    logo: "https://www.vectorlogo.zone/logos/isocpp/isocpp-icon.svg",
-  },
-];
-
 const frontends = [
   {
-    name: "HTML",
-    logo: "https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg",
+    name: 'JavaScript',
+    logo: '/javascript.svg',
   },
   {
-    name: "CSS",
-    logo: "https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg",
+    name: 'TypeScript',
+    logo: '/typescript.svg',
   },
   {
-    name: "React",
-    logo: "https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg",
+    name: 'React',
+    logo: 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg',
   },
   {
-    name: "Next.js",
-    logo: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
+    name: 'Next.js',
+    logo: '/nextjs-icon-dark-background.svg',
   },
   {
-    name: "TailwindCSS",
-    logo: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+    name: 'Remix',
+    logo: '/remix-letter-glowing.svg',
   },
   {
-    name: "ShadcnUI",
-    logo: "https://www.vectorlogo.zone/logos/github/github-icon.svg", // Placeholder, replace with actual ShadcnUI logo if available
+    name: 'TailwindCSS',
+    logo: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg',
+  },
+  {
+    name: 'CSS/SASS',
+    logo: 'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg',
   },
 ];
 
 const backends = [
   {
-    name: "Django",
-    logo: "https://www.vectorlogo.zone/logos/djangoproject/djangoproject-icon.svg",
+    name: 'Node.js',
+    logo: '/node-js.png',
   },
   {
-    name: "Spring Boot",
-    logo: "https://www.vectorlogo.zone/logos/springio/springio-icon.svg",
+    name: 'Express.js',
+    logo: '/icons8-express-js.svg',
   },
   {
-    name: "Express.js",
-    logo: "https://www.vectorlogo.zone/logos/expressjs/expressjs-icon.svg",
+    name: 'Python',
+    logo: '/python.svg',
+  },
+  {
+    name: 'Django',
+    logo: '/django-icon-svgrepo-com.svg',
+  },
+  {
+    name: 'Java',
+    logo: '/icons8-java.svg',
+  },
+  {
+    name: 'REST APIs',
+    logo: '/rest-api.png',
+  },
+  {
+    name: 'GraphQL',
+    logo: '/graphql-logo.svg',
+  },
+];
+const orm = [
+  {
+    name: 'Prisma',
+    logo: '/icons8-express-js.svg',
+  },
+  {
+    name: 'Drizzle ORM',
+    logo: '/node-js.svg',
   },
 ];
 
 const databases = [
   {
-    name: "MySQL",
-    logo: "https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg",
+    name: 'MySQL',
+    logo: '/icons8-my-sql.svg',
   },
   {
-    name: "PostgreSQL",
-    logo: "https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg",
+    name: 'PostgreSQL',
+    logo: 'https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg',
   },
   {
-    name: "SQLite",
-    logo: "https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg",
-  },
-  {
-    name: "H2 Database",
-    logo: "https://dbdb.io/media/logos/h2-logo.svg",
-  },
-  {
-    name: "MongoDB",
-    logo: "https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg",
+    name: 'MongoDB',
+    logo: 'https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg',
   },
 ];
 
 const paas = [
   {
-    name: "Vercel",
-    logo: "https://www.vectorlogo.zone/logos/vercel/vercel-icon.svg",
+    name: 'Vercel',
+    logo: '/vercel-icon-light.svg',
   },
   {
-    name: "Heroku",
-    logo: "https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg",
+    name: 'Netlify',
+    logo: '/netlify-logo.svg',
   },
   {
-    name: "Railway",
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Railway_Logo.svg/600px-Railway_Logo.svg.png?20231126064002",
+    name: 'Heroku',
+    logo: 'https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg',
   },
 ];
-
 const baas = [
   {
-    name: "Firebase",
-    logo: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
+    name: 'Supabase',
+    logo: '/vercel-icon-light.svg',
   },
   {
-    name: "Supabase",
-    logo: "https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg",
-  },
-  {
-    name: "AWS Amplify",
-    logo: "https://raw.githubusercontent.com/gilbarbara/logos/29e8719bf78915c7a82a26a6c203f53c4cb8fff2/logos/aws-amplify.svg",
+    name: 'Firebase',
+    logo: '/netlify-logo.svg',
   },
 ];
 
-const iaas = [
+const devOps = [
   {
-    name: "AWS",
-    logo: "https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-icon.svg",
+    name: 'CI/CD',
+    logo: '/ci-cd-icon.svg',
   },
   {
-    name: "GCP",
-    logo: "https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg",
+    name: 'Docker',
+    logo: '/docker-mark-blue.svg',
+  },
+  {
+    name: 'AWS',
+    logo: '/icons8-aws.svg',
+  },
+  {
+    name: 'Azure',
+    logo: '/icons8-azure.svg',
+  },
+  {
+    name: 'Vercel',
+    logo: '/vercel-icon-light.svg',
+  },
+  {
+    name: 'Netlify',
+    logo: '/netlify-logo.svg',
+  },
+];
+
+const tools = [
+  {
+    name: 'Git',
+    logo: '/icons8-aws.svg',
+  },
+  {
+    name: 'Agile/Scrum',
+    logo: '/icons8-azure.svg',
+  },
+  {
+    name: 'Jest',
+    logo: '/icons8-azure.svg',
+  },
+  {
+    name: 'Webpack',
+    logo: '/icons8-azure.svg',
+  },
+  {
+    name: 'Figma',
+    logo: '/icons8-azure.svg',
+  },
+];
+
+const extra = [
+  {
+    name: 'C++',
+    logo: '/icons8-c-plus-plus.svg',
   },
 ];
 
@@ -154,95 +194,136 @@ const SkillsSection = (props: Props) => {
         </TypographyP>
       </div>
 
-      <div className="mt-20 container max-w-7xl w-full h-auto md:h-[600px] grid grid-cols-1 sm:grid-cols-3 md:grid-cols-12 md:grid-rows-6 gap-4">
-        <div className="md:col-span-7 md:row-span-3 md:col-start-1 md:row-start-1 order-1 md:order-none">
-          <Box
-            title={"Languages"}
-            list={languages}
-            extraStyles="bg-blue-900/[.05] hover:bg-blue-900/[.2] border-blue-900/20 hover:border-blue-700/20 grid grid-rows-1 grid-cols-3 md:grid-rows-2 md:grid-cols-5"
-          />
+      <div className="mt-20 container max-w-7xl flex gap-10">
+        {/* left */}
+        <div className="flex-1 flex flex-col gap-4">
+          <div className="border border-border rounded-lg p-4">
+            <h2 className="text-sm text-muted-foreground mb-2">Frontend</h2>
+            <div className="grid grid-cols-4 gap-y-4">
+              {frontends.map((item) => (
+                <div className="flex flex-col items-center justify-between size-20">
+                  <Image
+                    src={item.logo}
+                    alt={item.name}
+                    width={50}
+                    height={50}
+                  />
+                  <p className="text-sm font-light">{item.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="border border-border rounded-lg p-4">
+            <h2 className="text-sm text-muted-foreground mb-2">Backend</h2>
+            <div className="grid grid-cols-4 gap-y-4">
+              {backends.map((item) => (
+                <div className="flex flex-col items-center justify-between size-20">
+                  <Image
+                    src={item.logo}
+                    alt={item.name}
+                    width={50}
+                    height={50}
+                  />
+                  <p className="text-sm font-light">{item.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="border border-border rounded-lg p-4">
+            <h2 className="text-sm text-muted-foreground mb-2">Databases</h2>
+            <div className="grid grid-cols-4 gap-y-4">
+              {databases.map((item) => (
+                <div className="flex flex-col items-center justify-between size-20">
+                  <Image
+                    src={item.logo}
+                    alt={item.name}
+                    width={50}
+                    height={50}
+                  />
+                  <p className="text-sm font-light">{item.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="border border-border rounded-lg p-4">
+            <h2 className="text-sm text-muted-foreground mb-2">Dev Ops</h2>
+            <div className="grid grid-cols-4 gap-y-4">
+              {devOps.map((item) => (
+                <div className="flex flex-col items-center justify-between size-20">
+                  <Image
+                    src={item.logo}
+                    alt={item.name}
+                    width={50}
+                    height={50}
+                  />
+                  <p className="text-sm font-light">{item.name}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
-        <div className="md:col-span-5 md:row-span-2 md:col-start-8 md:row-start-1 order-2 md:order-none">
-          <Box
-            title={"Front-End"}
-            list={frontends}
-            extraStyles="bg-green-900/10 hover:bg-green-900/[.2] border-green-900/20 hover:border-green-700/20 grid grid-rows-1 grid-cols-3 md:grid-rows-2 md:grid-cols-4"
-          />
-        </div>
-        <div className="md:col-span-5 md:row-span-2 md:col-start-8 md:row-start-3 order-3 md:order-none">
-          <Box
-            title={"Back-End"}
-            list={backends}
-            extraStyles="bg-green-900/[.05] hover:bg-green-900/[.2] border-green-900/20 hover:border-green-700/20 grid grid-rows-1 grid-cols-3 md:grid-rows-2 md:grid-cols-4"
-          />
-        </div>
-        <div className="md:col-span-5 md:row-span-2 md:col-start-8 md:row-start-5 order-4 md:order-none">
-          <Box
-            title={"Databases"}
-            list={databases}
-            extraStyles="bg-green-900/[.05] hover:bg-green-900/[.2] border-green-900/20 hover:border-green-700/20 grid grid-rows-1 grid-cols-3 md:grid-rows-2 md:grid-cols-4"
-          />
-        </div>
-        <div className="md:col-span-2 md:row-span-3 md:col-start-6 md:row-start-4 order-5 md:order-none">
-          <Box
-            title={"IaaS"}
-            list={iaas}
-            extraStyles="bg-red-900/[.05] hover:bg-red-900/[.2] border-red-900/20 hover:border-red-700/20 grid grid-rows-1 grid-cols-3 md:grid-rows-3 md:grid-cols-1"
-          />
-        </div>
-        <div className="md:col-span-2 md:row-span-3 md:col-start-4 md:row-start-4 order-6 md:order-none">
-          <Box
-            title={"PaaS"}
-            list={paas}
-            extraStyles="bg-red-900/[.05] hover:bg-red-900/[.2] border-red-900/20 hover:border-red-700/20 grid grid-rows-1 grid-cols-3 md:grid-rows-3 md:grid-cols-1"
-          />
-        </div>
-        <div className="md:col-span-2 md:row-span-3 md:col-start-2 md:row-start-4 order-7 md:order-none">
-          <Box
-            title={"BaaS"}
-            list={baas}
-            extraStyles="bg-red-900/[.05] hover:bg-red-900/[.2] border-red-900/20 hover:border-red-700/20 grid grid-rows-1 grid-cols-3 md:grid-rows-3 md:grid-cols-1"
-          />
+        {/* right */}
+        <div className="flex-1 space-y-10">
+          <h2 className="text-3xl font-semibold">My Tech Stack</h2>
+          <p className="font-light text-base text-muted-foreground">
+            I pride myself on being a full-stack developer with expertise in
+            both <span className="text-white font-medium">frontend</span> and{' '}
+            <span className="text-white font-medium">backend</span>{' '}
+            technologies, enabling me to create efficient and scalable web
+            applications from start to finish. Here’s a breakdown of the tools I
+            use:
+          </p>
+          <p className="font-light text-base text-muted-foreground">
+            <span className="text-white font-medium">Frontend</span>: I build
+            visually appealing, responsive, and highly interactive user
+            interfaces using modern technologies like{' '}
+            <span className="text-white font-medium">React</span>,{' '}
+            <span className="text-white font-medium">Next.js</span>, and{' '}
+            <span className="text-white font-medium">TailwindCSS</span>. My goal
+            is to provide users with a seamless and engaging experience,
+            optimized for performance across all devices.
+          </p>
+          <p className="font-light text-base text-muted-foreground">
+            <span className="text-white font-medium">Backend</span>: For backend
+            development, I leverage the power of{' '}
+            <span className="text-white font-medium">Node.js</span>,{' '}
+            <span className="text-white font-medium">Express.js</span>, and{' '}
+            <span className="text-white font-medium">Python</span> to build
+            robust, scalable APIs and services. I also use{' '}
+            <span className="text-white font-medium">GraphQL</span> to optimize
+            data fetching, providing clients with a more flexible and efficient
+            way to interact with backend data.
+          </p>
+          <p className="font-light text-base text-muted-foreground">
+            <span className="text-white font-medium">Databases</span>: Ensuring
+            data integrity and performance is crucial. I work with databases
+            such as <span className="text-white font-medium">MySQL</span>,{' '}
+            <span className="text-white font-medium">PostgreSQL</span>, and{' '}
+            <span className="text-white font-medium">MongoDB</span> to store and
+            manage data effectively, allowing for fast retrieval and secure
+            storage. My experience with these technologies enables me to design
+            efficient data structures and ensure the smooth functioning of
+            backend services.
+          </p>
+          <p className="font-light text-base text-muted-foreground">
+            <span className="text-white font-medium">DevOps</span>: To ensure
+            smooth and efficient deployment processes, I use{' '}
+            <span className="text-white font-medium">CI/CD</span> pipelines that
+            automate testing and deployment, allowing for seamless code
+            integration. I work with tools like{' '}
+            <span className="text-white font-medium">Docker</span> for
+            containerization, ensuring applications run consistently across
+            different environments. My experience with cloud platforms such as{' '}
+            <span className="text-white font-medium">AWS</span> and{' '}
+            <span className="text-white font-medium">Azure</span> allows me to
+            build scalable, reliable infrastructure. Additionally, I leverage{' '}
+            <span className="text-white font-medium">Vercel</span> and{' '}
+            <span className="text-white font-medium">Netlify</span> for fast,
+            automated deployments, making it easy to manage, deploy, and monitor
+            web applications with minimal friction.
+          </p>
         </div>
       </div>
-    </div>
-  );
-};
-
-const Box = ({
-  title,
-  list,
-  extraStyles,
-}: {
-  title: string;
-  list: Item[];
-  extraStyles?: string;
-}) => {
-  return (
-    <div
-      className={cn(
-        "relative h-full grid grid-cols-5 gap-x-4 gap-y-10 border p-8 pt-12 rounded-lg  transition duration-300 cursor-pointer group",
-        extraStyles ? extraStyles : ""
-      )}
-    >
-      <div className="absolute top-0 pt-1 left-2.5">
-        <span className="text-xs text-neutral-300 font-light group-hover:text-white transition duration-300">
-          {title}
-        </span>
-      </div>
-      {list.map((item) => (
-        <Item key={item.name} {...item} />
-      ))}
-    </div>
-  );
-};
-
-const Item = ({ logo, name }: Item) => {
-  return (
-    <div className="text-center flex flex-col items-center justify-center">
-      {/* logo */}
-      <Image src={logo} alt={name} height={30} width={30} />
-      <h6 className="mt-2 text-xs font-light">{name}</h6>
     </div>
   );
 };

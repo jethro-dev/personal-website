@@ -1,24 +1,22 @@
-import React from "react";
-import { TypographyH1 } from "./ui/typography-h1";
-import { TypographyP } from "./ui/typography-p";
-import Image from "next/image";
-import { Button } from "./ui/button";
-import { Badge } from "./badge";
-import { KEYWORDS, Project } from "@/typings";
-import Link from "next/link";
-import { ArrowUpRightFromSquare } from "lucide-react";
-import { client, urlFor } from "@/lib/sanity";
-import { groq } from "next-sanity";
-import { unstable_noStore as noStore } from "next/cache";
-import { getProjects } from "@/lib/sanity-utils";
-import { ProjectCard } from "./project-card";
-import { PortfolioGrid } from "./portfolio-grid";
+import React from 'react';
+import { TypographyH1 } from './ui/typography-h1';
+import { TypographyP } from './ui/typography-p';
+import Image from 'next/image';
+import { Button } from './ui/button';
+import { Badge } from './badge';
+import { KEYWORDS, Project } from '@/typings';
+import Link from 'next/link';
+import { ArrowUpRightFromSquare } from 'lucide-react';
+import { client, urlFor } from '@/lib/sanity';
+import { groq } from 'next-sanity';
+import { unstable_noStore as noStore } from 'next/cache';
+import { getProjects } from '@/lib/sanity-utils';
+import { ProjectCard } from './project-card';
+import { PortfolioGrid } from './portfolio-grid';
 
 type Props = {};
 
 export const Portfolio = async (props: Props) => {
-  const projects = await getProjects();
-
   return (
     <div
       id="portfolio"
@@ -33,7 +31,7 @@ export const Portfolio = async (props: Props) => {
               My Work
             </TypographyH1>
             <TypographyP className="mt-4 lg:mt-6">
-              {" "}
+              {' '}
               Passionate software developer with a focus on crafting efficient
               and innovative solutions to real-world problems.
             </TypographyP>
