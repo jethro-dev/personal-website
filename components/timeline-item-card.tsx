@@ -50,7 +50,7 @@ export const TimelineItemCard = ({
         {organisation}
       </p>
       {description.map((desc, i) => (
-        <p className="mt-4 text-sm font-normal text-muted-foreground">
+        <p key={i} className="mt-4 text-sm font-normal text-muted-foreground">
           - {desc}
         </p>
       ))}
