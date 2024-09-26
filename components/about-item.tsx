@@ -1,13 +1,13 @@
-"use client";
+'use client';
 import {
   motion,
   useMotionValueEvent,
   useScroll,
   useTransform,
-} from "framer-motion";
-import React, { useRef } from "react";
-import { TypographyH3 } from "./ui/typography-h3";
-import { TypographyP } from "./ui/typography-p";
+} from 'framer-motion';
+import React, { useRef } from 'react';
+import { TypographyH3 } from './ui/typography-h3';
+import { TypographyP } from './ui/typography-p';
 
 type Props = {};
 
@@ -15,7 +15,7 @@ export const AboutItem = ({ title, text }: { title: string; text: string }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start end", "center center"],
+    offset: ['start end', 'center center'],
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);

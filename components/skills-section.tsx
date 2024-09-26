@@ -1,8 +1,10 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import { TypographyH1 } from './ui/typography-h1';
 import { TypographyP } from './ui/typography-p';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
+import { SkillCategory } from './skill-category';
 
 type Props = {};
 type Item = {
@@ -21,7 +23,7 @@ const frontends = [
   },
   {
     name: 'React',
-    logo: 'https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg',
+    logo: '/images/icons8-react.svg',
   },
   {
     name: 'Next.js',
@@ -36,8 +38,16 @@ const frontends = [
     logo: 'https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg',
   },
   {
+    name: 'HTML',
+    logo: '/images/icons8-html.svg',
+  },
+  {
     name: 'CSS/SASS',
-    logo: 'https://www.vectorlogo.zone/logos/w3_css/w3_css-icon.svg',
+    logo: '/images/icons8-css.svg',
+  },
+  {
+    name: 'shadcn-ui',
+    logo: '/images/shadcn-icon.png',
   },
 ];
 
@@ -52,7 +62,7 @@ const backends = [
   },
   {
     name: 'Python',
-    logo: '/python.svg',
+    logo: '/images/icons8-python.svg',
   },
   {
     name: 'Django',
@@ -152,23 +162,31 @@ const devOps = [
 const tools = [
   {
     name: 'Git',
-    logo: '/icons8-aws.svg',
+    logo: '/images/icons8-github.svg',
   },
   {
     name: 'Agile/Scrum',
-    logo: '/icons8-azure.svg',
-  },
-  {
-    name: 'Jest',
-    logo: '/icons8-azure.svg',
+    logo: '/images/icons8-agile.png',
   },
   {
     name: 'Webpack',
-    logo: '/icons8-azure.svg',
+    logo: '/images/icons8-webpack.svg',
   },
   {
     name: 'Figma',
-    logo: '/icons8-azure.svg',
+    logo: '/images/icons8-figma.svg',
+  },
+  {
+    name: 'NPM',
+    logo: '/images/icons8-npm.png',
+  },
+  {
+    name: 'Yarn',
+    logo: '/images/yarn-icon.svg',
+  },
+  {
+    name: 'pnpm',
+    logo: '/images/pnpm-icon.svg',
   },
 ];
 
@@ -179,7 +197,41 @@ const extra = [
   },
 ];
 
+const content = [
+  {
+    title: 'Front-End Development',
+    description:
+      'Specializing in modern web development, expertise includes JavaScript, TypeScript, React, and Next.js for building high-performance applications. With Remix for full-stack solutions and TailwindCSS with CSS/SASS for creating sleek, responsive designs, modern and accessible user experiences are delivered.',
+  },
+  {
+    title: 'Back-End Development',
+    description:
+      'Expertise in backend development includes building scalable systems with Node.js, Express.js, and Python. Experience with Django and Java ensures robust solutions, while REST APIs and GraphQL enable seamless data integration.',
+  },
+  {
+    title: 'Databases',
+    description:
+      'Expertise in database management includes MySQL, PostgreSQL, and MongoDB for designing and implementing scalable, efficient data solutions tailored to meet the needs of modern applications.',
+  },
+  {
+    title: 'Dev Ops',
+    description:
+      'Specializing in DevOps, expertise includes setting up CI/CD pipelines, containerizing applications with Docker, and utilizing cloud platforms like AWS and Azure. Deployments are optimized on Vercel and Netlify for efficient scaling and performance.',
+  },
+  {
+    title: 'Development Tools & Workflow',
+    description:
+      'Proficient in essential development tools and methodologies including Git for version control, Agile/Scrum for project management, Jest for testing, Webpack for bundling, and Figma for design and collaboration, ensuring efficient and streamlined development workflows.',
+  },
+];
+
 const SkillsSection = (props: Props) => {
+  const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
+
+  const handleCategoryInView = (index: number) => {
+    console.log('Category in view', index);
+    setActiveCategoryIndex(index);
+  };
   return (
     <div
       id="skills"
@@ -194,145 +246,40 @@ const SkillsSection = (props: Props) => {
         </TypographyP>
       </div>
 
-      <div className="mt-20 container max-w-7xl flex gap-10">
-        {/* left */}
-        <div className="flex-1 flex flex-col gap-4">
-          <div className="border border-border rounded-lg p-4">
-            <h2 className="text-sm text-muted-foreground mb-2">Frontend</h2>
-            <div className="grid grid-cols-4 gap-y-4">
-              {frontends.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex flex-col items-center justify-between size-20"
-                >
-                  <Image
-                    src={item.logo}
-                    alt={item.name}
-                    width={50}
-                    height={50}
-                  />
-                  <p className="text-sm font-light">{item.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="border border-border rounded-lg p-4">
-            <h2 className="text-sm text-muted-foreground mb-2">Backend</h2>
-            <div className="grid grid-cols-4 gap-y-4">
-              {backends.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex flex-col items-center justify-between size-20"
-                >
-                  <Image
-                    src={item.logo}
-                    alt={item.name}
-                    width={50}
-                    height={50}
-                  />
-                  <p className="text-sm font-light">{item.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="border border-border rounded-lg p-4">
-            <h2 className="text-sm text-muted-foreground mb-2">Databases</h2>
-            <div className="grid grid-cols-4 gap-y-4">
-              {databases.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex flex-col items-center justify-between size-20"
-                >
-                  <Image
-                    src={item.logo}
-                    alt={item.name}
-                    width={50}
-                    height={50}
-                  />
-                  <p className="text-sm font-light">{item.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="border border-border rounded-lg p-4">
-            <h2 className="text-sm text-muted-foreground mb-2">Dev Ops</h2>
-            <div className="grid grid-cols-4 gap-y-4">
-              {devOps.map((item) => (
-                <div
-                  key={item.name}
-                  className="flex flex-col items-center justify-between size-20"
-                >
-                  <Image
-                    src={item.logo}
-                    alt={item.name}
-                    width={50}
-                    height={50}
-                  />
-                  <p className="text-sm font-light">{item.name}</p>
-                </div>
-              ))}
-            </div>
-          </div>
+      <div className="mt-20 container max-w-6xl flex gap-x-10 relative">
+        <div className="flex-1 relative">
+          <SkillCategory
+            title="Front-End Development"
+            items={frontends}
+            onEnter={() => handleCategoryInView(0)}
+          />
+          <SkillCategory
+            title="Back-End Development"
+            items={backends}
+            onEnter={() => handleCategoryInView(1)}
+          />
+          <SkillCategory
+            title="Databases Development"
+            items={databases}
+            onEnter={() => handleCategoryInView(2)}
+          />
+          <SkillCategory
+            title="Dev Ops"
+            items={devOps}
+            onEnter={() => handleCategoryInView(3)}
+          />
+          <SkillCategory
+            title="Development Tools & Workflow"
+            items={tools}
+            onEnter={() => handleCategoryInView(4)}
+          />
         </div>
-        {/* right */}
-        <div className="flex-1 space-y-10">
-          <h2 className="text-3xl font-semibold">My Tech Stack</h2>
-          <p className="font-light text-base text-muted-foreground">
-            I pride myself on being a full-stack developer with expertise in
-            both <span className="text-white font-medium">frontend</span> and{' '}
-            <span className="text-white font-medium">backend</span>{' '}
-            technologies, enabling me to create efficient and scalable web
-            applications from start to finish. Here’s a breakdown of the tools I
-            use:
-          </p>
-          <p className="font-light text-base text-muted-foreground">
-            <span className="text-white font-medium">Frontend</span>: I build
-            visually appealing, responsive, and highly interactive user
-            interfaces using modern technologies like{' '}
-            <span className="text-white font-medium">React</span>,{' '}
-            <span className="text-white font-medium">Next.js</span>, and{' '}
-            <span className="text-white font-medium">TailwindCSS</span>. My goal
-            is to provide users with a seamless and engaging experience,
-            optimized for performance across all devices.
-          </p>
-          <p className="font-light text-base text-muted-foreground">
-            <span className="text-white font-medium">Backend</span>: For backend
-            development, I leverage the power of{' '}
-            <span className="text-white font-medium">Node.js</span>,{' '}
-            <span className="text-white font-medium">Express.js</span>, and{' '}
-            <span className="text-white font-medium">Python</span> to build
-            robust, scalable APIs and services. I also use{' '}
-            <span className="text-white font-medium">GraphQL</span> to optimize
-            data fetching, providing clients with a more flexible and efficient
-            way to interact with backend data.
-          </p>
-          <p className="font-light text-base text-muted-foreground">
-            <span className="text-white font-medium">Databases</span>: Ensuring
-            data integrity and performance is crucial. I work with databases
-            such as <span className="text-white font-medium">MySQL</span>,{' '}
-            <span className="text-white font-medium">PostgreSQL</span>, and{' '}
-            <span className="text-white font-medium">MongoDB</span> to store and
-            manage data effectively, allowing for fast retrieval and secure
-            storage. My experience with these technologies enables me to design
-            efficient data structures and ensure the smooth functioning of
-            backend services.
-          </p>
-          <p className="font-light text-base text-muted-foreground">
-            <span className="text-white font-medium">DevOps</span>: To ensure
-            smooth and efficient deployment processes, I use{' '}
-            <span className="text-white font-medium">CI/CD</span> pipelines that
-            automate testing and deployment, allowing for seamless code
-            integration. I work with tools like{' '}
-            <span className="text-white font-medium">Docker</span> for
-            containerization, ensuring applications run consistently across
-            different environments. My experience with cloud platforms such as{' '}
-            <span className="text-white font-medium">AWS</span> and{' '}
-            <span className="text-white font-medium">Azure</span> allows me to
-            build scalable, reliable infrastructure. Additionally, I leverage{' '}
-            <span className="text-white font-medium">Vercel</span> and{' '}
-            <span className="text-white font-medium">Netlify</span> for fast,
-            automated deployments, making it easy to manage, deploy, and monitor
-            web applications with minimal friction.
+        <div className="flex-1 h-full sticky top-[30%]">
+          <h2 className="mt-20 text-2xl sm:text-3xl lg:text-4xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+            {content[activeCategoryIndex].title}
+          </h2>
+          <p className="mt-2 text-muted-foreground font-light">
+            {content[activeCategoryIndex].description}
           </p>
         </div>
       </div>
