@@ -201,7 +201,10 @@ const SkillsSection = (props: Props) => {
             <h2 className="text-sm text-muted-foreground mb-2">Frontend</h2>
             <div className="grid grid-cols-4 gap-y-4">
               {frontends.map((item) => (
-                <div className="flex flex-col items-center justify-between size-20">
+                <div
+                  key={item.name}
+                  className="flex flex-col items-center justify-between size-20"
+                >
                   <Image
                     src={item.logo}
                     alt={item.name}
@@ -217,7 +220,10 @@ const SkillsSection = (props: Props) => {
             <h2 className="text-sm text-muted-foreground mb-2">Backend</h2>
             <div className="grid grid-cols-4 gap-y-4">
               {backends.map((item) => (
-                <div className="flex flex-col items-center justify-between size-20">
+                <div
+                  key={item.name}
+                  className="flex flex-col items-center justify-between size-20"
+                >
                   <Image
                     src={item.logo}
                     alt={item.name}
@@ -233,7 +239,10 @@ const SkillsSection = (props: Props) => {
             <h2 className="text-sm text-muted-foreground mb-2">Databases</h2>
             <div className="grid grid-cols-4 gap-y-4">
               {databases.map((item) => (
-                <div className="flex flex-col items-center justify-between size-20">
+                <div
+                  key={item.name}
+                  className="flex flex-col items-center justify-between size-20"
+                >
                   <Image
                     src={item.logo}
                     alt={item.name}
@@ -249,7 +258,10 @@ const SkillsSection = (props: Props) => {
             <h2 className="text-sm text-muted-foreground mb-2">Dev Ops</h2>
             <div className="grid grid-cols-4 gap-y-4">
               {devOps.map((item) => (
-                <div className="flex flex-col items-center justify-between size-20">
+                <div
+                  key={item.name}
+                  className="flex flex-col items-center justify-between size-20"
+                >
                   <Image
                     src={item.logo}
                     alt={item.name}
