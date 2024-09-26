@@ -122,7 +122,7 @@ const experience = [
       'Collaborated with cross-functional teams including AI specialists, designers, and backend developers to align technical development with product goals, resulting in a 15% increase in feature release efficiency and a cohesive product development lifecycle.',
     ],
     organisation: 'STEM',
-    startDate: new Date('2024-05'),
+    startDate: new Date('2024-04'),
     endDate: new Date('2024-09'),
     is_present: true,
     keywords: [

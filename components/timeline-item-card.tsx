@@ -42,8 +42,8 @@ export const TimelineItemCard = ({
     >
       <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-[23.5px] border border-white dark:border-gray-900 dark:bg-gray-700"></div>
       <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-        {format(startDate, 'MMM yyyy')} -{' '}
-        {is_present ? 'PRESENT' : format(endDate, 'MMM yyyy')}
+        {format(startDate, 'MMM yyyy').toUpperCase()} -{' '}
+        {is_present ? 'PRESENT' : format(endDate, 'MMM yyyy').toUpperCase()}
       </time>
       <h3 className="text-lg font-semibold text-foreground">{title}</h3>
       <p className="mt-1 text-sm text-foreground italic font-light">
