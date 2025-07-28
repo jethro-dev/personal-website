@@ -16,7 +16,7 @@ export function BlogCard({ title, description, slug, coverImage }: SimpleBlog) {
           <CardItem
             translateZ="50"
             as={"h3"}
-            className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500"
+            className="text-xl font-bold gradient-text"
           >
             {title}
           </CardItem>
@@ -42,31 +42,6 @@ export function BlogCard({ title, description, slug, coverImage }: SimpleBlog) {
             {description}
           </CardItem>
 
-          {/* <div className="mt-4 w-full flex items-center flex-wrap gap-2">
-          {keywords?.map((keyword) => (
-            <CardItem translateZ={40}>
-              <Badge key={keyword} text={keyword} />
-            </CardItem>
-          ))}
-        </div> */}
-          {/* <div className="flex justify-between items-center mt-20">
-          <CardItem
-            translateZ={20}
-            // translateX={-40}
-            as="button"
-            className="px-4 py-2 rounded-xl text-xs font-normal dark:text-white"
-          >
-            Live site →
-          </CardItem>
-          <CardItem
-            translateZ={20}
-            // translateX={40}
-            as="button"
-            className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
-          >
-            GitHub
-          </CardItem>
-        </div> */}
         </CardBody>
       </CardContainer>
     </Link>
