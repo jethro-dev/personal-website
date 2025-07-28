@@ -11,25 +11,28 @@ import { getBlog, getBlogs, getRelatedBlogs } from "@/lib/sanity-utils";
 import { format, parseISO } from "date-fns";
 import { ArrowLeft } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Link from "next/link";
 // you can also choose styles such as prism/dracula
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CodeBlock from "@/components/code-block";
+import { BlogSEO } from "@/components/seo-metadata";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export const revalidate = 60; // revalidate at most every minutes
 
 export async function generateMetadata({ params }: Props) {
-  const blog: DetailedBlog = await getBlog(params.slug);
+  const { slug } = await params;
+  const blog: DetailedBlog = await getBlog(slug);
   return {
     title: blog.title,
   };
 }
 
 const BlogPage = async ({ params }: Props) => {
-  let { slug } = params;
+  let { slug } = await params;
 
   let blog = await getBlog(slug);
   let relatedBlogs = await getRelatedBlogs(blog.tags);
@@ -48,6 +51,14 @@ const BlogPage = async ({ params }: Props) => {
 
   return (
     <main>
+      <BlogSEO
+        title={blog.title}
+        description={blog.description}
+        slug={slug}
+        publishedDate={blog._createdAt.toString()}
+        coverImage={urlFor(blog.coverImage).url()}
+        tags={blog.tags || []}
+      />
       <header className="relative mt-20">
         {/* gradient */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-900 to-purple-900 brightness-50"></div>
@@ -57,10 +68,10 @@ const BlogPage = async ({ params }: Props) => {
 
         <div className="max-w-7xl container grid grid-cols-12 py-6">
           <div className="col-span-9">
-            <div className="flex items-center text-muted-foreground text-sm font-medium">
+            <Link href="/blogs" className="flex items-center text-muted-foreground text-sm font-medium hover:text-foreground transition-colors">
               <ArrowLeft className="w-4 h-4 mr-1" />
               <span>Back to Blog</span>
-            </div>
+            </Link>
             <div className="mt-16 flex items-center gap-4">
               <div className="px-3 py-2 rounded-full bg-violet-500 text-sm font">
                 {blog.category}
@@ -118,9 +129,9 @@ const BlogPage = async ({ params }: Props) => {
           <p className="mt-20 text-muted-foreground text-sm mb-6">
             Related readings
           </p>
-          {relatedBlogs.map((blog) => (
-            <div className="mt-6" key={blog._id}>
-              <p className="text-md font-medium">{blog.title}</p>
+          {relatedBlogs.map((relatedBlog) => (
+            <Link href={`/blogs/${relatedBlog.slug}`} key={relatedBlog._id} className="block mt-6 hover:bg-muted/50 p-2 rounded-md transition-colors">
+              <p className="text-md font-medium">{relatedBlog.title}</p>
               <div className="mt-2 flex items-center gap-2">
                 <Image
                   src="/profile.jpeg"
@@ -131,7 +142,7 @@ const BlogPage = async ({ params }: Props) => {
                 />
                 <p className="text-sm text-muted-foreground">Jethro Au</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

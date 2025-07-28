@@ -83,6 +83,10 @@
 }
 
 @layer utilities {
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500;
+  }
+  
   .test {
     background: linear-gradient(to top, #000 0, hsla(0, 0%, 100%, 0) 100%),
       linear-gradient(

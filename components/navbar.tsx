@@ -67,7 +67,7 @@ export const Navbar = (props: Props) => {
         <div>
           <Link href="/" className="flex items-center gap-2">
             {/* <Image src="/logo.svg" width={60} height={60} alt="Logo" /> */}
-            <span className="font-bold text-3xl bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+            <span className="font-bold text-3xl gradient-text">
               jethroau.com
             </span>
           </Link>

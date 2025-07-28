@@ -12,9 +12,9 @@ import { TypographyP } from './ui/typography-p';
 type Props = {};
 
 export const AboutItem = ({ title, text }: { title: string; text: string }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
-    target: ref,
+    target: ref as React.RefObject<HTMLElement>,
     offset: ['start end', 'center center'],
   });
 
@@ -29,7 +29,7 @@ export const AboutItem = ({ title, text }: { title: string; text: string }) => {
         scale: scale,
       }}
     >
-      <TypographyH3 className="text-4xl lg:text-4xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+      <TypographyH3 className="text-4xl lg:text-4xl font-bold relative z-20 gradient-text">
         {title}
       </TypographyH3>
       <TypographyP className="mt-2">{text}</TypographyP>

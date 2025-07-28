@@ -1,18 +1,16 @@
 import { cn } from "@/lib/utils";
 
-type Props = {
-  children: React.ReactNode;
-  className?: string;
-};
-export function TypographyH3({ className, children }: Props) {
+type Props = React.ComponentPropsWithoutRef<"h3">;
+export function TypographyH3({ className, children, ...props }: Props) {
   return (
-    <h2
+    <h3
       className={cn(
         "scroll-m-20 text-lg font-semibold tracking-tight lg:text-xl",
         className
       )}
+      {...props}
     >
       {children}
-    </h2>
+    </h3>
   );
 }

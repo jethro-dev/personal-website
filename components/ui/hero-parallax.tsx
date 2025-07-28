@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   motion,
   useScroll,
@@ -14,6 +14,38 @@ import CubicModel from "../cubic-model";
 
 export const HeroParallax = ({}: {}) => {
   const ref = React.useRef(null);
+
+  // React 19 Asset Preloading
+  useEffect(() => {
+    // Preload the Spline 3D model
+    const preloadSplineAssets = () => {
+      // Preload the main Spline scene
+      const splineUrl = "https://prod.spline.design/sR6LhnbBfBdiewiT/scene.splinecode";
+      fetch(splineUrl, { 
+        method: 'HEAD',
+        cache: 'force-cache'
+      }).catch(() => {
+        // Silently fail - this is just optimization
+      });
+      
+      // Preload Spline runtime if not already loaded
+      const moduleSpecifier = '@splinetool/react-spline';
+      if ('modulePreload' in HTMLLinkElement.prototype) {
+        const link = document.createElement('link');
+        link.rel = 'modulepreload';
+        link.href = moduleSpecifier;
+        document.head.appendChild(link);
+      }
+    };
+
+    // Use React 19's scheduler-friendly approach
+    if ('scheduler' in window && 'postTask' in (window as any).scheduler) {
+      (window as any).scheduler.postTask(preloadSplineAssets, { priority: 'background' });
+    } else {
+      // Fallback for browsers without scheduler API
+      requestIdleCallback(preloadSplineAssets, { timeout: 5000 });
+    }
+  }, []);
 
   return (
     <div

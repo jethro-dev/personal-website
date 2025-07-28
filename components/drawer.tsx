@@ -1,8 +1,6 @@
 "use client";
 
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import {
   Drawer,
@@ -14,22 +12,12 @@ import {
   DrawerTitle,
   DrawerTrigger,
 } from "@/components/ui/drawer";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "./ui/form";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { toast } from "sonner";
-import { useState } from "react";
-import { tree } from "next/dist/build/templates/app-page";
+import { useState, useTransition } from "react";
 import { Button as MovingBorderButton } from "@/components/ui/moving-border";
-import { send } from "@/action/send-email";
+import { sendMessage } from "@/action/send-email";
 import { Loader2 } from "lucide-react";
 
 export const formSchema = z.object({
@@ -40,40 +28,25 @@ export const formSchema = z.object({
 
 export function DrawerDemo() {
   const [open, setOpen] = useState(false);
-  const [loading, setLoading] = useState(false);
-  // 1. Define your form.
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      email: "",
-    },
-  });
+  const [isPending, startTransition] = useTransition();
 
-  // 2. Define a submit handler.
-  async function onSubmit(values: z.infer<typeof formSchema>) {
-    try {
-      setLoading(true);
-      // Try to send the form data
-      const res = await send(values);
-      // If send is successful, reset the form and provide user feedback
-      form.reset();
-      setLoading(false);
-      setOpen(false);
-      toast.success("Message received. Thank you!");
-    } catch (error: unknown) {
-      if (error instanceof Error) {
+  // React 19 Form Action
+  async function handleSubmit(formData: FormData) {
+    startTransition(async () => {
+      try {
+        const result = await sendMessage(formData);
+        
+        if (result.success) {
+          setOpen(false);
+          toast.success("Message received. Thank you!");
+        } else {
+          toast.error(result.error || "Failed to send message");
+        }
+      } catch (error) {
         console.error("Failed to send message:", error);
-        toast.error(`Error: ${error.message}`);
-      } else {
-        // Handle the case where the error is not an instance of Error
-        console.error("An unexpected error occurred:", error);
         toast.error("An unexpected error occurred. Please try again.");
       }
-    } finally {
-      // Finally block will run regardless of try/catch outcome
-      setLoading(false); // Make sure to stop the loading indicator
-    }
+    });
   }
 
   return (
@@ -95,84 +68,61 @@ export function DrawerDemo() {
             </DrawerDescription>
           </DrawerHeader>
           <div className="p-0 pb-0">
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-6"
-              >
-                <FormField
-                  control={form.control}
+            <form action={handleSubmit} className="space-y-6">
+              <div className="space-y-2">
+                <label htmlFor="name" className="font-light text-xs">Name</label>
+                <Input
+                  id="name"
                   name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-light text-xs">Name</FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          className="font-light text-xs"
-                          onPointerDown={(e) => e.stopPropagation()}
-                        />
-                      </FormControl>
-                      <FormMessage className="font-light text-xs" />
-                    </FormItem>
-                  )}
+                  required
+                  className="font-light text-xs"
+                  onPointerDown={(e) => e.stopPropagation()}
+                  disabled={isPending}
                 />
-                <FormField
-                  control={form.control}
+              </div>
+              
+              <div className="space-y-2">
+                <label htmlFor="email" className="font-light text-xs">Email</label>
+                <Input
+                  id="email"
                   name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-light text-xs">
-                        Email
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          {...field}
-                          className="font-light text-xs"
-                          onPointerDown={(e) => e.stopPropagation()}
-                        />
-                      </FormControl>
-
-                      <FormMessage className="font-light text-xs" />
-                    </FormItem>
-                  )}
+                  type="email"
+                  required
+                  className="font-light text-xs"
+                  onPointerDown={(e) => e.stopPropagation()}
+                  disabled={isPending}
                 />
-                <FormField
-                  control={form.control}
+              </div>
+              
+              <div className="space-y-2">
+                <label htmlFor="message" className="font-light text-xs">
+                  Message (optional)
+                </label>
+                <Textarea
+                  id="message"
                   name="message"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="font-light text-xs">
-                        Message (optional)
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea
-                          rows={5}
-                          placeholder="I really like your work. Let's connect!"
-                          className="resize-none font-light text-xs"
-                          onPointerDown={(e) => e.stopPropagation()}
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="font-light text-xs" />
-                    </FormItem>
-                  )}
+                  rows={5}
+                  placeholder="I really like your work. Let's connect!"
+                  className="resize-none font-light text-xs"
+                  onPointerDown={(e) => e.stopPropagation()}
+                  disabled={isPending}
                 />
-                <DrawerFooter className="px-0">
-                  <Button disabled={loading}>
-                    {loading ? (
-                      <Loader2 className="h-4 w-4 animate-spin" />
-                    ) : (
-                      "Submit"
-                    )}
-                  </Button>
+              </div>
+              
+              <DrawerFooter className="px-0">
+                <Button type="submit" disabled={isPending}>
+                  {isPending ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    "Submit"
+                  )}
+                </Button>
 
-                  <DrawerClose asChild>
-                    <Button variant="outline">Cancel</Button>
-                  </DrawerClose>
-                </DrawerFooter>
-              </form>
-            </Form>
+                <DrawerClose asChild>
+                  <Button variant="outline">Cancel</Button>
+                </DrawerClose>
+              </DrawerFooter>
+            </form>
           </div>
         </div>
       </DrawerContent>

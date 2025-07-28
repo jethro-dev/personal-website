@@ -238,7 +238,7 @@ const SkillsSection = (props: Props) => {
       className="bg-background pt-60 pb-40 transition duration-300"
     >
       <div className="text-left md:text-center container max-w-5xl mx-auto">
-        <TypographyH1 className="text-5xl sm:text-6xl lg:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+        <TypographyH1 className="text-5xl sm:text-6xl lg:text-7xl font-bold relative z-20 gradient-text">
           My skills
         </TypographyH1>
         <TypographyP className="mt-4 lg:mt-6">
@@ -275,7 +275,7 @@ const SkillsSection = (props: Props) => {
           />
         </div>
         <div className="flex-1 h-full sticky top-[30%]">
-          <h2 className="mt-20 text-2xl sm:text-3xl lg:text-4xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
+          <h2 className="mt-20 text-2xl sm:text-3xl lg:text-4xl font-bold relative z-20 gradient-text">
             {content[activeCategoryIndex].title}
           </h2>
           <p className="mt-2 text-muted-foreground font-light">
