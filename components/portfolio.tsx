@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useEffect } from 'react';
 import { TypographyH1 } from './ui/typography-h1';
 import { TypographyP } from './ui/typography-p';
 import Image from 'next/image';
@@ -13,10 +14,16 @@ import { unstable_noStore as noStore } from 'next/cache';
 import { getProjects } from '@/lib/sanity-utils';
 import { ProjectCard } from './project-card';
 import { PortfolioGrid } from './portfolio-grid';
+import { preloadImages, PORTFOLIO_IMAGES } from '@/lib/preload-assets';
 
 type Props = {};
 
-export const Portfolio = async (props: Props) => {
+export const Portfolio = (props: Props) => {
+  // React 19 Asset Preloading for Portfolio Images
+  useEffect(() => {
+    preloadImages(PORTFOLIO_IMAGES, 'low');
+  }, []);
+
   return (
     <div
       id="portfolio"

@@ -1,8 +1,11 @@
+'use client';
+import React, { useEffect } from 'react';
 import { TypographyH1 } from './ui/typography-h1';
 import { TypographyP } from './ui/typography-p';
 import { TracingBeam } from './ui/tracing-beam';
 import { AboutMeCard } from './about-me-card';
 import { AboutItem } from './about-item';
+import { preloadImages, CRITICAL_IMAGES } from '@/lib/preload-assets';
 
 type Props = {};
 
@@ -21,7 +24,12 @@ const paragraphs = [
   },
 ];
 
-export const About = async (props: Props) => {
+export const About = (props: Props) => {
+  // React 19 Asset Preloading for Critical Images
+  useEffect(() => {
+    preloadImages(CRITICAL_IMAGES, 'high');
+  }, []);
+
   return (
     <TracingBeam>
       <div

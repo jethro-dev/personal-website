@@ -14,6 +14,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 // you can also choose styles such as prism/dracula
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CodeBlock from "@/components/code-block";
+import { BlogSEO } from "@/components/seo-metadata";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -49,6 +50,14 @@ const BlogPage = async ({ params }: Props) => {
 
   return (
     <main>
+      <BlogSEO
+        title={blog.title}
+        description={blog.description}
+        slug={slug}
+        publishedDate={blog._createdAt.toString()}
+        coverImage={urlFor(blog.coverImage).url()}
+        tags={blog.tags || []}
+      />
       <header className="relative mt-20">
         {/* gradient */}
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-blue-900 to-purple-900 brightness-50"></div>

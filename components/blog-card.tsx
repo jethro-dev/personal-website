@@ -7,23 +7,25 @@ import { Project, SimpleBlog } from "@/typings";
 import { urlFor } from "@/lib/sanity";
 import { Badge } from "./badge";
 import Link from "next/link";
+import { BlogInteractions } from "./blog-interactions";
 
 export function BlogCard({ title, description, slug, coverImage }: SimpleBlog) {
   return (
-    <Link href={`/blogs/${slug}`}>
-      <CardContainer containerClassName="max-w-sm w-full h-full">
-        <CardBody className="p-8 w-full max-w-sm bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] h-auto rounded-xl border">
+    <CardContainer containerClassName="max-w-sm w-full h-full">
+      <CardBody className="p-8 w-full max-w-sm bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] h-auto rounded-xl border">
+        <Link href={`/blogs/${slug}`}>
           <CardItem
             translateZ="50"
             as={"h3"}
-            className="text-xl font-bold gradient-text"
+            className="text-xl font-bold gradient-text hover:underline"
           >
             {title}
           </CardItem>
+        </Link>
+        
+        <Link href={`/blogs/${slug}`}>
           <CardItem
             translateZ="40"
-            //   rotateX={20}
-            //   rotateZ={-10}
             className="w-full mt-4"
           >
             <Image
@@ -34,16 +36,22 @@ export function BlogCard({ title, description, slug, coverImage }: SimpleBlog) {
               alt="thumbnail"
             />
           </CardItem>
+        </Link>
+        
+        <Link href={`/blogs/${slug}`}>
           <CardItem
             as="p"
             translateZ="40"
-            className="text-sm max-w-sm mt-6 text-muted-foreground line-clamp-3"
+            className="text-sm max-w-sm mt-6 text-muted-foreground line-clamp-3 hover:text-foreground transition-colors"
           >
             {description}
           </CardItem>
+        </Link>
 
-        </CardBody>
-      </CardContainer>
-    </Link>
+        <CardItem translateZ="30" className="w-full">
+          <BlogInteractions blogId={slug} initialLikes={0} />
+        </CardItem>
+      </CardBody>
+    </CardContainer>
   );
 }
