@@ -11,6 +11,7 @@ import { getBlog, getBlogs, getRelatedBlogs } from "@/lib/sanity-utils";
 import { format, parseISO } from "date-fns";
 import { ArrowLeft } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import Link from "next/link";
 // you can also choose styles such as prism/dracula
 import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CodeBlock from "@/components/code-block";
@@ -67,10 +68,10 @@ const BlogPage = async ({ params }: Props) => {
 
         <div className="max-w-7xl container grid grid-cols-12 py-6">
           <div className="col-span-9">
-            <div className="flex items-center text-muted-foreground text-sm font-medium">
+            <Link href="/blogs" className="flex items-center text-muted-foreground text-sm font-medium hover:text-foreground transition-colors">
               <ArrowLeft className="w-4 h-4 mr-1" />
               <span>Back to Blog</span>
-            </div>
+            </Link>
             <div className="mt-16 flex items-center gap-4">
               <div className="px-3 py-2 rounded-full bg-violet-500 text-sm font">
                 {blog.category}
@@ -128,9 +129,9 @@ const BlogPage = async ({ params }: Props) => {
           <p className="mt-20 text-muted-foreground text-sm mb-6">
             Related readings
           </p>
-          {relatedBlogs.map((blog) => (
-            <div className="mt-6" key={blog._id}>
-              <p className="text-md font-medium">{blog.title}</p>
+          {relatedBlogs.map((relatedBlog) => (
+            <Link href={`/blogs/${relatedBlog.slug}`} key={relatedBlog._id} className="block mt-6 hover:bg-muted/50 p-2 rounded-md transition-colors">
+              <p className="text-md font-medium">{relatedBlog.title}</p>
               <div className="mt-2 flex items-center gap-2">
                 <Image
                   src="/profile.jpeg"
@@ -141,7 +142,7 @@ const BlogPage = async ({ params }: Props) => {
                 />
                 <p className="text-sm text-muted-foreground">Jethro Au</p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
