@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "title": "JethroAu.com",
+    "description": "探索科技與想像力的交匯點，踏上將概念轉化為強大、以用戶為中心的體驗之旅。讓我們一起建設未來——一行代碼一次。"
+  },
+  "nav": {
+    "home": "首頁",
+    "blogs": "部落格",
+    "projects": "專案",
+    "contact": "聯絡",
+    "toggleTheme": "切換主題"
+  },
+  "hero": {
+    "learnMore": "了解更多",
+    "or": "或",
+    "scheduleCall": "預約通話"
+  },
+  "contact": {
+    "title": "聯繫我們",
+    "description": "有專案構想嗎？讓我們一起合作！",
+    "form": {
+      "name": {
+        "label": "姓名",
+        "placeholder": "您的姓名",
+        "error": "姓名至少需要2個字元"
+      },
+      "email": {
+        "label": "電子郵件",
+        "placeholder": "your@email.com",
+        "error": "請輸入有效的電子郵件"
+      },
+      "message": {
+        "label": "訊息",
+        "placeholder": "告訴我您的專案...",
+        "error": "訊息至少需要2個字元"
+      },
+      "submit": "發送訊息",
+      "submitting": "發送中...",
+      "success": "訊息發送成功！",
+      "error": "發送失敗，請重試。"
+    }
+  },
+  "footer": {
+    "rights": "版權所有",
+    "quickLinks": "快速連結",
+    "social": "社群媒體"
+  },
+  "skills": {
+    "title": "技能與技術",
+    "description": "我使用的技術"
+  },
+  "experience": {
+    "title": "經歷",
+    "present": "至今"
+  },
+  "projects": {
+    "title": "專案",
+    "viewMore": "查看更多",
+    "visitSite": "訪問網站",
+    "viewCode": "查看程式碼"
+  },
+  "blogs": {
+    "title": "部落格",
+    "readMore": "閱讀更多",
+    "minRead": "分鐘閱讀",
+    "relatedPosts": "相關文章"
+  },
+  "notFound": {
+    "title": "找不到頁面",
+    "description": "您尋找的頁面不存在。",
+    "backHome": "返回首頁"
+  }
+}

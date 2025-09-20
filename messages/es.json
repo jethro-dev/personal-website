@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "title": "JethroAu.com",
+    "description": "Explora la intersección de tecnología e imaginación mientras emprendemos un viaje para transformar conceptos en experiencias poderosas centradas en el usuario. Construyamos el futuro juntos, una línea de código a la vez."
+  },
+  "nav": {
+    "home": "Inicio",
+    "blogs": "Blog",
+    "projects": "Proyectos",
+    "contact": "Contacto",
+    "toggleTheme": "Cambiar tema"
+  },
+  "hero": {
+    "learnMore": "Más información",
+    "or": "o",
+    "scheduleCall": "Agendar una llamada"
+  },
+  "contact": {
+    "title": "Ponte en contacto",
+    "description": "¿Tienes un proyecto en mente? ¡Trabajemos juntos!",
+    "form": {
+      "name": {
+        "label": "Nombre",
+        "placeholder": "Tu nombre",
+        "error": "El nombre debe tener al menos 2 caracteres"
+      },
+      "email": {
+        "label": "Correo electrónico",
+        "placeholder": "tu@email.com",
+        "error": "Por favor, ingresa un correo válido"
+      },
+      "message": {
+        "label": "Mensaje",
+        "placeholder": "Cuéntame sobre tu proyecto...",
+        "error": "El mensaje debe tener al menos 2 caracteres"
+      },
+      "submit": "Enviar mensaje",
+      "submitting": "Enviando...",
+      "success": "¡Mensaje enviado con éxito!",
+      "error": "Error al enviar. Por favor, intenta de nuevo."
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "quickLinks": "Enlaces rápidos",
+    "social": "Redes sociales"
+  },
+  "skills": {
+    "title": "Habilidades y Tecnologías",
+    "description": "Tecnologías con las que trabajo"
+  },
+  "experience": {
+    "title": "Experiencia",
+    "present": "Presente"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "viewMore": "Ver más",
+    "visitSite": "Visitar sitio",
+    "viewCode": "Ver código"
+  },
+  "blogs": {
+    "title": "Blog",
+    "readMore": "Leer más",
+    "minRead": "min de lectura",
+    "relatedPosts": "Publicaciones relacionadas"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "description": "La página que buscas no existe.",
+    "backHome": "Volver al inicio"
+  }
+}

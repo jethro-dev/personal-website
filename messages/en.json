@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "title": "JethroAu.com",
+    "description": "Explore the intersection of technology and imagination as we embark on a journey to transform concepts into powerful, user-centric experiences. Let's build the future together – one line of code at a time."
+  },
+  "nav": {
+    "home": "Home",
+    "blogs": "Blogs",
+    "projects": "Projects",
+    "contact": "Contact",
+    "toggleTheme": "Toggle theme"
+  },
+  "hero": {
+    "learnMore": "Learn More",
+    "or": "or",
+    "scheduleCall": "Schedule a call"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Have a project in mind? Let's work together!",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Your name",
+        "error": "Name must be at least 2 characters"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "your@email.com",
+        "error": "Please enter a valid email"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about your project...",
+        "error": "Message must be at least 2 characters"
+      },
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "quickLinks": "Quick Links",
+    "social": "Social"
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "description": "Technologies I work with"
+  },
+  "experience": {
+    "title": "Experience",
+    "present": "Present"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewMore": "View More",
+    "visitSite": "Visit Site",
+    "viewCode": "View Code"
+  },
+  "blogs": {
+    "title": "Blog",
+    "readMore": "Read More",
+    "minRead": "min read",
+    "relatedPosts": "Related Posts"
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist.",
+    "backHome": "Back to Home"
+  }
+}

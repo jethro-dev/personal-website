@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "title": "JethroAu.com",
+    "description": "テクノロジーと想像力の交差点を探求し、コンセプトをユーザー中心の強力な体験に変換する旅に出ましょう。一緒に未来を築きましょう。一行ずつコードを書いて。"
+  },
+  "nav": {
+    "home": "ホーム",
+    "blogs": "ブログ",
+    "projects": "プロジェクト",
+    "contact": "お問い合わせ",
+    "toggleTheme": "テーマ切り替え"
+  },
+  "hero": {
+    "learnMore": "詳しく見る",
+    "or": "または",
+    "scheduleCall": "通話を予約"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "description": "プロジェクトのご相談はありますか？一緒に働きましょう！",
+    "form": {
+      "name": {
+        "label": "お名前",
+        "placeholder": "お名前",
+        "error": "名前は2文字以上必要です"
+      },
+      "email": {
+        "label": "メールアドレス",
+        "placeholder": "your@email.com",
+        "error": "有効なメールアドレスを入力してください"
+      },
+      "message": {
+        "label": "メッセージ",
+        "placeholder": "プロジェクトについて教えてください...",
+        "error": "メッセージは2文字以上必要です"
+      },
+      "submit": "メッセージを送信",
+      "submitting": "送信中...",
+      "success": "メッセージが正常に送信されました！",
+      "error": "送信に失敗しました。もう一度お試しください。"
+    }
+  },
+  "footer": {
+    "rights": "著作権所有",
+    "quickLinks": "クイックリンク",
+    "social": "ソーシャル"
+  },
+  "skills": {
+    "title": "スキルと技術",
+    "description": "使用する技術"
+  },
+  "experience": {
+    "title": "経験",
+    "present": "現在"
+  },
+  "projects": {
+    "title": "プロジェクト",
+    "viewMore": "もっと見る",
+    "visitSite": "サイトを訪問",
+    "viewCode": "コードを見る"
+  },
+  "blogs": {
+    "title": "ブログ",
+    "readMore": "続きを読む",
+    "minRead": "分で読める",
+    "relatedPosts": "関連記事"
+  },
+  "notFound": {
+    "title": "ページが見つかりません",
+    "description": "お探しのページは存在しません。",
+    "backHome": "ホームへ戻る"
+  }
+}

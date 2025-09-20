@@ -16,14 +16,15 @@ This project uses `pnpm` as the package manager. Use `pnpm install` to install d
 ## Architecture
 
 ### Tech Stack
-- **Framework**: Next.js 14 with App Router (TypeScript)
+- **Framework**: Next.js 15 with App Router (TypeScript)
+- **React**: React 19 (latest stable)
 - **Styling**: Tailwind CSS with custom animations
 - **CMS**: Sanity Studio (headless CMS) integrated at `/admin` route
 - **UI Components**: Radix UI primitives with shadcn/ui patterns
 - **Email**: Nodemailer with React Email templates
 - **Forms**: React Hook Form with Zod validation
-- **Animation**: Framer Motion for animations
-- **3D Graphics**: Spline for 3D models
+- **Animation**: Motion v12 (motion.dev) for React 19 compatibility
+- **3D Graphics**: Temporarily disabled (Spline incompatible with React 19)
 
 ### Project Structure
 
@@ -57,3 +58,55 @@ Main Sanity schema types include:
 - `experience` - Work experience timeline items
 - `skill` - Technical skills
 - Various section schemas for page content management
+
+## Migration History
+
+### Next.js 15 & React 19 Migration (2025-09)
+Successfully migrated from Next.js 14 to 15 and React 18 to 19 with the following changes:
+
+#### Breaking Changes Addressed
+1. **Async Params in Dynamic Routes**: Next.js 15 now requires params to be awaited in dynamic routes
+   - Pattern: `const { slug } = await params;` in `[slug]/page.tsx`
+
+2. **Animation Library Migration**: Migrated from framer-motion to Motion v12
+   - framer-motion incompatible with React 19
+   - Motion v12 (motion.dev) provides full React 19 support
+   - Updated all imports from 'framer-motion' to 'motion/react'
+
+3. **Hydration Fixes**: Updated next-themes from 0.2.1 to 0.4.6
+   - Added `suppressHydrationWarning` to root html element
+   - Resolved theme hydration mismatches
+
+4. **TypeScript Fixes**: Updated useRef types throughout components
+   - Pattern: `useRef<HTMLDivElement>(null)` with proper element typing
+
+### Known Issues
+
+#### Spline 3D Incompatibility
+- **Issue**: @splinetool/react-spline not compatible with React 19
+- **Error**: `TypeError: Cannot read properties of undefined (reading 'ReactCurrentDispatcher')`
+- **Status**: Component temporarily disabled in `components/cubic-model.tsx`
+- **Future Plan**: Migrate to React Three Fiber v9 when ready
+
+## Upcoming Features
+
+### Internationalization (i18n)
+Planning to implement multi-locale support with:
+- **Supported Locales**:
+  - English (en) - Default
+  - Traditional Chinese (zh-TW)
+  - Simplified Chinese (zh-CN)
+  - Spanish (es)
+  - Japanese (ja)
+  - Arabic (ar) with RTL support
+
+- **Architecture**:
+  - next-intl for UI string translations
+  - @sanity/document-internationalization for CMS content
+  - Locale-based routing with [locale] segments
+  - Language switcher in navbar
+
+### 3D Graphics Future
+- **Plan**: Migrate to React Three Fiber v9 (React 19 compatible)
+- **Libraries**: @react-three/fiber, @react-three/drei, three
+- **Timeline**: After i18n implementation complete

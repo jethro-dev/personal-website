@@ -3,7 +3,8 @@ import { useTheme } from "next-themes";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { ThemeSwitch } from "./theme-switch";
-import Link from "next/link";
+import { LanguageSwitcher } from "./language-switcher";
+import { Link } from '@/i18n/routing';
 
 type Props = {};
 
@@ -76,6 +77,7 @@ export const Navbar = (props: Props) => {
           {list_item.map((item, i) => (
             <NavItem key={i} {...item} />
           ))}
+          <LanguageSwitcher />
           {/* <ThemeSwitch /> */}
         </div>
       </div>
