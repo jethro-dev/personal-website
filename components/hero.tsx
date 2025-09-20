@@ -7,9 +7,12 @@ import { TypographyP } from "./ui/typography-p";
 import { anton } from "@/app/fonts";
 import { groq } from "next-sanity";
 import { MacbookScroll } from "./ui/macbook-scroll";
+import { getTranslations } from 'next-intl/server';
+
 type Props = {};
 
 export const Hero = async (props: Props) => {
+  const t = await getTranslations('hero');
   const data =
     await client.fetch(groq`*[_type=='page' && title == 'Home'][0].section[_type == 'heroSection'][0]{
     title,paragraph
@@ -24,7 +27,7 @@ export const Hero = async (props: Props) => {
         <TypographyP className="mt-2 w-4/5">{data.paragraph}</TypographyP>
         <div className="flex flex-col sm:flex-row items-start md:items-center gap-4 mt-12">
           <LearnMoreButton />
-          <span>or</span>
+          <span>{t('or')}</span>
           <DrawerDemo />
           {/* <Button>Schedule a meeting</Button> */}
         </div>

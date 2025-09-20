@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { ThemeSwitch } from "./theme-switch";
 import { LanguageSwitcher } from "./language-switcher";
 import { Link } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 
 type Props = {};
 
@@ -43,6 +44,7 @@ const list_item: NavItem[] = [
 ];
 
 export const Navbar = (props: Props) => {
+  const t = useTranslations('nav');
   const { theme, setTheme } = useTheme();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);

@@ -4,6 +4,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from 'next-intl';
 import {
   Drawer,
   DrawerClose,
@@ -32,15 +33,19 @@ import { Button as MovingBorderButton } from "@/components/ui/moving-border";
 import { send } from "@/action/send-email";
 import { Loader2 } from "lucide-react";
 
-export const formSchema = z.object({
-  name: z.string().min(2).max(50),
-  email: z.string().email(),
-  message: z.string().min(2).max(200).optional(),
-});
+// Form schema will be created inside the component to use translations
 
 export function DrawerDemo() {
+  const t = useTranslations('contact.form');
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+
+  // Define form schema with translations
+  const formSchema = z.object({
+    name: z.string().min(2, t('name.error')).max(50),
+    email: z.string().email(t('email.error')),
+    message: z.string().min(2, t('message.error')).max(200).optional(),
+  });
   // 1. Define your form.
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -60,15 +65,15 @@ export function DrawerDemo() {
       form.reset();
       setLoading(false);
       setOpen(false);
-      toast.success("Message received. Thank you!");
+      toast.success(t('success'));
     } catch (error: unknown) {
       if (error instanceof Error) {
         console.error("Failed to send message:", error);
-        toast.error(`Error: ${error.message}`);
+        toast.error(t('error'));
       } else {
         // Handle the case where the error is not an instance of Error
         console.error("An unexpected error occurred:", error);
-        toast.error("An unexpected error occurred. Please try again.");
+        toast.error(t('error'));
       }
     } finally {
       // Finally block will run regardless of try/catch outcome
@@ -83,15 +88,15 @@ export function DrawerDemo() {
           // borderRadius="1.75rem"
           className="bg-white bg-background px-4 py-2 text-sm font-medium h-auto"
         >
-          Message me
+          {t('submit')}
         </MovingBorderButton>
       </DrawerTrigger>
       <DrawerContent>
         <div className="mx-auto w-full max-w-sm p-8">
           <DrawerHeader className="px-0">
-            <DrawerTitle>Send me a message</DrawerTitle>
+            <DrawerTitle>{useTranslations('contact')('title')}</DrawerTitle>
             <DrawerDescription>
-              Just fill in your name, and your email, that&apos;s it!
+              {useTranslations('contact')('description')}
             </DrawerDescription>
           </DrawerHeader>
           <div className="p-0 pb-0">
@@ -105,7 +110,7 @@ export function DrawerDemo() {
                   name="name"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="font-light text-xs">Name</FormLabel>
+                      <FormLabel className="font-light text-xs">{t('name.label')}</FormLabel>
                       <FormControl>
                         <Input
                           {...field}
@@ -123,7 +128,7 @@ export function DrawerDemo() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="font-light text-xs">
-                        Email
+                        {t('email.label')}
                       </FormLabel>
                       <FormControl>
                         <Input
@@ -143,12 +148,12 @@ export function DrawerDemo() {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel className="font-light text-xs">
-                        Message (optional)
+                        {t('message.label')}
                       </FormLabel>
                       <FormControl>
                         <Textarea
                           rows={5}
-                          placeholder="I really like your work. Let's connect!"
+                          placeholder={t('message.placeholder')}
                           className="resize-none font-light text-xs"
                           onPointerDown={(e) => e.stopPropagation()}
                           {...field}
@@ -163,12 +168,12 @@ export function DrawerDemo() {
                     {loading ? (
                       <Loader2 className="h-4 w-4 animate-spin" />
                     ) : (
-                      "Submit"
+                      t('submit')
                     )}
                   </Button>
 
                   <DrawerClose asChild>
-                    <Button variant="outline">Cancel</Button>
+                    <Button variant="outline">{useTranslations('common')('cancel')}</Button>
                   </DrawerClose>
                 </DrawerFooter>
               </form>

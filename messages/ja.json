@@ -69,5 +69,11 @@
     "title": "ページが見つかりません",
     "description": "お探しのページは存在しません。",
     "backHome": "ホームへ戻る"
+  },
+  "common": {
+    "cancel": "キャンセル",
+    "close": "閉じる",
+    "save": "保存",
+    "loading": "読み込み中..."
   }
 }

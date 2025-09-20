@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { useTranslations } from 'next-intl';
 
 type Props = {};
 
 export const LearnMoreButton = (props: Props) => {
+  const t = useTranslations('hero');
+
   return (
     <Button
       onClick={() => {
@@ -13,7 +16,7 @@ export const LearnMoreButton = (props: Props) => {
           ?.scrollIntoView({ behavior: "smooth" });
       }}
     >
-      Learn more about me
+      {t('learnMore')}
     </Button>
   );
 };

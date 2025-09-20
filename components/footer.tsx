@@ -1,14 +1,17 @@
 import { Github, Linkedin } from "lucide-react";
 import Link from "next/link";
+import { getTranslations } from 'next-intl/server';
 
 type Props = {};
 
-export const Footer = (props: Props) => {
+export const Footer = async (props: Props) => {
+  const t = await getTranslations('footer');
+
   return (
     <div className="bg-background py-4 px-6 w-full">
       <div className=" flex items-center justify-between">
         <span className="text-xs font-light">
-          © Jethro Au. All right reserved.
+          © Jethro Au. {t('rights')}
         </span>
 
         <div className="flex items-center gap-2.5">

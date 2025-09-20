@@ -69,5 +69,11 @@
     "title": "Página no encontrada",
     "description": "La página que buscas no existe.",
     "backHome": "Volver al inicio"
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "close": "Cerrar",
+    "save": "Guardar",
+    "loading": "Cargando..."
   }
 }

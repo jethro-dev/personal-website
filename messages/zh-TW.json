@@ -69,5 +69,11 @@
     "title": "找不到頁面",
     "description": "您尋找的頁面不存在。",
     "backHome": "返回首頁"
+  },
+  "common": {
+    "cancel": "取消",
+    "close": "關閉",
+    "save": "儲存",
+    "loading": "載入中..."
   }
 }
