@@ -1,5 +1,5 @@
 'use client';
-import { useScroll, motion, useTransform } from 'framer-motion';
+import { useScroll, motion, useTransform } from 'motion/react';
 import Image from 'next/image';
 import React, { useEffect, useRef } from 'react';
 
@@ -10,7 +10,7 @@ type Props = {
 };
 
 export const SkillCategory = ({ title, items, onEnter }: Props) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'center center'],

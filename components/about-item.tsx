@@ -4,7 +4,7 @@ import {
   useMotionValueEvent,
   useScroll,
   useTransform,
-} from 'framer-motion';
+} from 'motion/react';
 import React, { useRef } from 'react';
 import { TypographyH3 } from './ui/typography-h3';
 import { TypographyP } from './ui/typography-p';
@@ -12,7 +12,7 @@ import { TypographyP } from './ui/typography-p';
 type Props = {};
 
 export const AboutItem = ({ title, text }: { title: string; text: string }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'center center'],

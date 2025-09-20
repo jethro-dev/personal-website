@@ -6,7 +6,7 @@ import {
   useMotionTemplate,
   useMotionValue,
   useTransform,
-} from "framer-motion";
+} from 'motion/react';
 import { useRef } from "react";
 import { cn } from "@/lib/utils";
 
@@ -82,7 +82,7 @@ export const MovingBorder = ({
   ry?: string;
   [key: string]: any;
 }) => {
-  const pathRef = useRef<any>();
+  const pathRef = useRef<any>(null);
   const progress = useMotionValue<number>(0);
 
   useAnimationFrame((time) => {

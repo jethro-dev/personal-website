@@ -16,20 +16,21 @@ import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CodeBlock from "@/components/code-block";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 export const revalidate = 60; // revalidate at most every minutes
 
 export async function generateMetadata({ params }: Props) {
-  const blog: DetailedBlog = await getBlog(params.slug);
+  const { slug } = await params;
+  const blog: DetailedBlog = await getBlog(slug);
   return {
     title: blog.title,
   };
 }
 
 const BlogPage = async ({ params }: Props) => {
-  let { slug } = params;
+  let { slug } = await params;
 
   let blog = await getBlog(slug);
   let relatedBlogs = await getRelatedBlogs(blog.tags);

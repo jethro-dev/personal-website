@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { MotionValue, motion, useScroll, useTransform } from "framer-motion";
+import { MotionValue, motion, useScroll, useTransform } from 'motion/react';
 import {
   IconBrightnessDown,
   IconBrightnessUp,

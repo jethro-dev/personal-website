@@ -6,14 +6,14 @@ import {
   useTransform,
   useSpring,
   MotionValue,
-} from "framer-motion";
+} from 'motion/react';
 import Image from "next/image";
 import Link from "next/link";
 import { TextGenerateEffect } from "./text-generate-effect";
 import CubicModel from "../cubic-model";
 
 export const HeroParallax = ({}: {}) => {
-  const ref = React.useRef(null);
+  const ref = React.useRef<HTMLDivElement>(null);
 
   return (
     <div

@@ -15,7 +15,7 @@ import {
   useMotionValueEvent,
   useScroll,
   useTransform,
-} from 'framer-motion';
+} from 'motion/react';
 import { useRef } from 'react';
 
 export const TimelineItemCard = ({
@@ -27,7 +27,7 @@ export const TimelineItemCard = ({
   is_present,
   keywords,
 }: Experience) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLLIElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'center center'],

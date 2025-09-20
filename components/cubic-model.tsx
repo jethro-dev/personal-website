@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import Spline from "@splinetool/react-spline";
-import { motion } from "framer-motion";
+// Temporarily disabled - @splinetool/react-spline is not compatible with React 19 yet
+// import Spline from "@splinetool/react-spline";
+import { motion } from 'motion/react';
 type Props = {};
 
 const CubicModel = (props: Props) => {
@@ -11,9 +12,11 @@ const CubicModel = (props: Props) => {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 8 }}
-      className="h-full w-full"
+      className="h-full w-full flex items-center justify-center"
     >
-      <Spline scene="https://prod.spline.design/sR6LhnbBfBdiewiT/scene.splinecode" />
+      {/* Temporarily disabled - @splinetool/react-spline is not compatible with React 19 yet */}
+      {/* <Spline scene="https://prod.spline.design/sR6LhnbBfBdiewiT/scene.splinecode" /> */}
+      <div className="text-muted-foreground">3D Model Loading...</div>
     </motion.div>
   );
 };
