@@ -8,6 +8,7 @@ import { PortableText } from "@portabletext/react";
 import { ConnectBanner } from "@/components/connect-banner";
 import { unstable_noStore as noStore, unstable_cache } from "next/cache";
 import { getBlog, getBlogs, getRelatedBlogs } from "@/lib/sanity-utils";
+import { getLocale } from 'next-intl/server';
 import { format, parseISO } from "date-fns";
 import { ArrowLeft } from "lucide-react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
@@ -16,14 +17,15 @@ import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import CodeBlock from "@/components/code-block";
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 };
 
 export const revalidate = 60; // revalidate at most every minutes
 
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  const blog: DetailedBlog = await getBlog(slug);
+  const locale = await getLocale();
+  const blog: DetailedBlog = await getBlog(slug, locale);
   return {
     title: blog.title,
   };
@@ -31,8 +33,9 @@ export async function generateMetadata({ params }: Props) {
 
 const BlogPage = async ({ params }: Props) => {
   let { slug } = await params;
+  const locale = await getLocale();
 
-  let blog = await getBlog(slug);
+  let blog = await getBlog(slug, locale);
   let relatedBlogs = await getRelatedBlogs(blog.tags);
   const formattedDate = format(
     parseISO(blog._createdAt.toString()),

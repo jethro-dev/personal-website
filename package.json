@@ -20,6 +20,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "@react-email/components": "^0.0.25",
     "@sanity/code-input": "^4.1.4",
+    "@sanity/document-internationalization": "^4.0.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.28.0",
     "@splinetool/react-spline": "^2.2.6",

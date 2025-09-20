@@ -7,16 +7,18 @@ import { TypographyP } from "./ui/typography-p";
 import { anton } from "@/app/fonts";
 import { groq } from "next-sanity";
 import { MacbookScroll } from "./ui/macbook-scroll";
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, getLocale } from 'next-intl/server';
 
 type Props = {};
 
 export const Hero = async (props: Props) => {
   const t = await getTranslations('hero');
+  const locale = await getLocale();
+
   const data =
-    await client.fetch(groq`*[_type=='page' && title == 'Home'][0].section[_type == 'heroSection'][0]{
+    await client.fetch(groq`*[_type=='page' && title == 'Home' && language == $locale][0].section[_type == 'heroSection'][0]{
     title,paragraph
-  }`);
+  }`, { locale });
 
   return (
     <header className="bg-background relative h-screen min-h-[600px] p-6 flex items-center justify-between transition duration-300">

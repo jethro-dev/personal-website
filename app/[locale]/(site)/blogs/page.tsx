@@ -7,11 +7,15 @@ import { format, parseISO } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
+import { getLocale } from 'next-intl/server';
 
-type Props = {};
+type Props = {
+  params: Promise<{ locale: string }>;
+};
 
 const BlogsMainPage = async (props: Props) => {
-  const blogs: SimpleBlog[] = await getBlogs();
+  const locale = await getLocale();
+  const blogs: SimpleBlog[] = await getBlogs(locale);
 
   function formatDate(date: Date) {
     // Format the month as a short name followed by a period
