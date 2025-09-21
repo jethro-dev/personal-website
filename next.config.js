@@ -42,6 +42,18 @@ const nextConfig = {
                 port: '',
                 pathname: '/**',
             },
+            {
+                protocol: 'https',
+                hostname: 'www.vectorlogo.zone',
+                port: '',
+                pathname: '/logos/**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'cdn.worldvectorlogo.com',
+                port: '',
+                pathname: '/logos/**',
+            },
         ],
     },
     logging: {

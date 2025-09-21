@@ -1,79 +1,107 @@
 {
   "metadata": {
     "title": "JethroAu.com",
-    "description": "探索科技与想象力的交汇点，踏上将概念转化为强大、以用户为中心的体验之旅。让我们一起建设未来——一行代码一次。"
+    "description": "Explore the intersection of technology and imagination as we embark on a journey to transform concepts into powerful, user-centric experiences. Let's build the future together – one line of code at a time."
   },
   "nav": {
     "home": "首页",
-    "blogs": "博客",
+    "about": "关于",
+    "skills": "技能",
+    "experience": "经历",
     "projects": "项目",
+    "blogs": "博客",
     "contact": "联系",
     "toggleTheme": "切换主题"
   },
   "hero": {
-    "learnMore": "了解更多",
-    "or": "或",
-    "scheduleCall": "预约通话"
+    "learnMore": "Learn More",
+    "or": "or",
+    "scheduleCall": "Schedule a call"
   },
   "contact": {
-    "title": "联系我们",
-    "description": "有项目构想吗？让我们一起合作！",
+    "title": "Get in Touch",
+    "description": "Have a project in mind? Let's work together!",
     "form": {
       "name": {
-        "label": "姓名",
-        "placeholder": "您的姓名",
-        "error": "姓名至少需要2个字符"
+        "label": "Name",
+        "placeholder": "Your name",
+        "error": "Name must be at least 2 characters"
       },
       "email": {
-        "label": "电子邮件",
+        "label": "Email",
         "placeholder": "your@email.com",
-        "error": "请输入有效的电子邮件"
+        "error": "Please enter a valid email"
       },
       "message": {
-        "label": "消息",
-        "placeholder": "告诉我您的项目...",
-        "error": "消息至少需要2个字符"
+        "label": "Message",
+        "placeholder": "Tell me about your project...",
+        "error": "Message must be at least 2 characters"
       },
-      "submit": "发送消息",
-      "submitting": "发送中...",
-      "success": "消息发送成功！",
-      "error": "发送失败，请重试。"
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
     }
   },
   "footer": {
-    "rights": "版权所有",
-    "quickLinks": "快速链接",
-    "social": "社交媒体"
+    "rights": "All rights reserved",
+    "quickLinks": "Quick Links",
+    "social": "Social"
   },
   "skills": {
-    "title": "技能与技术",
-    "description": "我使用的技术"
+    "title": "Skills & Technologies",
+    "description": "Technologies I work with",
+    "categories": {
+      "frontend": {
+        "title": "Front-End Development",
+        "description": "Specializing in modern web development, expertise includes JavaScript, TypeScript, React, and Next.js for building high-performance applications. With Remix for full-stack solutions and TailwindCSS with CSS/SASS for creating sleek, responsive designs, modern and accessible user experiences are delivered."
+      },
+      "backend": {
+        "title": "Back-End Development",
+        "description": "Expertise in backend development includes building scalable systems with Node.js, Express.js, and Python. Experience with Django and Java ensures robust solutions, while REST APIs and GraphQL enable seamless data integration."
+      },
+      "databases": {
+        "title": "Databases",
+        "description": "Expertise in database management includes MySQL, PostgreSQL, and MongoDB for designing and implementing scalable, efficient data solutions tailored to meet the needs of modern applications."
+      },
+      "devops": {
+        "title": "Dev Ops",
+        "description": "Specializing in DevOps, expertise includes setting up CI/CD pipelines, containerizing applications with Docker, and utilizing cloud platforms like AWS and Azure. Deployments are optimized on Vercel and Netlify for efficient scaling and performance."
+      },
+      "tools": {
+        "title": "Development Tools & Workflow",
+        "description": "Proficient in essential development tools and methodologies including Git for version control, Agile/Scrum for project management, Jest for testing, Webpack for bundling, and Figma for design and collaboration, ensuring efficient and streamlined development workflows."
+      }
+    }
+  },
+  "about": {
+    "subtitle": "关于我的一些小事"
   },
   "experience": {
-    "title": "经历",
-    "present": "至今"
+    "title": "Experience",
+    "present": "Present"
   },
   "projects": {
-    "title": "项目",
-    "viewMore": "查看更多",
-    "visitSite": "访问网站",
-    "viewCode": "查看代码"
+    "title": "Projects",
+    "viewMore": "View More",
+    "visitSite": "Visit Site",
+    "viewCode": "View Code"
   },
   "blogs": {
-    "title": "博客",
-    "readMore": "阅读更多",
-    "minRead": "分钟阅读",
-    "relatedPosts": "相关文章"
+    "title": "Blog",
+    "readMore": "Read More",
+    "minRead": "min read",
+    "relatedPosts": "Related Posts"
   },
   "notFound": {
-    "title": "找不到页面",
-    "description": "您寻找的页面不存在。",
-    "backHome": "返回首页"
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist.",
+    "backHome": "Back to Home"
   },
   "common": {
-    "cancel": "取消",
-    "close": "关闭",
-    "save": "保存",
-    "loading": "加载中..."
+    "cancel": "Cancel",
+    "close": "Close",
+    "save": "Save",
+    "loading": "Loading..."
   }
 }

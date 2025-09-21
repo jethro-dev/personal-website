@@ -1,20 +1,17 @@
 import { TypographyH1 } from "@/components/ui/typography-h1";
 import { TypographyP } from "@/components/ui/typography-p";
-import { client, urlFor } from "@/lib/sanity";
-import { DetailedBlog, SimpleBlog } from "@/typings";
 import Image from "next/image";
 import React from "react";
-import { PortableText } from "@portabletext/react";
 import { ConnectBanner } from "@/components/connect-banner";
 import { unstable_noStore as noStore, unstable_cache } from "next/cache";
-import { getBlog, getBlogs, getRelatedBlogs } from "@/lib/sanity-utils";
+import { getBlogPost, getRelatedBlogs, getAllBlogSlugs } from "@/lib/content";
 import { getLocale } from 'next-intl/server';
 import { format, parseISO } from "date-fns";
 import { ArrowLeft } from "lucide-react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-// you can also choose styles such as prism/dracula
-import { materialDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { MDXRemote } from 'next-mdx-remote/rsc';
 import CodeBlock from "@/components/code-block";
+import remarkGfm from 'remark-gfm';
+import rehypePrism from 'rehype-prism-plus';
 
 type Props = {
   params: Promise<{ slug: string; locale: string }>;
@@ -25,9 +22,17 @@ export const revalidate = 60; // revalidate at most every minutes
 export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const locale = await getLocale();
-  const blog: DetailedBlog = await getBlog(slug, locale);
+  const blog = await getBlogPost(slug, locale);
+
+  if (!blog) {
+    return {
+      title: 'Blog Post Not Found'
+    };
+  }
+
   return {
     title: blog.title,
+    description: blog.description,
   };
 }
 
@@ -35,19 +40,33 @@ const BlogPage = async ({ params }: Props) => {
   let { slug } = await params;
   const locale = await getLocale();
 
-  let blog = await getBlog(slug, locale);
-  let relatedBlogs = await getRelatedBlogs(blog.tags);
+  let blog = await getBlogPost(slug, locale);
+
+  if (!blog) {
+    return (
+      <main>
+        <div className="container max-w-7xl mt-40">
+          <h1 className="text-4xl font-bold">Blog post not found</h1>
+          <p className="mt-4">The blog post you&apos;re looking for doesn&apos;t exist.</p>
+        </div>
+      </main>
+    );
+  }
+
+  let relatedBlogs = await getRelatedBlogs(blog.tags, locale, slug);
   const formattedDate = format(
-    parseISO(blog._createdAt.toString()),
+    parseISO(blog.publishedAt),
     "eeee, MMMM do yyyy"
   );
 
-  const serializers = {
-    types: {
-      // @ts-ignore
-      code: ({ value }) => <CodeBlock value={value} />,
-      // Add other type serializers as needed
+  const components = {
+    pre: ({ children, ...props }: any) => {
+      const language = props['data-language'] || 'text';
+      return <CodeBlock value={{ language, code: children }} />;
     },
+    code: ({ children }: any) => (
+      <code className="bg-gray-800 px-1 py-0.5 rounded text-sm">{children}</code>
+    ),
   };
 
   return (
@@ -77,6 +96,11 @@ const BlogPage = async ({ params }: Props) => {
             <p className="text-xl mt-10 text-muted-foreground font-medium">
               {blog.description}
             </p>
+            {blog.readingTime && (
+              <p className="text-sm text-muted-foreground mt-4">
+                {blog.readingTime.text}
+              </p>
+            )}
           </div>
         </div>
       </header>
@@ -87,7 +111,7 @@ const BlogPage = async ({ params }: Props) => {
             <div className="border p-2 rounded-md">
               <div className="relative w-full aspect-video rounded-md overflow-hidden">
                 <Image
-                  src={urlFor(blog.coverImage).url()}
+                  src={blog.coverImage}
                   alt={blog.title}
                   fill
                   className="object-center object-cover"
@@ -97,7 +121,16 @@ const BlogPage = async ({ params }: Props) => {
             </div>
 
             <div className="my-20 prose dark:prose-invert prose-sm lg:prose-lg prose-li:marker:text-primary">
-              <PortableText value={blog.content} components={serializers} />
+              <MDXRemote
+                source={blog.content}
+                components={components}
+                options={{
+                  mdxOptions: {
+                    remarkPlugins: [remarkGfm],
+                    rehypePlugins: [rehypePrism],
+                  }
+                }}
+              />
             </div>
           </div>
         </div>
@@ -119,24 +152,28 @@ const BlogPage = async ({ params }: Props) => {
           </div>
 
           {/* related readings */}
-          <p className="mt-20 text-muted-foreground text-sm mb-6">
-            Related readings
-          </p>
-          {relatedBlogs.map((blog) => (
-            <div className="mt-6" key={blog._id}>
-              <p className="text-md font-medium">{blog.title}</p>
-              <div className="mt-2 flex items-center gap-2">
-                <Image
-                  src="/profile.jpeg"
-                  alt="Jethro Au's profile pciture"
-                  width={30}
-                  height={30}
-                  className="rounded-full"
-                />
-                <p className="text-sm text-muted-foreground">Jethro Au</p>
-              </div>
-            </div>
-          ))}
+          {relatedBlogs.length > 0 && (
+            <>
+              <p className="mt-20 text-muted-foreground text-sm mb-6">
+                Related readings
+              </p>
+              {relatedBlogs.map((blog) => (
+                <div className="mt-6" key={blog.slug}>
+                  <p className="text-md font-medium">{blog.title}</p>
+                  <div className="mt-2 flex items-center gap-2">
+                    <Image
+                      src="/profile.jpeg"
+                      alt="Jethro Au's profile pciture"
+                      width={30}
+                      height={30}
+                      className="rounded-full"
+                    />
+                    <p className="text-sm text-muted-foreground">Jethro Au</p>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
         </div>
       </div>
       <ConnectBanner />
@@ -145,9 +182,9 @@ const BlogPage = async ({ params }: Props) => {
 };
 
 export async function generateStaticParams() {
-  const blogs: SimpleBlog[] = await getBlogs();
-  return blogs.map((blogs) => ({
-    slug: blogs.slug,
+  const slugs = getAllBlogSlugs();
+  return slugs.map((slug) => ({
+    slug: slug,
   }));
 }
 

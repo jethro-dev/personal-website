@@ -1,17 +1,20 @@
 {
   "metadata": {
     "title": "JethroAu.com",
-    "description": "探索科技與想像力的交匯點，踏上將概念轉化為強大、以用戶為中心的體驗之旅。讓我們一起建設未來——一行代碼一次。"
+    "description": "探索科技與想像力的交匯點，踏上將概念轉化為強大、以使用者為中心的體驗之旅。讓我們一起建設未來——一行程式碼一次。"
   },
   "nav": {
     "home": "首頁",
+    "about": "關於",
+    "skills": "技能",
+    "experience": "經歷",
     "blogs": "部落格",
     "projects": "專案",
     "contact": "聯絡",
     "toggleTheme": "切換主題"
   },
   "hero": {
-    "learnMore": "了解更多",
+    "learnMore": "瞭解更多",
     "or": "或",
     "scheduleCall": "預約通話"
   },
@@ -47,7 +50,32 @@
   },
   "skills": {
     "title": "技能與技術",
-    "description": "我使用的技術"
+    "description": "我使用的技術",
+    "categories": {
+      "frontend": {
+        "title": "前端開發",
+        "description": "專精於現代網頁開發，專業技能包括 JavaScript、TypeScript、React 和 Next.js，用於構建高效能應用程式。運用 Remix 提供全端解決方案，並使用 TailwindCSS 與 CSS/SASS 創建時尚、響應式設計，提供現代化且易於使用的使用者體驗。"
+      },
+      "backend": {
+        "title": "後端開發",
+        "description": "後端開發專業包括使用 Node.js、Express.js 和 Python 構建可擴展系統。具備 Django 和 Java 經驗確保穩健的解決方案，同時 REST API 和 GraphQL 實現無縫資料整合。"
+      },
+      "databases": {
+        "title": "資料庫",
+        "description": "資料庫管理專業包括 MySQL、PostgreSQL 和 MongoDB，用於設計和實施可擴展、高效的資料解決方案，以滿足現代應用程式的需求。"
+      },
+      "devops": {
+        "title": "開發維運",
+        "description": "專精於 DevOps，專業技能包括設置 CI/CD 流程、使用 Docker 容器化應用程式，以及利用 AWS 和 Azure 等雲端平台。在 Vercel 和 Netlify 上優化部署，實現高效的擴展和效能。"
+      },
+      "tools": {
+        "title": "開發工具與工作流程",
+        "description": "精通基本開發工具和方法論，包括用於版本控制的 Git、用於專案管理的 Agile/Scrum、用於測試的 Jest、用於打包的 Webpack，以及用於設計和協作的 Figma，確保高效且流暢的開發工作流程。"
+      }
+    }
+  },
+  "about": {
+    "subtitle": "關於我的一些小事"
   },
   "experience": {
     "title": "經歷",
@@ -55,9 +83,9 @@
   },
   "projects": {
     "title": "專案",
-    "viewMore": "查看更多",
-    "visitSite": "訪問網站",
-    "viewCode": "查看程式碼"
+    "viewMore": "檢視更多",
+    "visitSite": "造訪網站",
+    "viewCode": "檢視程式碼"
   },
   "blogs": {
     "title": "部落格",

@@ -1,19 +1,20 @@
 import React from "react";
 import { TypographyH1 } from "./ui/typography-h1";
 import { TypographyP } from "./ui/typography-p";
-import { client, urlFor } from "@/lib/sanity";
 import { SimpleBlog } from "@/typings";
 import Image from "next/image";
 import Link from "next/link";
-import { getBlogs } from "@/lib/sanity-utils";
+import { getBlogPosts } from "@/lib/content";
 import { BlogCard } from "./blog-card";
 import { Button } from "./ui/button";
+import { getLocale } from 'next-intl/server';
 
 type Props = {};
 
 export const LatestBlogPosts = async ({}: Props) => {
-  const blogs: SimpleBlog[] = await getBlogs();
-  if (!blogs) {
+  const locale = await getLocale();
+  const blogs = await getBlogPosts(locale);
+  if (!blogs || blogs.length === 0) {
     return null;
   }
   return (

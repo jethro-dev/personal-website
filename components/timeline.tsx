@@ -1,7 +1,8 @@
 import { cn } from '@/lib/utils';
 import React from 'react';
-import { getExperienceSectionData } from '@/lib/sanity-utils';
+import { getExperiences } from '@/lib/content';
 import { TimelineItemCard } from './timeline-item-card';
+import { getLocale } from 'next-intl/server';
 
 type Props = {
   className?: string;

@@ -1,0 +1,107 @@
+[
+  {
+    "id": "52ee8a3c-d7ce-46df-881f-ee1d0fcf6dc8",
+    "title": "Desarrollador de Software Freelance",
+    "description": "Diseño soluciones innovadoras de comercio electrónico, aprovechando tecnologías web avanzadas para crear aplicaciones web fluidas y centradas en el usuario que optimizan las experiencias de compra en línea e impulsan el crecimiento empresarial. HTML CSS JavaScript",
+    "organisation": "Freelance",
+    "startDate": "2021-06-01",
+    "endDate": "2022-03-01",
+    "isPresent": false,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Shopify"
+    ]
+  },
+  {
+    "id": "5e43ae3a-6660-498b-be6a-a5de4dfe3e18",
+    "title": "Ingeniero de Software",
+    "description": "Creación de aplicaciones web full-stack robustas para startups, impulsando iniciativas digitales a través de soluciones innovadoras que combinan perfectamente la sofisticación del frontend con funcionalidades poderosas del backend.",
+    "organisation": "LIVR",
+    "startDate": "2023-05-01",
+    "endDate": "2024-03-31",
+    "isPresent": false,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next",
+      "Node",
+      "Python",
+      "AWS"
+    ]
+  },
+  {
+    "id": "67967c5a-1ec8-46a3-833b-a2dbe885ea37",
+    "title": "Prácticas Profesionales",
+    "description": "Mejorar los sitios web de la empresa y proporcionar una mejor experiencia de usuario.",
+    "organisation": "PR Asia",
+    "startDate": "2019-06-01",
+    "endDate": "2019-08-01",
+    "isPresent": false,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": "a2398b91-590d-43e4-a595-32b89896ff13",
+    "title": "Ingeniero de Software Junior",
+    "description": "Desarrollar una plataforma de planificación y análisis financiero para pequeñas y medianas empresas y sus asesores financieros.",
+    "organisation": "The Business Plan Shop",
+    "startDate": "2022-03-01",
+    "endDate": "2023-05-31",
+    "isPresent": false,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "Java",
+      "JavaScript",
+      "Node",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "id": "c9fa471b-ae61-47db-b5e2-5e4d9d261b11",
+    "title": "Licenciatura en Ciencias",
+    "description": "Perfeccionando la destreza en resolución de problemas y habilidades de programación avanzada, subrayando un compromiso con la excelencia en el mundo dinámico de la tecnología.",
+    "organisation": "University of Sussex",
+    "startDate": "2018-09-01",
+    "endDate": "2021-06-01",
+    "isPresent": false,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Java"
+    ]
+  },
+  {
+    "id": "e6865877-9209-4244-843b-3115d823da99",
+    "title": "Ingeniero Frontend",
+    "description": "Desarrollé un sofisticado servicio de streaming de música aprovechando React, entregando una interfaz de usuario fluida e interactiva que soporta funcionalidades complejas.",
+    "organisation": "STEM",
+    "startDate": "2024-04-01",
+    "endDate": null,
+    "isPresent": true,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "TypeScript",
+      "JavaScript",
+      "Azure",
+      "AWS",
+      "Remix",
+      "React",
+      "Next",
+      "Web Audio API",
+      "Apollo",
+      "GraphQL",
+      "RESTful APIs"
+    ]
+  }
+]

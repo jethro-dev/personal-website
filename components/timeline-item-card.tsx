@@ -3,7 +3,6 @@
 import Image from 'next/image';
 import { CardBody, CardContainer, CardItem } from '@/components/ui/3d-card';
 import { Experience, Project } from '@/typings';
-import { urlFor } from '@/lib/sanity';
 import { Badge } from './badge';
 import { Eye, Github, Linkedin } from 'lucide-react';
 import Link from 'next/link';

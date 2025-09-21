@@ -7,12 +7,11 @@ import { Badge } from './badge';
 import { KEYWORDS, Project } from '@/typings';
 import Link from 'next/link';
 import { ArrowUpRightFromSquare } from 'lucide-react';
-import { client, urlFor } from '@/lib/sanity';
-import { groq } from 'next-sanity';
 import { unstable_noStore as noStore } from 'next/cache';
-import { getProjects } from '@/lib/sanity-utils';
+import { getProjects } from '@/lib/content';
 import { ProjectCard } from './project-card';
 import { PortfolioGrid } from './portfolio-grid';
+import { getLocale } from 'next-intl/server';
 
 type Props = {};
 

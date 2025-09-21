@@ -1,0 +1,125 @@
+{
+  "section": [
+    {
+      "_type": "heroSection",
+      "description": null,
+      "experience": null,
+      "paragraph": "Explore the intersection of technology and imagination as we embark on a journey to transform concepts into powerful, user-centric experiences. Let's build the future together – one line of code at a time.",
+      "paragraphs": null,
+      "title": "Welcome to jethroau.com!",
+      "tldr": null
+    },
+    {
+      "_type": "aboutSection",
+      "description": null,
+      "experience": null,
+      "paragraph": null,
+      "paragraphs": [
+        {
+          "text": "A passionate Computer Science graduate chasing his dreams. Originated in Hong Kong, currently living in the capital of the UK — London. Giving me the ability to read and write fluently in two of the most spoken languages in the world, English, and Chinese.",
+          "title": "What about me?"
+        },
+        {
+          "text": "There's nothing more satisfying than solving a problem that's been around for a while and nobody else knows how to solve. As a software developer, I constantly provide solutions for users' problems. I can be working on the occasional quick fix as well as more complex strategic solutions.",
+          "title": "Why do I love software development so much?"
+        },
+        {
+          "text": "Great fundamentals built up from university. I am always curious and love to stay updated to the latest technology. Also, I love challenges and I don't give up. With the advantages of bilingual, I am able to connect and collaborate with developers around the world.",
+          "title": "Then, what makes me a good software engineer?"
+        }
+      ],
+      "title": "About me",
+      "tldr": [
+        "Born in Hong Kong, fluent in both English and Chinese",
+        "Passionate developer and life-time learner",
+        "Smart and hardworking"
+      ]
+    },
+    {
+      "_type": "experienceSection",
+      "description": "Embark on a journey through my diverse expertise, where technology meets innovation. From crafting immersive web applications to pioneering e-commerce solutions, my experience is a testament to a dynamic blend of creativity, precision, and a passion for driving digital success.",
+      "experience": [
+        {
+          "description": "Honing problem-solving prowess and advanced programming skills, underlining a commitment to excellence in the dynamic world of technology.",
+          "endDate": "2021-06-01",
+          "is_present": false,
+          "keywords": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Java"
+          ],
+          "organisation": "University of Sussex",
+          "startDate": "2018-09-01",
+          "title": "Bachelor of Science"
+        },
+        {
+          "description": "Enhance company websites and provide better user experience.",
+          "endDate": "2019-08-01",
+          "is_present": false,
+          "keywords": [
+            "HTML",
+            "CSS",
+            "JavaScript"
+          ],
+          "organisation": "PR Asia",
+          "startDate": "2019-06-01",
+          "title": "Internship"
+        },
+        {
+          "description": "Engineer innovative e-commerce solutions, leveraging advanced web technologies to create seamless and user-centric web applications that optimize online shopping experiences and drive business growth.  HTML CSS JavaScript",
+          "endDate": "2022-03-01",
+          "is_present": false,
+          "keywords": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Shopify"
+          ],
+          "organisation": "Freelance",
+          "startDate": "2021-06-01",
+          "title": "Freelance Software Developer"
+        },
+        {
+          "description": "Develop a financial planning and analysis platform for small and medium-size businesses, and their financial advisors.",
+          "endDate": "2023-05-31",
+          "is_present": false,
+          "keywords": [
+            "HTML",
+            "CSS",
+            "Java",
+            "JavaScript",
+            "Node",
+            "PostgreSQL"
+          ],
+          "organisation": "The Business Plan Shop",
+          "startDate": "2022-03-01",
+          "title": "Junior Software Engineer"
+        },
+        {
+          "description": "Crafting robust full-stack web applications for startups, driving digital initiatives through innovative solutions that seamlessly blend front-end sophistication with powerful back-end functionalities.",
+          "endDate": "2024-03-31",
+          "is_present": false,
+          "keywords": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "TypeScript",
+            "React",
+            "Next",
+            "Node",
+            "Python",
+            "AWS"
+          ],
+          "organisation": "LIVR",
+          "startDate": "2023-05-01",
+          "title": "Software Engineer"
+        }
+      ],
+      "paragraph": null,
+      "paragraphs": null,
+      "title": "My Experience",
+      "tldr": null
+    }
+  ]
+}

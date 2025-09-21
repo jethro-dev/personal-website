@@ -5,8 +5,11 @@
   },
   "nav": {
     "home": "Home",
-    "blogs": "Blogs",
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
     "projects": "Projects",
+    "blogs": "Blogs",
     "contact": "Contact",
     "toggleTheme": "Toggle theme"
   },
@@ -47,7 +50,32 @@
   },
   "skills": {
     "title": "Skills & Technologies",
-    "description": "Technologies I work with"
+    "description": "Technologies I work with",
+    "categories": {
+      "frontend": {
+        "title": "Front-End Development",
+        "description": "Specializing in modern web development, expertise includes JavaScript, TypeScript, React, and Next.js for building high-performance applications. With Remix for full-stack solutions and TailwindCSS with CSS/SASS for creating sleek, responsive designs, modern and accessible user experiences are delivered."
+      },
+      "backend": {
+        "title": "Back-End Development",
+        "description": "Expertise in backend development includes building scalable systems with Node.js, Express.js, and Python. Experience with Django and Java ensures robust solutions, while REST APIs and GraphQL enable seamless data integration."
+      },
+      "databases": {
+        "title": "Databases",
+        "description": "Expertise in database management includes MySQL, PostgreSQL, and MongoDB for designing and implementing scalable, efficient data solutions tailored to meet the needs of modern applications."
+      },
+      "devops": {
+        "title": "Dev Ops",
+        "description": "Specializing in DevOps, expertise includes setting up CI/CD pipelines, containerizing applications with Docker, and utilizing cloud platforms like AWS and Azure. Deployments are optimized on Vercel and Netlify for efficient scaling and performance."
+      },
+      "tools": {
+        "title": "Development Tools & Workflow",
+        "description": "Proficient in essential development tools and methodologies including Git for version control, Agile/Scrum for project management, Jest for testing, Webpack for bundling, and Figma for design and collaboration, ensuring efficient and streamlined development workflows."
+      }
+    }
+  },
+  "about": {
+    "subtitle": "Little things about me"
   },
   "experience": {
     "title": "Experience",

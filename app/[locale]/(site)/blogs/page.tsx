@@ -1,9 +1,7 @@
 import { ConnectBanner } from "@/components/connect-banner";
-import { urlFor } from "@/lib/sanity";
-import { getBlogs } from "@/lib/sanity-utils";
+import { getBlogPosts } from "@/lib/content";
 import { cn } from "@/lib/utils";
-import { SimpleBlog } from "@/typings";
-import { format, parseISO } from "date-fns";
+import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -15,9 +13,9 @@ type Props = {
 
 const BlogsMainPage = async (props: Props) => {
   const locale = await getLocale();
-  const blogs: SimpleBlog[] = await getBlogs(locale);
+  const blogs = await getBlogPosts(locale);
 
-  function formatDate(date: Date) {
+  function formatDate(date: string | Date) {
     // Format the month as a short name followed by a period
     const month = format(new Date(date), "MMM"); // 'Apr'
 
@@ -25,7 +23,7 @@ const BlogsMainPage = async (props: Props) => {
     const day = format(new Date(date), "do"); // '17th'
 
     // Format the year as four digits
-    const year = format(new Date(date), "yyyy"); // '2024'
+    const year = format(new Date(date), "yyyy"); // '2025'
 
     return `${month}. ${day} ${year}`;
   }
@@ -59,7 +57,7 @@ const BlogsMainPage = async (props: Props) => {
             >
               <div className="bg-black absolute inset-0 z-10 opacity-50"></div>
               <Image
-                src={urlFor(blog.coverImage).url()}
+                src={blog.coverImage}
                 alt="Blog cover image"
                 fill
                 className="object-center object-cover brightness-50 group-hover:brightness-100 transition-all"
@@ -80,7 +78,7 @@ const BlogsMainPage = async (props: Props) => {
                     </p>
                   </div>
                   <p className="text-sm font-medium text-muted-foreground">
-                    {formatDate(blog._createdAt)}
+                    {formatDate(blog.publishedAt)}
                   </p>
                 </div>
               </div>

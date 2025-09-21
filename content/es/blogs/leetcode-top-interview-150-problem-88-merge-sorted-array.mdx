@@ -1,0 +1,83 @@
+---
+title: 'LeetCode Top Interview 150: Problema 88 Fusionar Array Ordenado'
+description: >-
+  Hoy, nos sumergimos en una pregunta de entrevista popular que se encuentra frecuentemente
+  en LeetCode: Fusionar Array Ordenado.
+slug: leetcode-top-interview-150-problem-88-merge-sorted-array
+coverImage: >-
+  https://cdn.sanity.io/images/dsnalg9u/production/469e18e67c06f6b7c5b5a038c4cf227cbddbecec-500x260.png
+category: LeetCode
+tags:
+  - engineering
+  - c++
+  - leetcode
+  - programming
+  - merge
+  - sort
+  - array
+publishedAt: '2024-05-09T00:08:16Z'
+updatedAt: '2024-05-09T02:32:08Z'
+---
+¡Bienvenido a otro viaje de programación! Hoy, nos sumergimos en una pregunta de entrevista popular que se encuentra frecuentemente en LeetCode: **Fusionar Array Ordenado**. La tarea es simple pero complicada; fusionar dos arrays ordenados en un array ordenado. El desafío a menudo toma a las personas desprevenidas cuando se trata de manejar casos extremos y asegurar eficiencia óptima.
+
+Aquí hay un resumen rápido del enunciado del problema:
+
+Dados dos arrays de enteros `nums1` y `nums2`, ordenados en orden no decreciente, y dos enteros `m` y `n`, representando el número de elementos en `nums1` y `nums2` respectivamente, fusiona `nums2` en `nums1` haciendo de `nums1` un solo array ordenado.
+
+### Configuración Inicial
+
+El truco aquí es utilizar el hecho de que `nums1` tiene suficiente espacio al final para acomodar todos los elementos de `nums2` (como especifica el problema). Fusionaremos los arrays desde el final hasta el principio para evitar sobrescribir elementos en `nums1` que aún no han sido procesados.
+
+Aquí está el fragmento de código proporcionado:
+
+
+```cpp
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (j >= 0) {
+            if (i >= 0 && nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
+            }
+        }
+    }
+};
+```
+
+### Explicación del Código
+
+- **Inicialización de Variables**:
+
+- `i` comienza en el último elemento válido de `nums1`.
+
+- `j` comienza en el último elemento de `nums2`.
+
+- `k` comienza en la última posición en el array `nums1` donde se colocará el elemento final del array fusionado.
+
+- **Proceso de Fusión**:
+
+- El bucle `while` continúa hasta que todos los elementos de `nums2` hayan sido considerados (es decir, `j >= 0`).
+
+- Dentro del bucle, comparamos elementos de `nums1` y `nums2` desde el final hasta el principio.
+
+- Si el elemento actual de `nums1` (`nums1[i]`) es mayor que el elemento actual de `nums2` (`nums2[j]`), colocamos `nums1[i]` en la posición `k` en `nums1` y decrementamos tanto `i` como `k`.
+
+- De lo contrario, colocamos `nums2[j]` en la posición `k` y decrementamos tanto `j` como `k`.
+
+### ¿Por qué Fusionar desde el Final?
+
+Fusionar desde el final es un movimiento estratégico porque nos permite llenar `nums1` desde atrás, evitando la necesidad de mover elementos para hacer espacio. Esta técnica asegura que la operación de fusión sea eficiente, con una complejidad temporal de O(m + n), donde m y n son las longitudes de los dos arrays.
+
+### Conclusión
+
+Esta solución es elegante en su simplicidad y eficiencia. Aprovecha el espacio proporcionado dentro de `nums1`, asegurando que no se necesite espacio adicional, adhiriéndose a las restricciones de fusión en el lugar.
+
+Espero que este recorrido haya arrojado luz sobre el proceso de pensamiento detrás de resolver el problema de Fusionar Array Ordenado y te haya ayudado a entender cómo abordar problemas similares en tus entrevistas o sesiones de práctica.
+
+¡Mantente atento para más soluciones y feliz programación!

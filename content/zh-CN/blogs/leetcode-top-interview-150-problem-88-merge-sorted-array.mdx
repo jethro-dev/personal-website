@@ -1,0 +1,82 @@
+---
+title: 'LeetCode Top Interview 150: 问题 88 合并有序数组'
+description: >-
+  今天，我们将深入探讨一个在 LeetCode 上经常遇到的热门面试问题：合并有序数组。
+slug: leetcode-top-interview-150-problem-88-merge-sorted-array
+coverImage: >-
+  https://cdn.sanity.io/images/dsnalg9u/production/469e18e67c06f6b7c5b5a038c4cf227cbddbecec-500x260.png
+category: LeetCode
+tags:
+  - engineering
+  - c++
+  - leetcode
+  - programming
+  - merge
+  - sort
+  - array
+publishedAt: '2024-05-09T00:08:16Z'
+updatedAt: '2024-05-09T02:32:08Z'
+---
+欢迎来到另一段编程之旅！今天，我们将深入探讨一个在 LeetCode 上经常遇到的热门面试问题：**合并有序数组**。这个任务看似简单但有技巧性；将两个有序数组合并成一个有序数组。这个挑战经常在处理边界情况和确保最优效率方面让人措手不及。
+
+以下是问题陈述的快速总结：
+
+给定两个按非递减顺序排列的整数数组 `nums1` 和 `nums2`，以及两个整数 `m` 和 `n`，分别表示 `nums1` 和 `nums2` 中的元素数量，将 `nums2` 合并到 `nums1` 中，使 `nums1` 成为一个有序数组。
+
+### 初始设置
+
+这里的技巧是利用 `nums1` 末尾有足够空间来容纳 `nums2` 的所有元素这一事实（如问题所述）。我们将从末尾到开头合并数组，以避免覆盖 `nums1` 中尚未处理的元素。
+
+以下是提供的代码片段：
+
+
+```cpp
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (j >= 0) {
+            if (i >= 0 && nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
+            }
+        }
+    }
+};
+```
+
+### 代码解释
+
+- **变量初始化**：
+
+- `i` 从 `nums1` 的最后一个有效元素开始。
+
+- `j` 从 `nums2` 的最后一个元素开始。
+
+- `k` 从数组 `nums1` 中将放置合并数组最终元素的最后位置开始。
+
+- **合并过程**：
+
+- `while` 循环继续，直到考虑了 `nums2` 的所有元素（即 `j >= 0`）。
+
+- 在循环内，我们从末尾到开头比较 `nums1` 和 `nums2` 的元素。
+
+- 如果 `nums1` 的当前元素（`nums1[i]`）大于 `nums2` 的当前元素（`nums2[j]`），我们将 `nums1[i]` 放在 `nums1` 的位置 `k`，并减少 `i` 和 `k`。
+
+- 否则，我们将 `nums2[j]` 放在位置 `k`，并减少 `j` 和 `k`。
+
+### 为什么从末尾合并？
+
+从末尾合并是一个战略性举措，因为它允许我们从后面填充 `nums1`，避免需要移动元素来腾出空间。这种技术确保合并操作是高效的，时间复杂度为 O(m + n)，其中 m 和 n 是两个数组的长度。
+
+### 结论
+
+这个解决方案在简洁性和效率方面都很优雅。它利用了 `nums1` 内提供的空间，确保不需要额外空间，符合原地合并的约束。
+
+我希望这个演示阐明了解决合并有序数组问题背后的思考过程，并帮助你理解如何在面试或练习中处理类似问题。
+
+请继续关注更多解决方案，编程愉快！

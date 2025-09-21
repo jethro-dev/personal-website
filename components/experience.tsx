@@ -3,7 +3,8 @@ import { TypographyH1 } from './ui/typography-h1';
 import { TypographyP } from './ui/typography-p';
 import { Timeline } from './timeline';
 import { Button } from './ui/button';
-import { getExperienceSectionData } from '@/lib/sanity-utils';
+import { getExperiences } from '@/lib/content';
+import { getLocale } from 'next-intl/server';
 
 type Props = {};
 

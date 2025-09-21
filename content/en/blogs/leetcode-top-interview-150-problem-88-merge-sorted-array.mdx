@@ -1,0 +1,84 @@
+---
+title: 'LeetCode Top Interview 150: Problem 88 Merge Sorted Array'
+description: >-
+  Today, we're diving into a popular interview question frequently encountered
+  on LeetCode: Merge Sorted Array.
+slug: leetcode-top-interview-150-problem-88-merge-sorted-array
+coverImage: >-
+  https://cdn.sanity.io/images/dsnalg9u/production/469e18e67c06f6b7c5b5a038c4cf227cbddbecec-500x260.png
+category: LeetCode
+tags:
+  - engineering
+  - c++
+  - leetcode
+  - programming
+  - merge
+  - sort
+  - array
+publishedAt: '2024-05-09T00:08:16Z'
+updatedAt: '2024-05-09T02:32:08Z'
+---
+Welcome to another coding journey! Today, we're diving into a popular interview question frequently encountered on LeetCode: **Merge Sorted Array**. The task is simple but tricky; merge two sorted arrays into one sorted array. The challenge often catches people off guard when it comes to handling edge cases and ensuring optimal efficiency.
+
+Here's a quick summary of the problem statement:
+
+Given two integer arrays `nums1` and `nums2`, sorted in non-decreasing order, and two integers `m` and `n`, representing the number of elements in `nums1` and `nums2` respectively, merge `nums2` into `nums1` making `nums1` a single sorted array.
+
+### Initial Setup
+
+The trick here is to utilize the fact that `nums1` has enough space at the end to accommodate all elements of `nums2` (as specified by the problem). We'll merge the arrays from the end to the beginning to avoid overwriting elements in `nums1` that haven't been processed yet.
+
+Here's the code snippet provided:
+
+
+```cpp
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (j >= 0) {
+            if (i >= 0 && nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
+            }
+        }
+    }
+};
+```
+
+`
+`Code Explanation
+
+- **Variables Initialization**:
+
+- `i` starts at the last valid element of `nums1`.
+
+- `j` starts at the last element of `nums2`.
+
+- `k` starts at the last position in the array `nums1` where the final element of the merged array will be placed.
+
+- **Merging Process**:
+
+- The `while` loop continues until all elements of `nums2` have been considered (i.e., `j >= 0`).
+
+- Inside the loop, we compare elements from `nums1` and `nums2` from the end to the beginning.
+
+- If the current element of `nums1` (`nums1[i]`) is greater than the current element of `nums2` (`nums2[j]`), we place `nums1[i]` at position `k` in `nums1` and decrease both `i` and `k`.
+
+- Otherwise, we place `nums2[j]` at position `k` and decrease both `j` and `k`.
+
+### Why Merge from the End?
+
+Merging from the end is a strategic move because it allows us to fill `nums1` from the back, avoiding the need to shift elements to make space. This technique ensures that the merge operation is efficient, with a time complexity of O(m + n), where m and n are the lengths of the two arrays.
+
+### Conclusion
+
+This solution is elegant in its simplicity and efficiency. It leverages the provided space within `nums1`, ensuring that no additional space is needed, adhering to the constraints of in-place merging.
+
+I hope this walkthrough has shed light on the thought process behind solving the Merge Sorted Array problem and helped you understand how to approach similar problems in your interviews or practice sessions.
+
+Stay tuned for more solutions and happy coding!

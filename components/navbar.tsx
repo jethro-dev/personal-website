@@ -15,39 +15,43 @@ type NavItem = {
   smooth: boolean;
 };
 
-const list_item: NavItem[] = [
-  {
-    title: "About",
-    href: "#about",
-    smooth: true,
-  },
-  {
-    title: "Skills",
-    href: "#skills",
-    smooth: true,
-  },
-  {
-    title: "Experience",
-    href: "#experience",
-    smooth: true,
-  },
-  {
-    title: "Projects",
-    href: "#portfolio",
-    smooth: true,
-  },
-  {
-    title: "Blogs",
-    href: "/blogs",
-    smooth: false,
-  },
-];
+// Move this inside the component to access translations
+// const list_item defined inside component now
 
 export const Navbar = (props: Props) => {
   const t = useTranslations('nav');
   const { theme, setTheme } = useTheme();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
+
+  // Define list_item inside component to use translations
+  const list_item: NavItem[] = [
+    {
+      title: t('about'),
+      href: "#about",
+      smooth: true,
+    },
+    {
+      title: t('skills'),
+      href: "#skills",
+      smooth: true,
+    },
+    {
+      title: t('experience'),
+      href: "#experience",
+      smooth: true,
+    },
+    {
+      title: t('projects'),
+      href: "#portfolio",
+      smooth: true,
+    },
+    {
+      title: t('blogs'),
+      href: "/blogs",
+      smooth: false,
+    },
+  ];
 
   const handleScroll = () => {
     const currentScrollPos = window.pageYOffset;

@@ -1,22 +1,25 @@
 {
   "metadata": {
     "title": "JethroAu.com",
-    "description": "Explora la intersección de tecnología e imaginación mientras emprendemos un viaje para transformar conceptos en experiencias poderosas centradas en el usuario. Construyamos el futuro juntos, una línea de código a la vez."
+    "description": "Explora la intersección de la tecnología y la imaginación mientras nos embarcamos en un viaje para transformar conceptos en experiencias poderosas y centradas en el usuario. Construyamos el futuro juntos, una línea de código a la vez."
   },
   "nav": {
     "home": "Inicio",
+    "about": "Acerca",
+    "skills": "Habilidades",
+    "experience": "Experiencia",
     "blogs": "Blog",
     "projects": "Proyectos",
     "contact": "Contacto",
     "toggleTheme": "Cambiar tema"
   },
   "hero": {
-    "learnMore": "Más información",
+    "learnMore": "Saber Más",
     "or": "o",
-    "scheduleCall": "Agendar una llamada"
+    "scheduleCall": "Programar una llamada"
   },
   "contact": {
-    "title": "Ponte en contacto",
+    "title": "Ponerse en Contacto",
     "description": "¿Tienes un proyecto en mente? ¡Trabajemos juntos!",
     "form": {
       "name": {
@@ -25,29 +28,54 @@
         "error": "El nombre debe tener al menos 2 caracteres"
       },
       "email": {
-        "label": "Correo electrónico",
+        "label": "Correo Electrónico",
         "placeholder": "tu@email.com",
-        "error": "Por favor, ingresa un correo válido"
+        "error": "Por favor, ingresa un correo electrónico válido"
       },
       "message": {
         "label": "Mensaje",
         "placeholder": "Cuéntame sobre tu proyecto...",
         "error": "El mensaje debe tener al menos 2 caracteres"
       },
-      "submit": "Enviar mensaje",
+      "submit": "Enviar Mensaje",
       "submitting": "Enviando...",
       "success": "¡Mensaje enviado con éxito!",
-      "error": "Error al enviar. Por favor, intenta de nuevo."
+      "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
     }
   },
   "footer": {
     "rights": "Todos los derechos reservados",
-    "quickLinks": "Enlaces rápidos",
-    "social": "Redes sociales"
+    "quickLinks": "Enlaces Rápidos",
+    "social": "Redes Sociales"
   },
   "skills": {
     "title": "Habilidades y Tecnologías",
-    "description": "Tecnologías con las que trabajo"
+    "description": "Tecnologías con las que trabajo",
+    "categories": {
+      "frontend": {
+        "title": "Desarrollo Frontend",
+        "description": "Especializado en desarrollo web moderno, mi experiencia incluye JavaScript, TypeScript, React y Next.js para construir aplicaciones de alto rendimiento. Con Remix para soluciones full-stack y TailwindCSS con CSS/SASS para crear diseños elegantes y responsivos, se entregan experiencias de usuario modernas y accesibles."
+      },
+      "backend": {
+        "title": "Desarrollo Backend",
+        "description": "La experiencia en desarrollo backend incluye la construcción de sistemas escalables con Node.js, Express.js y Python. La experiencia con Django y Java asegura soluciones robustas, mientras que las APIs REST y GraphQL permiten una integración de datos sin problemas."
+      },
+      "databases": {
+        "title": "Bases de Datos",
+        "description": "La experiencia en gestión de bases de datos incluye MySQL, PostgreSQL y MongoDB para diseñar e implementar soluciones de datos escalables y eficientes adaptadas a las necesidades de las aplicaciones modernas."
+      },
+      "devops": {
+        "title": "DevOps",
+        "description": "Especializado en DevOps, mi experiencia incluye la configuración de pipelines CI/CD, la contenerización de aplicaciones con Docker, y la utilización de plataformas en la nube como AWS y Azure. Los despliegues se optimizan en Vercel y Netlify para un escalado y rendimiento eficientes."
+      },
+      "tools": {
+        "title": "Herramientas de Desarrollo y Flujo de Trabajo",
+        "description": "Competente en herramientas de desarrollo esenciales y metodologías incluyendo Git para control de versiones, Agile/Scrum para gestión de proyectos, Jest para pruebas, Webpack para empaquetado, y Figma para diseño y colaboración, asegurando flujos de trabajo de desarrollo eficientes y optimizados."
+      }
+    }
+  },
+  "about": {
+    "subtitle": "Pequeñas cosas sobre mí"
   },
   "experience": {
     "title": "Experiencia",
@@ -55,20 +83,20 @@
   },
   "projects": {
     "title": "Proyectos",
-    "viewMore": "Ver más",
-    "visitSite": "Visitar sitio",
-    "viewCode": "Ver código"
+    "viewMore": "Ver Más",
+    "visitSite": "Visitar Sitio",
+    "viewCode": "Ver Código"
   },
   "blogs": {
     "title": "Blog",
-    "readMore": "Leer más",
+    "readMore": "Leer Más",
     "minRead": "min de lectura",
-    "relatedPosts": "Publicaciones relacionadas"
+    "relatedPosts": "Publicaciones Relacionadas"
   },
   "notFound": {
-    "title": "Página no encontrada",
+    "title": "Página No Encontrada",
     "description": "La página que buscas no existe.",
-    "backHome": "Volver al inicio"
+    "backHome": "Volver al Inicio"
   },
   "common": {
     "cancel": "Cancelar",

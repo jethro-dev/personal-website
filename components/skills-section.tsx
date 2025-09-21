@@ -48,7 +48,7 @@ const frontends = [
   },
   {
     name: 'shadcn-ui',
-    logo: '/images/shadcn-icon.png',
+    logo: '/images/shadcn-ui.svg',
   },
 ];
 
@@ -67,29 +67,19 @@ const backends = [
   },
   {
     name: 'Django',
-    logo: '/django-icon-svgrepo-com.svg',
+    logo: '/icons8-django.svg',
   },
   {
     name: 'Java',
-    logo: '/icons8-java.svg',
+    logo: '/images/icons8-java.svg',
   },
   {
-    name: 'REST APIs',
+    name: 'REST API',
     logo: '/rest-api.png',
   },
   {
     name: 'GraphQL',
     logo: '/graphql-logo.svg',
-  },
-];
-const orm = [
-  {
-    name: 'Prisma',
-    logo: '/icons8-express-js.svg',
-  },
-  {
-    name: 'Drizzle ORM',
-    logo: '/node-js.svg',
   },
 ];
 
@@ -106,30 +96,29 @@ const databases = [
     name: 'MongoDB',
     logo: 'https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg',
   },
-];
-
-const paas = [
-  {
-    name: 'Vercel',
-    logo: '/vercel-icon-light.svg',
-  },
-  {
-    name: 'Netlify',
-    logo: '/netlify-logo.svg',
-  },
-  {
-    name: 'Heroku',
-    logo: 'https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg',
-  },
-];
-const baas = [
-  {
-    name: 'Supabase',
-    logo: '/vercel-icon-light.svg',
-  },
   {
     name: 'Firebase',
-    logo: '/netlify-logo.svg',
+    logo: 'https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg',
+  },
+  {
+    name: 'DynamoDB',
+    logo: 'https://cdn.worldvectorlogo.com/logos/aws-dynamodb.svg',
+  },
+  {
+    name: 'MariaDB',
+    logo: 'https://www.vectorlogo.zone/logos/mariadb/mariadb-icon.svg',
+  },
+  {
+    name: 'Redis',
+    logo: 'https://www.vectorlogo.zone/logos/redis/redis-icon.svg',
+  },
+  {
+    name: 'ElasticSearch',
+    logo: 'https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg',
+  },
+  {
+    name: 'SQLite',
+    logo: 'https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg',
   },
 ];
 
@@ -141,6 +130,22 @@ const devOps = [
   {
     name: 'Docker',
     logo: '/docker-mark-blue.svg',
+  },
+  {
+    name: 'Kubernetes',
+    logo: 'https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg',
+  },
+  {
+    name: 'Jenkins',
+    logo: 'https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg',
+  },
+  {
+    name: 'GitHub Actions',
+    logo: '/images/icons8-github.svg',
+  },
+  {
+    name: 'GitLab CI/CD',
+    logo: 'https://www.vectorlogo.zone/logos/gitlab/gitlab-icon.svg',
   },
   {
     name: 'AWS',
@@ -198,34 +203,6 @@ const extra = [
   },
 ];
 
-const content = [
-  {
-    title: 'Front-End Development',
-    description:
-      'Specializing in modern web development, expertise includes JavaScript, TypeScript, React, and Next.js for building high-performance applications. With Remix for full-stack solutions and TailwindCSS with CSS/SASS for creating sleek, responsive designs, modern and accessible user experiences are delivered.',
-  },
-  {
-    title: 'Back-End Development',
-    description:
-      'Expertise in backend development includes building scalable systems with Node.js, Express.js, and Python. Experience with Django and Java ensures robust solutions, while REST APIs and GraphQL enable seamless data integration.',
-  },
-  {
-    title: 'Databases',
-    description:
-      'Expertise in database management includes MySQL, PostgreSQL, and MongoDB for designing and implementing scalable, efficient data solutions tailored to meet the needs of modern applications.',
-  },
-  {
-    title: 'Dev Ops',
-    description:
-      'Specializing in DevOps, expertise includes setting up CI/CD pipelines, containerizing applications with Docker, and utilizing cloud platforms like AWS and Azure. Deployments are optimized on Vercel and Netlify for efficient scaling and performance.',
-  },
-  {
-    title: 'Development Tools & Workflow',
-    description:
-      'Proficient in essential development tools and methodologies including Git for version control, Agile/Scrum for project management, Jest for testing, Webpack for bundling, and Figma for design and collaboration, ensuring efficient and streamlined development workflows.',
-  },
-];
-
 const SkillsSection = (props: Props) => {
   const t = useTranslations('skills');
   const [activeCategoryIndex, setActiveCategoryIndex] = useState(0);
@@ -234,6 +211,31 @@ const SkillsSection = (props: Props) => {
     console.log('Category in view', index);
     setActiveCategoryIndex(index);
   };
+
+  // Create content array using translations
+  const content = [
+    {
+      title: t('categories.frontend.title'),
+      description: t('categories.frontend.description'),
+    },
+    {
+      title: t('categories.backend.title'),
+      description: t('categories.backend.description'),
+    },
+    {
+      title: t('categories.databases.title'),
+      description: t('categories.databases.description'),
+    },
+    {
+      title: t('categories.devops.title'),
+      description: t('categories.devops.description'),
+    },
+    {
+      title: t('categories.tools.title'),
+      description: t('categories.tools.description'),
+    },
+  ];
+
   return (
     <div
       id="skills"
@@ -251,37 +253,37 @@ const SkillsSection = (props: Props) => {
       <div className="mt-20 container max-w-6xl flex gap-x-10 relative">
         <div className="flex-1 relative">
           <SkillCategory
-            title="Front-End Development"
+            title={t('categories.frontend.title')}
             items={frontends}
             onEnter={() => handleCategoryInView(0)}
           />
           <SkillCategory
-            title="Back-End Development"
+            title={t('categories.backend.title')}
             items={backends}
             onEnter={() => handleCategoryInView(1)}
           />
           <SkillCategory
-            title="Databases Development"
+            title={t('categories.databases.title')}
             items={databases}
             onEnter={() => handleCategoryInView(2)}
           />
           <SkillCategory
-            title="Dev Ops"
+            title={t('categories.devops.title')}
             items={devOps}
             onEnter={() => handleCategoryInView(3)}
           />
           <SkillCategory
-            title="Development Tools & Workflow"
+            title={t('categories.tools.title')}
             items={tools}
             onEnter={() => handleCategoryInView(4)}
           />
         </div>
         <div className="flex-1 h-full sticky top-[30%]">
-          <h2 className="mt-20 text-2xl sm:text-3xl lg:text-4xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
-            {content[activeCategoryIndex].title}
-          </h2>
-          <p className="mt-2 text-muted-foreground font-light">
-            {content[activeCategoryIndex].description}
+          <h3 className="font-bold mb-4 text-3xl">
+            {content[activeCategoryIndex]?.title}
+          </h3>
+          <p className="dark:text-neutral-400">
+            {content[activeCategoryIndex]?.description}
           </p>
         </div>
       </div>

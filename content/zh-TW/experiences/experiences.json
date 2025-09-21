@@ -1,0 +1,107 @@
+[
+  {
+    "id": "52ee8a3c-d7ce-46df-881f-ee1d0fcf6dc8",
+    "title": "自由職業軟體開發者",
+    "description": "設計創新的電子商務解決方案，運用先進的網路技術創建無縫且以用戶為中心的網路應用程式，優化線上購物體驗並推動業務增長。HTML CSS JavaScript",
+    "organisation": "Freelance",
+    "startDate": "2021-06-01",
+    "endDate": "2022-03-01",
+    "isPresent": false,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Shopify"
+    ]
+  },
+  {
+    "id": "5e43ae3a-6660-498b-be6a-a5de4dfe3e18",
+    "title": "軟體工程師",
+    "description": "為新創公司打造強健的全端網路應用程式，透過創新解決方案推動數位化倡議，無縫結合前端精緻度與強大的後端功能。",
+    "organisation": "LIVR",
+    "startDate": "2023-05-01",
+    "endDate": "2024-03-31",
+    "isPresent": false,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Next",
+      "Node",
+      "Python",
+      "AWS"
+    ]
+  },
+  {
+    "id": "67967c5a-1ec8-46a3-833b-a2dbe885ea37",
+    "title": "實習生",
+    "description": "改善公司網站並提供更好的用戶體驗。",
+    "organisation": "PR Asia",
+    "startDate": "2019-06-01",
+    "endDate": "2019-08-01",
+    "isPresent": false,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "JavaScript"
+    ]
+  },
+  {
+    "id": "a2398b91-590d-43e4-a595-32b89896ff13",
+    "title": "初級軟體工程師",
+    "description": "為中小型企業及其財務顧問開發財務規劃和分析平台。",
+    "organisation": "The Business Plan Shop",
+    "startDate": "2022-03-01",
+    "endDate": "2023-05-31",
+    "isPresent": false,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "Java",
+      "JavaScript",
+      "Node",
+      "PostgreSQL"
+    ]
+  },
+  {
+    "id": "c9fa471b-ae61-47db-b5e2-5e4d9d261b11",
+    "title": "理學學士",
+    "description": "磨練解決問題的能力和進階程式設計技能，突顯對在科技動態世界中追求卓越的承諾。",
+    "organisation": "University of Sussex",
+    "startDate": "2018-09-01",
+    "endDate": "2021-06-01",
+    "isPresent": false,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Java"
+    ]
+  },
+  {
+    "id": "e6865877-9209-4244-843b-3115d823da99",
+    "title": "前端工程師",
+    "description": "運用React開發精緻的音樂串流服務，提供無縫且互動式的使用者介面，支援複雜功能。",
+    "organisation": "STEM",
+    "startDate": "2024-04-01",
+    "endDate": null,
+    "isPresent": true,
+    "keywords": [
+      "HTML",
+      "CSS",
+      "TypeScript",
+      "JavaScript",
+      "Azure",
+      "AWS",
+      "Remix",
+      "React",
+      "Next",
+      "Web Audio API",
+      "Apollo",
+      "GraphQL",
+      "RESTful APIs"
+    ]
+  }
+]

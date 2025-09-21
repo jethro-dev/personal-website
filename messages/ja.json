@@ -1,14 +1,17 @@
 {
   "metadata": {
     "title": "JethroAu.com",
-    "description": "テクノロジーと想像力の交差点を探求し、コンセプトをユーザー中心の強力な体験に変換する旅に出ましょう。一緒に未来を築きましょう。一行ずつコードを書いて。"
+    "description": "テクノロジーと想像力の交差点を探求し、コンセプトを強力でユーザー中心の体験に変える旅に出ましょう。一行のコードから未来を一緒に築いていきましょう。"
   },
   "nav": {
     "home": "ホーム",
+    "about": "私について",
+    "skills": "スキル",
+    "experience": "経験",
     "blogs": "ブログ",
     "projects": "プロジェクト",
     "contact": "お問い合わせ",
-    "toggleTheme": "テーマ切り替え"
+    "toggleTheme": "テーマを切り替え"
   },
   "hero": {
     "learnMore": "詳しく見る",
@@ -17,12 +20,12 @@
   },
   "contact": {
     "title": "お問い合わせ",
-    "description": "プロジェクトのご相談はありますか？一緒に働きましょう！",
+    "description": "プロジェクトのアイデアはありますか？一緒に取り組みましょう！",
     "form": {
       "name": {
         "label": "お名前",
-        "placeholder": "お名前",
-        "error": "名前は2文字以上必要です"
+        "placeholder": "あなたのお名前",
+        "error": "名前は2文字以上である必要があります"
       },
       "email": {
         "label": "メールアドレス",
@@ -32,22 +35,47 @@
       "message": {
         "label": "メッセージ",
         "placeholder": "プロジェクトについて教えてください...",
-        "error": "メッセージは2文字以上必要です"
+        "error": "メッセージは2文字以上である必要があります"
       },
       "submit": "メッセージを送信",
       "submitting": "送信中...",
       "success": "メッセージが正常に送信されました！",
-      "error": "送信に失敗しました。もう一度お試しください。"
+      "error": "メッセージの送信に失敗しました。もう一度お試しください。"
     }
   },
   "footer": {
-    "rights": "著作権所有",
+    "rights": "全権利留保",
     "quickLinks": "クイックリンク",
     "social": "ソーシャル"
   },
   "skills": {
     "title": "スキルと技術",
-    "description": "使用する技術"
+    "description": "私が使用する技術",
+    "categories": {
+      "frontend": {
+        "title": "フロントエンド開発",
+        "description": "モダンなウェブ開発を専門とし、高性能アプリケーションの構築にJavaScript、TypeScript、React、Next.jsを使用した専門知識があります。フルスタックソリューションにはRemix、洗練されたレスポンシブデザインの作成にはTailwindCSSとCSS/SASSを使用して、モダンでアクセシブルなユーザーエクスペリエンスを提供します。"
+      },
+      "backend": {
+        "title": "バックエンド開発",
+        "description": "バックエンド開発の専門知識には、Node.js、Express.js、Pythonを使用したスケーラブルなシステムの構築が含まれます。DjangoとJavaの経験により堅牢なソリューションを確保し、REST APIとGraphQLにより シームレスなデータ統合を可能にします。"
+      },
+      "databases": {
+        "title": "データベース",
+        "description": "データベース管理の専門知識には、モダンアプリケーションのニーズに合わせてスケーラブルで効率的なデータソリューションを設計・実装するためのMySQL、PostgreSQL、MongoDBが含まれます。"
+      },
+      "devops": {
+        "title": "DevOps",
+        "description": "DevOpsを専門とし、CI/CDパイプラインの設定、Dockerによるアプリケーションのコンテナ化、AWSやAzureなどのクラウドプラットフォームの活用の専門知識があります。VercelとNetlifyでのデプロイメントを最適化し、効率的なスケーリングとパフォーマンスを実現しています。"
+      },
+      "tools": {
+        "title": "開発ツールとワークフロー",
+        "description": "バージョン管理のためのGit、プロジェクト管理のためのAgile/Scrum、テストのためのJest、バンドリングのためのWebpack、デザインとコラボレーションのためのFigmaなど、必須の開発ツールと方法論に精通し、効率的で合理化された開発ワークフローを確保しています。"
+      }
+    }
+  },
+  "about": {
+    "subtitle": "私についての小さなこと"
   },
   "experience": {
     "title": "経験",
@@ -68,7 +96,7 @@
   "notFound": {
     "title": "ページが見つかりません",
     "description": "お探しのページは存在しません。",
-    "backHome": "ホームへ戻る"
+    "backHome": "ホームに戻る"
   },
   "common": {
     "cancel": "キャンセル",

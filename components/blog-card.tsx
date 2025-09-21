@@ -4,7 +4,6 @@ import Image from "next/image";
 import React from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import { Project, SimpleBlog } from "@/typings";
-import { urlFor } from "@/lib/sanity";
 import { Badge } from "./badge";
 import Link from "next/link";
 
@@ -27,7 +26,7 @@ export function BlogCard({ title, description, slug, coverImage }: SimpleBlog) {
             className="w-full mt-4"
           >
             <Image
-              src={urlFor(coverImage).url()}
+              src={coverImage}
               height="1000"
               width="1000"
               className="h-60 w-full object-cover rounded-xl group-hover/card:shadow-xl"
