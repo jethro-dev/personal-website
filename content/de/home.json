@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Willkommen bei jethroau.com!",
+    "paragraph": "Erkunden Sie die Schnittstelle von Technologie und Vorstellungskraft, während wir uns auf eine Reise begeben, Konzepte in leistungsstarke, benutzerzentrierte Erfahrungen zu verwandeln. Lassen Sie uns gemeinsam die Zukunft aufbauen – eine Codezeile nach der anderen."
+  },
+  "about": {
+    "title": "Über mich",
+    "paragraphs": [
+      {
+        "text": "Ein leidenschaftlicher Informatik-Absolvent, der seine Träume verfolgt. Ursprünglich aus Hongkong stammend, lebe ich derzeit in der Hauptstadt Großbritanniens – London. Das gibt mir die Fähigkeit, fließend in zwei der meistgesprochenen Sprachen der Welt zu lesen und zu schreiben: Englisch und Chinesisch.",
+        "title": "Was ist mit mir?"
+      },
+      {
+        "text": "Es gibt nichts Befriedigenderes, als ein Problem zu lösen, das schon eine Weile besteht und niemand sonst weiß, wie man es löst. Als Softwareentwickler biete ich ständig Lösungen für Benutzerprobleme. Ich kann sowohl an gelegentlichen schnellen Fixes als auch an komplexeren strategischen Lösungen arbeiten.",
+        "title": "Warum liebe ich Softwareentwicklung so sehr?"
+      },
+      {
+        "text": "Großartige Grundlagen von der Universität aufgebaut. Ich bin immer neugierig und liebe es, mit der neuesten Technologie auf dem Laufenden zu bleiben. Außerdem liebe ich Herausforderungen und gebe nicht auf. Mit den Vorteilen der Zweisprachigkeit kann ich mich mit Entwicklern auf der ganzen Welt verbinden und zusammenarbeiten.",
+        "title": "Was macht mich dann zu einem guten Software-Ingenieur?"
+      }
+    ],
+    "tldr": [
+      "Geboren in Hongkong, fließend in Englisch und Chinesisch",
+      "Leidenschaftlicher Entwickler und lebenslanger Lerner",
+      "Klug und fleißig"
+    ]
+  }
+}

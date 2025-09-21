@@ -1,0 +1,72 @@
+[
+  {
+    "id": "jethroau-website",
+    "name": "JethroAu.com",
+    "slug": "jethroau-com",
+    "description": "Next.js 14와 TypeScript로 구축된 개인 웹사이트로, 블로깅과 프로젝트 쇼케이스를 위한 동적 플랫폼을 만들어 전문적인 온라인 존재감과 인사이트 공유 및 기술 커뮤니티와의 연결을 위한 귀중한 리소스를 제공합니다.",
+    "github": "https://github.com/jethro-dev/personal-website",
+    "demo": "https://jethroau.com",
+    "image": "/jethroau-cover.png",
+    "size": "col-span-1 md:col-span-2 row-span-1"
+  },
+  {
+    "id": "livr-studios",
+    "name": "LIVR Studios",
+    "slug": "livr-studios",
+    "description": "현대 웹 기술과 프레임워크를 활용하여 동적 마케팅 사이트를 개발하여 온라인 참여도와 리드 생성을 20% 증가시켰습니다.",
+    "github": "",
+    "demo": "https://www.livrstudios.com/",
+    "image": "/livr-studios-cover.png",
+    "size": "col-span-1 md:col-span-1 row-span-1"
+  },
+  {
+    "id": "sceneai",
+    "name": "SceneAI",
+    "slug": "sceneai",
+    "description": "작가와 창작자를 위한 상세한 장면 설명을 생성하는 AI 기반 도구로, 서드파티 생성 서비스와 RESTful API를 활용하여 사용자의 영감을 향상시키고 창작 과정을 간소화했습니다.",
+    "github": "https://github.com/jethro-dev/ai-environment-generator",
+    "demo": "https://sceneai.vercel.app/",
+    "image": "/sceneai-cover.png",
+    "size": "col-span-1 md:col-span-1 md:row-span-2"
+  },
+  {
+    "id": "dvsa-booking",
+    "name": "DVSA 운전 시험 예약 자동화",
+    "slug": "dvsa-booking-automation",
+    "description": "DVSA 웹사이트에서 운전 시험 예약을 자동화하는 매우 효율적인 솔루션으로, 사이트를 탐색하고 세부 정보를 입력하며 이용 가능한 슬롯을 검색합니다.",
+    "github": "https://github.com/jethro-dev/dvsa-driving-test-booking-automation",
+    "demo": "",
+    "image": "/dvsa-cover.png",
+    "size": "col-span-1 md:col-span-2 lg:col-span-1 row-span-1"
+  },
+  {
+    "id": "studybud",
+    "name": "StudyBud",
+    "slug": "studybud",
+    "description": "스터디 파트너를 찾기 위한 혁신적인 플랫폼으로, 메시징, 그룹 스터디 세션, 사용자 매칭 알고리즘을 구현하여 학생들의 학습 경험을 향상시키고 학업적 연결을 촉진하는 협력적 환경을 조성했습니다.",
+    "github": "https://github.com/jethro-dev/studybud",
+    "demo": "https://studybud-jethro.up.railway.app/",
+    "image": "/studybud-cover.png",
+    "size": "col-span-1 md:col-span-2 lg:col-span-2 row-span-1"
+  },
+  {
+    "id": "stemfm",
+    "name": "StemFM",
+    "slug": "stemfm",
+    "description": "StemFM은 자동 스템 분리와 지능형 믹싱을 위해 AI를 사용하는 최첨단 음악 스트리밍 플랫폼으로, 청취자에게 완전히 새롭고 몰입적인 음악 경험을 제공합니다.",
+    "github": "",
+    "demo": "https://www.stemplayer.com/",
+    "image": "/stemfm-cover.png",
+    "size": "col-span-1 md:col-span-2 row-span-1"
+  },
+  {
+    "id": "yee-studio",
+    "name": "Yee Studio",
+    "slug": "yee-studio",
+    "description": "제 창작 스튜디오",
+    "github": "https://github.com/jethro-dev/studio-landing-page",
+    "demo": "https://studio-landing-page-six.vercel.app",
+    "image": "/yeestudio-cover.png",
+    "size": "col-span-1 md:col-span-1 lg:col-span-2 lg:row-span-1"
+  }
+]

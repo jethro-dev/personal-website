@@ -1,0 +1,82 @@
+---
+title: 'LeetCode Top Interview 150: Problema 88 Mesclar Array Ordenado'
+description: >-
+  Hoje, estamos mergulhando numa pergunta popular de entrevista frequentemente
+  encontrada no LeetCode: Mesclar Array Ordenado.
+slug: leetcode-top-interview-150-problem-88-merge-sorted-array
+coverImage: >-
+  https://cdn.sanity.io/images/dsnalg9u/production/469e18e67c06f6b7c5b5a038c4cf227cbddbecec-500x260.png
+category: LeetCode
+tags:
+  - engenharia
+  - c++
+  - leetcode
+  - programação
+  - mesclar
+  - ordenar
+  - array
+publishedAt: '2024-05-09T00:08:16Z'
+updatedAt: '2024-05-09T02:32:08Z'
+---
+Bem-vindos a outra jornada de programação! Hoje, estamos mergulhando numa pergunta popular de entrevista frequentemente encontrada no LeetCode: **Mesclar Array Ordenado**. A tarefa é simples mas complicada; mesclar dois arrays ordenados em um array ordenado. O desafio frequentemente pega as pessoas de surpresa quando se trata de lidar com casos extremos e garantir eficiência ótima.
+
+Aqui está um resumo rápido do enunciado do problema:
+
+Dados dois arrays de inteiros `nums1` e `nums2`, ordenados em ordem não decrescente, e dois inteiros `m` e `n`, representando o número de elementos em `nums1` e `nums2` respectivamente, mescle `nums2` em `nums1` fazendo `nums1` um único array ordenado.
+
+### Configuração Inicial
+
+O truque aqui é utilizar o fato de que `nums1` tem espaço suficiente no final para acomodar todos os elementos de `nums2` (como especificado pelo problema). Vamos mesclar os arrays do final para o início para evitar sobrescrever elementos em `nums1` que ainda não foram processados.
+
+Aqui está o trecho de código fornecido:
+
+```cpp
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (j >= 0) {
+            if (i >= 0 && nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
+            }
+        }
+    }
+};
+```
+
+### Explicação do Código
+
+- **Inicialização de Variáveis**:
+
+- `i` começa no último elemento válido de `nums1`.
+
+- `j` começa no último elemento de `nums2`.
+
+- `k` começa na última posição no array `nums1` onde o elemento final do array mesclado será colocado.
+
+- **Processo de Mesclagem**:
+
+- O loop `while` continua até que todos os elementos de `nums2` tenham sido considerados (ou seja, `j >= 0`).
+
+- Dentro do loop, comparamos elementos de `nums1` e `nums2` do final para o início.
+
+- Se o elemento atual de `nums1` (`nums1[i]`) for maior que o elemento atual de `nums2` (`nums2[j]`), colocamos `nums1[i]` na posição `k` em `nums1` e diminuímos tanto `i` quanto `k`.
+
+- Caso contrário, colocamos `nums2[j]` na posição `k` e diminuímos tanto `j` quanto `k`.
+
+### Por que Mesclar do Final?
+
+Mesclar do final é um movimento estratégico porque nos permite preencher `nums1` de trás para frente, evitando a necessidade de deslocar elementos para abrir espaço. Esta técnica garante que a operação de mesclagem seja eficiente, com complexidade de tempo O(m + n), onde m e n são os comprimentos dos dois arrays.
+
+### Conclusão
+
+Esta solução é elegante em sua simplicidade e eficiência. Ela aproveita o espaço fornecido dentro de `nums1`, garantindo que nenhum espaço adicional seja necessário, aderindo às restrições de mesclagem in-place.
+
+Espero que este walkthrough tenha esclarecido o processo de pensamento por trás da resolução do problema Mesclar Array Ordenado e ajudado você a entender como abordar problemas similares em suas entrevistas ou sessões de prática.
+
+Fiquem ligados para mais soluções e feliz codificação!

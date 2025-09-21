@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "title": "JethroAu.com",
+    "description": "기술과 상상력의 교차점을 탐구하며 개념을 강력하고 사용자 중심적인 경험으로 변화시키는 여정을 시작합니다. 함께 미래를 구축합시다 – 한 줄의 코드씩."
+  },
+  "nav": {
+    "home": "홈",
+    "about": "소개",
+    "skills": "기술",
+    "experience": "경력",
+    "projects": "프로젝트",
+    "portfolio": "포트폴리오",
+    "blogs": "블로그",
+    "contact": "연락처",
+    "toggleTheme": "테마 전환",
+    "siteName": "JethroAu"
+  },
+  "hero": {
+    "welcome": "환영합니다",
+    "siteName": "jethroau.com",
+    "tagline": "함께 미래를 구축합시다\n – 한 줄의 코드씩.",
+    "learnMore": "자세히 보기",
+    "or": "또는",
+    "scheduleCall": "통화 예약"
+  },
+  "contact": {
+    "title": "연락하기",
+    "description": "프로젝트를 계획 중이신가요? 함께 작업해요!",
+    "form": {
+      "name": {
+        "label": "이름",
+        "placeholder": "당신의 이름",
+        "error": "이름은 최소 2글자 이상이어야 합니다"
+      },
+      "email": {
+        "label": "이메일",
+        "placeholder": "your@email.com",
+        "error": "유효한 이메일을 입력해주세요"
+      },
+      "message": {
+        "label": "메시지",
+        "placeholder": "프로젝트에 대해 알려주세요...",
+        "error": "메시지는 최소 2글자 이상이어야 합니다"
+      },
+      "submit": "메시지 보내기",
+      "submitting": "전송 중...",
+      "success": "메시지가 성공적으로 전송되었습니다!",
+      "error": "메시지 전송에 실패했습니다. 다시 시도해주세요."
+    }
+  },
+  "footer": {
+    "rights": "모든 권리 보유",
+    "quickLinks": "빠른 링크",
+    "social": "소셜"
+  },
+  "skills": {
+    "title": "기술 & 도구",
+    "description": "제가 사용하는 기술들",
+    "categories": {
+      "frontend": {
+        "title": "프론트엔드 개발",
+        "description": "현대적인 웹 개발을 전문으로 하며, JavaScript, TypeScript, React, Next.js를 활용한 고성능 애플리케이션 구축에 전문성을 갖추고 있습니다. 풀스택 솔루션을 위한 Remix와 세련되고 반응형 디자인을 위한 TailwindCSS 및 CSS/SASS를 통해 현대적이고 접근 가능한 사용자 경험을 제공합니다."
+      },
+      "backend": {
+        "title": "백엔드 개발",
+        "description": "백엔드 개발 전문성은 Node.js, Express.js, Python을 활용한 확장 가능한 시스템 구축을 포함합니다. Django와 Java 경험을 통해 견고한 솔루션을 보장하며, REST API와 GraphQL을 통해 원활한 데이터 통합을 가능하게 합니다."
+      },
+      "databases": {
+        "title": "데이터베이스",
+        "description": "데이터베이스 관리 전문성은 현대 애플리케이션의 요구사항을 충족하는 확장 가능하고 효율적인 데이터 솔루션을 설계하고 구현하기 위한 MySQL, PostgreSQL, MongoDB를 포함합니다."
+      },
+      "devops": {
+        "title": "데브옵스",
+        "description": "데브옵스를 전문으로 하며, CI/CD 파이프라인 구축, Docker를 활용한 애플리케이션 컨테이너화, AWS 및 Azure와 같은 클라우드 플랫폼 활용에 전문성을 갖추고 있습니다. 효율적인 확장과 성능을 위해 Vercel과 Netlify에서 배포를 최적화합니다."
+      },
+      "tools": {
+        "title": "개발 도구 & 워크플로우",
+        "description": "버전 관리를 위한 Git, 프로젝트 관리를 위한 Agile/Scrum, 테스팅을 위한 Jest, 번들링을 위한 Webpack, 디자인과 협업을 위한 Figma를 포함한 필수 개발 도구와 방법론에 능숙하여 효율적이고 체계적인 개발 워크플로우를 보장합니다."
+      }
+    }
+  },
+  "about": {
+    "subtitle": "저에 대한 작은 이야기들"
+  },
+  "experience": {
+    "title": "경력 사항",
+    "description": "기술이 혁신과 만나는 다양한 전문성을 통한 여정을 시작하세요. 몰입형 웹 애플리케이션 제작부터 전자상거래 솔루션 개척까지, 제 경험은 창의성, 정밀성, 그리고 디지털 성공을 추진하는 열정의 역동적인 조합에 대한 증거입니다.",
+    "yearsOfExperience": "🏅 5년 이상의 경험",
+    "present": "현재"
+  },
+  "projects": {
+    "title": "프로젝트",
+    "viewMore": "더 보기",
+    "visitSite": "사이트 방문",
+    "viewCode": "코드 보기"
+  },
+  "portfolio": {
+    "title": "제 작업",
+    "description": "실세계 문제에 대한 효율적이고 혁신적인 솔루션 제작에 중점을 둔 열정적인 소프트웨어 개발자입니다."
+  },
+  "connectBanner": {
+    "title": "저와 연결하세요",
+    "subtitle": "아이디어를 코드로 변환해봅시다!",
+    "description1": "협업, 문의, 또는 기술 대화를 위해 연락주세요 – 함께 비전을 강력한 소프트웨어 솔루션으로 바꿀 수 있습니다. 당신의 프로젝트가 디지털 변환을 기다리고 있습니다!",
+    "description2": "연락처 양식을 작성하거나 미팅을 예약하여 저에게 연락하세요."
+  },
+  "blogs": {
+    "title": "블로그",
+    "allBlogs": "모든 블로그",
+    "featuredTitle": "추천 블로그",
+    "featuredDescription": "제가 추천하는 블로그 포스트들입니다",
+    "readMore": "더 읽기",
+    "readMoreBlogs": "더 많은 블로그 읽기",
+    "minRead": "분 읽기",
+    "relatedPosts": "관련 포스트"
+  },
+  "notFound": {
+    "title": "페이지를 찾을 수 없습니다",
+    "description": "찾고 계신 페이지가 존재하지 않습니다.",
+    "backHome": "홈으로 돌아가기"
+  },
+  "common": {
+    "cancel": "취소",
+    "close": "닫기",
+    "save": "저장",
+    "loading": "로딩 중..."
+  },
+  "certifications": {
+    "title": "Meta 인증\n백엔드 개발자",
+    "issueDate": "발급일: {date}",
+    "verifyLink": "확인하려면 클릭",
+    "coursesTitle": "강의",
+    "courses": [
+      {
+        "title": "백엔드 개발 입문",
+        "description": "서버 사이드 프로그래밍과 데이터베이스 통합을 포함한 백엔드 웹 개발의 기초를 배웁니다."
+      },
+      {
+        "title": "Python 프로그래밍",
+        "description": "구문, 데이터 구조, 핵심 개념을 다루는 Python 프로그래밍의 기초를 마스터합니다."
+      },
+      {
+        "title": "버전 관리",
+        "description": "효율적인 협업과 코드 관리를 위한 Git과 GitHub에 중점을 둔 버전 관리 시스템을 이해합니다."
+      },
+      {
+        "title": "백엔드 개발을 위한 데이터베이스 입문",
+        "description": "SQL 쿼리와 데이터베이스 설계 원칙을 포함한 주요 데이터베이스 개념과 기술을 탐구합니다."
+      },
+      {
+        "title": "Django 웹 프레임워크",
+        "description": "모델, 뷰, 템플릿을 다루는 Django 웹 프레임워크를 사용하여 견고하고 확장 가능한 웹 애플리케이션을 구축합니다."
+      },
+      {
+        "title": "API",
+        "description": "RESTful 원칙과 실용적인 구현에 중점을 두고 API를 설계, 구축, 활용하는 방법을 배웁니다."
+      },
+      {
+        "title": "풀스택",
+        "description": "웹 애플리케이션의 모든 부분을 통합하여 프론트엔드와 백엔드 개발에 대한 포괄적인 이해를 얻습니다."
+      },
+      {
+        "title": "백엔드 개발자 캡스톤",
+        "description": "복잡한 시스템을 구축하는 능력을 보여주는 포괄적인 프로젝트에서 백엔드 개발 기술을 적용합니다."
+      },
+      {
+        "title": "코딩 인터뷰 준비",
+        "description": "연습 문제, 문제 해결 전략, 성공을 위한 팁으로 코딩 인터뷰를 준비합니다."
+      }
+    ]
+  },
+  "aboutCard": {
+    "name": "Jethro Au",
+    "title": "소프트웨어 엔지니어"
+  }
+}

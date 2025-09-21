@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "title": "JethroAu.com",
+    "description": "Erkunden Sie die Schnittstelle von Technologie und Vorstellungskraft, während wir uns auf eine Reise begeben, Konzepte in leistungsstarke, benutzerzentrierte Erfahrungen zu verwandeln. Lassen Sie uns gemeinsam die Zukunft aufbauen – eine Codezeile nach der anderen."
+  },
+  "nav": {
+    "home": "Startseite",
+    "about": "Über mich",
+    "skills": "Fähigkeiten",
+    "experience": "Erfahrung",
+    "projects": "Projekte",
+    "portfolio": "Portfolio",
+    "blogs": "Blog",
+    "contact": "Kontakt",
+    "toggleTheme": "Design wechseln",
+    "siteName": "JethroAu"
+  },
+  "hero": {
+    "welcome": "Willkommen bei",
+    "siteName": "jethroau.com",
+    "tagline": "Lassen Sie uns gemeinsam die Zukunft aufbauen\n – eine Codezeile nach der anderen.",
+    "learnMore": "Mehr erfahren",
+    "or": "oder",
+    "scheduleCall": "Anruf planen"
+  },
+  "contact": {
+    "title": "Kontakt aufnehmen",
+    "description": "Haben Sie ein Projekt im Kopf? Lassen Sie uns zusammenarbeiten!",
+    "form": {
+      "name": {
+        "label": "Name",
+        "placeholder": "Ihr Name",
+        "error": "Name muss mindestens 2 Zeichen lang sein"
+      },
+      "email": {
+        "label": "E-Mail",
+        "placeholder": "ihre@email.com",
+        "error": "Bitte geben Sie eine gültige E-Mail-Adresse ein"
+      },
+      "message": {
+        "label": "Nachricht",
+        "placeholder": "Erzählen Sie mir von Ihrem Projekt...",
+        "error": "Nachricht muss mindestens 2 Zeichen lang sein"
+      },
+      "submit": "Nachricht senden",
+      "submitting": "Wird gesendet...",
+      "success": "Nachricht erfolgreich gesendet!",
+      "error": "Fehler beim Senden der Nachricht. Bitte versuchen Sie es erneut."
+    }
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten",
+    "quickLinks": "Schnelllinks",
+    "social": "Social Media"
+  },
+  "skills": {
+    "title": "Fähigkeiten & Technologien",
+    "description": "Technologien, mit denen ich arbeite",
+    "categories": {
+      "frontend": {
+        "title": "Frontend-Entwicklung",
+        "description": "Spezialisiert auf moderne Webentwicklung, umfasst die Expertise JavaScript, TypeScript, React und Next.js für den Aufbau leistungsstarker Anwendungen. Mit Remix für Full-Stack-Lösungen und TailwindCSS mit CSS/SASS für elegante, responsive Designs werden moderne und barrierefreie Benutzererfahrungen geliefert."
+      },
+      "backend": {
+        "title": "Backend-Entwicklung",
+        "description": "Expertise in der Backend-Entwicklung umfasst den Aufbau skalierbarer Systeme mit Node.js, Express.js und Python. Erfahrung mit Django und Java gewährleistet robuste Lösungen, während REST-APIs und GraphQL eine nahtlose Datenintegration ermöglichen."
+      },
+      "databases": {
+        "title": "Datenbanken",
+        "description": "Expertise im Datenbankmanagement umfasst MySQL, PostgreSQL und MongoDB für das Design und die Implementierung skalierbarer, effizienter Datenlösungen, die auf die Bedürfnisse moderner Anwendungen zugeschnitten sind."
+      },
+      "devops": {
+        "title": "DevOps",
+        "description": "Spezialisiert auf DevOps, umfasst die Expertise das Einrichten von CI/CD-Pipelines, die Containerisierung von Anwendungen mit Docker und die Nutzung von Cloud-Plattformen wie AWS und Azure. Deployments werden auf Vercel und Netlify für effiziente Skalierung und Leistung optimiert."
+      },
+      "tools": {
+        "title": "Entwicklungstools & Workflow",
+        "description": "Versiert in wesentlichen Entwicklungstools und Methodologien einschließlich Git für Versionskontrolle, Agile/Scrum für Projektmanagement, Jest für Tests, Webpack für Bundling und Figma für Design und Zusammenarbeit, um effiziente und optimierte Entwicklungsworkflows sicherzustellen."
+      }
+    }
+  },
+  "about": {
+    "subtitle": "Kleine Dinge über mich"
+  },
+  "experience": {
+    "title": "Meine Erfahrung",
+    "description": "Begeben Sie sich auf eine Reise durch meine vielfältige Expertise, wo Technologie auf Innovation trifft. Vom Erstellen immersiver Webanwendungen bis hin zur Pionierarbeit bei E-Commerce-Lösungen ist meine Erfahrung ein Zeugnis für eine dynamische Mischung aus Kreativität, Präzision und Leidenschaft für digitalen Erfolg.",
+    "yearsOfExperience": "🏅 5+ Jahre Erfahrung",
+    "present": "Aktuell"
+  },
+  "projects": {
+    "title": "Projekte",
+    "viewMore": "Mehr anzeigen",
+    "visitSite": "Website besuchen",
+    "viewCode": "Code anzeigen"
+  },
+  "portfolio": {
+    "title": "Meine Arbeit",
+    "description": "Leidenschaftlicher Softwareentwickler mit Fokus auf der Erstellung effizienter und innovativer Lösungen für reale Probleme."
+  },
+  "connectBanner": {
+    "title": "Verbinden Sie sich mit mir",
+    "subtitle": "Lassen Sie uns Ideen in Code verwandeln!",
+    "description1": "Kontaktieren Sie mich für Kooperationen, Anfragen oder einfach für ein Tech-Gespräch – gemeinsam können wir Visionen in leistungsstarke Software-Lösungen verwandeln. Ihr Projekt wartet auf seine digitale Transformation!",
+    "description2": "Kontaktieren Sie mich durch Ausfüllen des Kontaktformulars oder Terminvereinbarung."
+  },
+  "blogs": {
+    "title": "Blog",
+    "allBlogs": "Alle Blogs",
+    "featuredTitle": "Empfohlene Blogs",
+    "featuredDescription": "Hier sind meine empfohlenen Blog-Beiträge",
+    "readMore": "Mehr lesen",
+    "readMoreBlogs": "Mehr Blogs lesen",
+    "minRead": "Min. Lesedauer",
+    "relatedPosts": "Verwandte Beiträge"
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "description": "Die Seite, die Sie suchen, existiert nicht.",
+    "backHome": "Zurück zur Startseite"
+  },
+  "common": {
+    "cancel": "Abbrechen",
+    "close": "Schließen",
+    "save": "Speichern",
+    "loading": "Wird geladen..."
+  },
+  "certifications": {
+    "title": "Meta Zertifiziert\nBackend-Entwickler",
+    "issueDate": "Ausstellungsdatum: {date}",
+    "verifyLink": "Klicken Sie zur Verifizierung",
+    "coursesTitle": "Kurse",
+    "courses": [
+      {
+        "title": "Einführung in die Backend-Entwicklung",
+        "description": "Lernen Sie die Grundlagen der Backend-Webentwicklung, einschließlich serverseitiger Programmierung und Datenbankintegration."
+      },
+      {
+        "title": "Programmieren in Python",
+        "description": "Meistern Sie die Grundlagen der Python-Programmierung, einschließlich Syntax, Datenstrukturen und Kernkonzepte."
+      },
+      {
+        "title": "Versionskontrolle",
+        "description": "Verstehen Sie Versionskontrollsysteme mit Fokus auf Git und GitHub für effiziente Zusammenarbeit und Codeverwaltung."
+      },
+      {
+        "title": "Einführung in Datenbanken für Backend-Entwicklung",
+        "description": "Erkunden Sie wichtige Datenbankkonzepte und -techniken, einschließlich SQL-Abfragen und Datenbankdesign-Prinzipien."
+      },
+      {
+        "title": "Django Web Framework",
+        "description": "Erstellen Sie robuste und skalierbare Webanwendungen mit dem Django-Web-Framework, einschließlich Modelle, Views und Templates."
+      },
+      {
+        "title": "APIs",
+        "description": "Lernen Sie, APIs zu entwerfen, zu erstellen und zu nutzen, mit Fokus auf RESTful-Prinzipien und praktische Implementierung."
+      },
+      {
+        "title": "Der Full Stack",
+        "description": "Gewinnen Sie ein umfassendes Verständnis sowohl der Frontend- als auch Backend-Entwicklung und integrieren Sie alle Teile einer Webanwendung."
+      },
+      {
+        "title": "Backend-Entwickler Abschlussprojekt",
+        "description": "Wenden Sie Ihre Backend-Entwicklungsfähigkeiten in einem umfassenden Projekt an und zeigen Sie Ihre Fähigkeit, komplexe Systeme zu erstellen."
+      },
+      {
+        "title": "Vorbereitung auf Coding-Interviews",
+        "description": "Bereiten Sie sich auf Coding-Interviews mit Übungsaufgaben, Problemlösungsstrategien und Tipps für den Erfolg vor."
+      }
+    ]
+  },
+  "aboutCard": {
+    "name": "Jethro Au",
+    "title": "Software-Ingenieur"
+  }
+}

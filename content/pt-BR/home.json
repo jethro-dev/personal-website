@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Bem-vindo ao jethroau.com!",
+    "paragraph": "Explore a interseção entre tecnologia e imaginação enquanto embarcamos em uma jornada para transformar conceitos em experiências poderosas e centradas no usuário. Vamos construir o futuro juntos – uma linha de código por vez."
+  },
+  "about": {
+    "title": "Sobre mim",
+    "paragraphs": [
+      {
+        "text": "Um graduado em Ciência da Computação apaixonado perseguindo seus sonhos. Originário de Hong Kong, atualmente vivendo na capital do Reino Unido — Londres. Isso me dá a capacidade de ler e escrever fluentemente em duas das línguas mais faladas no mundo, inglês e chinês.",
+        "title": "O que sobre mim?"
+      },
+      {
+        "text": "Não há nada mais satisfatório do que resolver um problema que existe há um tempo e ninguém mais sabe como resolver. Como desenvolvedor de software, eu constantemente forneço soluções para problemas dos usuários. Posso trabalhar tanto em correções rápidas ocasionais quanto em soluções estratégicas mais complexas.",
+        "title": "Por que eu amo tanto desenvolvimento de software?"
+      },
+      {
+        "text": "Excelentes fundamentos construídos na universidade. Sou sempre curioso e adoro me manter atualizado com as tecnologias mais recentes. Além disso, amo desafios e não desisto. Com as vantagens do bilinguismo, posso me conectar e colaborar com desenvolvedores ao redor do mundo.",
+        "title": "Então, o que me torna um bom engenheiro de software?"
+      }
+    ],
+    "tldr": [
+      "Nascido em Hong Kong, fluente em inglês e chinês",
+      "Desenvolvedor apaixonado e aprendiz para toda a vida",
+      "Inteligente e trabalhador"
+    ]
+  }
+}

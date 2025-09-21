@@ -1,0 +1,56 @@
+[
+  {
+    "id": "9331603e-b327-485a-ac1c-cf70208af876",
+    "name": "YEE STUDIO 랜딩 페이지",
+    "slug": "yee-studio-landing-page",
+    "image": "https://cdn.sanity.io/images/dsnalg9u/production/bb4556dd40daf66f3cc386ede3d4a53e56a86f4a-1329x939.png",
+    "url": "https://studio-landing-page-six.vercel.app/",
+    "content": "세 번째 테스트 프로젝트입니다!",
+    "isPublic": true,
+    "description": "Yee Studio는 혁신적인 웹 디자인, 개발, 브랜딩 및 디지털 마케팅을 아우르는 포괄적인 웹 솔루션 제공을 전문으로 합니다. 비교할 수 없는 전문성과 비전적 결과를 위해 브랜드의 디지털 여정을 저희에게 맡겨주세요.",
+    "keywords": [
+      "React",
+      "Next",
+      "JavaScript",
+      "Animations"
+    ],
+    "createdAt": "2024-03-22T22:27:28Z"
+  },
+  {
+    "id": "ae2ad83b-5676-4bbe-afb7-f7d8f6f0c229",
+    "name": "블로깅 웹 앱",
+    "slug": "blogging-web-app",
+    "image": "https://cdn.sanity.io/images/dsnalg9u/production/c93aa71fc04f6027a22570d6f742bfe30371470e-2838x1597.webp",
+    "url": "https://jdevblog.vercel.app/",
+    "content": "두 번째 테스트",
+    "isPublic": true,
+    "description": "J-Blog는 풀스택 블로깅 웹 애플리케이션입니다. React, Next.js, GraphQL, TailwindCSS 등으로 구축되었습니다.",
+    "keywords": [
+      "TypeScript",
+      "React",
+      "Next",
+      "Fullstack",
+      "APIs"
+    ],
+    "createdAt": "2024-02-08T21:38:17Z"
+  },
+  {
+    "id": "fee37fb4-e2e7-4eb3-980f-71642e7d61dc",
+    "name": "SceneAI",
+    "slug": "sceneai",
+    "image": "https://cdn.sanity.io/images/dsnalg9u/production/4af2addffdfa85649041f96a03d4c412e23633e7-1280x768.png",
+    "url": "https://sceneai.vercel.app/",
+    "content": "SceneAI는 텍스트 프롬프트에서 놀라운 360도 파노라마 이미지를 생성하도록 설계된 최첨단 앱입니다. 고급 AI 알고리즘을 활용하여 SceneAI는 여러분의 아이디어를 몰입형 환경으로 변환하며, 가상 투어, 부동산 프레젠테이션 및 창의적 시각적 스토리텔링에 완벽합니다.",
+    "isPublic": true,
+    "description": "SceneAI는 텍스트 프롬프트에서 놀라운 360도 파노라마 이미지를 생성하도록 설계된 최첨단 앱입니다. 고급 AI 알고리즘을 활용하여 SceneAI는 여러분의 아이디어를 몰입형 환경으로 변환하며, 가상 투어, 부동산 프레젠테이션 및 창의적 시각적 스토리텔링에 완벽합니다.",
+    "keywords": [
+      "React",
+      "Next",
+      "Fullstack",
+      "APIs",
+      "Stable Diffusion",
+      "AI"
+    ],
+    "createdAt": "2024-02-08T21:38:01Z"
+  }
+]

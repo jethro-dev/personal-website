@@ -1,0 +1,82 @@
+---
+title: 'LeetCode Top Interview 150 : Problème 88 Fusionner des Tableaux Triés'
+description: >-
+  Aujourd'hui, nous plongeons dans une question d'entretien populaire
+  fréquemment rencontrée sur LeetCode : Fusionner des Tableaux Triés.
+slug: leetcode-top-interview-150-problem-88-merge-sorted-array
+coverImage: >-
+  https://cdn.sanity.io/images/dsnalg9u/production/469e18e67c06f6b7c5b5a038c4cf227cbddbecec-500x260.png
+category: LeetCode
+tags:
+  - engineering
+  - c++
+  - leetcode
+  - programmation
+  - fusion
+  - tri
+  - tableau
+publishedAt: '2024-05-09T00:08:16Z'
+updatedAt: '2024-05-09T02:32:08Z'
+---
+Bienvenue dans un autre voyage de codage ! Aujourd'hui, nous plongeons dans une question d'entretien populaire fréquemment rencontrée sur LeetCode : **Fusionner des Tableaux Triés**. La tâche est simple mais délicate ; fusionner deux tableaux triés en un seul tableau trié. Le défi surprend souvent les gens quand il s'agit de gérer les cas limites et d'assurer une efficacité optimale.
+
+Voici un résumé rapide de l'énoncé du problème :
+
+Étant donnés deux tableaux d'entiers `nums1` et `nums2`, triés par ordre non décroissant, et deux entiers `m` et `n`, représentant le nombre d'éléments dans `nums1` et `nums2` respectivement, fusionnez `nums2` dans `nums1` en faisant de `nums1` un seul tableau trié.
+
+### Configuration Initiale
+
+L'astuce ici est d'utiliser le fait que `nums1` a suffisamment d'espace à la fin pour accueillir tous les éléments de `nums2` (comme spécifié par le problème). Nous fusionnerons les tableaux de la fin vers le début pour éviter d'écraser les éléments dans `nums1` qui n'ont pas encore été traités.
+
+Voici l'extrait de code fourni :
+
+```cpp
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (j >= 0) {
+            if (i >= 0 && nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
+            }
+        }
+    }
+};
+```
+
+### Explication du Code
+
+- **Initialisation des Variables** :
+
+- `i` commence au dernier élément valide de `nums1`.
+
+- `j` commence au dernier élément de `nums2`.
+
+- `k` commence à la dernière position dans le tableau `nums1` où l'élément final du tableau fusionné sera placé.
+
+- **Processus de Fusion** :
+
+- La boucle `while` continue jusqu'à ce que tous les éléments de `nums2` aient été considérés (c'est-à-dire `j >= 0`).
+
+- À l'intérieur de la boucle, nous comparons les éléments de `nums1` et `nums2` de la fin vers le début.
+
+- Si l'élément actuel de `nums1` (`nums1[i]`) est plus grand que l'élément actuel de `nums2` (`nums2[j]`), nous plaçons `nums1[i]` à la position `k` dans `nums1` et diminuons `i` et `k`.
+
+- Sinon, nous plaçons `nums2[j]` à la position `k` et diminuons `j` et `k`.
+
+### Pourquoi Fusionner depuis la Fin ?
+
+Fusionner depuis la fin est un mouvement stratégique car cela nous permet de remplir `nums1` par l'arrière, évitant le besoin de décaler les éléments pour faire de la place. Cette technique assure que l'opération de fusion est efficace, avec une complexité temporelle de O(m + n), où m et n sont les longueurs des deux tableaux.
+
+### Conclusion
+
+Cette solution est élégante dans sa simplicité et son efficacité. Elle exploite l'espace fourni dans `nums1`, s'assurant qu'aucun espace supplémentaire n'est nécessaire, respectant les contraintes de la fusion en place.
+
+J'espère que cette présentation a éclairé le processus de réflexion derrière la résolution du problème de Fusion de Tableaux Triés et vous a aidé à comprendre comment aborder des problèmes similaires dans vos entretiens ou sessions de pratique.
+
+Restez à l'écoute pour plus de solutions et bon codage !

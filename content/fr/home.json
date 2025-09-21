@@ -1,0 +1,28 @@
+{
+  "hero": {
+    "title": "Bienvenue chez jethroau.com !",
+    "paragraph": "Explorez l'intersection de la technologie et de l'imagination en embarquant dans un voyage pour transformer les concepts en expériences puissantes et centrées sur l'utilisateur. Construisons ensemble l'avenir – une ligne de code à la fois."
+  },
+  "about": {
+    "title": "À propos de moi",
+    "paragraphs": [
+      {
+        "text": "Un diplômé en informatique passionné qui poursuit ses rêves. Originaire de Hong Kong, je vis actuellement dans la capitale du Royaume-Uni — Londres. Cela me donne la capacité de lire et d'écrire couramment dans deux des langues les plus parlées au monde, l'anglais et le chinois.",
+        "title": "Qu'en est-il de moi ?"
+      },
+      {
+        "text": "Il n'y a rien de plus satisfaisant que de résoudre un problème qui existe depuis un moment et que personne d'autre ne sait comment résoudre. En tant que développeur de logiciels, je fournis constamment des solutions aux problèmes des utilisateurs. Je peux travailler sur des corrections rapides occasionnelles ainsi que sur des solutions stratégiques plus complexes.",
+        "title": "Pourquoi j'aime autant le développement logiciel ?"
+      },
+      {
+        "text": "D'excellentes bases construites à l'université. Je suis toujours curieux et j'aime rester à jour avec les dernières technologies. De plus, j'aime les défis et je n'abandonne pas. Avec les avantages du bilinguisme, je peux me connecter et collaborer avec des développeurs du monde entier.",
+        "title": "Alors, qu'est-ce qui fait de moi un bon ingénieur logiciel ?"
+      }
+    ],
+    "tldr": [
+      "Né à Hong Kong, maîtrise parfaitement l'anglais et le chinois",
+      "Développeur passionné et apprenant à vie",
+      "Intelligent et travailleur"
+    ]
+  }
+}

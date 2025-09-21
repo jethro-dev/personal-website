@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "title": "JethroAu.com",
+    "description": "Explore a interseção entre tecnologia e imaginação enquanto embarcamos em uma jornada para transformar conceitos em experiências poderosas e centradas no usuário. Vamos construir o futuro juntos – uma linha de código por vez."
+  },
+  "nav": {
+    "home": "Início",
+    "about": "Sobre",
+    "skills": "Habilidades",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "portfolio": "Portfólio",
+    "blogs": "Blog",
+    "contact": "Contato",
+    "toggleTheme": "Alternar tema",
+    "siteName": "JethroAu"
+  },
+  "hero": {
+    "welcome": "Bem-vindo ao",
+    "siteName": "jethroau.com",
+    "tagline": "Vamos construir o futuro juntos\n – uma linha de código por vez.",
+    "learnMore": "Saiba mais",
+    "or": "ou",
+    "scheduleCall": "Agendar chamada"
+  },
+  "contact": {
+    "title": "Entre em contato",
+    "description": "Tem um projeto em mente? Vamos colaborar!",
+    "form": {
+      "name": {
+        "label": "Nome",
+        "placeholder": "Seu nome",
+        "error": "O nome deve ter pelo menos 2 caracteres"
+      },
+      "email": {
+        "label": "Email",
+        "placeholder": "seu@email.com",
+        "error": "Por favor, insira um endereço de email válido"
+      },
+      "message": {
+        "label": "Mensagem",
+        "placeholder": "Me conte sobre seu projeto...",
+        "error": "A mensagem deve ter pelo menos 2 caracteres"
+      },
+      "submit": "Enviar mensagem",
+      "submitting": "Enviando...",
+      "success": "Mensagem enviada com sucesso!",
+      "error": "Falha ao enviar a mensagem. Por favor, tente novamente."
+    }
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados",
+    "quickLinks": "Links rápidos",
+    "social": "Social"
+  },
+  "skills": {
+    "title": "Habilidades e tecnologias",
+    "description": "Tecnologias com as quais trabalho",
+    "categories": {
+      "frontend": {
+        "title": "Desenvolvimento Frontend",
+        "description": "Especializado em desenvolvimento web moderno, abrangendo expertise em JavaScript, TypeScript, React e Next.js para construir aplicações de alta performance. Com Remix para soluções full-stack e TailwindCSS com CSS/SASS para designs elegantes e responsivos, entrego experiências de usuário modernas e acessíveis."
+      },
+      "backend": {
+        "title": "Desenvolvimento Backend",
+        "description": "A expertise em desenvolvimento backend inclui a construção de sistemas escaláveis com Node.js, Express.js e Python. Experiência com Django e Java garante soluções robustas, enquanto APIs REST e GraphQL permitem integração perfeita de dados."
+      },
+      "databases": {
+        "title": "Bancos de dados",
+        "description": "A expertise em gerenciamento de bancos de dados inclui MySQL, PostgreSQL e MongoDB para projetar e implementar soluções de dados escaláveis e eficientes, adaptadas às necessidades de aplicações modernas."
+      },
+      "devops": {
+        "title": "DevOps",
+        "description": "Especializado em DevOps, abrangendo expertise na configuração de pipelines CI/CD, containerização de aplicações com Docker e aproveitamento de plataformas de nuvem como AWS e Azure. Otimizo deployments no Vercel e Netlify para escalabilidade e performance eficientes."
+      },
+      "tools": {
+        "title": "Ferramentas de desenvolvimento e fluxo de trabalho",
+        "description": "Proficiente em ferramentas e metodologias de desenvolvimento essenciais, incluindo Git para controle de versão, Agile/Scrum para gerenciamento de projetos, Jest para testes, Webpack para bundling e Figma para design e colaboração, garantindo fluxos de trabalho de desenvolvimento eficientes e otimizados."
+      }
+    }
+  },
+  "about": {
+    "subtitle": "Pequenas coisas sobre mim"
+  },
+  "experience": {
+    "title": "Minha experiência",
+    "description": "Embarque em uma jornada através da minha expertise diversificada, onde tecnologia encontra inovação. Desde a criação de aplicações web imersivas até o pioneirismo em soluções de e-commerce, minha experiência é um testemunho de uma mistura dinâmica de criatividade, precisão e paixão pelo sucesso digital.",
+    "yearsOfExperience": "🏅 Mais de 5 anos de experiência",
+    "present": "Presente"
+  },
+  "projects": {
+    "title": "Projetos",
+    "viewMore": "Ver mais",
+    "visitSite": "Visitar site",
+    "viewCode": "Ver código"
+  },
+  "portfolio": {
+    "title": "Meu trabalho",
+    "description": "Desenvolvedor de software apaixonado focado em criar soluções eficientes e inovadoras para problemas do mundo real."
+  },
+  "connectBanner": {
+    "title": "Conecte-se comigo",
+    "subtitle": "Vamos transformar ideias em código!",
+    "description1": "Entre em contato para colaborações, consultas ou apenas uma conversa sobre tecnologia – juntos, podemos transformar visões em soluções de software poderosas. Seu projeto está esperando sua transformação digital!",
+    "description2": "Entre em contato comigo preenchendo o formulário de contato ou agendando uma reunião."
+  },
+  "blogs": {
+    "title": "Blog",
+    "allBlogs": "Todos os blogs",
+    "featuredTitle": "Blogs em destaque",
+    "featuredDescription": "Aqui estão meus posts de blog em destaque",
+    "readMore": "Leia mais",
+    "readMoreBlogs": "Leia mais blogs",
+    "minRead": "Min de leitura",
+    "relatedPosts": "Posts relacionados"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você está procurando não existe.",
+    "backHome": "Voltar ao início"
+  },
+  "common": {
+    "cancel": "Cancelar",
+    "close": "Fechar",
+    "save": "Salvar",
+    "loading": "Carregando..."
+  },
+  "certifications": {
+    "title": "Meta Certificado\nDesenvolvedor Backend",
+    "issueDate": "Data de emissão: {date}",
+    "verifyLink": "Clique para verificar",
+    "coursesTitle": "Cursos",
+    "courses": [
+      {
+        "title": "Introdução ao desenvolvimento backend",
+        "description": "Aprenda os fundamentos do desenvolvimento web backend, incluindo programação server-side e integração com bancos de dados."
+      },
+      {
+        "title": "Programação em Python",
+        "description": "Domine os fundamentos da programação Python, incluindo sintaxe, estruturas de dados e conceitos centrais."
+      },
+      {
+        "title": "Controle de versão",
+        "description": "Entenda sistemas de controle de versão com foco em Git e GitHub para colaboração eficiente e gerenciamento de código."
+      },
+      {
+        "title": "Introdução a bancos de dados para desenvolvimento backend",
+        "description": "Explore conceitos e técnicas essenciais de bancos de dados, incluindo consultas SQL e princípios de design de banco de dados."
+      },
+      {
+        "title": "Framework web Django",
+        "description": "Construa aplicações web robustas e escaláveis usando o framework web Django, cobrindo models, views e templates."
+      },
+      {
+        "title": "APIs",
+        "description": "Aprenda a projetar, construir e utilizar APIs, com foco em princípios RESTful e implementação prática."
+      },
+      {
+        "title": "O stack completo",
+        "description": "Obtenha uma compreensão abrangente tanto do desenvolvimento frontend quanto backend, integrando todas as partes de uma aplicação web."
+      },
+      {
+        "title": "Projeto final de desenvolvedor backend",
+        "description": "Aplique suas habilidades de desenvolvimento backend em um projeto abrangente, demonstrando sua capacidade de construir sistemas complexos."
+      },
+      {
+        "title": "Preparação para entrevistas de programação",
+        "description": "Prepare-se para entrevistas de programação com problemas práticos, estratégias de resolução de problemas e dicas para o sucesso."
+      }
+    ]
+  },
+  "aboutCard": {
+    "name": "Jethro Au",
+    "title": "Engenheiro de software"
+  }
+}

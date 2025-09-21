@@ -1,0 +1,56 @@
+[
+  {
+    "id": "9331603e-b327-485a-ac1c-cf70208af876",
+    "name": "Page d'atterrissage YEE STUDIO",
+    "slug": "yee-studio-landing-page",
+    "image": "https://cdn.sanity.io/images/dsnalg9u/production/bb4556dd40daf66f3cc386ede3d4a53e56a86f4a-1329x939.png",
+    "url": "https://studio-landing-page-six.vercel.app/",
+    "content": "Ceci est le troisième projet de test !",
+    "isPublic": true,
+    "description": "Yee Studio se spécialise dans la fourniture de solutions web complètes, englobant la conception web innovante, le développement, l'image de marque et le marketing numérique. Confiez le parcours numérique de votre marque à nous pour un professionnalisme inégalé et des résultats visionnaires.",
+    "keywords": [
+      "React",
+      "Next",
+      "JavaScript",
+      "Animations"
+    ],
+    "createdAt": "2024-03-22T22:27:28Z"
+  },
+  {
+    "id": "ae2ad83b-5676-4bbe-afb7-f7d8f6f0c229",
+    "name": "Application Web de Blog",
+    "slug": "blogging-web-app",
+    "image": "https://cdn.sanity.io/images/dsnalg9u/production/c93aa71fc04f6027a22570d6f742bfe30371470e-2838x1597.webp",
+    "url": "https://jdevblog.vercel.app/",
+    "content": "Mon deuxième test",
+    "isPublic": true,
+    "description": "J-Blog est une application web de blog full-stack. Elle est construite avec React, Next.js, GraphQL, TailwindCSS, et plus encore.",
+    "keywords": [
+      "TypeScript",
+      "React",
+      "Next",
+      "Fullstack",
+      "APIs"
+    ],
+    "createdAt": "2024-02-08T21:38:17Z"
+  },
+  {
+    "id": "fee37fb4-e2e7-4eb3-980f-71642e7d61dc",
+    "name": "SceneAI",
+    "slug": "sceneai",
+    "image": "https://cdn.sanity.io/images/dsnalg9u/production/4af2addffdfa85649041f96a03d4c412e23633e7-1280x768.png",
+    "url": "https://sceneai.vercel.app/",
+    "content": "SceneAI est une application de pointe conçue pour générer de superbes images panoramiques à 360 degrés à partir d'invites textuelles. En exploitant des algorithmes IA avancés, SceneAI transforme vos idées en environnements immersifs, parfaits pour les visites virtuelles, les présentations immobilières et la narration visuelle créative.",
+    "isPublic": true,
+    "description": "SceneAI est une application de pointe conçue pour générer de superbes images panoramiques à 360 degrés à partir d'invites textuelles. En exploitant des algorithmes IA avancés, SceneAI transforme vos idées en environnements immersifs, parfaits pour les visites virtuelles, les présentations immobilières et la narration visuelle créative.",
+    "keywords": [
+      "React",
+      "Next",
+      "Fullstack",
+      "APIs",
+      "Stable Diffusion",
+      "AI"
+    ],
+    "createdAt": "2024-02-08T21:38:01Z"
+  }
+]

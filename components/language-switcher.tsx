@@ -17,7 +17,11 @@ const locales = [
   { code: 'zh-CN', name: 'Simplified Chinese', nativeName: '简体中文' },
   { code: 'es', name: 'Spanish', nativeName: 'Español' },
   { code: 'ja', name: 'Japanese', nativeName: '日本語' },
-  { code: 'ar', name: 'Arabic', nativeName: 'العربية' },
+  { code: 'ko', name: 'Korean', nativeName: '한국어' },
+  { code: 'de', name: 'German', nativeName: 'Deutsch' },
+  { code: 'fr', name: 'French', nativeName: 'Français' },
+  { code: 'ru', name: 'Russian', nativeName: 'Русский' },
+  { code: 'pt-BR', name: 'Portuguese (Brazil)', nativeName: 'Português (BR)' },
 ];
 
 export function LanguageSwitcher() {

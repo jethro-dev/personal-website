@@ -1,0 +1,82 @@
+---
+title: 'LeetCode Top Interview 150: Problem 88 Sortierte Arrays zusammenführen'
+description: >-
+  Heute tauchen wir in eine beliebte Interview-Frage ein, die häufig auf
+  LeetCode anzutreffen ist: Sortierte Arrays zusammenführen.
+slug: leetcode-top-interview-150-problem-88-merge-sorted-array
+coverImage: >-
+  https://cdn.sanity.io/images/dsnalg9u/production/469e18e67c06f6b7c5b5a038c4cf227cbddbecec-500x260.png
+category: LeetCode
+tags:
+  - engineering
+  - c++
+  - leetcode
+  - programmierung
+  - merge
+  - sortierung
+  - array
+publishedAt: '2024-05-09T00:08:16Z'
+updatedAt: '2024-05-09T02:32:08Z'
+---
+Willkommen zu einer weiteren Coding-Reise! Heute tauchen wir in eine beliebte Interview-Frage ein, die häufig auf LeetCode anzutreffen ist: **Sortierte Arrays zusammenführen**. Die Aufgabe ist einfach, aber knifflig; zwei sortierte Arrays zu einem sortierten Array zusammenführen. Die Herausforderung überrascht oft Leute, wenn es um das Handhaben von Randfällen und das Sicherstellen optimaler Effizienz geht.
+
+Hier ist eine kurze Zusammenfassung der Problemstellung:
+
+Gegeben sind zwei Integer-Arrays `nums1` und `nums2`, sortiert in nicht-absteigender Reihenfolge, und zwei Integers `m` und `n`, die die Anzahl der Elemente in `nums1` bzw. `nums2` repräsentieren. Führen Sie `nums2` in `nums1` zusammen, sodass `nums1` ein einziges sortiertes Array wird.
+
+### Initiale Einrichtung
+
+Der Trick hier ist, die Tatsache zu nutzen, dass `nums1` am Ende genug Platz hat, um alle Elemente von `nums2` aufzunehmen (wie vom Problem spezifiziert). Wir werden die Arrays vom Ende zum Anfang zusammenführen, um zu vermeiden, dass Elemente in `nums1` überschrieben werden, die noch nicht verarbeitet wurden.
+
+Hier ist der bereitgestellte Code-Schnipsel:
+
+```cpp
+class Solution {
+public:
+    void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n - 1;
+
+        while (j >= 0) {
+            if (i >= 0 && nums1[i] > nums2[j]) {
+                nums1[k--] = nums1[i--];
+            } else {
+                nums1[k--] = nums2[j--];
+            }
+        }
+    }
+};
+```
+
+### Code-Erklärung
+
+- **Variablen-Initialisierung**:
+
+- `i` beginnt beim letzten gültigen Element von `nums1`.
+
+- `j` beginnt beim letzten Element von `nums2`.
+
+- `k` beginnt an der letzten Position im Array `nums1`, wo das finale Element des zusammengeführten Arrays platziert wird.
+
+- **Zusammenführungsprozess**:
+
+- Die `while`-Schleife läuft weiter, bis alle Elemente von `nums2` berücksichtigt wurden (d.h., `j >= 0`).
+
+- Innerhalb der Schleife vergleichen wir Elemente aus `nums1` und `nums2` vom Ende zum Anfang.
+
+- Wenn das aktuelle Element von `nums1` (`nums1[i]`) größer ist als das aktuelle Element von `nums2` (`nums2[j]`), platzieren wir `nums1[i]` an Position `k` in `nums1` und verringern sowohl `i` als auch `k`.
+
+- Andernfalls platzieren wir `nums2[j]` an Position `k` und verringern sowohl `j` als auch `k`.
+
+### Warum vom Ende zusammenführen?
+
+Das Zusammenführen vom Ende ist ein strategischer Zug, weil es uns erlaubt, `nums1` von hinten zu füllen und die Notwendigkeit zu vermeiden, Elemente zu verschieben, um Platz zu schaffen. Diese Technik stellt sicher, dass die Zusammenführungsoperation effizient ist, mit einer Zeitkomplexität von O(m + n), wobei m und n die Längen der beiden Arrays sind.
+
+### Fazit
+
+Diese Lösung ist elegant in ihrer Einfachheit und Effizienz. Sie nutzt den bereitgestellten Platz innerhalb von `nums1` und stellt sicher, dass kein zusätzlicher Platz benötigt wird, wodurch sie den Einschränkungen der In-Place-Zusammenführung entspricht.
+
+Ich hoffe, dieser Durchgang hat Licht auf den Denkprozess hinter der Lösung des Sortierte-Arrays-Zusammenführen-Problems geworfen und Ihnen geholfen zu verstehen, wie Sie ähnliche Probleme in Ihren Interviews oder Übungssitzungen angehen können.
+
+Bleiben Sie dran für weitere Lösungen und viel Spaß beim Coding!
