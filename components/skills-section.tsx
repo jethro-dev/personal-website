@@ -48,7 +48,7 @@ const frontends = [
   },
   {
     name: 'shadcn-ui',
-    logo: '/images/shadcn-ui.svg',
+    logo: '/images/shadcn-ui.png',
   },
 ];
 
