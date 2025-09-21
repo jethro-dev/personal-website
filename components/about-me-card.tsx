@@ -18,7 +18,7 @@ export function AboutMeCard({}) {
 
   return (
     <CardContainer>
-      <CardBody className="relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border-white/[0.2] border w-[20rem] lg:w-[24rem] h-auto rounded-xl p-8 flex flex-col items-center cursor-pointer overflow-hidden">
+      <CardBody className="relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] border-white/[0.2] border w-[24.375rem] h-[30.25rem] rounded-xl p-8 flex flex-col items-center justify-center cursor-pointer overflow-hidden shadow-lg">
         {/* Aurora Background */}
         <AuroraBackground className="absolute inset-0 w-full h-full rounded-xl" showRadialGradient={false} />
 
@@ -34,14 +34,14 @@ export function AboutMeCard({}) {
               src={"/profile.jpeg"}
               height="1000"
               width="1000"
-              className="h-24 w-24 lg:h-28 lg:w-28 object-cover aspect-square rounded-full group-hover/card:shadow-xl"
+              className="h-32 w-32 lg:h-36 lg:w-36 object-cover aspect-square rounded-full group-hover/card:shadow-xl"
               alt="thumbnail"
             />
           </CardItem>
           <CardItem
             as={"h1"}
             translateZ="50"
-            className="mt-6 text-xl lg:text-2xl font-bold text-white"
+            className="mt-8 text-2xl lg:text-3xl font-bold text-white"
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-300">
               {t('name')}
@@ -50,20 +50,20 @@ export function AboutMeCard({}) {
           <CardItem
             as="p"
             translateZ="40"
-            className="mt-3 text-sm lg:text-base text-white/70 max-w-sm text-center"
+            className="mt-4 text-base lg:text-lg text-white/70 max-w-sm text-center"
           >
             {t('title')}
           </CardItem>
-          <div className="mt-4 w-full flex items-center justify-center flex-wrap gap-2">
+          <div className="mt-6 w-full flex items-center justify-center flex-wrap gap-3">
             <CardItem translateZ="40">
               <Button
                 variant={"ghost"}
                 size={"icon"}
-                className="rounded-full w-8 h-8 hover:bg-white/10"
+                className="rounded-full w-10 h-10 hover:bg-white/10"
                 asChild
               >
                 <Link href="https://www.linkedin.com/in/galongau/">
-                  <Linkedin className="h-4 w-4 text-white/70" />
+                  <Linkedin className="h-5 w-5 text-white/70" />
                 </Link>
               </Button>
             </CardItem>
@@ -71,11 +71,11 @@ export function AboutMeCard({}) {
               <Button
                 variant={"ghost"}
                 size={"icon"}
-                className="rounded-full w-8 h-8 hover:bg-white/10"
+                className="rounded-full w-10 h-10 hover:bg-white/10"
                 asChild
               >
                 <Link href="https://github.com/jethro-dev">
-                  <Github className="h-4 w-4 text-white/70" />
+                  <Github className="h-5 w-5 text-white/70" />
                 </Link>
               </Button>
             </CardItem>
@@ -85,7 +85,7 @@ export function AboutMeCard({}) {
             translateZ={40}
             // translateX={-40}
 
-            className="mt-6"
+            className="mt-8"
           >
             <DrawerDemo />
           </CardItem>

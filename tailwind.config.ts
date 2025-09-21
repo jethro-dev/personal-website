@@ -114,7 +114,7 @@ function addCustomContainer({ addComponents }: any) {
       '@media (min-width: 1440px)': {
         maxWidth: '1440px',
       },
-      '@media (min-width: 1920px)': {
+      '@media (min-width: 1950px)': {
         maxWidth: '1600px',
       },
     }

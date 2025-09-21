@@ -7,6 +7,7 @@ import { Certifications } from "@/components/certifications";
 import { Experience } from "@/components/experience";
 import { Portfolio } from "@/components/portfolio";
 import { LatestBlogPosts } from "@/components/latest-blog-posts";
+import { Qualities } from "@/components/qualities";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <main className="">
         <HeroParallax />
 
+        <Qualities />
         <About />
         <SkillsSection />
         <Certifications />

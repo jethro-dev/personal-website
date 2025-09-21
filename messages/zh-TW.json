@@ -172,5 +172,19 @@
   "aboutCard": {
     "name": "歐嘉朗",
     "title": "軟體工程師"
+  },
+  "qualities": {
+    "fullStack": {
+      "title": "全端開發者",
+      "description": "從資料庫設計到使用者介面的端到端網頁開發專業知識，提供完整的解決方案。"
+    },
+    "aiEnthusiast": {
+      "title": "人工智慧愛好者",
+      "description": "運用人工智慧和機器學習建構更智慧、更高效的應用程式。"
+    },
+    "trendsSetter": {
+      "title": "緊跟技術前沿",
+      "description": "尖端技術的早期採用者，始終領先於產業趨勢和最佳實務。"
+    }
   }
 }

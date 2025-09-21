@@ -172,5 +172,19 @@
   "aboutCard": {
     "name": "Jethro Au",
     "title": "ソフトウェアエンジニア"
+  },
+  "qualities": {
+    "fullStack": {
+      "title": "フルスタック開発者",
+      "description": "データベース設計からユーザーインターフェースまでのエンドツーエンドのWeb開発の専門知識で、完全なソリューションを提供します。"
+    },
+    "aiEnthusiast": {
+      "title": "AI愛好家",
+      "description": "人工知能と機械学習を活用して、よりスマートで効率的なアプリケーションを構築します。"
+    },
+    "trendsSetter": {
+      "title": "トレンドの先駆者",
+      "description": "最先端技術の早期採用者で、業界のトレンドやベストプラクティスよりも先を行き続けています。"
+    }
   }
 }

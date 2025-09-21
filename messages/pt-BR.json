@@ -172,5 +172,19 @@
   "aboutCard": {
     "name": "Jethro Au",
     "title": "Engenheiro de software"
+  },
+  "qualities": {
+    "fullStack": {
+      "title": "Desenvolvedor Full-Stack",
+      "description": "Experiência completa em desenvolvimento web do design de banco de dados às interfaces de usuário, entregando soluções completas."
+    },
+    "aiEnthusiast": {
+      "title": "Entusiasta de IA",
+      "description": "Aproveitando inteligência artificial e aprendizado de máquina para construir aplicações mais inteligentes e eficientes."
+    },
+    "trendsSetter": {
+      "title": "À frente das tendências",
+      "description": "Adotador precoce de tecnologias de ponta, sempre à frente das tendências da indústria e melhores práticas."
+    }
   }
 }

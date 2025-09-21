@@ -172,5 +172,19 @@
   "aboutCard": {
     "name": "欧嘉朗",
     "title": "软件工程师"
+  },
+  "qualities": {
+    "fullStack": {
+      "title": "全栈开发者",
+      "description": "从数据库设计到用户界面的端到端Web开发专业知识，提供完整的解决方案。"
+    },
+    "aiEnthusiast": {
+      "title": "人工智能爱好者",
+      "description": "利用人工智能和机器学习构建更智能、更高效的应用程序。"
+    },
+    "trendsSetter": {
+      "title": "紧跟技术前沿",
+      "description": "尖端技术的早期采用者，始终领先于行业趋势和最佳实践。"
+    }
   }
 }
