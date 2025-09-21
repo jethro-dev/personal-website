@@ -5,7 +5,7 @@ import { format } from "date-fns";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { getLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 type Props = {
   params: Promise<{ locale: string }>;
@@ -13,6 +13,7 @@ type Props = {
 
 const BlogsMainPage = async (props: Props) => {
   const locale = await getLocale();
+  const t = await getTranslations('blogs');
   const blogs = await getBlogPosts(locale);
 
   function formatDate(date: string | Date) {
@@ -44,7 +45,7 @@ const BlogsMainPage = async (props: Props) => {
   return (
     <main>
       <div className="mt-20 mb-40 container max-w-7xl pt-20">
-        <h1 className="text-4xl font-medium">All Posts</h1>
+        <h1 className="text-4xl font-medium">{t('allBlogs')}</h1>
         <div className="mt-20 grid grid-cols-3 grid-rows-7 h-[600px] gap-6">
           {blogsWithGrid.slice(0, 5).map((blog) => (
             <Link

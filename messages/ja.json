@@ -104,6 +104,7 @@
   },
   "blogs": {
     "title": "ブログ",
+    "allBlogs": "すべてのブログ",
     "featuredTitle": "注目のブログ",
     "featuredDescription": "私の注目のブログ記事です",
     "readMore": "続きを読む",

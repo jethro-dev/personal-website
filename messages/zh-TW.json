@@ -104,6 +104,7 @@
   },
   "blogs": {
     "title": "部落格",
+    "allBlogs": "所有部落格",
     "featuredTitle": "精選部落格",
     "featuredDescription": "這是我的精選部落格文章",
     "readMore": "閱讀更多",

@@ -104,6 +104,7 @@
   },
   "blogs": {
     "title": "Blog",
+    "allBlogs": "所有博客",
     "featuredTitle": "精选博客",
     "featuredDescription": "这是我的精选博客文章",
     "readMore": "Read More",

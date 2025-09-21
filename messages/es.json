@@ -104,6 +104,7 @@
   },
   "blogs": {
     "title": "Blog",
+    "allBlogs": "Todos los Blogs",
     "featuredTitle": "Blogs Destacados",
     "featuredDescription": "Estos son mis artículos de blog destacados",
     "readMore": "Leer Más",

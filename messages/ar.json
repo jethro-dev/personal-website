@@ -104,6 +104,7 @@
   },
   "blogs": {
     "title": "المدونة",
+    "allBlogs": "جميع المدونات",
     "featuredTitle": "المدونات المميزة",
     "featuredDescription": "هذه هي منشوراتي المميزة في المدونة",
     "readMore": "اقرأ المزيد",

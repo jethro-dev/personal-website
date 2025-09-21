@@ -14,6 +14,9 @@ const CodeBlock = ({
     language: string;
   };
 }) => {
+  // Ensure code is always a string
+  const codeString = String(value.code || '');
+
   return (
     <div className="text-xs relative">
       <Button
@@ -21,14 +24,14 @@ const CodeBlock = ({
         variant={"ghost"}
         size={"icon"}
         onClick={() => {
-          navigator.clipboard.writeText(value.code);
+          navigator.clipboard.writeText(codeString);
           toast.success("Copied to clipboard");
         }}
       >
         <Copy className="w-4 h-4" />
       </Button>
       <SyntaxHighlighter language={value.language || "text"} style={twilight}>
-        {value.code}
+        {codeString}
       </SyntaxHighlighter>
     </div>
   );

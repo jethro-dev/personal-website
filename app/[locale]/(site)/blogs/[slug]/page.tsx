@@ -8,10 +8,10 @@ import { getBlogPost, getRelatedBlogs, getAllBlogSlugs } from "@/lib/content";
 import { getLocale } from 'next-intl/server';
 import { format, parseISO } from "date-fns";
 import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import CodeBlock from "@/components/code-block";
 import remarkGfm from 'remark-gfm';
-import rehypePrism from 'rehype-prism-plus';
 
 type Props = {
   params: Promise<{ slug: string; locale: string }>;
@@ -60,13 +60,38 @@ const BlogPage = async ({ params }: Props) => {
   );
 
   const components = {
-    pre: ({ children, ...props }: any) => {
-      const language = props['data-language'] || 'text';
-      return <CodeBlock value={{ language, code: children }} />;
+    // Handle code blocks with syntax highlighting
+    pre: (props: any) => {
+      // The pre element wraps a code element in MDX
+      const codeElement = props.children;
+
+      if (codeElement?.props) {
+        // Extract language from className (e.g., "language-javascript")
+        const className = codeElement.props.className || '';
+        const match = /language-(\w+)/.exec(className);
+        const language = match ? match[1] : 'text';
+
+        // Get the actual code text from the code element's children
+        const code = codeElement.props.children || '';
+
+        return <CodeBlock value={{ language, code: String(code) }} />;
+      }
+
+      // Fallback for plain pre blocks
+      return <pre {...props} />;
     },
-    code: ({ children }: any) => (
-      <code className="bg-gray-800 px-1 py-0.5 rounded text-sm">{children}</code>
-    ),
+    // Handle inline code
+    code: ({ children, className }: any) => {
+      // If it has a className, it's part of a code block (handled by pre)
+      if (className) {
+        return <code className={className}>{children}</code>;
+      }
+
+      // Otherwise it's inline code
+      return (
+        <code className="bg-gray-800 px-1 py-0.5 rounded text-sm">{children}</code>
+      );
+    },
   };
 
   return (
@@ -80,10 +105,10 @@ const BlogPage = async ({ params }: Props) => {
 
         <div className="max-w-7xl container grid grid-cols-12 py-6">
           <div className="col-span-9">
-            <div className="flex items-center text-muted-foreground text-sm font-medium">
+            <Link href={`/${locale}/blogs`} className="flex items-center text-muted-foreground text-sm font-medium hover:text-white transition-colors">
               <ArrowLeft className="w-4 h-4 mr-1" />
               <span>Back to Blog</span>
-            </div>
+            </Link>
             <div className="mt-16 flex items-center gap-4">
               <div className="px-3 py-2 rounded-full bg-violet-500 text-sm font">
                 {blog.category}
@@ -120,14 +145,14 @@ const BlogPage = async ({ params }: Props) => {
               </div>
             </div>
 
-            <div className="my-20 prose dark:prose-invert prose-sm lg:prose-lg prose-li:marker:text-primary">
+            <div className="my-20 prose dark:prose-invert prose-sm lg:prose-lg prose-li:marker:text-primary prose-code:before:content-none prose-code:after:content-none">
               <MDXRemote
                 source={blog.content}
                 components={components}
                 options={{
                   mdxOptions: {
                     remarkPlugins: [remarkGfm],
-                    rehypePlugins: [rehypePrism],
+                    development: false,
                   }
                 }}
               />

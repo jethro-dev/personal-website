@@ -83,7 +83,7 @@ export async function getBlogPosts(locale: string = 'en'): Promise<BlogPost[]> {
           ...data,
           content,
           slug: file.replace('.mdx', ''),
-          readingTime: readingTime(content)
+          readingTime: readingTime(String(content))
         } as BlogPost;
       })
   );
@@ -111,7 +111,7 @@ export async function getBlogPost(slug: string, locale: string = 'en'): Promise<
       ...data,
       content,
       slug,
-      readingTime: readingTime(content)
+      readingTime: readingTime(String(content))
     } as BlogPost;
   }
 
@@ -169,6 +169,22 @@ export function getExperiences(locale: string = 'en'): Experience[] {
   }
 
   return JSON.parse(fs.readFileSync(experiencesPath, 'utf-8'));
+}
+
+// Get portfolio projects
+export function getPortfolioProjects(locale: string = 'en'): any[] {
+  const portfolioProjectsPath = path.join(contentDir, locale, 'projects', 'portfolio-projects.json');
+
+  if (!fs.existsSync(portfolioProjectsPath)) {
+    // Fallback to English
+    const enPortfolioProjectsPath = path.join(contentDir, 'en', 'projects', 'portfolio-projects.json');
+    if (fs.existsSync(enPortfolioProjectsPath)) {
+      return JSON.parse(fs.readFileSync(enPortfolioProjectsPath, 'utf-8'));
+    }
+    return [];
+  }
+
+  return JSON.parse(fs.readFileSync(portfolioProjectsPath, 'utf-8'));
 }
 
 // Get home page data

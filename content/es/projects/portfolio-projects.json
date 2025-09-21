@@ -1,0 +1,72 @@
+[
+  {
+    "id": "jethroau-website",
+    "name": "JethroAu.com",
+    "slug": "jethroau-com",
+    "description": "Un sitio web personal construido con Next.js 14 y TypeScript, creando una plataforma dinámica para blogs y presentación de proyectos, resultando en una presencia profesional en línea y un recurso valioso para compartir conocimientos y conectar con la comunidad tecnológica.",
+    "github": "https://github.com/jethro-dev/personal-website",
+    "demo": "https://jethroau.com",
+    "image": "/jethroau-cover.png",
+    "size": "col-span-1 md:col-span-2 row-span-1"
+  },
+  {
+    "id": "livr-studios",
+    "name": "LIVR Studios",
+    "slug": "livr-studios",
+    "description": "Desarrollé un sitio de marketing dinámico aprovechando tecnologías y marcos web modernos, resultando en un aumento del 20% en el engagement en línea y generación de leads.",
+    "github": "",
+    "demo": "https://www.livrstudios.com/",
+    "image": "/livr-studios-cover.png",
+    "size": "col-span-1 md:col-span-1 row-span-1"
+  },
+  {
+    "id": "sceneai",
+    "name": "SceneAI",
+    "slug": "sceneai",
+    "description": "Una herramienta impulsada por IA que genera descripciones detalladas de escenas para escritores y creadores, utilizando servicios generativos de terceros y APIs RESTful, resultando en inspiración mejorada y un proceso creativo simplificado para los usuarios.",
+    "github": "https://github.com/jethro-dev/ai-environment-generator",
+    "demo": "https://sceneai.vercel.app/",
+    "image": "/sceneai-cover.png",
+    "size": "col-span-1 md:col-span-1 md:row-span-2"
+  },
+  {
+    "id": "dvsa-booking",
+    "name": "Automatización de Reservas de Exámenes de Conducir DVSA",
+    "slug": "dvsa-booking-automation",
+    "description": "Automatizar la reserva de exámenes de conducir en el sitio web de DVSA, una solución altamente eficiente que navega el sitio, completa los detalles y busca espacios disponibles.",
+    "github": "https://github.com/jethro-dev/dvsa-driving-test-booking-automation",
+    "demo": "",
+    "image": "/dvsa-cover.png",
+    "size": "col-span-1 md:col-span-2 lg:col-span-1 row-span-1"
+  },
+  {
+    "id": "studybud",
+    "name": "StudyBud",
+    "slug": "studybud",
+    "description": "Una plataforma innovadora para encontrar compañeros de estudio, implementando mensajería, sesiones de estudio grupal y algoritmos de coincidencia de usuarios, resultando en un ambiente colaborativo que mejora las experiencias de aprendizaje de los estudiantes y fomenta conexiones académicas.",
+    "github": "https://github.com/jethro-dev/studybud",
+    "demo": "https://studybud-jethro.up.railway.app/",
+    "image": "/studybud-cover.png",
+    "size": "col-span-1 md:col-span-2 lg:col-span-2 row-span-1"
+  },
+  {
+    "id": "stemfm",
+    "name": "StemFM",
+    "slug": "stemfm",
+    "description": "StemFM es una plataforma de streaming musical de vanguardia que usa IA para la separación automática de pistas y mezcla inteligente, ofreciendo a los oyentes una forma completamente nueva e inmersiva de experimentar la música.",
+    "github": "",
+    "demo": "https://www.stemplayer.com/",
+    "image": "/stemfm-cover.png",
+    "size": "col-span-1 md:col-span-2 row-span-1"
+  },
+  {
+    "id": "yee-studio",
+    "name": "Yee Studio",
+    "slug": "yee-studio",
+    "description": "Mi estudio creativo",
+    "github": "https://github.com/jethro-dev/studio-landing-page",
+    "demo": "https://studio-landing-page-six.vercel.app",
+    "image": "/yeestudio-cover.png",
+    "size": "col-span-1 md:col-span-1 lg:col-span-2 lg:row-span-1"
+  }
+]
