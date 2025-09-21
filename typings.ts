@@ -73,7 +73,7 @@ export type ExperienceSectionData = {
 
 export type Experience = {
   title: string;
-  description: string[];
+  description: string | string[];
   organisation: string;
   startDate: Date;
   endDate: Date;

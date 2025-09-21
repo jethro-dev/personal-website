@@ -40,7 +40,7 @@ export interface Project {
 export interface Experience {
   id: string;
   title: string;
-  description: string;
+  description: string | string[];
   organisation: string;
   startDate: string;
   endDate: string | null;
