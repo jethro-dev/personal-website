@@ -14,6 +14,9 @@
     "toggleTheme": "Cambiar tema"
   },
   "hero": {
+    "welcome": "Bienvenido a",
+    "siteName": "jethroau.com",
+    "tagline": "Construyamos el futuro juntos\n – una línea de código a la vez.",
     "learnMore": "Saber Más",
     "or": "o",
     "scheduleCall": "Programar una llamada"
@@ -78,7 +81,9 @@
     "subtitle": "Pequeñas cosas sobre mí"
   },
   "experience": {
-    "title": "Experiencia",
+    "title": "Mi Experiencia",
+    "description": "Embarca en un viaje a través de mi diversa experiencia, donde la tecnología se encuentra con la innovación. Desde la creación de aplicaciones web inmersivas hasta soluciones pioneras de comercio electrónico, mi experiencia es un testimonio de una mezcla dinámica de creatividad, precisión y pasión por impulsar el éxito digital.",
+    "yearsOfExperience": "🏅 5+ años de experiencia",
     "present": "Presente"
   },
   "projects": {
@@ -87,9 +92,22 @@
     "visitSite": "Visitar Sitio",
     "viewCode": "Ver Código"
   },
+  "portfolio": {
+    "title": "Mi Trabajo",
+    "description": "Desarrollador de software apasionado con un enfoque en crear soluciones eficientes e innovadoras para problemas del mundo real."
+  },
+  "connectBanner": {
+    "title": "Conéctate Conmigo",
+    "subtitle": "¡Transformemos Ideas en Código!",
+    "description1": "Contáctame para colaboraciones, consultas, o simplemente una charla técnica – juntos, podemos convertir visiones en poderosas soluciones de software. ¡Tu proyecto espera su transformación digital!",
+    "description2": "Contáctame completando el formulario de contacto o programando una reunión."
+  },
   "blogs": {
     "title": "Blog",
+    "featuredTitle": "Blogs Destacados",
+    "featuredDescription": "Estos son mis artículos de blog destacados",
     "readMore": "Leer Más",
+    "readMoreBlogs": "Leer más blogs",
     "minRead": "min de lectura",
     "relatedPosts": "Publicaciones Relacionadas"
   },

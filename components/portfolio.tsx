@@ -11,11 +11,13 @@ import { unstable_noStore as noStore } from 'next/cache';
 import { getProjects } from '@/lib/content';
 import { ProjectCard } from './project-card';
 import { PortfolioGrid } from './portfolio-grid';
-import { getLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 type Props = {};
 
 export const Portfolio = async (props: Props) => {
+  const t = await getTranslations('portfolio');
+
   return (
     <div
       id="portfolio"
@@ -27,12 +29,10 @@ export const Portfolio = async (props: Props) => {
         <div className="flex-1">
           <div className="text-center mb-20">
             <TypographyH1 className="text-5xl sm:text-6xl lg:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
-              My Work
+              {t('title')}
             </TypographyH1>
             <TypographyP className="mt-4 lg:mt-6">
-              {' '}
-              Passionate software developer with a focus on crafting efficient
-              and innovative solutions to real-world problems.
+              {t('description')}
             </TypographyP>
           </div>
           <PortfolioGrid />

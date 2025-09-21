@@ -14,6 +14,9 @@
     "toggleTheme": "Toggle theme"
   },
   "hero": {
+    "welcome": "Welcome to",
+    "siteName": "jethroau.com",
+    "tagline": "Let's build the future together\n – one line of code at a time.",
     "learnMore": "Learn More",
     "or": "or",
     "scheduleCall": "Schedule a call"
@@ -78,7 +81,9 @@
     "subtitle": "Little things about me"
   },
   "experience": {
-    "title": "Experience",
+    "title": "My Experience",
+    "description": "Embark on a journey through my diverse expertise, where technology meets innovation. From crafting immersive web applications to pioneering e-commerce solutions, my experience is a testament to a dynamic blend of creativity, precision, and a passion for driving digital success.",
+    "yearsOfExperience": "🏅 5+ Years of experience",
     "present": "Present"
   },
   "projects": {
@@ -87,9 +92,22 @@
     "visitSite": "Visit Site",
     "viewCode": "View Code"
   },
+  "portfolio": {
+    "title": "My Work",
+    "description": "Passionate software developer with a focus on crafting efficient and innovative solutions to real-world problems."
+  },
+  "connectBanner": {
+    "title": "Connect With Me",
+    "subtitle": "Let's Transform Ideas into Code!",
+    "description1": "Reach out for collaborations, inquiries, or just a tech chat – together, we can turn visions into powerful software solutions. Your project awaits its digital transformation!",
+    "description2": "Contact me by completing the contact form or scheduling a meeting."
+  },
   "blogs": {
     "title": "Blog",
+    "featuredTitle": "Featured Blogs",
+    "featuredDescription": "Here are my featured blog posts",
     "readMore": "Read More",
+    "readMoreBlogs": "Read more blogs",
     "minRead": "min read",
     "relatedPosts": "Related Posts"
   },

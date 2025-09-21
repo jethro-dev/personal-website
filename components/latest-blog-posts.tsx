@@ -7,12 +7,13 @@ import Link from "next/link";
 import { getBlogPosts } from "@/lib/content";
 import { BlogCard } from "./blog-card";
 import { Button } from "./ui/button";
-import { getLocale } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 
 type Props = {};
 
 export const LatestBlogPosts = async ({}: Props) => {
   const locale = await getLocale();
+  const t = await getTranslations('blogs');
   const blogs = await getBlogPosts(locale);
   if (!blogs || blogs.length === 0) {
     return null;
@@ -27,16 +28,16 @@ export const LatestBlogPosts = async ({}: Props) => {
         <div className="flex-1">
           <div className="text-center">
             <TypographyH1 className="text-5xl sm:text-6xl lg:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500 pb-4">
-              Featured Blogs
+              {t('featuredTitle')}
             </TypographyH1>
             <TypographyP className="lg:mt-6">
-              Here are my featured blog posts
+              {t('featuredDescription')}
             </TypographyP>
           </div>
 
           <div className="relative max-w-7xl mx-auto mt-10 flex flex-col lg:flex-row items-stretch justify-between gap-4">
             <Button className="absolute bottom-[100%] mb-10 right-0" asChild>
-              <Link href={"/blogs"}>Read more blogs</Link>
+              <Link href={`/${locale}/blogs`}>{t('readMoreBlogs')}</Link>
             </Button>
             {blogs.slice(0, 3).map((post, i) => (
               // <Blog key={i} {...post} />

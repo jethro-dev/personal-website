@@ -14,6 +14,9 @@
     "toggleTheme": "切換主題"
   },
   "hero": {
+    "welcome": "歡迎來到",
+    "siteName": "jethroau.com",
+    "tagline": "讓我們一起構建未來\n – 一次一行程式碼。",
     "learnMore": "瞭解更多",
     "or": "或",
     "scheduleCall": "預約通話"
@@ -78,7 +81,9 @@
     "subtitle": "關於我的一些小事"
   },
   "experience": {
-    "title": "經歷",
+    "title": "我的經歷",
+    "description": "踏上我多元化專業技能的旅程，科技與創新在此交匯。從打造沉浸式網路應用到開創性的電子商務解決方案，我的經驗見證了創造力、精準度和推動數位成功熱情的動態融合。",
+    "yearsOfExperience": "🏅 5年以上經驗",
     "present": "至今"
   },
   "projects": {
@@ -87,9 +92,22 @@
     "visitSite": "造訪網站",
     "viewCode": "檢視程式碼"
   },
+  "portfolio": {
+    "title": "我的作品",
+    "description": "充滿熱情的軟體開發者，專注於為現實世界問題打造高效和創新的解決方案。"
+  },
+  "connectBanner": {
+    "title": "與我聯繫",
+    "subtitle": "讓我們將想法轉化為程式碼！",
+    "description1": "無論是合作、諮詢，還是只是技術交流 – 我們可以一起將願景轉化為強大的軟體解決方案。您的專案正在等待數位化轉型！",
+    "description2": "透過填寫聯絡表單或預約會議與我聯繫。"
+  },
   "blogs": {
     "title": "部落格",
+    "featuredTitle": "精選部落格",
+    "featuredDescription": "這是我的精選部落格文章",
     "readMore": "閱讀更多",
+    "readMoreBlogs": "閱讀更多部落格",
     "minRead": "分鐘閱讀",
     "relatedPosts": "相關文章"
   },

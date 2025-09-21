@@ -16,6 +16,7 @@ import {
   useTransform,
 } from 'motion/react';
 import { useRef } from 'react';
+import { useTranslations } from 'next-intl';
 
 export const TimelineItemCard = ({
   title,
@@ -27,12 +28,17 @@ export const TimelineItemCard = ({
   keywords,
 }: Experience) => {
   const ref = useRef<HTMLLIElement>(null);
+  const t = useTranslations('experience');
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start end', 'center center'],
   });
 
   const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+
+  // Ensure description is an array
+  const descriptionArray = Array.isArray(description) ? description : [description || ''];
+
   return (
     <motion.li
       ref={ref}
@@ -42,19 +48,19 @@ export const TimelineItemCard = ({
       <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-[23.5px] border border-white dark:border-gray-900 dark:bg-gray-700"></div>
       <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
         {format(startDate, 'MMM yyyy').toUpperCase()} -{' '}
-        {is_present ? 'PRESENT' : format(endDate, 'MMM yyyy').toUpperCase()}
+        {is_present ? t('present').toUpperCase() : format(endDate, 'MMM yyyy').toUpperCase()}
       </time>
       <h3 className="text-lg font-semibold text-foreground">{title}</h3>
       <p className="mt-1 text-sm text-foreground italic font-light">
         {organisation}
       </p>
-      {description.map((desc, i) => (
+      {descriptionArray.filter(desc => desc).map((desc, i) => (
         <p key={i} className="mt-4 text-sm font-normal text-muted-foreground">
           - {desc}
         </p>
       ))}
       <div className="mt-4 flex items-center gap-2 flex-wrap">
-        {keywords.map((ss, i) => (
+        {keywords && keywords.map((ss, i) => (
           <Badge key={i} text={ss} />
         ))}
       </div>

@@ -6,11 +6,14 @@ import { TypographyH3 } from "./ui/typography-h3";
 import { Button } from "./ui/button";
 import useConfettiGradient from "@/hooks/useConfettiGradient";
 import { DrawerDemo } from "./drawer";
+import { useTranslations } from 'next-intl';
 
 type Props = {};
 
 export const ConnectBanner = (props: Props) => {
   const { ConfettiGradient } = useConfettiGradient(1);
+  const t = useTranslations('connectBanner');
+
   return (
     <div
       id="connect-banner"
@@ -20,17 +23,15 @@ export const ConnectBanner = (props: Props) => {
         <ConfettiGradient />
       </div>
       <div className="max-w-5xl mx-auto px-6 z-10">
-        <TypographyH1>Connect With Me</TypographyH1>
+        <TypographyH1>{t('title')}</TypographyH1>
         <TypographyH3 className="mt-4">
-          Let&apos;s Transform Ideas into Code!
+          {t('subtitle')}
         </TypographyH3>
         <TypographyP className="mt-6 w-4/5 text-white">
-          Reach out for collaborations, inquiries, or just a tech chat –
-          together, we can turn visions into powerful software solutions. Your
-          project awaits its digital transformation!
+          {t('description1')}
         </TypographyP>
         <TypographyP className="mt-2 w-4/5 text-white">
-          Contact me by completing the contact form or scheduling a meeting.
+          {t('description2')}
         </TypographyP>
         <div className="mt-12 flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <DrawerDemo />

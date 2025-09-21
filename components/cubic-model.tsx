@@ -1,7 +1,5 @@
 "use client";
 import React from "react";
-// Temporarily disabled - @splinetool/react-spline is not compatible with React 19 yet
-// import Spline from "@splinetool/react-spline";
 import { motion } from 'motion/react';
 type Props = {};
 

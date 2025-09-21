@@ -14,9 +14,12 @@
     "toggleTheme": "切换主题"
   },
   "hero": {
-    "learnMore": "Learn More",
-    "or": "or",
-    "scheduleCall": "Schedule a call"
+    "welcome": "欢迎来到",
+    "siteName": "jethroau.com",
+    "tagline": "让我们一起构建未来\n – 一次一行代码。",
+    "learnMore": "了解更多",
+    "or": "或",
+    "scheduleCall": "预约通话"
   },
   "contact": {
     "title": "Get in Touch",
@@ -78,8 +81,10 @@
     "subtitle": "关于我的一些小事"
   },
   "experience": {
-    "title": "Experience",
-    "present": "Present"
+    "title": "我的经历",
+    "description": "踏上我多元化专业技能的旅程，科技与创新在此交汇。从打造沉浸式网络应用到开创性的电子商务解决方案，我的经验见证了创造力、精准度和推动数字成功热情的动态融合。",
+    "yearsOfExperience": "🏅 5年以上经验",
+    "present": "至今"
   },
   "projects": {
     "title": "Projects",
@@ -87,9 +92,22 @@
     "visitSite": "Visit Site",
     "viewCode": "View Code"
   },
+  "portfolio": {
+    "title": "我的作品",
+    "description": "充满热情的软件开发者，专注于为现实世界问题打造高效和创新的解决方案。"
+  },
+  "connectBanner": {
+    "title": "与我联系",
+    "subtitle": "让我们将想法转化为代码！",
+    "description1": "无论是合作、咨询，还是只是技术交流 – 我们可以一起将愿景转化为强大的软件解决方案。您的项目正在等待数字化转型！",
+    "description2": "通过填写联系表单或预约会议与我联系。"
+  },
   "blogs": {
     "title": "Blog",
+    "featuredTitle": "精选博客",
+    "featuredDescription": "这是我的精选博客文章",
     "readMore": "Read More",
+    "readMoreBlogs": "阅读更多博客",
     "minRead": "min read",
     "relatedPosts": "Related Posts"
   },
