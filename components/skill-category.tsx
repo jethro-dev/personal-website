@@ -48,7 +48,7 @@ export const SkillCategory = ({ title, items, onEnter }: Props) => {
               className="flex flex-col items-center justify-between size-20"
             >
               <Image src={item.logo} alt={item.name} width={50} height={50} />
-              <p className="text-sm font-light">{item.name}</p>
+              <p className="text-sm font-light text-center">{item.name}</p>
             </div>
           ))}
         </div>
