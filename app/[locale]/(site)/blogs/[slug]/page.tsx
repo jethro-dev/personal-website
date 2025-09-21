@@ -45,7 +45,7 @@ const BlogPage = async ({ params }: Props) => {
   if (!blog) {
     return (
       <main>
-        <div className="container max-w-7xl mt-40">
+        <div className="container mt-40">
           <h1 className="text-4xl font-bold">Blog post not found</h1>
           <p className="mt-4">The blog post you&apos;re looking for doesn&apos;t exist.</p>
         </div>
@@ -103,7 +103,7 @@ const BlogPage = async ({ params }: Props) => {
         <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-transparent to-[80%] to-black"></div>
         <div className="absolute inset-0 -z-10 test"></div>
 
-        <div className="max-w-7xl container grid grid-cols-12 py-6">
+        <div className="container grid grid-cols-12 py-6">
           <div className="col-span-9">
             <Link href={`/${locale}/blogs`} className="flex items-center text-muted-foreground text-sm font-medium hover:text-white transition-colors">
               <ArrowLeft className="w-4 h-4 mr-1" />
@@ -130,7 +130,7 @@ const BlogPage = async ({ params }: Props) => {
         </div>
       </header>
 
-      <div className="container max-w-7xl grid grid-cols-12 mt-16">
+      <div className="container grid grid-cols-12 mt-16">
         <div className="col-span-9 pr-10">
           <div className="">
             <div className="border p-2 rounded-md">

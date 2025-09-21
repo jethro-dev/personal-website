@@ -80,7 +80,7 @@ export const PortfolioGrid = async (props: Props) => {
   ];
 
   return (
-    <div className="container max-w-8xl mx-auto py-8">
+    <div className="container mx-auto py-8">
       <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 auto-rows-[250px] md:auto-rows-[250px] lg:auto-rows-[250px]">
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />

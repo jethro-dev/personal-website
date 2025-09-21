@@ -16,7 +16,7 @@ export const Experience = async (props: Props) => {
       id="experience"
       className="bg-background pt-60 pb-40 transition duration-300"
     >
-      <div className="text-left md:text-center container max-w-7xl mx-auto">
+      <div className="text-left md:text-center container mx-auto">
         <TypographyH1 className="text-5xl sm:text-6xl lg:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
           {t('title')}
         </TypographyH1>

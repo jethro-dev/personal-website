@@ -22,7 +22,7 @@ export const ConnectBanner = (props: Props) => {
       <div className="w-full h-full brightness-75 absolute inset-0 z-0">
         <ConfettiGradient />
       </div>
-      <div className="max-w-5xl mx-auto px-6 z-10">
+      <div className="container z-10">
         <TypographyH1>{t('title')}</TypographyH1>
         <TypographyH3 className="mt-4">
           {t('subtitle')}

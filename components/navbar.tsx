@@ -4,8 +4,9 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { ThemeSwitch } from "./theme-switch";
 import { LanguageSwitcher } from "./language-switcher";
-import { Link } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
+import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
+import { usePathname } from "next/navigation";
 
 type Props = {};
 
@@ -19,7 +20,7 @@ type NavItem = {
 // const list_item defined inside component now
 
 export const Navbar = (props: Props) => {
-  const t = useTranslations('nav');
+  const t = useTranslations("nav");
   const { theme, setTheme } = useTheme();
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
@@ -27,27 +28,27 @@ export const Navbar = (props: Props) => {
   // Define list_item inside component to use translations
   const list_item: NavItem[] = [
     {
-      title: t('about'),
+      title: t("about"),
       href: "#about",
       smooth: true,
     },
     {
-      title: t('skills'),
+      title: t("skills"),
       href: "#skills",
       smooth: true,
     },
     {
-      title: t('experience'),
+      title: t("experience"),
       href: "#experience",
       smooth: true,
     },
     {
-      title: t('projects'),
+      title: t("projects"),
       href: "#portfolio",
       smooth: true,
     },
     {
-      title: t('blogs'),
+      title: t("blogs"),
       href: "/blogs",
       smooth: false,
     },
@@ -70,7 +71,7 @@ export const Navbar = (props: Props) => {
         visible ? "transform translate-y-0" : "transform -translate-y-full"
       }`}
     >
-      <div className="container max-w-8xl flex items-center justify-between">
+      <div className="container flex items-center justify-between">
         <div>
           <Link href="/" className="flex items-center gap-2">
             {/* <Image src="/logo.svg" width={60} height={60} alt="Logo" /> */}
@@ -92,20 +93,34 @@ export const Navbar = (props: Props) => {
 };
 
 const NavItem = ({ title, href, smooth }: NavItem) => {
+  const pathname = usePathname();
   let classNames =
     "hidden sm:block font-light text-lg text-white/50 hover:text-white transition duration-300";
 
   if (smooth) {
-    return (
-      <button
-        onClick={() => {
-          document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
-        }}
-        className={classNames}
-      >
-        {title}
-      </button>
-    );
+    // Check if we're on the home page (considering locale)
+    const isHomePage = pathname === '/' || pathname.match(/^\/[a-z]{2}(-[A-Z]{2})?\/?$/);
+
+    if (isHomePage) {
+      // On home page, use smooth scroll
+      return (
+        <button
+          onClick={() => {
+            document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+          }}
+          className={classNames}
+        >
+          {title}
+        </button>
+      );
+    } else {
+      // On other pages, navigate to home with the hash
+      return (
+        <Link href={`/${href}`} className={classNames}>
+          {title}
+        </Link>
+      );
+    }
   } else {
     return (
       <Link href={href} className={classNames}>

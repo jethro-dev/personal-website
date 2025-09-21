@@ -250,7 +250,7 @@ const SkillsSection = (props: Props) => {
         </TypographyP>
       </div>
 
-      <div className="mt-20 container max-w-8xl flex gap-x-10 relative">
+      <div className="mt-20 container flex gap-x-10 relative">
         <div className="flex-1 relative">
           <SkillCategory
             title={t('categories.frontend.title')}

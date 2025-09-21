@@ -14,15 +14,15 @@ module.exports = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
+  corePlugins: {
+    container: false
+  },
   theme: {
-    container: {
-      center: true,
-      padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
-    },
     extend: {
+      screens: {
+        '2xl': '1536px',  // Ensure 2xl breakpoint is at default
+        '3xl': '1920px',  // Define when 3xl breakpoint triggers
+      },
       maxWidth: {
         '8xl': '90rem',   // 1440px
         '9xl': '100rem',  // 1600px
@@ -87,10 +87,30 @@ module.exports = {
     require("tailwindcss-animate"),
     require("@tailwindcss/typography"),
     require("tailwind-scrollbar")({ nocompatible: true }),
+    addCustomContainer,
     addVariablesForColors,
     addBgGrid,
   ],
 };
+
+// This plugin adds custom container with specific breakpoints
+function addCustomContainer({ addComponents }: any) {
+  addComponents({
+    '.container': {
+      width: '100%',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      paddingLeft: '2rem',
+      paddingRight: '2rem',
+      '@media (min-width: 1440px)': {
+        maxWidth: '1440px',
+      },
+      '@media (min-width: 1920px)': {
+        maxWidth: '1600px',
+      },
+    }
+  })
+}
 
 // This plugin adds each Tailwind color as a global CSS variable, e.g. var(--gray-200).
 function addVariablesForColors({ addBase, theme }: any) {

@@ -10,8 +10,8 @@ import Link from "next/link";
 export function BlogCard({ title, description, slug, coverImage }: SimpleBlog) {
   return (
     <Link href={`/blogs/${slug}`}>
-      <CardContainer containerClassName="max-w-sm w-full h-full">
-        <CardBody className="p-8 w-full max-w-sm bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] h-auto rounded-xl border">
+      <CardContainer containerClassName="w-full h-full">
+        <CardBody className="p-8 w-full bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] h-full rounded-xl border">
           <CardItem
             translateZ="50"
             as={"h3"}
@@ -36,7 +36,7 @@ export function BlogCard({ title, description, slug, coverImage }: SimpleBlog) {
           <CardItem
             as="p"
             translateZ="40"
-            className="text-sm max-w-sm mt-6 text-muted-foreground line-clamp-3"
+            className="text-sm mt-6 text-muted-foreground line-clamp-3"
           >
             {description}
           </CardItem>

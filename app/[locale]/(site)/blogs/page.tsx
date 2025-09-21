@@ -44,7 +44,7 @@ const BlogsMainPage = async (props: Props) => {
   });
   return (
     <main>
-      <div className="mt-20 mb-40 container max-w-7xl pt-20">
+      <div className="mt-20 mb-40 container pt-20">
         <h1 className="text-4xl font-medium">{t('allBlogs')}</h1>
         <div className="mt-20 grid grid-cols-3 grid-rows-7 h-[600px] gap-6">
           {blogsWithGrid.slice(0, 5).map((blog) => (

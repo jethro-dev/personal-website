@@ -194,7 +194,7 @@ const SkillsSection = (props: Props) => {
         </TypographyP>
       </div>
 
-      <div className="mt-20 container max-w-7xl flex gap-10">
+      <div className="mt-20 container flex gap-10">
         {/* left */}
         <div className="flex-1 flex flex-col gap-4">
           <div className="border border-border rounded-lg p-4">
