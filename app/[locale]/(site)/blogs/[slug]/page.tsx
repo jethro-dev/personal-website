@@ -183,8 +183,8 @@ const BlogPage = async ({ params }: Props) => {
                 Related readings
               </p>
               {relatedBlogs.map((blog) => (
-                <div className="mt-6" key={blog.slug}>
-                  <p className="text-md font-medium">{blog.title}</p>
+                <Link href={`/${locale}/blogs/${blog.slug}`} key={blog.slug} className="block mt-6 group">
+                  <p className="text-md font-medium group-hover:text-primary transition-colors">{blog.title}</p>
                   <div className="mt-2 flex items-center gap-2">
                     <Image
                       src="/profile.jpeg"
@@ -195,7 +195,7 @@ const BlogPage = async ({ params }: Props) => {
                     />
                     <p className="text-sm text-muted-foreground">Jethro Au</p>
                   </div>
-                </div>
+                </Link>
               ))}
             </>
           )}
