@@ -2,7 +2,7 @@
   {
     "id": "52ee8a3c-d7ce-46df-881f-ee1d0fcf6dc8",
     "title": "Freelance Software Developer",
-    "description": "Engineer innovative e-commerce solutions, leveraging advanced web technologies to create seamless and user-centric web applications that optimize online shopping experiences and drive business growth.  HTML CSS JavaScript",
+    "description": "• Built custom Shopify e-commerce sites resulting in 40% increase in client sales and 30% reduction in bounce rates\n• Applied SEO and digital marketing strategies to achieve 20% traffic increase and higher conversion rates",
     "organisation": "Freelance",
     "startDate": "2021-06-01",
     "endDate": "2022-03-01",
@@ -17,7 +17,7 @@
   {
     "id": "5e43ae3a-6660-498b-be6a-a5de4dfe3e18",
     "title": "Software Engineer",
-    "description": "Crafting robust full-stack web applications for startups, driving digital initiatives through innovative solutions that seamlessly blend front-end sophistication with powerful back-end functionalities.",
+    "description": "• Developed dynamic marketing site with integrated CMS, increasing engagement by 20% and reducing content update time by 50%\n• Led development team while optimizing performance to achieve 35% faster page loads through caching and code optimization",
     "organisation": "LIVR",
     "startDate": "2023-05-01",
     "endDate": "2024-03-31",
@@ -37,7 +37,7 @@
   {
     "id": "67967c5a-1ec8-46a3-833b-a2dbe885ea37",
     "title": "Internship",
-    "description": "Enhance company websites and provide better user experience.",
+    "description": "• Redesigned company website with improved navigation and modern layout, resulting in 25% increase in user engagement\n• Supported digital marketing initiatives through SEO implementation and market research, improving online visibility by 15%",
     "organisation": "PR Asia",
     "startDate": "2019-06-01",
     "endDate": "2019-08-01",
@@ -51,7 +51,7 @@
   {
     "id": "a2398b91-590d-43e4-a595-32b89896ff13",
     "title": "Junior Software Engineer",
-    "description": "Develop a financial planning and analysis platform for small and medium-size businesses, and their financial advisors.",
+    "description": "• Revamped business plan editor functionality, improving user satisfaction by 30% while reducing technical debt by 20%\n• Optimized SEO and managed digital ad campaigns, achieving 25% increase in organic traffic and 15% boost in lead generation",
     "organisation": "The Business Plan Shop",
     "startDate": "2022-03-01",
     "endDate": "2023-05-31",
@@ -83,7 +83,7 @@
   {
     "id": "e6865877-9209-4244-843b-3115d823da99",
     "title": "Frontend Engineer",
-    "description": "Developed a sophisticated music streaming service by leveraging React, delivering a seamless and interactive user interface that supports complex functionalities",
+    "description": "• Developed sophisticated music streaming service using React and Web Audio API, achieving 30% faster load times through performance optimizations\n• Collaborated with AI specialists and backend teams to deliver features 15% more efficiently while reducing page load times by 35%",
     "organisation": "STEM",
     "startDate": "2024-04-01",
     "endDate": "2024-10-31",
@@ -107,7 +107,7 @@
   {
     "id": "openferry-2024",
     "title": "Frontend Engineer",
-    "description": "Developing OpenFerry, a ferry ticket booking SaaS platform. Building intuitive UI components and scalable, reusable libraries. Crafting responsive landing pages to enhance user engagement. Maintaining a consistent design system with tools like Storybook. Collaborating with cross-functional teams to implement features. Leveraging modern tools and frameworks like React, Next.js, Vite, and Vanilla Extract CSS.",
+    "description": "• Building OpenFerry's ferry booking SaaS platform with React, Next.js, and Vite, creating intuitive UI components and maintaining design consistency with Storybook\n• Developing scalable, reusable component libraries and responsive landing pages to enhance user engagement\n• Collaborating with cross-functional teams to deliver features using modern CI/CD workflows",
     "organisation": "OpenFerry (Droplet/NISEA)",
     "startDate": "2024-11-01",
     "endDate": null,

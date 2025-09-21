@@ -2,7 +2,7 @@
   {
     "id": "52ee8a3c-d7ce-46df-881f-ee1d0fcf6dc8",
     "title": "自由软件开发者",
-    "description": "设计创新的电子商务解决方案，利用先进的网络技术创建无缝且以用户为中心的网络应用程序，优化在线购物体验并推动业务增长。",
+    "description": "• 构建定制Shopify电商网站，实现客户销售额增长40%，跳出率降低30%\n• 应用SEO和数字营销策略，实现流量增长20%和更高的转化率",
     "organisation": "Freelance",
     "startDate": "2021-06-01",
     "endDate": "2022-03-01",
@@ -17,7 +17,7 @@
   {
     "id": "5e43ae3a-6660-498b-be6a-a5de4dfe3e18",
     "title": "软件工程师",
-    "description": "为初创公司打造强大的全栈网络应用程序，通过创新解决方案推动数字化举措，将前端的精密性与强大的后端功能完美融合。",
+    "description": "• 开发集成CMS的动态营销网站，提升参与度20%，内容更新时间减少50%\n• 领导开发团队，通过缓存和代码优化实现页面加载速度提升35%",
     "organisation": "LIVR",
     "startDate": "2023-05-01",
     "endDate": "2024-03-31",
@@ -37,7 +37,7 @@
   {
     "id": "67967c5a-1ec8-46a3-833b-a2dbe885ea37",
     "title": "实习生",
-    "description": "增强公司网站并提供更好的用户体验。",
+    "description": "• 重新设计公司网站，改进导航和现代化布局，用户参与度提升25%\n• 通过SEO实施和市场研究支持数字营销计划，在线可见度提升15%",
     "organisation": "PR Asia",
     "startDate": "2019-06-01",
     "endDate": "2019-08-01",
@@ -51,7 +51,7 @@
   {
     "id": "a2398b91-590d-43e4-a595-32b89896ff13",
     "title": "初级软件工程师",
-    "description": "为中小型企业及其财务顾问开发财务规划和分析平台。",
+    "description": "• 改进商业计划编辑器功能，用户满意度提升30%，技术债务减少20%\n• 优化SEO并管理数字广告活动，实现有机流量增长25%，潜在客户增长15%",
     "organisation": "The Business Plan Shop",
     "startDate": "2022-03-01",
     "endDate": "2023-05-31",
@@ -83,7 +83,7 @@
   {
     "id": "e6865877-9209-4244-843b-3115d823da99",
     "title": "前端工程师",
-    "description": "通过利用React开发了一个复杂的音乐流媒体服务，提供无缝且交互式的用户界面，支持复杂的功能。",
+    "description": "• 使用React和Web Audio API开发复杂的音乐流媒体服务，通过性能优化实现加载速度提升30%\n• 与AI专家和后端团队协作，功能交付效率提升15%，页面加载时间减少35%",
     "organisation": "STEM",
     "startDate": "2024-04-01",
     "endDate": "2024-10-31",
@@ -107,7 +107,7 @@
   {
     "id": "openferry-2024",
     "title": "前端工程师",
-    "description": "开发OpenFerry，一个渡轮票务预订SaaS平台。构建直观的UI组件和可扩展、可重用的库。打造响应式登陆页面以提高用户参与度。使用Storybook等工具维护一致的设计系统。与跨职能团队合作实施功能。利用React、Next.js、Vite和Vanilla Extract CSS等现代工具和框架。",
+    "description": "• 使用React、Next.js和Vite构建OpenFerry渡轮预订SaaS平台，创建直观的UI组件并使用Storybook维护设计一致性\n• 开发可扩展、可重用的组件库和响应式登陆页面以提升用户参与度\n• 与跨职能团队协作，使用现代CI/CD工作流程交付功能",
     "organisation": "OpenFerry (Droplet/NISEA)",
     "startDate": "2024-11-01",
     "endDate": null,
