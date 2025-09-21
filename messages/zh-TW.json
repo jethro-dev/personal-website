@@ -8,10 +8,12 @@
     "about": "關於",
     "skills": "技能",
     "experience": "經歷",
-    "blogs": "部落格",
     "projects": "專案",
+    "portfolio": "作品集",
+    "blogs": "部落格",
     "contact": "聯絡",
-    "toggleTheme": "切換主題"
+    "toggleTheme": "切換主題",
+    "siteName": "JethroAu"
   },
   "hero": {
     "welcome": "歡迎來到",

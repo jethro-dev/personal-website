@@ -8,10 +8,12 @@
     "about": "Acerca",
     "skills": "Habilidades",
     "experience": "Experiencia",
-    "blogs": "Blog",
     "projects": "Proyectos",
+    "portfolio": "Portafolio",
+    "blogs": "Blog",
     "contact": "Contacto",
-    "toggleTheme": "Cambiar tema"
+    "toggleTheme": "Cambiar tema",
+    "siteName": "JethroAu"
   },
   "hero": {
     "welcome": "Bienvenido a",

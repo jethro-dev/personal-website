@@ -8,10 +8,12 @@
     "about": "私について",
     "skills": "スキル",
     "experience": "経験",
-    "blogs": "ブログ",
     "projects": "プロジェクト",
+    "portfolio": "ポートフォリオ",
+    "blogs": "ブログ",
     "contact": "お問い合わせ",
-    "toggleTheme": "テーマを切り替え"
+    "toggleTheme": "テーマを切り替え",
+    "siteName": "JethroAu"
   },
   "hero": {
     "welcome": "ようこそ",

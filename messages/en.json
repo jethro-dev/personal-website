@@ -9,9 +9,11 @@
     "skills": "Skills",
     "experience": "Experience",
     "projects": "Projects",
+    "portfolio": "Portfolio",
     "blogs": "Blogs",
     "contact": "Contact",
-    "toggleTheme": "Toggle theme"
+    "toggleTheme": "Toggle theme",
+    "siteName": "JethroAu"
   },
   "hero": {
     "welcome": "Welcome to",

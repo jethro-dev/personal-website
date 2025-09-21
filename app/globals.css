@@ -66,6 +66,9 @@
 
     --radius: 0.5rem;
   }
+  .theme {
+    --animate-aurora: aurora 60s linear infinite;
+  }
 }
 
 @layer base {
@@ -105,3 +108,14 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 } */
+
+@theme inline {
+  @keyframes aurora {
+  from {
+    backgroundPosition: 50% 50%, 50% 50%;
+    }
+  to {
+    backgroundPosition: 350% 50%, 350% 50%;
+    }
+  }
+}

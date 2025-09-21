@@ -6,7 +6,6 @@ import { TypographyH3 } from './ui/typography-h3';
 import Link from 'next/link';
 import { getHomePageData } from '@/lib/content';
 import { TracingBeam } from './ui/tracing-beam';
-import { AboutMeCard } from './about-me-card';
 import { AboutItem } from './about-item';
 import { getLocale, getTranslations } from 'next-intl/server';
 
@@ -20,9 +19,9 @@ export const About = async (props: Props) => {
     <TracingBeam>
       <div
         id="about"
-        className="container bg-background py-20 px-6 flex md:items-start justify-between transition duration-300 gap-10 lg:gap-20 relative flex-col items-center md:flex-row"
+        className="container bg-background py-20 px-6 transition duration-300 relative"
       >
-        <div className="">
+        <div className="max-w-4xl mx-auto">
           <TypographyH1 className="text-4xl sm:text-7xl lg:text-7xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
             {homeData.about?.title || "About Me"}
           </TypographyH1>
@@ -33,9 +32,6 @@ export const About = async (props: Props) => {
               <AboutItem key={i} {...p} />
             )) || []}
           </div>
-        </div>
-        <div className="sticky top-[30%]">
-          <AboutMeCard />
         </div>
       </div>
     </TracingBeam>

@@ -9,9 +9,11 @@
     "skills": "技能",
     "experience": "经历",
     "projects": "项目",
+    "portfolio": "作品集",
     "blogs": "博客",
     "contact": "联系",
-    "toggleTheme": "切换主题"
+    "toggleTheme": "切换主题",
+    "siteName": "JethroAu"
   },
   "hero": {
     "welcome": "欢迎来到",

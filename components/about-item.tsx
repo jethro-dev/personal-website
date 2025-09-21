@@ -18,7 +18,7 @@ export const AboutItem = ({ title, text }: { title: string; text: string }) => {
     offset: ['start end', 'center center'],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
+  const translateY = useTransform(scrollYProgress, [0, 1], [20, 0]);
 
   return (
     <motion.div
@@ -26,7 +26,7 @@ export const AboutItem = ({ title, text }: { title: string; text: string }) => {
       className="my-40 lg:my-80"
       style={{
         opacity: scrollYProgress,
-        scale: scale,
+        translateY: translateY,
       }}
     >
       <TypographyH3 className="text-4xl lg:text-4xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">

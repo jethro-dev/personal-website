@@ -8,10 +8,12 @@
     "about": "حول",
     "skills": "المهارات",
     "experience": "الخبرة",
-    "blogs": "المدونة",
     "projects": "المشاريع",
+    "portfolio": "المعرض",
+    "blogs": "المدونة",
     "contact": "تواصل",
-    "toggleTheme": "تبديل السمة"
+    "toggleTheme": "تبديل السمة",
+    "siteName": "JethroAu"
   },
   "hero": {
     "welcome": "مرحبًا بك في",

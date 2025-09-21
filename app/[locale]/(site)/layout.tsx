@@ -1,5 +1,4 @@
 import "../../globals.css";
-import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
@@ -15,7 +14,6 @@ export default function SiteLayout({
   return (
     <div className={`${poppins.className} !bg-background`}>
       <ThemeProvider>
-        <Navbar />
         <SmoothScrollingWrapper>
           <div vaul-drawer-wrapper="">{children}</div>
         </SmoothScrollingWrapper>
