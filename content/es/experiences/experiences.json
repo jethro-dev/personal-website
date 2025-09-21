@@ -86,8 +86,8 @@
     "description": "Desarrollé un sofisticado servicio de streaming de música aprovechando React, entregando una interfaz de usuario fluida e interactiva que soporta funcionalidades complejas.",
     "organisation": "STEM",
     "startDate": "2024-04-01",
-    "endDate": null,
-    "isPresent": true,
+    "endDate": "2024-10-31",
+    "isPresent": false,
     "keywords": [
       "HTML",
       "CSS",
@@ -102,6 +102,28 @@
       "Apollo",
       "GraphQL",
       "RESTful APIs"
+    ]
+  },
+  {
+    "id": "openferry-2024",
+    "title": "Ingeniero Frontend",
+    "description": "Desarrollando OpenFerry, una plataforma SaaS de reserva de billetes de ferry. Construyendo componentes de UI intuitivos y bibliotecas escalables y reutilizables. Creando páginas de destino responsivas para mejorar la participación del usuario. Manteniendo un sistema de diseño consistente con herramientas como Storybook. Colaborando con equipos multifuncionales para implementar funciones. Aprovechando herramientas y frameworks modernos como React, Next.js, Vite y Vanilla Extract CSS.",
+    "organisation": "OpenFerry (Droplet/NISEA)",
+    "startDate": "2024-11-01",
+    "endDate": null,
+    "isPresent": true,
+    "keywords": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Vite",
+      "Vanilla Extract CSS",
+      "Storybook",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "CI/CD",
+      "Git"
     ]
   }
 ]

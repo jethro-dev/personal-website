@@ -86,8 +86,8 @@
     "description": "Reactを活用して洗練された音楽ストリーミングサービスを開発し、複雑な機能をサポートするシームレスでインタラクティブなユーザーインターフェースを提供しました。",
     "organisation": "STEM",
     "startDate": "2024-04-01",
-    "endDate": null,
-    "isPresent": true,
+    "endDate": "2024-10-31",
+    "isPresent": false,
     "keywords": [
       "HTML",
       "CSS",
@@ -102,6 +102,28 @@
       "Apollo",
       "GraphQL",
       "RESTful APIs"
+    ]
+  },
+  {
+    "id": "openferry-2024",
+    "title": "フロントエンドエンジニア",
+    "description": "OpenFerry（フェリーチケット予約SaaSプラットフォーム）の開発。直感的なUIコンポーネントとスケーラブルで再利用可能なライブラリの構築。ユーザーエンゲージメントを高めるレスポンシブランディングページの作成。Storybookなどのツールを使用した一貫したデザインシステムの維持。クロスファンクショナルチームとの協力による機能実装。React、Next.js、Vite、Vanilla Extract CSSなどの最新ツールとフレームワークの活用。",
+    "organisation": "OpenFerry (Droplet/NISEA)",
+    "startDate": "2024-11-01",
+    "endDate": null,
+    "isPresent": true,
+    "keywords": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Vite",
+      "Vanilla Extract CSS",
+      "Storybook",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "CI/CD",
+      "Git"
     ]
   }
 ]

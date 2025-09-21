@@ -86,8 +86,8 @@
     "description": "طوّرت خدمة بث موسيقي متطورة باستخدام React، مما يوفر واجهة مستخدم سلسة وتفاعلية تدعم الوظائف المعقدة.",
     "organisation": "STEM",
     "startDate": "2024-04-01",
-    "endDate": null,
-    "isPresent": true,
+    "endDate": "2024-10-31",
+    "isPresent": false,
     "keywords": [
       "HTML",
       "CSS",
@@ -102,6 +102,28 @@
       "Apollo",
       "GraphQL",
       "RESTful APIs"
+    ]
+  },
+  {
+    "id": "openferry-2024",
+    "title": "مهندس واجهة أمامية",
+    "description": "تطوير OpenFerry، منصة SaaS لحجز تذاكر العبّارات. بناء مكونات واجهة مستخدم بديهية ومكتبات قابلة للتوسع وإعادة الاستخدام. إنشاء صفحات هبوط سريعة الاستجابة لتحسين مشاركة المستخدم. الحفاظ على نظام تصميم متسق باستخدام أدوات مثل Storybook. التعاون مع فرق متعددة الوظائف لتنفيذ الميزات. استخدام أدوات وأطر عمل حديثة مثل React، Next.js، Vite، وVanilla Extract CSS.",
+    "organisation": "OpenFerry (Droplet/NISEA)",
+    "startDate": "2024-11-01",
+    "endDate": null,
+    "isPresent": true,
+    "keywords": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Vite",
+      "Vanilla Extract CSS",
+      "Storybook",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "CI/CD",
+      "Git"
     ]
   }
 ]

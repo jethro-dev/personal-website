@@ -86,8 +86,8 @@
     "description": "運用React開發精緻的音樂串流服務，提供無縫且互動式的使用者介面，支援複雜功能。",
     "organisation": "STEM",
     "startDate": "2024-04-01",
-    "endDate": null,
-    "isPresent": true,
+    "endDate": "2024-10-31",
+    "isPresent": false,
     "keywords": [
       "HTML",
       "CSS",
@@ -102,6 +102,28 @@
       "Apollo",
       "GraphQL",
       "RESTful APIs"
+    ]
+  },
+  {
+    "id": "openferry-2024",
+    "title": "前端工程師",
+    "description": "開發OpenFerry，一個渡輪票務預訂SaaS平台。構建直觀的UI元件和可擴展、可重用的程式庫。打造響應式登陸頁面以提高用戶參與度。使用Storybook等工具維護一致的設計系統。與跨職能團隊合作實施功能。利用React、Next.js、Vite和Vanilla Extract CSS等現代工具和框架。",
+    "organisation": "OpenFerry (Droplet/NISEA)",
+    "startDate": "2024-11-01",
+    "endDate": null,
+    "isPresent": true,
+    "keywords": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Vite",
+      "Vanilla Extract CSS",
+      "Storybook",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "CI/CD",
+      "Git"
     ]
   }
 ]
