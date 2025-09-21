@@ -103,5 +103,53 @@
     "close": "Cerrar",
     "save": "Guardar",
     "loading": "Cargando..."
+  },
+  "certifications": {
+    "title": "Desarrollador Backend\nCertificado por Meta",
+    "issueDate": "Fecha de emisión: {date}",
+    "verifyLink": "Haz clic para verificar",
+    "coursesTitle": "Cursos",
+    "courses": [
+      {
+        "title": "Introducción al Desarrollo Backend",
+        "description": "Aprende los fundamentos del desarrollo web backend, incluyendo programación del lado del servidor e integración de bases de datos."
+      },
+      {
+        "title": "Programación en Python",
+        "description": "Domina los conceptos básicos de la programación en Python, cubriendo sintaxis, estructuras de datos y conceptos fundamentales."
+      },
+      {
+        "title": "Control de Versiones",
+        "description": "Comprende los sistemas de control de versiones, con enfoque en Git y GitHub para colaboración eficiente y gestión de código."
+      },
+      {
+        "title": "Introducción a Bases de Datos para Desarrollo Backend",
+        "description": "Explora conceptos y técnicas clave de bases de datos, incluyendo consultas SQL y principios de diseño de bases de datos."
+      },
+      {
+        "title": "Framework Web Django",
+        "description": "Construye aplicaciones web robustas y escalables usando el framework Django, cubriendo modelos, vistas y plantillas."
+      },
+      {
+        "title": "APIs",
+        "description": "Aprende a diseñar, construir y consumir APIs, enfocándote en principios RESTful e implementación práctica."
+      },
+      {
+        "title": "El Stack Completo",
+        "description": "Obtén una comprensión integral del desarrollo frontend y backend, integrando todas las partes de una aplicación web."
+      },
+      {
+        "title": "Proyecto Final de Desarrollo Backend",
+        "description": "Aplica tus habilidades de desarrollo backend en un proyecto integral, demostrando tu capacidad para construir sistemas complejos."
+      },
+      {
+        "title": "Preparación para Entrevistas de Programación",
+        "description": "Prepárate para entrevistas de programación con preguntas de práctica, estrategias de resolución de problemas y consejos para el éxito."
+      }
+    ]
+  },
+  "aboutCard": {
+    "name": "Jethro Au",
+    "title": "Ingeniero de Software"
   }
 }

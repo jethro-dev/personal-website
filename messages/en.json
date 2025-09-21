@@ -103,5 +103,53 @@
     "close": "Close",
     "save": "Save",
     "loading": "Loading..."
+  },
+  "certifications": {
+    "title": "Meta Certified\nBack-End Developer",
+    "issueDate": "Issue Date: {date}",
+    "verifyLink": "Click to verify",
+    "coursesTitle": "Courses",
+    "courses": [
+      {
+        "title": "Introduction to Back-End Development",
+        "description": "Learn the fundamentals of back-end web development, including server-side programming and database integration."
+      },
+      {
+        "title": "Programming in Python",
+        "description": "Master the basics of Python programming, covering syntax, data structures, and core concepts."
+      },
+      {
+        "title": "Version Control",
+        "description": "Understand version control systems, with a focus on Git and GitHub for efficient collaboration and code management."
+      },
+      {
+        "title": "Introduction to Databases for Back-End Development",
+        "description": "Explore key database concepts and techniques, including SQL queries and database design principles."
+      },
+      {
+        "title": "Django Web Framework",
+        "description": "Build robust and scalable web applications using the Django web framework, covering models, views, and templates."
+      },
+      {
+        "title": "APIs",
+        "description": "Learn to design, build, and consume APIs, focusing on RESTful principles and practical implementation."
+      },
+      {
+        "title": "The Full Stack",
+        "description": "Gain a comprehensive understanding of both front-end and back-end development, integrating all parts of a web application."
+      },
+      {
+        "title": "Back-End Developer Capstone",
+        "description": "Apply your back-end development skills in a comprehensive project, showcasing your ability to build complex systems."
+      },
+      {
+        "title": "Coding Interview Preparation",
+        "description": "Prepare for coding interviews with practice questions, problem-solving strategies, and tips for success."
+      }
+    ]
+  },
+  "aboutCard": {
+    "name": "Jethro Au",
+    "title": "Software Engineer"
   }
 }

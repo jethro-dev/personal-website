@@ -10,8 +10,11 @@ import Link from "next/link";
 import { Button as MovingBorderButton } from "./ui/moving-border";
 import { Button } from "./ui/button";
 import { DrawerDemo } from "./drawer";
+import { useTranslations } from 'next-intl';
 
 export function AboutMeCard({}) {
+  const t = useTranslations('aboutCard');
+
   return (
     <CardContainer>
       <CardBody className="bg-gray-50 relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-[16rem] h-auto rounded-xl p-6 border flex flex-col items-center cursor-pointer">
@@ -35,7 +38,7 @@ export function AboutMeCard({}) {
           className="mt-4 text-xl font-bold text-neutral-600 dark:text-white"
         >
           <span className="bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
-            Jethro Au
+            {t('name')}
           </span>
         </CardItem>
         <CardItem
@@ -43,7 +46,7 @@ export function AboutMeCard({}) {
           translateZ="40"
           className="mt-2 text-xs text-muted-foreground max-w-sm line-clamp-1"
         >
-          Software Enginer
+          {t('title')}
         </CardItem>
         <div className="mt-4 w-full flex items-center justify-center flex-wrap gap-2">
           <CardItem translateZ="40">

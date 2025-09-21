@@ -103,5 +103,53 @@
     "close": "Close",
     "save": "Save",
     "loading": "Loading..."
+  },
+  "certifications": {
+    "title": "Meta 认证\n后端开发者",
+    "issueDate": "颁发日期：{date}",
+    "verifyLink": "点击验证",
+    "coursesTitle": "课程",
+    "courses": [
+      {
+        "title": "后端开发入门",
+        "description": "学习后端Web开发的基础知识，包括服务端编程和数据库集成。"
+      },
+      {
+        "title": "Python编程",
+        "description": "掌握Python编程基础，涵盖语法、数据结构和核心概念。"
+      },
+      {
+        "title": "版本控制",
+        "description": "了解版本控制系统，重点关注Git和GitHub以实现高效协作和代码管理。"
+      },
+      {
+        "title": "后端开发数据库入门",
+        "description": "探索关键数据库概念和技术，包括SQL查询和数据库设计原则。"
+      },
+      {
+        "title": "Django Web框架",
+        "description": "使用Django Web框架构建强大且可扩展的Web应用程序，涵盖模型、视图和模板。"
+      },
+      {
+        "title": "API开发",
+        "description": "学习设计、构建和使用API，重点关注RESTful原则和实际实现。"
+      },
+      {
+        "title": "全栈开发",
+        "description": "全面了解前端和后端开发，整合Web应用程序的所有部分。"
+      },
+      {
+        "title": "后端开发项目实战",
+        "description": "在综合项目中应用您的后端开发技能，展示构建复杂系统的能力。"
+      },
+      {
+        "title": "编程面试准备",
+        "description": "通过练习题、解题策略和成功技巧为编程面试做准备。"
+      }
+    ]
+  },
+  "aboutCard": {
+    "name": "欧嘉朗",
+    "title": "软件工程师"
   }
 }

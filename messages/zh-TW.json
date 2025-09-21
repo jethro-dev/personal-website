@@ -103,5 +103,53 @@
     "close": "關閉",
     "save": "儲存",
     "loading": "載入中..."
+  },
+  "certifications": {
+    "title": "Meta 認證\n後端開發者",
+    "issueDate": "頒發日期：{date}",
+    "verifyLink": "點擊驗證",
+    "coursesTitle": "課程",
+    "courses": [
+      {
+        "title": "後端開發入門",
+        "description": "學習後端網頁開發的基礎知識，包括伺服器端程式設計和資料庫整合。"
+      },
+      {
+        "title": "Python 程式設計",
+        "description": "掌握 Python 程式設計基礎，涵蓋語法、資料結構和核心概念。"
+      },
+      {
+        "title": "版本控制",
+        "description": "了解版本控制系統，重點關注 Git 和 GitHub 以實現高效協作和程式碼管理。"
+      },
+      {
+        "title": "後端開發資料庫入門",
+        "description": "探索關鍵資料庫概念和技術，包括 SQL 查詢和資料庫設計原則。"
+      },
+      {
+        "title": "Django 網頁框架",
+        "description": "使用 Django 網頁框架構建強大且可擴充的網頁應用程式，涵蓋模型、視圖和模板。"
+      },
+      {
+        "title": "API 開發",
+        "description": "學習設計、構建和使用 API，重點關注 RESTful 原則和實際實作。"
+      },
+      {
+        "title": "全端開發",
+        "description": "全面了解前端和後端開發，整合網頁應用程式的所有部分。"
+      },
+      {
+        "title": "後端開發專案實戰",
+        "description": "在綜合專案中應用您的後端開發技能，展示構建複雜系統的能力。"
+      },
+      {
+        "title": "程式設計面試準備",
+        "description": "透過練習題、解題策略和成功技巧為程式設計面試做準備。"
+      }
+    ]
+  },
+  "aboutCard": {
+    "name": "歐嘉朗",
+    "title": "軟體工程師"
   }
 }
