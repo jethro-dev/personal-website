@@ -23,6 +23,10 @@ module.exports = {
       },
     },
     extend: {
+      maxWidth: {
+        '8xl': '90rem',   // 1440px
+        '9xl': '100rem',  // 1600px
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

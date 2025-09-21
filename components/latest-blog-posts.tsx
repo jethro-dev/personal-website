@@ -35,7 +35,7 @@ export const LatestBlogPosts = async ({}: Props) => {
             </TypographyP>
           </div>
 
-          <div className="relative max-w-7xl mx-auto mt-10 flex flex-col lg:flex-row items-stretch justify-between gap-4">
+          <div className="relative max-w-8xl mx-auto mt-10 flex flex-col lg:flex-row items-stretch justify-between gap-4">
             <Button className="absolute bottom-[100%] mb-10 right-0" asChild>
               <Link href={`/${locale}/blogs`}>{t('readMoreBlogs')}</Link>
             </Button>
