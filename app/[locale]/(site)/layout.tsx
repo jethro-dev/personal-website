@@ -8,14 +8,19 @@ import { Analytics } from "@vercel/analytics/react";
 
 export default function SiteLayout({
   children,
+  modal,
 }: {
   children: React.ReactNode;
+  modal: React.ReactNode;
 }) {
   return (
     <div className={`${poppins.className} !bg-background`}>
       <ThemeProvider>
         <SmoothScrollingWrapper>
-          <div vaul-drawer-wrapper="">{children}</div>
+          <div vaul-drawer-wrapper="">
+            {children}
+            {modal}
+          </div>
         </SmoothScrollingWrapper>
         <Footer />
         <Toaster />

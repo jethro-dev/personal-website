@@ -8,8 +8,14 @@ import { Experience } from "@/components/experience";
 import { Portfolio } from "@/components/portfolio";
 import { LatestBlogPosts } from "@/components/latest-blog-posts";
 import { Qualities } from "@/components/qualities";
+import { HorizontalScrollSection } from "@/components/horizontal-scroll-section";
+import { getProjects } from "@/lib/content";
+import { getLocale } from "next-intl/server";
 
-export default function Home() {
+export default async function Home() {
+  const locale = await getLocale();
+  const projects = getProjects(locale);
+
   return (
     <>
       {/* Sticky Navigation */}
@@ -25,6 +31,7 @@ export default function Home() {
         <Certifications />
         <Experience />
         <Portfolio />
+        <HorizontalScrollSection projects={projects} />
         <ConnectBanner />
         <LatestBlogPosts />
       </main>
