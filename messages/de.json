@@ -126,6 +126,8 @@
     "loading": "Wird geladen..."
   },
   "certifications": {
+    "sectionTitle": "Zertifizierungen & Berufliche Entwicklung",
+    "sectionDescription": "Mit dem Engagement für kontinuierliches Lernen und berufliches Wachstum verfolge ich branchenweit anerkannte Zertifizierungen, um meine technische Expertise zu verbessern und mit aufkommenden Technologien Schritt zu halten. Diese Nachweise validieren meine Fähigkeiten und zeigen mein Engagement für qualitativ hochwertige Lösungen.",
     "title": "Meta Zertifiziert\nBackend-Entwickler",
     "issueDate": "Ausstellungsdatum: {date}",
     "verifyLink": "Klicken Sie zur Verifizierung",

@@ -126,6 +126,8 @@
     "loading": "Loading..."
   },
   "certifications": {
+    "sectionTitle": "认证与专业发展",
+    "sectionDescription": "致力于持续学习和专业成长，我追求行业认可的认证以增强我的技术专长并与新兴技术保持同步。这些证书验证了我的技能，并展示了我致力于提供高质量解决方案的决心。",
     "title": "Meta 认证\n后端开发者",
     "issueDate": "颁发日期：{date}",
     "verifyLink": "点击验证",

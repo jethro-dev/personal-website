@@ -126,6 +126,8 @@
     "loading": "Carregando..."
   },
   "certifications": {
+    "sectionTitle": "Certificações e Desenvolvimento Profissional",
+    "sectionDescription": "Comprometido com o aprendizado contínuo e crescimento profissional, busco certificações reconhecidas pela indústria para aprimorar minha expertise técnica e me manter atualizado com tecnologias emergentes. Essas credenciais validam minhas habilidades e demonstram minha dedicação em fornecer soluções de alta qualidade.",
     "title": "Meta Certificado\nDesenvolvedor Backend",
     "issueDate": "Data de emissão: {date}",
     "verifyLink": "Clique para verificar",

@@ -126,6 +126,8 @@
     "loading": "Loading..."
   },
   "certifications": {
+    "sectionTitle": "Certifications & Professional Development",
+    "sectionDescription": "Committed to continuous learning and professional growth, I pursue industry-recognized certifications to enhance my technical expertise and stay current with emerging technologies. These credentials validate my skills and demonstrate my dedication to delivering high-quality solutions.",
     "title": "Meta Certified\nBack-End Developer",
     "issueDate": "Issue Date: {date}",
     "verifyLink": "Click to verify",

@@ -126,6 +126,8 @@
     "loading": "Chargement..."
   },
   "certifications": {
+    "sectionTitle": "Certifications et Développement Professionnel",
+    "sectionDescription": "Engagé dans l'apprentissage continu et la croissance professionnelle, je poursuis des certifications reconnues dans l'industrie pour améliorer mon expertise technique et rester à jour avec les technologies émergentes. Ces certifications valident mes compétences et démontrent mon engagement à fournir des solutions de haute qualité.",
     "title": "Meta Certifié\nDéveloppeur Backend",
     "issueDate": "Date d'émission : {date}",
     "verifyLink": "Cliquez pour vérifier",
