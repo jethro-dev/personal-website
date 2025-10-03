@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 import { ThemeProvider } from "@/providers/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 import { poppins } from "../fonts";
-import SmoothScrollingWrapper from "@/components/smooth-scrolling-wrapper";
+// import SmoothScrollingWrapper from "@/components/smooth-scrolling-wrapper";
 import { Analytics } from "@vercel/analytics/react";
 
 export async function generateMetadata({
@@ -53,12 +53,12 @@ export default async function LocaleLayout({
         <NextIntlClientProvider messages={messages}>
           <div className={`${poppins.className} !bg-background`}>
             <ThemeProvider>
-              <SmoothScrollingWrapper>
+              {/* <SmoothScrollingWrapper> */}
                 <div vaul-drawer-wrapper="">
                   {children}
                   {modal}
                 </div>
-              </SmoothScrollingWrapper>
+              {/* </SmoothScrollingWrapper> */}
               <Footer />
               <Toaster />
             </ThemeProvider>

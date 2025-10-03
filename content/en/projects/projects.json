@@ -1,5 +1,24 @@
 [
   {
+    "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "name": "OpenFerry",
+    "slug": "openferry",
+    "image": "/open-ferry-screenshot.png",
+    "url": "https://openferry.com/",
+    "content": "OpenFerry is a comprehensive ferry booking platform that allows users to discover and book ferry routes across 250 regions worldwide. The platform provides real-time ferry tracking, stress-free trip notifications, and a streamlined booking experience for direct and multi-leg ferry journeys.",
+    "isPublic": true,
+    "description": "OpenFerry is a comprehensive ferry booking platform that allows users to discover and book ferry routes across 250 regions worldwide. The platform provides real-time ferry tracking, stress-free trip notifications, and a streamlined booking experience for direct and multi-leg ferry journeys.",
+    "keywords": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Fullstack",
+      "Travel Tech",
+      "APIs"
+    ],
+    "createdAt": "2024-10-03T22:42:00Z"
+  },
+  {
     "id": "9331603e-b327-485a-ac1c-cf70208af876",
     "name": "YEE STUDIO Landing Page",
     "slug": "yee-studio-landing-page",

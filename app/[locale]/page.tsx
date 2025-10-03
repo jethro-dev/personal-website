@@ -30,7 +30,7 @@ export default async function Home() {
         <SkillsSection />
         <Certifications />
         <Experience />
-        <Portfolio />
+        {/* <Portfolio /> */}
         <HorizontalScrollSection projects={projects} />
         <ConnectBanner />
         <LatestBlogPosts />

@@ -38,12 +38,14 @@ export function ProjectDrawer({ project }: ProjectDrawerProps) {
 
   return (
     <Drawer open={isOpen} onOpenChange={(open) => !open && handleClose()}>
-      <DrawerContent className="max-h-[90vh]">
+      <DrawerContent className="h-[98vh]">
         <DrawerHeader>
           <DrawerTitle className="sr-only">{project.name}</DrawerTitle>
         </DrawerHeader>
-        <div className="overflow-y-auto max-h-[calc(90vh-4rem)]">
-          <ProjectDetail project={project} mode="drawer" />
+        <div className="overflow-y-auto flex-1">
+          <div className="container">
+            <ProjectDetail project={project} mode="drawer" />
+          </div>
         </div>
       </DrawerContent>
     </Drawer>
