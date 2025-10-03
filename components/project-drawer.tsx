@@ -8,7 +8,7 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer";
 import { ProjectDetail } from "@/components/project-detail";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface Project {
   id: string;
@@ -20,38 +20,21 @@ interface Project {
   keywords: string[];
 }
 
-interface ModalProjectPageProps {
-  params: Promise<{
-    slug: string;
-    locale: string;
-  }>;
+interface ProjectDrawerProps {
+  project: Project;
 }
 
-export default function ModalProjectPage({ params }: ModalProjectPageProps) {
+export function ProjectDrawer({ project }: ProjectDrawerProps) {
   const router = useRouter();
-  const [project, setProject] = useState<Project | null>(null);
   const [isOpen, setIsOpen] = useState(true);
-
-  useEffect(() => {
-    const fetchProject = async () => {
-      const resolvedParams = await params;
-      const response = await fetch(`/api/projects/${resolvedParams.slug}`);
-      if (response.ok) {
-        const data = await response.json();
-        setProject(data);
-      }
-    };
-    fetchProject();
-  }, [params]);
 
   const handleClose = () => {
     setIsOpen(false);
-    router.back();
+    // Small delay to allow animation to finish
+    setTimeout(() => {
+      router.back();
+    }, 300);
   };
-
-  if (!project) {
-    return null;
-  }
 
   return (
     <Drawer open={isOpen} onOpenChange={(open) => !open && handleClose()}>
