@@ -7,44 +7,52 @@ import { cn } from "@/lib/utils";
 interface QualityCardProps {
   title: string;
   description: string;
-  gradientClass: string;
+  videoSrc?: string;
   className?: string;
 }
 
 export const QualityCard = ({
   title,
   description,
-  gradientClass,
+  videoSrc,
   className
 }: QualityCardProps) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      whileHover={{ scale: 1.02, y: -5 }}
       className={cn(
-        "relative overflow-hidden rounded-3xl p-8 h-80 flex flex-col justify-end",
-        "backdrop-blur-sm border border-white/10 shadow-2xl",
-        gradientClass,
+        "relative overflow-hidden rounded-[2rem] p-8 aspect-[9/16] flex flex-col justify-between",
+        "border border-border backdrop-blur-sm shadow-lg",
         className
       )}
     >
-      {/* Background overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/20 backdrop-blur-[1px]" />
+      {/* Video Background */}
+      {videoSrc ? (
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src={videoSrc} type="video/mp4" />
+        </video>
+      ) : (
+        // Placeholder background
+        <div className="absolute inset-0 bg-gradient-to-br from-neutral-800 to-neutral-900" />
+      )}
+
+      {/* Dark overlay for text readability */}
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]" />
 
       {/* Content */}
-      <div className="relative z-10 space-y-3">
-        <h3 className="text-2xl lg:text-3xl font-bold text-white">
+      <div className="relative z-10 space-y-4">
+        <h3 className="text-2xl lg:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
           {title}
         </h3>
-        <p className="text-white/90 text-base lg:text-lg leading-relaxed">
+        <p className="text-neutral-300 text-sm lg:text-base leading-relaxed">
           {description}
         </p>
       </div>
-
-      {/* Subtle glow effect */}
-      <div className="absolute inset-0 opacity-50 bg-gradient-to-t from-transparent via-transparent to-white/5" />
     </motion.div>
   );
 };
